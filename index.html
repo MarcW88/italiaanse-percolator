@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Authentieke Italiaanse koffie thuis | Italiaanse Percolator</title>
+  <meta name="description" content="Wij testen, vergelijken en leggen uit. Vind de percolator die bij jouw smaak past. Onafhankelijke reviews van Bialetti, Alessi en meer.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700&family=DM+Serif+Display:ital,wght@0,400&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Italiaanse Percolator",
+    "description": "De beste Italiaanse percolators getest en vergeleken",
+    "url": "https://italiaanse-percolator.nl",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://italiaanse-percolator.nl/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-container">
+        <a href="index.html" class="nav-brand">Italiaanse Percolator</a>
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="beste-italiaanse-percolators.html" class="nav-link">Top 10</a></li>
+          <li><a href="koopgids/index.html" class="nav-link">Koopgids</a></li>
+          <li><a href="vergelijking/index.html" class="nav-link">Vergelijking</a></li>
+          <li><a href="over-ons.html" class="nav-link">Over ons</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" style="background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('Images/hero-section.png') center/cover; min-height: 600px; display: flex; align-items: center; color: white; position: relative;">
+    <div class="container" style="text-align: center; position: relative; z-index: 2;">
+      <h1 class="hero-title" style="color: white; font-size: 3.5rem; line-height: 1.1; margin-bottom: var(--sp-4); font-weight: 700; text-shadow: 2px 2px 8px rgba(0,0,0,0.7);">Authentieke Italiaanse koffie thuis</h1>
+      
+      <p class="hero-subtitle" style="color: rgba(255,255,255,0.95); font-size: 1.4rem; margin-bottom: var(--sp-2); max-width: 700px; margin-left: auto; margin-right: auto; font-weight: 400; text-shadow: 1px 1px 4px rgba(0,0,0,0.7);">Wij testen, vergelijken en leggen uit. Vind de percolator die bij jouw smaak past.</p>
+      
+      <p style="color: rgba(255,255,255,0.9); font-size: 1.1rem; margin-bottom: var(--sp-8); font-weight: 300; text-shadow: 1px 1px 3px rgba(0,0,0,0.6);">✨ Vertrouwd door meer dan 50.000 koffieliefhebbers</p>
+      
+      <div class="hero-cta" style="display: flex; gap: var(--sp-4); justify-content: center; flex-wrap: wrap;">
+        <a href="beste-italiaanse-percolators.html" class="btn btn-primary btn-lg" style="background: linear-gradient(135deg, #D2691E, #8B4513); border: none; padding: 1rem 2rem; font-size: 1.1rem; font-weight: 600; box-shadow: 0 6px 20px rgba(0,0,0,0.3); transition: all 0.3s ease; transform: translateY(0);" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.4)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 6px 20px rgba(0,0,0,0.3)'">Bekijk de top 10 →</a>
+        <a href="koopgids/hoe-kies-je-de-juiste-percolator.html" class="btn btn-outline btn-lg" style="border: 2px solid rgba(255,255,255,0.8); color: white; background: rgba(255,255,255,0.15); padding: 1rem 2rem; font-size: 1.1rem; font-weight: 600; backdrop-filter: blur(10px); transition: all 0.3s ease;" onmouseover="this.style.background='rgba(255,255,255,0.25)'; this.style.borderColor='white'" onmouseout="this.style.background='rgba(255,255,255,0.15)'; this.style.borderColor='rgba(255,255,255,0.8)'">Koopgids lezen</a>
+      </div>
+    </div>
+    
+    <!-- Subtle overlay for better text readability -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.2) 100%); z-index: 1;"></div>
+  </section>
+
+  <!-- Onze Favorieten -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center mb-8">
+        <h2>Onze favorieten</h2>
+        <p class="lead">Deze drie percolators hebben ons het meest overtuigd tijdens onze tests.</p>
+      </div>
+      
+      <div class="grid grid-3">
+        <!-- Product 1 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="Images/bialetti_fiammetta.jpg" alt="Bialetti Fiammetta percolator">
+          </div>
+          <div class="product-content">
+            <h3 class="product-title">Bialetti Fiammetta</h3>
+            <p class="product-subtitle">Klassiek design, perfecte smaak</p>
+            <div class="product-rating">
+              <div class="stars">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+              </div>
+              <span class="rating-text">9.2/10</span>
+            </div>
+            <a href="bialetti-fiammetta-review.html" class="btn btn-secondary">Bekijk review</a>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="Images/bialetti_venus.jpg" alt="Bialetti Venus percolator">
+          </div>
+          <div class="product-content">
+            <h3 class="product-title">Bialetti Venus</h3>
+            <p class="product-subtitle">Perfect voor inductie</p>
+            <div class="product-rating">
+              <div class="stars">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+              </div>
+              <span class="rating-text">8.8/10</span>
+            </div>
+            <a href="bialetti-venus-review.html" class="btn btn-secondary">Bekijk review</a>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img src="Images/alessi_pulcina.jpg" alt="Alessi Pulcina percolator">
+          </div>
+          <div class="product-content">
+            <h3 class="product-title">Alessi Pulcina</h3>
+            <p class="product-subtitle">Design award winnaar</p>
+            <div class="product-rating">
+              <div class="stars">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">☆</span>
+              </div>
+              <span class="rating-text">8.5/10</span>
+            </div>
+            <a href="alessi-pulcina-review.html" class="btn btn-secondary">Bekijk review</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Waarom vertrouwen? -->
+  <section class="section-sm" style="background: var(--surface-soft);">
+    <div class="container">
+      <div class="text-center mb-8">
+        <h2>Waarom kun je ons vertrouwen?</h2>
+      </div>
+      
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-body text-center">
+            <div style="font-size: 3rem; margin-bottom: var(--sp-4);">🛒</div>
+            <h3>Wij kopen en testen zelf</h3>
+            <p class="text-dim">Alle percolators worden door ons aangekocht en maandenlang getest in onze eigen keuken.</p>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-body text-center">
+            <div style="font-size: 3rem; margin-bottom: var(--sp-4);">🚫</div>
+            <h3>Geen gesponsorde merken</h3>
+            <p class="text-dim">Wij accepteren geen geld van merken voor positieve reviews. Onze mening is 100% onafhankelijk.</p>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-body text-center">
+            <div style="font-size: 3rem; margin-bottom: var(--sp-4);">📊</div>
+            <h3>Transparante reviews</h3>
+            <p class="text-dim">Alle testresultaten en criteria worden duidelijk uitgelegd. Geen verborgen agenda's.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Populaire Gidsen -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center mb-8">
+        <h2>Populaire gidsen</h2>
+        <p class="lead">Alles wat je moet weten over Italiaanse percolators</p>
+      </div>
+      
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="card-body">
+            <div style="width: 60px; height: 60px; background: var(--coffee); border-radius: var(--r-lg); display: flex; align-items: center; justify-content: center; margin-bottom: var(--sp-4);">
+              <span style="color: white; font-size: 1.5rem;">🤔</span>
+            </div>
+            <h3>Hoe kies je de juiste percolator?</h3>
+            <p class="text-dim mb-6">Materiaal, grootte, warmtebron - alle factoren op een rijtje voor de perfecte keuze.</p>
+            <a href="koopgids/hoe-kies-je-de-juiste-percolator.html" class="btn btn-ghost">Lees meer →</a>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-body">
+            <div style="width: 60px; height: 60px; background: var(--sage); border-radius: var(--r-lg); display: flex; align-items: center; justify-content: center; margin-bottom: var(--sp-4);">
+              <span style="color: white; font-size: 1.5rem;">🧽</span>
+            </div>
+            <h3>Onderhoud en reiniging</h3>
+            <p class="text-dim mb-6">Zo houd je je percolator jarenlang in topconditie en behoud je de beste koffiesmaak.</p>
+            <a href="koopgids/hoe-onderhoud-je-een-percolator.html" class="btn btn-ghost">Lees meer →</a>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-body">
+            <div style="width: 60px; height: 60px; background: var(--cta); border-radius: var(--r-lg); display: flex; align-items: center; justify-content: center; margin-bottom: var(--sp-4);">
+              <span style="color: white; font-size: 1.5rem;">⚖️</span>
+            </div>
+            <h3>Percolator vs espressoapparaat</h3>
+            <p class="text-dim mb-6">Wat zijn de verschillen en welke keuze past het beste bij jouw koffieritueel?</p>
+            <a href="koopgids/percolator-vs-espressoapparaat.html" class="btn btn-ghost">Lees meer →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Laatste Reviews -->
+  <section class="section-sm" style="background: var(--surface-soft);">
+    <div class="container">
+      <div class="text-center mb-8">
+        <h2>Laatste reviews</h2>
+        <p class="lead">Onze nieuwste tests en vergelijkingen</p>
+      </div>
+      
+      <div class="grid grid-2">
+        <div class="card">
+          <div class="card-body">
+            <div class="flex items-center gap-4 mb-4">
+              <img src="Images/bialetti_brikka.jpg" alt="Bialetti Brikka" style="width: 80px; height: 80px; object-fit: cover; border-radius: var(--r-md);">
+              <div>
+                <h3 style="margin-bottom: var(--sp-2);">Bialetti Brikka Review</h3>
+                <div class="rating-badge">8.6/10</div>
+              </div>
+            </div>
+            <p class="text-dim mb-4">De Brikka belooft espresso-achtige crema. Maar houdt deze percolator die belofte ook?</p>
+            <a href="bialetti-brikka-review.html" class="btn btn-ghost">Lees review →</a>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-body">
+            <div class="flex items-center gap-4 mb-4">
+              <img src="Images/italiaanse-percolator-5.png" alt="Vergelijking Bialetti vs Alessi" style="width: 80px; height: 80px; object-fit: cover; border-radius: var(--r-md);">
+              <div>
+                <h3 style="margin-bottom: var(--sp-2);">Bialetti vs Alessi</h3>
+                <div class="rating-badge">Vergelijking</div>
+              </div>
+            </div>
+            <p class="text-dim mb-4">Twee Italiaanse iconen in directe vergelijking. Welk merk wint op design, kwaliteit en prijs?</p>
+            <a href="vergelijking/bialetti-vs-alessi.html" class="btn btn-ghost">Lees vergelijking →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="section text-center">
+    <div class="container">
+      <div class="card" style="max-width: 600px; margin: 0 auto;">
+        <div class="card-body">
+          <h2 class="mb-4">Klaar om je perfecte percolator te vinden?</h2>
+          <p class="lead mb-6">Bekijk onze complete top 10 met gedetailleerde reviews, prijsvergelijkingen en kooptips.</p>
+          <a href="beste-italiaanse-percolators.html" class="btn btn-primary btn-lg">→ Bekijk de top 10 Italiaanse percolators</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO Content Section -->
+  <section class="section" style="background: var(--surface-soft);">
+    <div class="container">
+      <div class="grid" style="grid-template-columns: 2fr 1fr; gap: var(--sp-8);">
+        <div>
+          <h2 class="mb-6">Alles over Italiaanse percolators</h2>
+          
+          <div class="card mb-6">
+            <div class="card-body">
+              <h3 class="mb-4">Wat is een Italiaanse percolator?</h3>
+              <p class="mb-4">Een <strong>Italiaanse percolator</strong>, ook wel moka pot genoemd, is een klassieke koffiezetter die werkt op stoompressuur. Uitgevonden door Alfonso Bialetti in 1933, is deze methode van koffie zetten nog altijd populair vanwege de rijke, intense smaak die het produceert.</p>
+              
+              <p class="mb-4">De <a href="bialetti-fiammetta-review.html" style="color: var(--coffee);">Bialetti Fiammetta</a> is een perfecte introductie tot de wereld van Italiaanse percolators. Voor wie een modernere variant zoekt, is de <a href="bialetti-venus-review.html" style="color: var(--coffee);">Bialetti Venus</a> ideaal dankzij zijn inductiegeschiktheid.</p>
+              
+              <h4 class="mt-6 mb-3">Populaire merken en modellen</h4>
+              <ul class="mb-4">
+                <li><strong>Bialetti:</strong> Het originele merk met klassieke modellen zoals de <a href="bialetti-fiammetta-review.html" style="color: var(--coffee);">Fiammetta</a> en innovatieve opties zoals de <a href="bialetti-brikka-review.html" style="color: var(--coffee);">Brikka met crema-functie</a></li>
+                <li><strong>Alessi:</strong> Design-percolators zoals de award-winnende <a href="alessi-pulcina-review.html" style="color: var(--coffee);">Pulcina</a></li>
+                <li><strong>Andere merken:</strong> Bekijk onze <a href="beste-italiaanse-percolators.html" style="color: var(--coffee);">complete top 10 lijst</a> voor meer opties</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card mb-6">
+            <div class="card-body">
+              <h3 class="mb-4">Hoe kies je de beste percolator?</h3>
+              <p class="mb-4">Bij het kiezen van een percolator zijn er verschillende factoren om rekening mee te houden:</p>
+              
+              <div class="grid grid-2 gap-4 mb-4">
+                <div>
+                  <h4>🔥 Warmtebron</h4>
+                  <p class="text-sm text-dim">Heb je inductie? Kies dan voor RVS modellen zoals de <a href="bialetti-venus-review.html" style="color: var(--coffee);">Venus</a>. Voor gas en elektrisch zijn aluminium modellen perfect.</p>
+                </div>
+                <div>
+                  <h4>👥 Huishoudgrootte</h4>
+                  <p class="text-sm text-dim">3 kopjes voor 1-2 personen, 6 kopjes voor gezinnen. Bekijk onze <a href="koopgids/hoe-kies-je-de-juiste-percolator.html" style="color: var(--coffee);">uitgebreide koopgids</a>.</p>
+                </div>
+              </div>
+              
+              <p><a href="koopgids/hoe-kies-je-de-juiste-percolator.html" class="btn btn-outline">Lees de volledige koopgids →</a></p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              <h3 class="mb-4">Onderhoud en tips</h3>
+              <p class="mb-4">Een goed onderhouden percolator gaat jaren mee en blijft perfecte koffie maken. De belangrijkste tips:</p>
+              
+              <ul class="mb-4">
+                <li>Spoel na gebruik met warm water (geen zeep!)</li>
+                <li>Laat alle onderdelen goed drogen</li>
+                <li>Vervang de rubber pakking jaarlijks</li>
+                <li>Gebruik de juiste maling (niet te fijn)</li>
+              </ul>
+              
+              <p>Voor meer details, lees onze <a href="koopgids/hoe-onderhoud-je-een-percolator.html" style="color: var(--coffee);">complete onderhoudshandleiding</a> of vergelijk de <a href="koopgids/percolator-vs-espressoapparaat.html" style="color: var(--coffee);">verschillen met espressoapparaten</a>.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div>
+          <div class="card mb-6">
+            <div class="card-body">
+              <h3 class="mb-4">🏆 Onze top keuzes</h3>
+              
+              <div class="mb-4 pb-4" style="border-bottom: 1px solid var(--surface-soft);">
+                <h4 style="font-size: var(--fs-base); margin-bottom: var(--sp-2);">🥇 Beste overall</h4>
+                <p class="text-sm mb-2"><a href="bialetti-fiammetta-review.html" style="color: var(--coffee);">Bialetti Fiammetta</a></p>
+                <p class="text-xs text-dim">Klassiek, betrouwbaar, perfecte smaak</p>
+              </div>
+              
+              <div class="mb-4 pb-4" style="border-bottom: 1px solid var(--surface-soft);">
+                <h4 style="font-size: var(--fs-base); margin-bottom: var(--sp-2);">🥈 Beste voor inductie</h4>
+                <p class="text-sm mb-2"><a href="bialetti-venus-review.html" style="color: var(--coffee);">Bialetti Venus</a></p>
+                <p class="text-xs text-dim">Modern, RVS, inductiegeschikt</p>
+              </div>
+              
+              <div class="mb-4 pb-4" style="border-bottom: 1px solid var(--surface-soft);">
+                <h4 style="font-size: var(--fs-base); margin-bottom: var(--sp-2);">🥉 Beste design</h4>
+                <p class="text-sm mb-2"><a href="alessi-pulcina-review.html" style="color: var(--coffee);">Alessi Pulcina</a></p>
+                <p class="text-xs text-dim">Award-winnend design</p>
+              </div>
+              
+              <div>
+                <h4 style="font-size: var(--fs-base); margin-bottom: var(--sp-2);">✨ Meest innovatief</h4>
+                <p class="text-sm mb-2"><a href="bialetti-brikka-review.html" style="color: var(--coffee);">Bialetti Brikka</a></p>
+                <p class="text-xs text-dim">Met crema functie</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              <h3 class="mb-4">📚 Populaire gidsen</h3>
+              
+              <div class="mb-3">
+                <a href="koopgids/hoe-kies-je-de-juiste-percolator.html" class="text-sm" style="color: var(--coffee); display: block; margin-bottom: var(--sp-1);">→ Hoe kies je de juiste percolator?</a>
+                <p class="text-xs text-dim">Materiaal, grootte, warmtebron</p>
+              </div>
+              
+              <div class="mb-3">
+                <a href="koopgids/hoe-onderhoud-je-een-percolator.html" class="text-sm" style="color: var(--coffee); display: block; margin-bottom: var(--sp-1);">→ Onderhoud en reiniging</a>
+                <p class="text-xs text-dim">Zo blijft je percolator perfect</p>
+              </div>
+              
+              <div class="mb-3">
+                <a href="koopgids/percolator-vs-espressoapparaat.html" class="text-sm" style="color: var(--coffee); display: block; margin-bottom: var(--sp-1);">→ Percolator vs espresso</a>
+                <p class="text-xs text-dim">Wat past bij jou?</p>
+              </div>
+              
+              <div>
+                <a href="vergelijking/index.html" class="text-sm" style="color: var(--coffee); display: block; margin-bottom: var(--sp-1);">→ Alle vergelijkingen</a>
+                <p class="text-xs text-dim">Merk tegen merk</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center mb-8">
+        <h2>Veelgestelde vragen</h2>
+        <p class="lead">Alles wat je wilt weten over Italiaanse percolators</p>
+      </div>
+      
+      <div style="max-width: 800px; margin: 0 auto;">
+        <div class="card mb-4">
+          <div class="card-body">
+            <h3 class="mb-3">Wat is het verschil tussen een percolator en een espressoapparaat?</h3>
+            <p class="text-dim">Een percolator werkt op lage druk (1-2 bar) en maakt sterke koffie, terwijl een espressoapparaat hoge druk (9+ bar) gebruikt voor echte espresso. Percolators zijn eenvoudiger, goedkoper en maken authentieke Italiaanse koffie. Lees meer in onze <a href="koopgids/percolator-vs-espressoapparaat.html" style="color: var(--coffee);">uitgebreide vergelijking</a>.</p>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-body">
+            <h3 class="mb-3">Welke percolator is het beste voor beginners?</h3>
+            <p class="text-dim">De <a href="bialetti-fiammetta-review.html" style="color: var(--coffee);">Bialetti Fiammetta</a> is perfect voor beginners. Hij is betaalbaar, betrouwbaar en makkelijk te gebruiken. Voor inductiekookplaten raden we de <a href="bialetti-venus-review.html" style="color: var(--coffee);">Bialetti Venus</a> aan.</p>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-body">
+            <h3 class="mb-3">Hoe lang gaat een Italiaanse percolator mee?</h3>
+            <p class="text-dim">Een kwaliteitspercolator van Bialetti of Alessi gaat bij goed onderhoud 10-20 jaar mee. Alleen de rubber pakking moet jaarlijks vervangen worden. Bekijk onze <a href="koopgids/hoe-onderhoud-je-een-percolator.html" style="color: var(--coffee);">onderhoudstips</a> voor maximale levensduur.</p>
+          </div>
+        </div>
+
+        <div class="card mb-4">
+          <div class="card-body">
+            <h3 class="mb-3">Kan ik een aluminium percolator op inductie gebruiken?</h3>
+            <p class="text-dim">Nee, aluminium werkt niet op inductie. Voor inductiekookplaten heb je een RVS percolator nodig zoals de <a href="bialetti-venus-review.html" style="color: var(--coffee);">Bialetti Venus</a>. Bekijk onze <a href="beste-italiaanse-percolators.html" style="color: var(--coffee);">top 10 lijst</a> voor alle inductiegeschikte modellen.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <h3 class="mb-3">Welke koffiemaling gebruik ik voor een percolator?</h3>
+            <p class="text-dim">Gebruik een medium-fijne maling, vergelijkbaar met filterkoffie maar iets fijner. Te grof en de koffie wordt waterig, te fijn en hij wordt bitter. Meer tips vind je in onze <a href="koopgids/hoe-kies-je-de-juiste-percolator.html" style="color: var(--coffee);">complete koopgids</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Italiaanse Percolator</h4>
+          <p style="color: #D1D5DB; line-height: 1.6;">De beste Italiaanse percolators getest en vergeleken. Onafhankelijke reviews voor de perfecte koffie-ervaring.</p>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Reviews</h4>
+          <a href="beste-italiaanse-percolators.html">Top 10 Percolators</a>
+          <a href="bialetti-fiammetta-review.html">Bialetti Fiammetta</a>
+          <a href="bialetti-venus-review.html">Bialetti Venus</a>
+          <a href="alessi-pulcina-review.html">Alessi Pulcina</a>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Gidsen</h4>
+          <a href="koopgids/hoe-kies-je-de-juiste-percolator.html">Hoe kies je een percolator?</a>
+          <a href="koopgids/hoe-onderhoud-je-een-percolator.html">Onderhoud & reiniging</a>
+          <a href="koopgids/percolator-vs-espressoapparaat.html">Percolator vs espresso</a>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Over ons</h4>
+          <a href="over-ons.html">Over ons</a>
+          <a href="contact.html">Contact</a>
+          <a href="privacy.html">Privacy</a>
+          <a href="disclaimer.html">Disclaimer</a>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 Italiaanse Percolator. Als partner van Bol.com en Amazon verdienen wij aan kwalificerende aankopen.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky CTA Mobile -->
+  <div class="sticky-cta">
+    <a href="beste-italiaanse-percolators.html" class="btn btn-primary" style="width: 100%; justify-content: center;">Bekijk top 10 →</a>
+  </div>
+
+  <script>
+    // Simple FAQ toggle functionality for future use
+    document.addEventListener('DOMContentLoaded', function() {
+      const faqQuestions = document.querySelectorAll('.faq-question');
+      
+      faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+          const answer = this.nextElementSibling;
+          const isOpen = answer.style.display === 'block';
+          
+          // Close all other answers
+          document.querySelectorAll('.faq-answer').forEach(ans => {
+            ans.style.display = 'none';
+          });
+          
+          // Toggle current answer
+          answer.style.display = isOpen ? 'none' : 'block';
+        });
+      });
+    });
+  </script>
+</body>
+</html>
