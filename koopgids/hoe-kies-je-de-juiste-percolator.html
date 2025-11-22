@@ -169,8 +169,7 @@
   <!-- Main Content -->
   <section class="section">
     <div class="container">
-      <div class="grid" style="grid-template-columns: 2fr 1fr; gap: var(--sp-8);">
-        <div>
+      <div style="max-width: 900px; margin: 0 auto;">
           
           <!-- Behoeften bepalen -->
           <div class="card mb-8" id="behoeften">
@@ -213,6 +212,11 @@
                 </div>
               </div>
             </div>
+          </div>
+
+          <!-- Séparateur visuel -->
+          <div class="text-center mb-8">
+            <div style="width: 60px; height: 4px; background: linear-gradient(90deg, var(--coffee), var(--sage)); margin: 0 auto; border-radius: 2px;"></div>
           </div>
 
           <!-- Materiaal -->
@@ -349,6 +353,11 @@
             </div>
           </div>
 
+          <!-- Séparateur visuel -->
+          <div class="text-center mb-8">
+            <div style="width: 60px; height: 4px; background: linear-gradient(90deg, var(--sage), var(--cta)); margin: 0 auto; border-radius: 2px;"></div>
+          </div>
+
           <!-- Kookplaat compatibiliteit -->
           <div class="card mb-8" id="compatibiliteit">
             <div class="card-body">
@@ -424,6 +433,17 @@
                   <p><strong>Heb je inductie?</strong> Kies voor RVS modellen zoals de <a href="../bialetti-venus-review.html" style="color: var(--coffee);">Bialetti Venus</a>.</p>
                   <p><strong>Andere kookplaten?</strong> Aluminium modellen zoals de <a href="../bialetti-fiammetta-review.html" style="color: var(--coffee);">Bialetti Fiammetta</a> zijn perfect.</p>
                 </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Progress indicator -->
+          <div class="card mb-8" style="background: linear-gradient(135deg, #F0FDF4, #ECFDF5); border-left: 4px solid var(--success);">
+            <div class="card-body text-center">
+              <h4>🎆 Halverwege! Je bent goed bezig</h4>
+              <p class="text-sm text-dim">Je hebt de basis criteria doorgenomen. Nu gaan we kijken naar de concrete modellen en vergelijkingen.</p>
+              <div style="width: 100%; height: 8px; background: #E5E7EB; border-radius: 4px; margin: 1rem 0;">
+                <div style="width: 60%; height: 100%; background: linear-gradient(90deg, var(--coffee), var(--success)); border-radius: 4px;"></div>
               </div>
             </div>
           </div>
@@ -514,6 +534,11 @@
             </div>
           </div>
 
+          <!-- Séparateur visuel -->
+          <div class="text-center mb-8">
+            <div style="width: 60px; height: 4px; background: linear-gradient(90deg, var(--cta), var(--coffee)); margin: 0 auto; border-radius: 2px;"></div>
+          </div>
+
           <!-- Expert tips -->
           <div class="card mb-8" id="experts-tips">
             <div class="card-body">
@@ -561,6 +586,11 @@
                 </div>
               </div>
             </div>
+          </div>
+
+          <!-- Séparateur visuel -->
+          <div class="text-center mb-8">
+            <div style="width: 60px; height: 4px; background: linear-gradient(90deg, var(--coffee), var(--sage)); margin: 0 auto; border-radius: 2px;"></div>
           </div>
 
           <!-- Gebruikshandleiding -->
@@ -619,6 +649,18 @@
               </div>
             </div>
           </div>
+
+          <!-- Progress indicator final -->
+          <div class="card mb-8" style="background: linear-gradient(135deg, #EFF6FF, #DBEAFE); border-left: 4px solid var(--cta);">
+            <div class="card-body text-center">
+              <h4>🎉 Bijna klaar! Laatste vragen beantwoorden</h4>
+              <p class="text-sm text-dim">Je hebt alle belangrijke informatie gelezen. Hieronder vind je antwoorden op de meest gestelde vragen.</p>
+              <div style="width: 100%; height: 8px; background: #E5E7EB; border-radius: 4px; margin: 1rem 0;">
+                <div style="width: 90%; height: 100%; background: linear-gradient(90deg, var(--success), var(--cta)); border-radius: 4px;"></div>
+              </div>
+            </div>
+          </div>
+
           <!-- FAQ Section -->
           <div class="card mb-8" id="faq">
             <div class="card-body">
@@ -817,81 +859,74 @@
             </div>
           </div>
 
-        </div>
-
-        <!-- Sidebar -->
-        <div>
-          <!-- Quick Recommendations -->
-          <div class="card mb-6">
+          <!-- Gerelateerde resources (ex-sidebar content) -->
+          <div class="card mb-8">
             <div class="card-body">
-              <h3 class="mb-4">Onze top aanbevelingen</h3>
+              <h2 class="mb-6">🔗 Gerelateerde gidsen en resources</h2>
               
-              <div class="mb-6">
-                <h4 style="font-size: var(--fs-base); margin-bottom: var(--sp-2);">Beste overall</h4>
-                <div class="flex items-center gap-3 mb-2">
-                  <img src="../Images/italiaanse-percolator.png" alt="Bialetti Fiammetta" style="width: 50px; height: 50px; object-fit: cover; border-radius: var(--r-sm);">
+              <div class="grid grid-2 gap-6">
+                <div>
+                  <h3 class="mb-4">Meer lezen</h3>
+                  <div class="mb-4">
+                    <a href="../koopgids/hoe-onderhoud-je-een-percolator.html" style="color: var(--coffee); font-weight: 500;">🧙 Onderhoud & reiniging</a>
+                    <p class="text-sm text-dim">Zo houd je je percolator jarenlang in topconditie</p>
+                  </div>
+                  <div class="mb-4">
+                    <a href="../koopgids/percolator-vs-espressoapparaat.html" style="color: var(--coffee); font-weight: 500;">⚖️ Percolator vs espresso</a>
+                    <p class="text-sm text-dim">Wat zijn de verschillen en wat past bij jou?</p>
+                  </div>
                   <div>
-                    <p class="text-sm"><strong>Bialetti Fiammetta</strong></p>
-                    <p class="text-xs text-dim">€34,95 • 9.2/10</p>
+                    <a href="../beste-italiaanse-percolators.html" style="color: var(--coffee); font-weight: 500;">🏆 Complete top 10 lijst</a>
+                    <p class="text-sm text-dim">Alle modellen getest en vergeleken</p>
                   </div>
                 </div>
-                <a href="../bialetti-fiammetta-review.html" class="btn btn-ghost btn-sm">Bekijk review →</a>
-              </div>
-              
-              <div class="mb-6">
-                <h4 style="font-size: var(--fs-base); margin-bottom: var(--sp-2);">Beste voor inductie</h4>
-                <div class="flex items-center gap-3 mb-2">
-                  <img src="../Images/italiaanse-percolator-2.png" alt="Bialetti Venus" style="width: 50px; height: 50px; object-fit: cover; border-radius: var(--r-sm);">
-                  <div>
-                    <p class="text-sm"><strong>Bialetti Venus</strong></p>
-                    <p class="text-xs text-dim">€42,50 • 8.8/10</p>
+                
+                <div>
+                  <h3 class="mb-4">Onze top aanbevelingen</h3>
+                  
+                  <div class="card mb-4" style="border-left: 3px solid var(--coffee);">
+                    <div class="card-body">
+                      <div class="flex items-center gap-3 mb-2">
+                        <img src="../Images/italiaanse-percolator.png" alt="Bialetti Fiammetta" style="width: 40px; height: 40px; object-fit: cover; border-radius: var(--r-sm);">
+                        <div>
+                          <p class="text-sm font-weight: 500;">Bialetti Fiammetta</p>
+                          <p class="text-xs text-dim">€34,95 • 9.2/10 • Beste overall</p>
+                        </div>
+                      </div>
+                      <a href="../bialetti-fiammetta-review.html" class="btn btn-outline btn-sm">Bekijk review →</a>
+                    </div>
+                  </div>
+                  
+                  <div class="card mb-4" style="border-left: 3px solid var(--sage);">
+                    <div class="card-body">
+                      <div class="flex items-center gap-3 mb-2">
+                        <img src="../Images/italiaanse-percolator-2.png" alt="Bialetti Venus" style="width: 40px; height: 40px; object-fit: cover; border-radius: var(--r-sm);">
+                        <div>
+                          <p class="text-sm font-weight: 500;">Bialetti Venus</p>
+                          <p class="text-xs text-dim">€42,50 • 8.8/10 • Beste voor inductie</p>
+                        </div>
+                      </div>
+                      <a href="../bialetti-venus-review.html" class="btn btn-outline btn-sm">Bekijk review →</a>
+                    </div>
+                  </div>
+                  
+                  <div class="card" style="border-left: 3px solid var(--cta);">
+                    <div class="card-body">
+                      <div class="flex items-center gap-3 mb-2">
+                        <img src="../Images/italiaanse-percolator-3.png" alt="Alessi Pulcina" style="width: 40px; height: 40px; object-fit: cover; border-radius: var(--r-sm);">
+                        <div>
+                          <p class="text-sm font-weight: 500;">Alessi Pulcina</p>
+                          <p class="text-xs text-dim">€89,00 • 8.5/10 • Beste design</p>
+                        </div>
+                      </div>
+                      <a href="../alessi-pulcina-review.html" class="btn btn-outline btn-sm">Bekijk review →</a>
+                    </div>
                   </div>
                 </div>
-                <a href="../bialetti-venus-review.html" class="btn btn-ghost btn-sm">Bekijk review →</a>
-              </div>
-              
-              <div>
-                <h4 style="font-size: var(--fs-base); margin-bottom: var(--sp-2);">Beste design</h4>
-                <div class="flex items-center gap-3 mb-2">
-                  <img src="../Images/italiaanse-percolator-3.png" alt="Alessi Pulcina" style="width: 50px; height: 50px; object-fit: cover; border-radius: var(--r-sm);">
-                  <div>
-                    <p class="text-sm"><strong>Alessi Pulcina</strong></p>
-                    <p class="text-xs text-dim">€89,00 • 8.5/10</p>
-                  </div>
-                </div>
-                <a href="../alessi-pulcina-review.html" class="btn btn-ghost btn-sm">Bekijk review →</a>
               </div>
             </div>
           </div>
 
-          <!-- Related Guides -->
-          <div class="card mb-6">
-            <div class="card-body">
-              <h3 class="mb-4">Gerelateerde gidsen</h3>
-              <div class="mb-4">
-                <a href="../koopgids/hoe-onderhoud-je-een-percolator.html" style="color: var(--coffee);">🧽 Onderhoud & reiniging</a>
-                <p class="text-xs text-dim">Zo houd je je percolator in topconditie</p>
-              </div>
-              <div class="mb-4">
-                <a href="../koopgids/percolator-vs-espressoapparaat.html" style="color: var(--coffee);">⚖️ Percolator vs espresso</a>
-                <p class="text-xs text-dim">Wat zijn de verschillen?</p>
-              </div>
-              <div>
-                <a href="../beste-italiaanse-percolators.html" style="color: var(--coffee);">🏆 Top 10 percolators</a>
-                <p class="text-xs text-dim">Alle modellen getest en vergeleken</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- CTA -->
-          <div class="card">
-            <div class="card-body text-center">
-              <h3 class="mb-4">Klaar om te kiezen?</h3>
-              <a href="../beste-italiaanse-percolators.html" class="btn btn-primary btn-lg mb-3" style="width: 100%;">Bekijk alle reviews</a>
-              <p class="text-xs text-dim">Vergelijk alle modellen en vind jouw perfecte percolator</p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -930,5 +965,48 @@
       </div>
     </div>
   </footer>
+  <!-- Bouton flottant retour au sommaire -->
+  <div id="back-to-toc" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; display: none;">
+    <a href="#" onclick="document.querySelector('.card').scrollIntoView({behavior: 'smooth'}); return false;" class="btn btn-primary" style="border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+      ↑
+    </a>
+  </div>
+
+  <script>
+    // Afficher/masquer le bouton de retour au sommaire
+    window.addEventListener('scroll', function() {
+      const backToTocBtn = document.getElementById('back-to-toc');
+      const tocElement = document.querySelector('.card');
+      
+      if (tocElement) {
+        const tocRect = tocElement.getBoundingClientRect();
+        if (tocRect.bottom < 0) {
+          backToTocBtn.style.display = 'block';
+        } else {
+          backToTocBtn.style.display = 'none';
+        }
+      }
+    });
+
+    // Smooth scroll pour les liens d'ancrage
+    document.addEventListener('DOMContentLoaded', function() {
+      const anchorLinks = document.querySelectorAll('a[href^="#"]');
+      
+      anchorLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+          
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
