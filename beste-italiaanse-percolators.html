@@ -754,6 +754,39 @@
       display: none;
     }
   }
+
+  /* Layout Reviews + TOC */
+  .reviews-section {
+    padding: 3rem 0;
+  }
+
+  .reviews-layout {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .reviews-content {
+    min-width: 0; /* Permet au contenu de se rétrécir */
+  }
+
+  .reviews-sidebar {
+    position: sticky;
+    top: 2rem;
+  }
+
+  /* Mobile: stack layout */
+  @media (max-width: 1024px) {
+    .reviews-layout {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    
+    .reviews-sidebar {
+      display: none; /* Cache le TOC sur mobile */
+    }
+  }
   </style>
 </head>
 <body>
@@ -1004,6 +1037,61 @@
               <td><span class="rating-score">8.7/10</span></td>
               <td><a href="#bialetti-dama" class="btn-sm btn-outline">Review</a></td>
             </tr>
+            <tr data-category="budget">
+              <td><span class="rank-badge rank-6">6</span></td>
+              <td><a href="#bialetti-alpina" class="font-medium">Bialetti Alpina 2c</a></td>
+              <td><span class="material-badge aluminum">Aluminium</span></td>
+              <td><span class="inductie-no">❌</span></td>
+              <td>2 cups (100ml)</td>
+              <td><span class="price-badge budget">€</span></td>
+              <td>Compact</td>
+              <td><span class="rating-score">8.4/10</span></td>
+              <td><a href="#bialetti-alpina" class="btn-sm btn-outline">Review</a></td>
+            </tr>
+            <tr data-category="premium">
+              <td><span class="rank-badge rank-7">7</span></td>
+              <td><a href="#alessi-pulcina" class="font-medium">Alessi Pulcina 3c</a></td>
+              <td><span class="material-badge aluminum">Aluminium</span></td>
+              <td><span class="inductie-no">❌</span></td>
+              <td>3 cups (150ml)</td>
+              <td><span class="price-badge premium">€€€</span></td>
+              <td>Design</td>
+              <td><span class="rating-score">8.5/10</span></td>
+              <td><a href="#alessi-pulcina" class="btn-sm btn-outline">Review</a></td>
+            </tr>
+            <tr data-category="budget">
+              <td><span class="rank-badge rank-8">8</span></td>
+              <td><a href="#bialetti-mini-express" class="font-medium">Bialetti Mini Express 2c</a></td>
+              <td><span class="material-badge aluminum">Aluminium</span></td>
+              <td><span class="inductie-no">❌</span></td>
+              <td>2 cups (100ml)</td>
+              <td><span class="price-badge budget">€</span></td>
+              <td>Solo gebruik</td>
+              <td><span class="rating-score">8.3/10</span></td>
+              <td><a href="#bialetti-mini-express" class="btn-sm btn-outline">Review</a></td>
+            </tr>
+            <tr data-category="inductie,mid">
+              <td><span class="rank-badge rank-9">9</span></td>
+              <td><a href="#grosche-milano" class="font-medium">Grosche Milano 6c</a></td>
+              <td><span class="material-badge steel">RVS</span></td>
+              <td><span class="inductie-yes">✅</span></td>
+              <td>6 cups (300ml)</td>
+              <td><span class="price-badge mid">€€</span></td>
+              <td>Moderne stijl</td>
+              <td><span class="rating-score">8.2/10</span></td>
+              <td><a href="#grosche-milano" class="btn-sm btn-outline">Review</a></td>
+            </tr>
+            <tr data-category="mid">
+              <td><span class="rank-badge rank-10">10</span></td>
+              <td><a href="#bialetti-brikka" class="font-medium">Bialetti Brikka 4c</a></td>
+              <td><span class="material-badge aluminum">Aluminium</span></td>
+              <td><span class="inductie-no">❌</span></td>
+              <td>4 cups (200ml)</td>
+              <td><span class="price-badge mid">€€</span></td>
+              <td>Crema laag</td>
+              <td><span class="rating-score">8.0/10</span></td>
+              <td><a href="#bialetti-brikka" class="btn-sm btn-outline">Review</a></td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -1135,8 +1223,12 @@
           </div>
         </div>
 
-        <!-- Product Reviews - CORRECT ORDER (#1 → #10) -->
-        <div class="mb-8">
+  <!-- Section Reviews avec TOC Sidebar -->
+  <section class="reviews-section">
+    <div class="container">
+      <div class="reviews-layout">
+        <!-- Reviews Content (70%) -->
+        <div class="reviews-content">
           <h2 class="mb-6">Gedetailleerde reviews</h2>
           
           <!-- Product 1 - BESTE KEUZE EERST! -->
@@ -1730,6 +1822,100 @@
           </div>
 
         </div>
+        
+        <!-- TOC Sidebar (30%) -->
+        <div class="reviews-sidebar">
+          <div class="toc-sidebar">
+            <h3>Navigatie</h3>
+            
+            <!-- TOP 3 -->
+            <div class="toc-section">
+              <span class="toc-label">🎯 Top aanbevelingen</span>
+              
+              <a href="#bialetti-fiammetta" class="toc-link highlight">
+                <span class="toc-icon">🏆</span>
+                <span class="toc-rank">1</span>
+                <span class="toc-name">Fiammetta</span>
+                <span class="toc-score">9.2</span>
+              </a>
+              
+              <a href="#bialetti-venus" class="toc-link">
+                <span class="toc-icon">⚡</span>
+                <span class="toc-rank">2</span>
+                <span class="toc-name">Venus</span>
+                <span class="toc-score">8.8</span>
+              </a>
+              
+              <a href="#bialetti-moka" class="toc-link">
+                <span class="toc-icon">💰</span>
+                <span class="toc-rank">3</span>
+                <span class="toc-name">Moka</span>
+                <span class="toc-score">9.0</span>
+              </a>
+            </div>
+            
+            <!-- 7 AUTRES EN ACCORDION -->
+            <details class="toc-more">
+              <summary>+ 7 andere modellen</summary>
+              <a href="#bialetti-musa" class="toc-link small">
+                <span class="toc-rank">4</span>
+                <span class="toc-name">Musa</span>
+                <span class="toc-score">8.6</span>
+              </a>
+              <a href="#bialetti-dama" class="toc-link small">
+                <span class="toc-rank">5</span>
+                <span class="toc-name">Dama</span>
+                <span class="toc-score">8.7</span>
+              </a>
+              <a href="#bialetti-alpina" class="toc-link small">
+                <span class="toc-rank">6</span>
+                <span class="toc-name">Alpina</span>
+                <span class="toc-score">8.4</span>
+              </a>
+              <a href="#alessi-pulcina" class="toc-link small">
+                <span class="toc-rank">7</span>
+                <span class="toc-name">Pulcina</span>
+                <span class="toc-score">8.5</span>
+              </a>
+              <a href="#bialetti-mini-express" class="toc-link small">
+                <span class="toc-rank">8</span>
+                <span class="toc-name">Mini Express</span>
+                <span class="toc-score">8.3</span>
+              </a>
+              <a href="#grosche-milano" class="toc-link small">
+                <span class="toc-rank">9</span>
+                <span class="toc-name">Milano</span>
+                <span class="toc-score">8.2</span>
+              </a>
+              <a href="#bialetti-brikka" class="toc-link small">
+                <span class="toc-rank">10</span>
+                <span class="toc-name">Brikka</span>
+                <span class="toc-score">8.0</span>
+              </a>
+            </details>
+            
+            <!-- GUIDES -->
+            <div class="toc-section">
+              <span class="toc-label">📚 Gidsen</span>
+              <a href="#buying-guide" class="toc-link guide">
+                <span class="toc-icon">🧭</span>
+                <span class="toc-name">Koopgids</span>
+              </a>
+              <a href="#faq" class="toc-link guide">
+                <span class="toc-icon">❓</span>
+                <span class="toc-name">FAQ</span>
+              </a>
+            </div>
+            
+            <!-- PROGRESS -->
+            <div class="toc-progress">
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: 35%"></div>
+              </div>
+              <span class="progress-text">35% gelezen</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1812,101 +1998,6 @@
         </div>
       </div>
 
-      <!-- Sidebar TOC Optimisé -->
-      <div>
-        <div class="toc-sidebar">
-          <h3>Navigatie</h3>
-          
-          <!-- TOP 3 -->
-          <div class="toc-section">
-            <span class="toc-label">🎯 Top aanbevelingen</span>
-            
-            <a href="#bialetti-fiammetta" class="toc-link highlight">
-              <span class="toc-icon">🏆</span>
-              <span class="toc-rank">1</span>
-              <span class="toc-name">Fiammetta</span>
-              <span class="toc-score">9.2</span>
-            </a>
-            
-            <a href="#bialetti-venus" class="toc-link">
-              <span class="toc-icon">⚡</span>
-              <span class="toc-rank">2</span>
-              <span class="toc-name">Venus</span>
-              <span class="toc-score">8.8</span>
-            </a>
-            
-            <a href="#bialetti-moka" class="toc-link">
-              <span class="toc-icon">💰</span>
-              <span class="toc-rank">3</span>
-              <span class="toc-name">Moka</span>
-              <span class="toc-score">9.0</span>
-            </a>
-          </div>
-          
-          <!-- 7 AUTRES EN ACCORDION -->
-          <details class="toc-more">
-            <summary>+ 7 andere modellen</summary>
-            <a href="#bialetti-musa" class="toc-link small">
-              <span class="toc-rank">4</span>
-              <span class="toc-name">Musa</span>
-              <span class="toc-score">8.6</span>
-            </a>
-            <a href="#bialetti-dama" class="toc-link small">
-              <span class="toc-rank">5</span>
-              <span class="toc-name">Dama</span>
-              <span class="toc-score">8.7</span>
-            </a>
-            <a href="#bialetti-alpina" class="toc-link small">
-              <span class="toc-rank">6</span>
-              <span class="toc-name">Alpina</span>
-              <span class="toc-score">8.4</span>
-            </a>
-            <a href="#alessi-pulcina" class="toc-link small">
-              <span class="toc-rank">7</span>
-              <span class="toc-name">Pulcina</span>
-              <span class="toc-score">8.5</span>
-            </a>
-            <a href="#bialetti-mini-express" class="toc-link small">
-              <span class="toc-rank">8</span>
-              <span class="toc-name">Mini Express</span>
-              <span class="toc-score">8.3</span>
-            </a>
-            <a href="#grosche-milano" class="toc-link small">
-              <span class="toc-rank">9</span>
-              <span class="toc-name">Milano</span>
-              <span class="toc-score">8.2</span>
-            </a>
-            <a href="#bialetti-brikka" class="toc-link small">
-              <span class="toc-rank">10</span>
-              <span class="toc-name">Brikka</span>
-              <span class="toc-score">8.0</span>
-            </a>
-          </details>
-          
-          <!-- GUIDES -->
-          <div class="toc-section">
-            <span class="toc-label">📚 Gidsen</span>
-            <a href="#buying-guide" class="toc-link guide">
-              <span class="toc-icon">🧭</span>
-              <span class="toc-name">Koopgids</span>
-            </a>
-            <a href="#faq" class="toc-link guide">
-              <span class="toc-icon">❓</span>
-              <span class="toc-name">FAQ</span>
-            </a>
-          </div>
-          
-          <!-- PROGRESS -->
-          <div class="toc-progress">
-            <div class="progress-bar">
-              <div class="progress-fill" style="width: 35%"></div>
-            </div>
-            <span class="progress-text">35% gelezen</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- Direct Comparisons -->
   <section class="section-sm">
