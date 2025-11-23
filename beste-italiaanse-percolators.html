@@ -214,24 +214,13 @@
     box-shadow: 0 8px 24px rgba(0,0,0,0.08);
   }
 
-  .pick-primary {
-    border-color: #2563eb;
-    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  .pick-card {
+    border-color: #e2e8f0;
+    background: #ffffff;
   }
 
-  .pick-secondary {
-    border-color: #dc2626;
-    background: linear-gradient(135deg, #fef2f2 0%, #fecaca 100%);
-  }
-
-  .pick-tertiary {
-    border-color: #16a34a;
-    background: linear-gradient(135deg, #f0fdf4 0%, #bbf7d0 100%);
-  }
-
-  .pick-icon {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+  .pick-card:hover {
+    border-color: #cbd5e1;
   }
 
   .pick-badge {
@@ -847,13 +836,12 @@
   <!-- Quick Picks Optimisé -->
   <section class="quick-picks">
     <div class="container">
-      <h2>🎯 Vind snel je perfecte percolator</h2>
+      <h2>Vind snel je perfecte percolator</h2>
       <p class="picks-intro">Geen tijd om alles te lezen? Dit zijn onze top 3 aanbevelingen:</p>
       
       <!-- 3 cartes principales toujours visibles -->
       <div class="picks-grid">
-        <div class="pick-card pick-primary">
-          <div class="pick-icon">🏆</div>
+        <div class="pick-card">
           <div class="pick-badge">Beste algemeen</div>
           <h3>Bialetti Fiammetta</h3>
           <p class="pick-desc">Perfecte balans prijs/kwaliteit</p>
@@ -867,8 +855,7 @@
           <a href="#bialetti-fiammetta" class="pick-cta">Bekijk review →</a>
         </div>
         
-        <div class="pick-card pick-secondary">
-          <div class="pick-icon">⚡</div>
+        <div class="pick-card">
           <div class="pick-badge">Beste inductie</div>
           <h3>Bialetti Venus</h3>
           <p class="pick-desc">RVS - alle kookplaten</p>
@@ -882,8 +869,7 @@
           <a href="#bialetti-venus" class="pick-cta">Bekijk review →</a>
         </div>
         
-        <div class="pick-card pick-tertiary">
-          <div class="pick-icon">💰</div>
+        <div class="pick-card">
           <div class="pick-badge">Beste budget</div>
           <h3>Moka Express</h3>
           <p class="pick-desc">Iconische klassieker</p>
@@ -903,7 +889,6 @@
         <summary class="picks-more-btn">Bekijk 3 andere aanbevelingen →</summary>
         <div class="picks-grid">
           <div class="pick-card">
-            <div class="pick-icon">🎨</div>
             <div class="pick-badge">Beste design</div>
             <h3>Alessi Pulcina</h3>
             <p class="pick-desc">Award-winnend design</p>
@@ -918,7 +903,6 @@
           </div>
           
           <div class="pick-card">
-            <div class="pick-icon">�</div>
             <div class="pick-badge">Beste premium</div>
             <h3>Bialetti Musa</h3>
             <p class="pick-desc">Luxe RVS design</p>
@@ -933,7 +917,6 @@
           </div>
           
           <div class="pick-card">
-            <div class="pick-icon">�</div>
             <div class="pick-badge">Beste compact</div>
             <h3>Bialetti Dama</h3>
             <p class="pick-desc">Elegant & compact</p>
@@ -1830,24 +1813,21 @@
             
             <!-- TOP 3 -->
             <div class="toc-section">
-              <span class="toc-label">🎯 Top aanbevelingen</span>
+              <span class="toc-label">Top aanbevelingen</span>
               
               <a href="#bialetti-fiammetta" class="toc-link highlight">
-                <span class="toc-icon">🏆</span>
                 <span class="toc-rank">1</span>
                 <span class="toc-name">Fiammetta</span>
                 <span class="toc-score">9.2</span>
               </a>
               
               <a href="#bialetti-venus" class="toc-link">
-                <span class="toc-icon">⚡</span>
                 <span class="toc-rank">2</span>
                 <span class="toc-name">Venus</span>
                 <span class="toc-score">8.8</span>
               </a>
               
               <a href="#bialetti-moka" class="toc-link">
-                <span class="toc-icon">💰</span>
                 <span class="toc-rank">3</span>
                 <span class="toc-name">Moka</span>
                 <span class="toc-score">9.0</span>
@@ -1896,13 +1876,11 @@
             
             <!-- GUIDES -->
             <div class="toc-section">
-              <span class="toc-label">📚 Gidsen</span>
+              <span class="toc-label">Gidsen</span>
               <a href="#buying-guide" class="toc-link guide">
-                <span class="toc-icon">🧭</span>
                 <span class="toc-name">Koopgids</span>
               </a>
               <a href="#faq" class="toc-link guide">
-                <span class="toc-icon">❓</span>
                 <span class="toc-name">FAQ</span>
               </a>
             </div>
@@ -1925,7 +1903,8 @@
         <!-- Buying Guide -->
         <div class="card mb-8" id="buying-guide">
           <div class="card-body">
-            <h2 class="mb-6">Waar moet je op letten bij het kiezen?</h2>
+            <div style="max-width: 900px; margin: 0 auto;">
+              <h2 class="mb-6">Waar moet je op letten bij het kiezen?</h2>
 
             <h3 class="mb-3">Kies op basis van kookplaat</h3>
             <p class="text-dim mb-3">
@@ -1994,6 +1973,7 @@
               van elk materiaal maximaliseren, bekijk onze <a href="koopgids/hoe-onderhoud-je-een-percolator.html">onderhoudsgids voor percolators</a>.
             </p>
 
+            </div>
           </div>
         </div>
       </div>
