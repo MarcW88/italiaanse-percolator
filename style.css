@@ -838,40 +838,7 @@ h4 {
   color: var(--text-light);
 }
 
-/* Table of Contents */
-.toc {
-  background: var(--surface);
-  border-radius: var(--r-lg);
-  padding: var(--sp-6);
-  box-shadow: var(--shadow-sm);
-  margin: var(--sp-8) 0;
-  position: sticky;
-  top: 100px;
-}
-
-.toc h3 {
-  margin-bottom: var(--sp-4);
-  color: var(--coffee);
-}
-
-.toc ul {
-  list-style: none;
-  padding: 0;
-}
-
-.toc li {
-  margin-bottom: var(--sp-2);
-}
-
-.toc a {
-  color: var(--text-dim);
-  font-size: var(--fs-sm);
-  transition: color 0.2s ease;
-}
-
-.toc a:hover {
-  color: var(--coffee);
-}
+/* Table of Contents - SUPPRIMÉ (remplacé par .toc-sidebar optimisé) */
 
 /* Footer */
 .footer {
