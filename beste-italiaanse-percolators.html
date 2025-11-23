@@ -165,6 +165,168 @@
       font-size: 1.75rem;
     }
   }
+
+  /* Quick Picks Optimisés */
+  .quick-picks {
+    padding: 3rem 0;
+    background: #ffffff;
+  }
+
+  .quick-picks h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #0f172a;
+  }
+
+  .picks-intro {
+    text-align: center;
+    font-size: 1.125rem;
+    color: #64748b;
+    margin-bottom: 2rem;
+  }
+
+  .picks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .pick-card {
+    position: relative;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    background: #f8fafc;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+
+  .pick-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  }
+
+  .pick-primary {
+    border-color: #2563eb;
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  }
+
+  .pick-secondary {
+    border-color: #dc2626;
+    background: linear-gradient(135deg, #fef2f2 0%, #fecaca 100%);
+  }
+
+  .pick-tertiary {
+    border-color: #16a34a;
+    background: linear-gradient(135deg, #f0fdf4 0%, #bbf7d0 100%);
+  }
+
+  .pick-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .pick-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: white;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #2563eb;
+    margin-bottom: 0.75rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+
+  .pick-card h3 {
+    font-size: 1.25rem;
+    margin: 0.5rem 0;
+    color: #0f172a;
+    font-weight: 600;
+  }
+
+  .pick-desc {
+    font-size: 0.875rem;
+    color: #64748b;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
+
+  .pick-specs {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: #475569;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  .pick-cta {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #2563eb;
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+    font-size: 0.875rem;
+  }
+
+  .pick-cta:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+  }
+
+  .picks-more {
+    text-align: center;
+  }
+
+  .picks-more-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s;
+    list-style: none;
+    color: #475569;
+  }
+
+  .picks-more-btn::-webkit-details-marker {
+    display: none;
+  }
+
+  .picks-more-btn:hover {
+    border-color: #2563eb;
+    color: #2563eb;
+  }
+
+  .picks-more[open] .picks-more-btn {
+    margin-bottom: 1.5rem;
+    border-color: #2563eb;
+    color: #2563eb;
+  }
+
+  /* Mobile: 1 colonne */
+  @media (max-width: 768px) {
+    .picks-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .quick-picks {
+      padding: 2rem 0;
+    }
+    
+    .quick-picks h2 {
+      font-size: 1.5rem;
+    }
+  }
   </style>
 </head>
 <body>
@@ -219,61 +381,112 @@
       </details>
     </div>
   </section>
-      <!-- Sélection Rapide -->
-      <div class="card mb-8">
-        <div class="card-body">
-          <h2 class="mb-4">🎯 Onze Top Keuzes in één Oogopslag</h2>
-          <p class="text-dim mb-6">Geen tijd om alles te lezen? Dit zijn onze directe aanbevelingen per situatie:</p>
-          
-          <div class="grid grid-2 gap-6 mb-6">
-            <div class="quick-pick-card">
-              <div class="rating-badge mb-2" style="background: #2563eb;">🏆 BESTE ALGEHELE KEUZE</div>
-              <h4><a href="#bialetti-moka-express" class="text-decoration-none">Bialetti Moka Express 6 cups</a></h4>
-              <p class="text-sm text-dim">De iconische klassieker - perfecte balans tussen prijs, kwaliteit en betrouwbaarheid</p>
-              <div class="text-sm"><strong>€25-30</strong> • Aluminium • Gas/Elektrisch</div>
-            </div>
-            
-            <div class="quick-pick-card">
-              <div class="rating-badge mb-2" style="background: #dc2626;">⚡ BESTE VOOR INDUCTIE</div>
-              <h4><a href="#bialetti-venus" class="text-decoration-none">Bialetti Venus 6 cups</a></h4>
-              <p class="text-sm text-dim">RVS constructie - werkt op alle kookplaten inclusief inductie</p>
-              <div class="text-sm"><strong>€45-55</strong> • RVS • Alle warmtebronnen</div>
-            </div>
-            
-            <div class="quick-pick-card">
-              <div class="rating-badge mb-2" style="background: #16a34a;">💰 BESTE PRIJS-KWALITEIT</div>
-              <h4><a href="#bialetti-moka-express-3" class="text-decoration-none">Bialetti Moka Express 3 cups</a></h4>
-              <p class="text-sm text-dim">Perfect voor beginners en kleine huishoudens - onverslaanbare prijs</p>
-              <div class="text-sm"><strong>€18-22</strong> • Aluminium • Gas/Elektrisch</div>
-            </div>
-            
-            <div class="quick-pick-card">
-              <div class="rating-badge mb-2" style="background: #7c3aed;">🎨 BESTE DESIGN</div>
-              <h4><a href="#alessi-pulcina" class="text-decoration-none">Alessi Pulcina 3 cups</a></h4>
-              <p class="text-sm text-dim">Award-winnend design van Michele De Lucchi - kunstobject voor je keuken</p>
-              <div class="text-sm"><strong>€85-95</strong> • Aluminium • Gas/Elektrisch</div>
-            </div>
-            
-            <div class="quick-pick-card">
-              <div class="rating-badge mb-2" style="background: #ea580c;">👶 BESTE VOOR BEGINNERS</div>
-              <h4><a href="#bialetti-fiammetta" class="text-decoration-none">Bialetti Fiammetta 3 cups</a></h4>
-              <p class="text-sm text-dim">Moderne ergonomie en gebruiksvriendelijk - ideaal voor je eerste percolator</p>
-              <div class="text-sm"><strong>€35-40</strong> • Aluminium • Gas/Elektrisch</div>
-            </div>
-            
-            <div class="quick-pick-card">
-              <div class="rating-badge mb-2" style="background: #059669;">💎 BESTE PREMIUM KEUZE</div>
-              <h4><a href="#bialetti-musa" class="text-decoration-none">Bialetti Musa 6 cups</a></h4>
-              <p class="text-sm text-dim">Luxe RVS design met inductie compatibiliteit - voor de veeleisende koffieliefhebber</p>
-              <div class="text-sm"><strong>€65-75</strong> • RVS • Alle warmtebronnen</div>
-            </div>
+  <!-- Quick Picks Optimisé -->
+  <section class="quick-picks">
+    <div class="container">
+      <h2>🎯 Vind snel je perfecte percolator</h2>
+      <p class="picks-intro">Geen tijd om alles te lezen? Dit zijn onze top 3 aanbevelingen:</p>
+      
+      <!-- 3 cartes principales toujours visibles -->
+      <div class="picks-grid">
+        <div class="pick-card pick-primary">
+          <div class="pick-icon">🏆</div>
+          <div class="pick-badge">Beste algemeen</div>
+          <h3>Bialetti Fiammetta</h3>
+          <p class="pick-desc">Perfecte balans prijs/kwaliteit</p>
+          <div class="pick-specs">
+            <span>€35</span>
+            <span>•</span>
+            <span>3 cups</span>
+            <span>•</span>
+            <span>Aluminium</span>
           </div>
-          
-          <div class="text-center">
-            <p class="text-sm text-dim">👇 Scroll naar beneden voor de complete vergelijking en gedetailleerde reviews</p>
+          <a href="#bialetti-fiammetta" class="pick-cta">Bekijk review →</a>
+        </div>
+        
+        <div class="pick-card pick-secondary">
+          <div class="pick-icon">⚡</div>
+          <div class="pick-badge">Beste inductie</div>
+          <h3>Bialetti Venus</h3>
+          <p class="pick-desc">RVS - alle kookplaten</p>
+          <div class="pick-specs">
+            <span>€48</span>
+            <span>•</span>
+            <span>4 cups</span>
+            <span>•</span>
+            <span>RVS</span>
           </div>
+          <a href="#bialetti-venus" class="pick-cta">Bekijk review →</a>
+        </div>
+        
+        <div class="pick-card pick-tertiary">
+          <div class="pick-icon">💰</div>
+          <div class="pick-badge">Beste budget</div>
+          <h3>Moka Express</h3>
+          <p class="pick-desc">Iconische klassieker</p>
+          <div class="pick-specs">
+            <span>€25</span>
+            <span>•</span>
+            <span>3 cups</span>
+            <span>•</span>
+            <span>Aluminium</span>
+          </div>
+          <a href="#bialetti-moka" class="pick-cta">Bekijk review →</a>
         </div>
       </div>
+      
+      <!-- 3 cartes secondaires dans accordion -->
+      <details class="picks-more">
+        <summary class="picks-more-btn">Bekijk 3 andere aanbevelingen →</summary>
+        <div class="picks-grid">
+          <div class="pick-card">
+            <div class="pick-icon">🎨</div>
+            <div class="pick-badge">Beste design</div>
+            <h3>Alessi Pulcina</h3>
+            <p class="pick-desc">Award-winnend design</p>
+            <div class="pick-specs">
+              <span>€85</span>
+              <span>•</span>
+              <span>3 cups</span>
+              <span>•</span>
+              <span>Aluminium</span>
+            </div>
+            <a href="#alessi-pulcina" class="pick-cta">Bekijk review →</a>
+          </div>
+          
+          <div class="pick-card">
+            <div class="pick-icon">�</div>
+            <div class="pick-badge">Beste premium</div>
+            <h3>Bialetti Musa</h3>
+            <p class="pick-desc">Luxe RVS design</p>
+            <div class="pick-specs">
+              <span>€65</span>
+              <span>•</span>
+              <span>6 cups</span>
+              <span>•</span>
+              <span>RVS</span>
+            </div>
+            <a href="#bialetti-musa" class="pick-cta">Bekijk review →</a>
+          </div>
+          
+          <div class="pick-card">
+            <div class="pick-icon">�</div>
+            <div class="pick-badge">Beste compact</div>
+            <h3>Bialetti Dama</h3>
+            <p class="pick-desc">Elegant & compact</p>
+            <div class="pick-specs">
+              <span>€55</span>
+              <span>•</span>
+              <span>3 cups</span>
+              <span>•</span>
+              <span>RVS</span>
+            </div>
+            <a href="#bialetti-dama" class="pick-cta">Bekijk review →</a>
+          </div>
+        </div>
+      </details>
+    </div>
+  </section>
 
       <!-- Vergelijkingstabel -->
       <div class="card mb-8">
