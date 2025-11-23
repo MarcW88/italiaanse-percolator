@@ -20,7 +20,7 @@ def generate_product_page(product, index):
     """Génère une fiche produit individuelle"""
     
     slug = slugify(product['Nom du produit'])
-    filename = f"produits/{slug}.html"
+    filename = f"producten/{slug}.html"
     
     # Template fiche produit
     html_content = f"""<!DOCTYPE html>
@@ -31,7 +31,7 @@ def generate_product_page(product, index):
     <title>{product['Nom du produit']} | Italiaanse Percolator</title>
     <meta name="description" content="{product['Description courte']} - Prijs: €{product['Prix estimé (€)']} - {product['Note estimée (sur 5)']}★ ({product["Nombre d'avis estimé"]} reviews)">
     <link rel="stylesheet" href="../style.css">
-    <link rel="canonical" href="https://italiaanse-percolator.nl/produits/{slug}.html">
+    <link rel="canonical" href="https://italiaanse-percolator.nl/producten/{slug}.html">
 </head>
 <body>
     <nav class="navbar">
@@ -40,9 +40,9 @@ def generate_product_page(product, index):
                 <a href="../index.html" class="nav-brand">Italiaanse Percolator</a>
                 <ul class="nav-menu">
                     <li><a href="../index.html" class="nav-link">Home</a></li>
-                    <li><a href="../categories/percolateurs.html" class="nav-link">Percolateurs</a></li>
+                    <li><a href="../categories/percolators.html" class="nav-link">Percolators</a></li>
                     <li><a href="../categories/accessoires.html" class="nav-link">Accessoires</a></li>
-                    <li><a href="../categories/electriques.html" class="nav-link">Électriques</a></li>
+                    <li><a href="../categories/elektrische-percolators.html" class="nav-link">Elektrisch</a></li>
                 </ul>
             </div>
         </div>
@@ -59,7 +59,7 @@ def generate_product_page(product, index):
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 3rem;">
             <!-- Image produit -->
             <div>
-                <img src="../images/produits/{slug}.jpg" alt="{product['Nom du produit']}" 
+                <img src="../images/producten/{slug}.jpg" alt="{product['Nom du produit']}" 
                      style="width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"
                      onerror="this.src='../Images/placeholder-product.jpg'">
             </div>
@@ -106,7 +106,7 @@ def generate_product_page(product, index):
                     <a href="{product['URL']}" target="_blank" rel="nofollow" 
                        class="btn btn-primary btn-lg" 
                        style="flex: 1; text-align: center; padding: 1rem 2rem; background: #D2691E; color: white; text-decoration: none; border-radius: 5px; font-weight: 600;">
-                        Acheter sur Bol.com →
+                        Koop op Bol.com →
                     </a>
                     <button onclick="window.print()" class="btn btn-outline" 
                             style="padding: 1rem; border: 2px solid #D2691E; background: transparent; color: #D2691E; border-radius: 5px; cursor: pointer;">
@@ -116,16 +116,16 @@ def generate_product_page(product, index):
 
                 <!-- Trust badges -->
                 <div style="display: flex; gap: 1rem; margin-top: 1.5rem; font-size: 0.9rem; color: #666;">
-                    <span>✓ Livraison gratuite dès €20</span>
-                    <span>✓ Retour gratuit 30 jours</span>
-                    <span>✓ Service client NL</span>
+                    <span>✓ Gratis verzending vanaf €20</span>
+                    <span>✓ Gratis retour 30 dagen</span>
+                    <span>✓ Nederlandse klantenservice</span>
                 </div>
             </div>
         </div>
 
         <!-- Description détaillée -->
         <section style="margin-bottom: 3rem;">
-            <h2>Description détaillée</h2>
+            <h2>Gedetailleerde beschrijving</h2>
             <p>Le <strong>{product['Nom du produit']}</strong> de {product['Marque']} est {product['Description courte'].lower()}. 
             {f"Cette percolateur de {product['Capacité (tasses)']} tasses" if pd.notna(product['Capacité (tasses)']) else "Ce produit"} 
             est parfait pour les amateurs de café italien authentique.</p>
@@ -138,7 +138,7 @@ def generate_product_page(product, index):
 
         <!-- Produits similaires -->
         <section>
-            <h2>Produits similaires</h2>
+            <h2>Vergelijkbare producten</h2>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
                 <!-- Sera rempli dynamiquement -->
             </div>
@@ -156,7 +156,16 @@ def generate_product_page(product, index):
 def generate_category_page(category_name, products):
     """Génère une page catégorie avec liste de produits"""
     
-    slug = slugify(category_name)
+    # Mapping français -> néerlandais pour les noms de fichiers
+    category_mapping = {
+        'Cafetière percolateur': 'percolators',
+        'Cafetière électrique': 'elektrische-percolators', 
+        'Accessoire (joints et filtres)': 'accessoires',
+        'Adaptateur induction': 'inductie-adapters',
+        "Kit d'entretien": 'onderhoudssets'
+    }
+    
+    slug = category_mapping.get(category_name, slugify(category_name))
     filename = f"categories/{slug}.html"
     
     # Générer cards produits
@@ -165,12 +174,12 @@ def generate_category_page(category_name, products):
         product_slug = slugify(product['Nom du produit'])
         products_html += f"""
         <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/produits/{product_slug}.jpg" alt="{product['Nom du produit']}" 
+            <img src="../images/producten/{product_slug}.jpg" alt="{product['Nom du produit']}" 
                  style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
                  onerror="this.src='../Images/placeholder-product.jpg'">
             
             <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../produits/{product_slug}.html" style="text-decoration: none; color: #333;">
+                <a href="../producten/{product_slug}.html" style="text-decoration: none; color: #333;">
                     {product['Nom du produit']}
                 </a>
             </h3>
@@ -190,9 +199,9 @@ def generate_category_page(category_name, products):
                 <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
                     €{product['Prix estimé (€)']}
                 </span>
-                <a href="../produits/{product_slug}.html" class="btn btn-primary" 
+                <a href="../producten/{product_slug}.html" class="btn btn-primary" 
                    style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Voir détails
+                    Bekijk details
                 </a>
             </div>
         </div>"""
@@ -215,9 +224,9 @@ def generate_category_page(category_name, products):
                 <a href="../index.html" class="nav-brand">Italiaanse Percolator</a>
                 <ul class="nav-menu">
                     <li><a href="../index.html" class="nav-link">Home</a></li>
-                    <li><a href="percolateurs.html" class="nav-link">Percolateurs</a></li>
+                    <li><a href="percolators.html" class="nav-link">Percolators</a></li>
                     <li><a href="accessoires.html" class="nav-link">Accessoires</a></li>
-                    <li><a href="electriques.html" class="nav-link">Électriques</a></li>
+                    <li><a href="elektrische-percolators.html" class="nav-link">Elektrisch</a></li>
                 </ul>
             </div>
         </div>
