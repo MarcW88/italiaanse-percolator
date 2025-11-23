@@ -565,6 +565,189 @@
       padding: 0.75rem;
     }
   }
+
+  /* TOC Sidebar Optimisé */
+  .toc-sidebar {
+    position: sticky;
+    top: 2rem;
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  }
+
+  .toc-sidebar h3 {
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+    color: #0f172a;
+    font-weight: 600;
+  }
+
+  .toc-section {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .toc-section:last-of-type {
+    border-bottom: none;
+  }
+
+  .toc-label {
+    display: block;
+    font-size: 0.75rem;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+
+  .toc-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.25rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #475569;
+    transition: all 0.2s;
+    font-size: 0.875rem;
+  }
+
+  .toc-link:hover {
+    background: #f8fafc;
+    color: #0f172a;
+  }
+
+  .toc-link.highlight {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border-left: 3px solid #f59e0b;
+    font-weight: 600;
+    color: #92400e;
+  }
+
+  .toc-icon {
+    font-size: 1rem;
+  }
+
+  .toc-rank {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    background: #2563eb;
+    color: white;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .toc-name {
+    flex: 1;
+    font-weight: 500;
+  }
+
+  .toc-score {
+    padding: 0.2rem 0.5rem;
+    background: #10b981;
+    color: white;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  .toc-link.small {
+    font-size: 0.8125rem;
+    padding: 0.375rem 0.75rem;
+  }
+
+  .toc-link.small .toc-rank {
+    width: 18px;
+    height: 18px;
+    font-size: 0.7rem;
+  }
+
+  .toc-link.small .toc-score {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.4rem;
+  }
+
+  .toc-link.guide .toc-rank {
+    display: none;
+  }
+
+  .toc-more {
+    margin-bottom: 1.5rem;
+  }
+
+  .toc-more summary {
+    padding: 0.5rem 0.75rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #475569;
+    list-style: none;
+    transition: all 0.2s;
+  }
+
+  .toc-more summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .toc-more summary:hover {
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+  }
+
+  .toc-more[open] summary {
+    margin-bottom: 0.5rem;
+    background: #eff6ff;
+    border-color: #2563eb;
+    color: #2563eb;
+  }
+
+  .toc-progress {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #f1f5f9;
+  }
+
+  .progress-bar {
+    width: 100%;
+    height: 6px;
+    background: #e2e8f0;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #2563eb, #3b82f6);
+    transition: width 0.3s ease;
+  }
+
+  .progress-text {
+    font-size: 0.75rem;
+    color: #64748b;
+    font-weight: 500;
+  }
+
+  /* Mobile: hide sidebar, show bottom nav later */
+  @media (max-width: 1024px) {
+    .toc-sidebar {
+      display: none;
+    }
+  }
   </style>
 </head>
 <body>
@@ -1619,24 +1802,97 @@
         </div>
       </div>
 
-      <!-- Sidebar TOC -->
+      <!-- Sidebar TOC Optimisé -->
       <div>
-        <div class="toc">
-          <h3>Inhoud</h3>
-          <ul>
-            <li><a href="#bialetti-fiammetta">1. Bialetti Fiammetta</a></li>
-            <li><a href="#bialetti-venus">2. Bialetti Venus</a></li>
-            <li><a href="#bialetti-moka">3. Bialetti Moka Express</a></li>
-            <li><a href="#bialetti-musa">4. Bialetti Musa</a></li>
-            <li><a href="#bialetti-dama">5. Bialetti Dama</a></li>
-            <li><a href="#bialetti-alpina">6. Bialetti Alpina</a></li>
-            <li><a href="#alessi-pulcina">7. Alessi Pulcina</a></li>
-            <li><a href="#bialetti-mini-express">8. Bialetti Mini Express</a></li>
-            <li><a href="#grosche-milano">9. Grosche Milano</a></li>
-            <li><a href="#bialetti-brikka">10. Bialetti Brikka</a></li>
-            <li><a href="#buying-guide">Koopgids</a></li>
-            <li><a href="#faq">Veelgestelde vragen</a></li>
-          </ul>
+        <div class="toc-sidebar">
+          <h3>Navigatie</h3>
+          
+          <!-- TOP 3 -->
+          <div class="toc-section">
+            <span class="toc-label">🎯 Top aanbevelingen</span>
+            
+            <a href="#bialetti-fiammetta" class="toc-link highlight">
+              <span class="toc-icon">🏆</span>
+              <span class="toc-rank">1</span>
+              <span class="toc-name">Fiammetta</span>
+              <span class="toc-score">9.2</span>
+            </a>
+            
+            <a href="#bialetti-venus" class="toc-link">
+              <span class="toc-icon">⚡</span>
+              <span class="toc-rank">2</span>
+              <span class="toc-name">Venus</span>
+              <span class="toc-score">8.8</span>
+            </a>
+            
+            <a href="#bialetti-moka" class="toc-link">
+              <span class="toc-icon">💰</span>
+              <span class="toc-rank">3</span>
+              <span class="toc-name">Moka</span>
+              <span class="toc-score">9.0</span>
+            </a>
+          </div>
+          
+          <!-- 7 AUTRES EN ACCORDION -->
+          <details class="toc-more">
+            <summary>+ 7 andere modellen</summary>
+            <a href="#bialetti-musa" class="toc-link small">
+              <span class="toc-rank">4</span>
+              <span class="toc-name">Musa</span>
+              <span class="toc-score">8.6</span>
+            </a>
+            <a href="#bialetti-dama" class="toc-link small">
+              <span class="toc-rank">5</span>
+              <span class="toc-name">Dama</span>
+              <span class="toc-score">8.7</span>
+            </a>
+            <a href="#bialetti-alpina" class="toc-link small">
+              <span class="toc-rank">6</span>
+              <span class="toc-name">Alpina</span>
+              <span class="toc-score">8.4</span>
+            </a>
+            <a href="#alessi-pulcina" class="toc-link small">
+              <span class="toc-rank">7</span>
+              <span class="toc-name">Pulcina</span>
+              <span class="toc-score">8.5</span>
+            </a>
+            <a href="#bialetti-mini-express" class="toc-link small">
+              <span class="toc-rank">8</span>
+              <span class="toc-name">Mini Express</span>
+              <span class="toc-score">8.3</span>
+            </a>
+            <a href="#grosche-milano" class="toc-link small">
+              <span class="toc-rank">9</span>
+              <span class="toc-name">Milano</span>
+              <span class="toc-score">8.2</span>
+            </a>
+            <a href="#bialetti-brikka" class="toc-link small">
+              <span class="toc-rank">10</span>
+              <span class="toc-name">Brikka</span>
+              <span class="toc-score">8.0</span>
+            </a>
+          </details>
+          
+          <!-- GUIDES -->
+          <div class="toc-section">
+            <span class="toc-label">📚 Gidsen</span>
+            <a href="#buying-guide" class="toc-link guide">
+              <span class="toc-icon">🧭</span>
+              <span class="toc-name">Koopgids</span>
+            </a>
+            <a href="#faq" class="toc-link guide">
+              <span class="toc-icon">❓</span>
+              <span class="toc-name">FAQ</span>
+            </a>
+          </div>
+          
+          <!-- PROGRESS -->
+          <div class="toc-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 35%"></div>
+            </div>
+            <span class="progress-text">35% gelezen</span>
+          </div>
         </div>
       </div>
     </div>
@@ -1647,56 +1903,6 @@
     <div class="container">
       <h2 class="mb-6">Directe vergelijkingen</h2>
 
-      <div style="max-width: 900px; margin: 0 auto;" class="mb-8">
-        <h3 class="mb-3">Top 3 head‑to‑head: Fiammetta vs Moka Express vs Venus</h3>
-        <table class="comparison-table mb-4">
-          <thead>
-            <tr>
-              <th>Aspect</th>
-              <th>Bialetti Fiammetta</th>
-              <th>Bialetti Moka Express</th>
-              <th>Bialetti Venus</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Prijs (indicatief)</td>
-              <td>€34,95</td>
-              <td>€24,95</td>
-              <td>€42,50</td>
-            </tr>
-            <tr>
-              <td>Materiaal</td>
-              <td>Aluminium</td>
-              <td>Aluminium</td>
-              <td>RVS</td>
-            </tr>
-            <tr>
-              <td>Inductie</td>
-              <td>Nee</td>
-              <td>Nee</td>
-              <td>Ja</td>
-            </tr>
-            <tr>
-              <td>Capaciteit (standaard)</td>
-              <td>3 kopjes</td>
-              <td>3 kopjes</td>
-              <td>4 kopjes</td>
-            </tr>
-            <tr>
-              <td>Beste voor</td>
-              <td>Allround dagelijks gebruik</td>
-              <td>Budget & klassiek</td>
-              <td>Inductie & modern</td>
-            </tr>
-          </tbody>
-        </table>
-        <p class="text-dim">
-          Deze drie modellen liggen dicht bij elkaar in prestaties. Heb je inductie of wil je maximale flexibiliteit, dan is de <strong>Venus</strong> de logische keuze.
-          Is budget prioriteit en kook je niet op inductie, dan is de <strong>Moka Express</strong> de meest rationele optie. Wil je iets moderners met een iets betere afwerking
-          dan de Moka, dan zit je met de <strong>Fiammetta</strong> precies in het midden.
-        </p>
-      </div>
 
       <div style="max-width: 900px; margin: 0 auto;">
         <h3 class="mb-3">Budget vs premium: Moka Express vs Alessi Pulcina</h3>
