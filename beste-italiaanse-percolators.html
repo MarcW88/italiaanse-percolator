@@ -56,6 +56,116 @@
     ]
   }
   </script>
+  
+  <!-- Hero Compact Styles -->
+  <style>
+  .hero-compact {
+    padding: 2rem 0;
+    background: linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%);
+  }
+
+  .hero-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .hero-header h1 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    margin: 0;
+    color: #0f172a;
+    font-weight: 700;
+  }
+
+  .hero-badges {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .badge {
+    padding: 0.25rem 0.75rem;
+    background: white;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #2563eb;
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+
+  .lead-compact {
+    font-size: 1rem;
+    color: #475569;
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+  }
+
+  .cta-inline {
+    color: #2563eb;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+    transition: color 0.2s;
+  }
+
+  .cta-inline:hover {
+    color: #1d4ed8;
+  }
+
+  .affiliate-mini {
+    font-size: 0.75rem;
+    color: #64748b;
+    cursor: pointer;
+  }
+
+  .affiliate-mini summary {
+    list-style: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-weight: 500;
+  }
+
+  .affiliate-mini summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .affiliate-mini[open] summary {
+    margin-bottom: 0.5rem;
+  }
+
+  .affiliate-mini p {
+    margin: 0;
+    padding: 0.75rem;
+    background: #f8fafc;
+    border-radius: 8px;
+    border-left: 3px solid #2563eb;
+  }
+
+  .affiliate-mini a {
+    color: #2563eb;
+    text-decoration: underline;
+  }
+
+  /* Mobile responsive */
+  @media (max-width: 768px) {
+    .hero-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+    
+    .hero-badges {
+      flex-wrap: wrap;
+    }
+    
+    .hero-header h1 {
+      font-size: 1.75rem;
+    }
+  }
+  </style>
 </head>
 <body>
   <!-- Navigation -->
@@ -83,40 +193,32 @@
     </div>
   </div>
 
-  <!-- Hero -->
-  <section class="section-sm">
+  <!-- Hero Compact -->
+  <section class="hero-compact">
     <div class="container">
-      <h1 class="display-title text-center mb-6">De 10 beste Italiaanse percolators van 2025</h1>
-      <p class="lead text-center mb-8">Na 8 jaar testen en meer dan 50 Italiaanse percolators in onze keuken, hebben we de 10 beste modellen van 2025 geselecteerd. Van budgetvriendelijke klassiekers tot moderne RVS modellen voor inductie: in dit overzicht vind je snel welke percolator het beste past bij jouw kookplaat, huishouden en budget.</p>
-      
-      <!-- Affiliate Disclaimer -->
-      <div class="card" style="border-left: 4px solid #2563eb; background: #EFF6FF; margin-bottom: 2rem;">
-        <div class="card-body" style="padding: 1rem 1.5rem;">
-          <p style="margin: 0; font-size: 14px; color: #1e40af;">
-            <strong>Transparantie:</strong> Deze pagina bevat affiliate links. Wij verdienen een commissie 
-            bij aankoop via onze links, zonder extra kosten voor jou. Dit helpt ons onafhankelijke tests 
-            te blijven uitvoeren. 
-            <a href="over-ons.html#affiliate-beleid" style="text-decoration: underline;">Lees meer →</a>
-          </p>
-        </div>
-      </div>
-
-      <!-- Trust Badges -->
-      <div class="trust-badges" style="display: flex; gap: 2rem; justify-content: center; margin: 2rem 0; padding: 1.5rem; background: #F9FAFB; border-radius: 8px;">
-        <div style="text-align: center;">
-          <div style="font-size: 2rem; margin-bottom: 0.5rem; font-weight: 600; color: #2563eb;">50+</div>
-          <div style="font-size: 0.875rem; color: #6B7280;">Modellen getest</div>
-        </div>
-        <div style="text-align: center;">
-          <div style="font-size: 2rem; margin-bottom: 0.5rem; font-weight: 600; color: #2563eb;">8</div>
-          <div style="font-size: 0.875rem; color: #6B7280;">Jaar ervaring</div>
-        </div>
-        <div style="text-align: center;">
-          <div style="font-size: 2rem; margin-bottom: 0.5rem; font-weight: 600; color: #2563eb;">100%</div>
-          <div style="font-size: 0.875rem; color: #6B7280;">Onafhankelijk</div>
+      <!-- Titre + contexte en 1 ligne -->
+      <div class="hero-header">
+        <h1>De 10 beste Italiaanse percolators van 2025</h1>
+        <div class="hero-badges">
+          <span class="badge">50+ getest</span>
+          <span class="badge">8 jaar ervaring</span>
+          <span class="badge">100% onafhankelijk</span>
         </div>
       </div>
       
+      <!-- Lead + CTA direct -->
+      <p class="lead-compact">
+        Van budget tot premium, van inductie tot gas - vind je perfecte percolator 
+        <a href="#buying-guide" class="cta-inline">→ Start hier</a>
+      </p>
+      
+      <!-- Affiliate disclaimer mini (repliable) -->
+      <details class="affiliate-mini">
+        <summary>ℹ️ Affiliate transparantie</summary>
+        <p>Deze pagina bevat affiliate links. Wij verdienen een commissie bij aankoop via onze links, zonder extra kosten voor jou. Dit helpt ons onafhankelijke tests te blijven uitvoeren. <a href="over-ons.html#affiliate-beleid">Lees meer →</a></p>
+      </details>
+    </div>
+  </section>
       <!-- Sélection Rapide -->
       <div class="card mb-8">
         <div class="card-body">
