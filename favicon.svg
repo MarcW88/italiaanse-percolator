@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Cafetière italienne (Moka pot) -->
+  <defs>
+    <linearGradient id="metalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E5E7EB;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#9CA3AF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6B7280;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="handleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7B5A43;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#5A3F2E;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Base de la cafetière -->
+  <ellipse cx="16" cy="26" rx="8" ry="3" fill="url(#metalGradient)" stroke="#4B5563" stroke-width="0.5"/>
+  
+  <!-- Corps principal (partie basse) -->
+  <path d="M 8 26 L 8 18 Q 8 16 10 16 L 22 16 Q 24 16 24 18 L 24 26" 
+        fill="url(#metalGradient)" stroke="#4B5563" stroke-width="0.5"/>
+  
+  <!-- Partie haute (réservoir) -->
+  <path d="M 10 16 L 10 10 Q 10 8 12 8 L 20 8 Q 22 8 22 10 L 22 16" 
+        fill="url(#metalGradient)" stroke="#4B5563" stroke-width="0.5"/>
+  
+  <!-- Couvercle -->
+  <ellipse cx="16" cy="8" rx="6" ry="2" fill="url(#metalGradient)" stroke="#4B5563" stroke-width="0.5"/>
+  
+  <!-- Poignée du couvercle -->
+  <circle cx="16" cy="6" r="1.5" fill="url(#handleGradient)" stroke="#3F2F1F" stroke-width="0.3"/>
+  
+  <!-- Poignée latérale -->
+  <path d="M 24 14 Q 28 14 28 18 Q 28 22 24 22" 
+        fill="none" stroke="url(#handleGradient)" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Bec verseur -->
+  <path d="M 8 12 Q 4 12 4 16 Q 4 18 6 18" 
+        fill="none" stroke="url(#metalGradient)" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <!-- Détails décoratifs -->
+  <line x1="10" y1="20" x2="22" y2="20" stroke="#6B7280" stroke-width="0.3"/>
+  <line x1="12" y1="12" x2="20" y2="12" stroke="#6B7280" stroke-width="0.3"/>
+  
+  <!-- Reflets pour donner du volume -->
+  <ellipse cx="14" cy="10" rx="1" ry="0.5" fill="#F3F4F6" opacity="0.6"/>
+  <ellipse cx="18" cy="20" rx="1.5" ry="0.8" fill="#F3F4F6" opacity="0.4"/>
+</svg>

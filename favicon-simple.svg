@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <!-- Version simplifiée pour favicon 16x16 -->
+  <!-- Base -->
+  <ellipse cx="8" cy="14" rx="4" ry="1.5" fill="#9CA3AF"/>
+  
+  <!-- Corps principal -->
+  <rect x="4" y="8" width="8" height="6" rx="1" fill="#D1D5DB"/>
+  
+  <!-- Partie haute -->
+  <rect x="5" y="4" width="6" height="4" rx="1" fill="#E5E7EB"/>
+  
+  <!-- Couvercle -->
+  <ellipse cx="8" cy="4" rx="3" ry="1" fill="#F3F4F6"/>
+  
+  <!-- Poignée du couvercle -->
+  <circle cx="8" cy="3" r="0.8" fill="#7B5A43"/>
+  
+  <!-- Poignée latérale -->
+  <path d="M 12 7 Q 14 7 14 9 Q 14 11 12 11" 
+        fill="none" stroke="#7B5A43" stroke-width="1" stroke-linecap="round"/>
+  
+  <!-- Bec verseur -->
+  <path d="M 4 6 Q 2 6 2 8 Q 2 9 3 9" 
+        fill="none" stroke="#9CA3AF" stroke-width="1" stroke-linecap="round"/>
+</svg>
