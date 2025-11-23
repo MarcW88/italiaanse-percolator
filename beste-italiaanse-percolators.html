@@ -327,6 +327,244 @@
       font-size: 1.5rem;
     }
   }
+
+  /* Tableau Comparatif Responsive */
+  .comparison-wrapper {
+    padding: 3rem 0;
+    background: #f8fafc;
+  }
+
+  .comparison-wrapper h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #0f172a;
+  }
+
+  .comparison-intro {
+    text-align: center;
+    font-size: 1.125rem;
+    color: #64748b;
+    margin-bottom: 2rem;
+  }
+
+  .comparison-filters {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: white;
+    padding: 1rem;
+    border-bottom: 2px solid #e2e8f0;
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+
+  .filter-btn {
+    padding: 0.5rem 1rem;
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s;
+  }
+
+  .filter-btn.active {
+    background: #2563eb;
+    color: white;
+    border-color: #2563eb;
+  }
+
+  .filter-btn:hover:not(.active) {
+    border-color: #2563eb;
+    color: #2563eb;
+  }
+
+  /* Desktop: table visible */
+  @media (min-width: 769px) {
+    .comparison-table-desktop { display: block; }
+    .comparison-cards-mobile { display: none; }
+  }
+
+  /* Mobile: cards visible */
+  @media (max-width: 768px) {
+    .comparison-table-desktop { display: none; }
+    .comparison-cards-mobile { display: block; }
+  }
+
+  .comparison-card {
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .comparison-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  }
+
+  .card-rank {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .rank-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: #2563eb;
+    color: white;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+
+  .rank-label {
+    font-size: 0.75rem;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .card-header h4 {
+    font-size: 1.125rem;
+    margin: 0;
+    color: #0f172a;
+    font-weight: 600;
+  }
+
+  .card-rating {
+    padding: 0.25rem 0.75rem;
+    background: #10b981;
+    color: white;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+
+  .card-image {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #f8fafc;
+  }
+
+  .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .card-specs {
+    margin-bottom: 1rem;
+  }
+
+  .spec-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .spec-row:last-child {
+    border-bottom: none;
+  }
+
+  .spec-label {
+    font-size: 0.875rem;
+    color: #64748b;
+    font-weight: 500;
+  }
+
+  .spec-value {
+    font-size: 0.875rem;
+    color: #0f172a;
+    font-weight: 600;
+  }
+
+  .badge-aluminum {
+    padding: 0.25rem 0.5rem;
+    background: #f1f5f9;
+    border-radius: 4px;
+    color: #475569;
+  }
+
+  .badge-steel {
+    padding: 0.25rem 0.5rem;
+    background: #e0f2fe;
+    border-radius: 4px;
+    color: #0369a1;
+  }
+
+  .badge-price {
+    color: #16a34a;
+    font-weight: 700;
+  }
+
+  .card-cta {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    background: #2563eb;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s;
+  }
+
+  .card-cta:hover {
+    background: #1d4ed8;
+  }
+
+  .comparison-legend {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    color: #64748b;
+  }
+
+  /* Mobile responsive */
+  @media (max-width: 768px) {
+    .comparison-wrapper {
+      padding: 2rem 0;
+    }
+    
+    .comparison-wrapper h2 {
+      font-size: 1.5rem;
+    }
+    
+    .comparison-filters {
+      padding: 0.75rem;
+    }
+  }
   </style>
 </head>
 <body>
@@ -488,146 +726,203 @@
     </div>
   </section>
 
-      <!-- Vergelijkingstabel -->
-      <div class="card mb-8">
-        <div class="card-body">
-          <h2 class="mb-4">📊 Snelle Vergelijking - Alle 10 Modellen</h2>
-          <p class="text-dim mb-6">Vergelijk alle eigenschappen in één overzicht. Klik op een modelnaam voor de volledige review.</p>
-          
-          <div class="table-responsive">
-            <table class="comparison-table">
-              <thead>
-                <tr>
-                  <th>Ranking</th>
-                  <th>Model</th>
-                  <th>Materiaal</th>
-                  <th>Inductie</th>
-                  <th>Capaciteit</th>
-                  <th>Prijsklasse</th>
-                  <th>Beste voor</th>
-                  <th>Rating</th>
-                  <th>Acties</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><span class="rank-badge rank-1">1</span></td>
-                  <td><a href="#bialetti-fiammetta" class="font-medium">Bialetti Fiammetta 3c</a></td>
-                  <td><span class="material-badge aluminum">Aluminium</span></td>
-                  <td><span class="inductie-no">❌</span></td>
-                  <td>3 cups (150ml)</td>
-                  <td><span class="price-badge budget">€</span></td>
-                  <td>Beginners</td>
-                  <td><span class="rating-score">9.2/10</span></td>
-                  <td><a href="#bialetti-fiammetta" class="btn-sm btn-outline">Review</a></td>
-                </tr>
-                <tr>
-                  <td><span class="rank-badge rank-2">2</span></td>
-                  <td><a href="#bialetti-venus" class="font-medium">Bialetti Venus 4c</a></td>
-                  <td><span class="material-badge steel">RVS</span></td>
-                  <td><span class="inductie-yes">✅</span></td>
-                  <td>4 cups (200ml)</td>
-                  <td><span class="price-badge mid">€€</span></td>
-                  <td>Inductie</td>
-                  <td><span class="rating-score">8.8/10</span></td>
-                  <td><a href="#bialetti-venus" class="btn-sm btn-outline">Review</a></td>
-                </tr>
-                <tr>
-                  <td><span class="rank-badge rank-3">3</span></td>
-                  <td><a href="#bialetti-moka" class="font-medium">Bialetti Moka Express 3c</a></td>
-                  <td><span class="material-badge aluminum">Aluminium</span></td>
-                  <td><span class="inductie-no">❌</span></td>
-                  <td>3 cups (150ml)</td>
-                  <td><span class="price-badge budget">€</span></td>
-                  <td>Klassiek</td>
-                  <td><span class="rating-score">9.0/10</span></td>
-                  <td><a href="#bialetti-moka" class="btn-sm btn-outline">Review</a></td>
-                </tr>
-                <tr>
-                  <td><span class="rank-badge rank-4">4</span></td>
-                  <td><a href="#bialetti-musa" class="font-medium">Bialetti Musa 6c</a></td>
-                  <td><span class="material-badge steel">RVS</span></td>
-                  <td><span class="inductie-yes">✅</span></td>
-                  <td>6 cups (300ml)</td>
-                  <td><span class="price-badge mid">€€</span></td>
-                  <td>Gezinnen</td>
-                  <td><span class="rating-score">8.6/10</span></td>
-                  <td><a href="#bialetti-musa" class="btn-sm btn-outline">Review</a></td>
-                </tr>
-                <tr>
-                  <td><span class="rank-badge rank-5">5</span></td>
-                  <td><a href="#bialetti-dama" class="font-medium">Bialetti Dama 3c</a></td>
-                  <td><span class="material-badge steel">RVS</span></td>
-                  <td><span class="inductie-yes">✅</span></td>
-                  <td>3 cups (150ml)</td>
-                  <td><span class="price-badge mid">€€</span></td>
-                  <td>Design</td>
-                  <td><span class="rating-score">8.7/10</span></td>
-                  <td><a href="#bialetti-dama" class="btn-sm btn-outline">Review</a></td>
-                </tr>
-                <tr>
-                  <td><span class="rank-badge rank-6">6</span></td>
-                  <td><a href="#bialetti-alpina" class="font-medium">Bialetti Alpina 2c</a></td>
-                  <td><span class="material-badge aluminum">Aluminium</span></td>
-                  <td><span class="inductie-no">❌</span></td>
-                  <td>2 cups (100ml)</td>
-                  <td><span class="price-badge budget">€</span></td>
-                  <td>Compact</td>
-                  <td><span class="rating-score">8.4/10</span></td>
-                  <td><a href="#bialetti-alpina" class="btn-sm btn-outline">Review</a></td>
-                </tr>
-                <tr>
-                  <td><span class="rank-badge rank-7">7</span></td>
-                  <td><a href="#alessi-pulcina" class="font-medium">Alessi Pulcina 3c</a></td>
-                  <td><span class="material-badge aluminum">Aluminium</span></td>
-                  <td><span class="inductie-no">❌</span></td>
-                  <td>3 cups (150ml)</td>
-                  <td><span class="price-badge premium">€€€</span></td>
-                  <td>Design</td>
-                  <td><span class="rating-score">8.5/10</span></td>
-                  <td><a href="#alessi-pulcina" class="btn-sm btn-outline">Review</a></td>
-                </tr>
-                <tr>
-                  <td><span class="rank-badge rank-8">8</span></td>
-                  <td><a href="#bialetti-mini-express" class="font-medium">Bialetti Mini Express</a></td>
-                  <td><span class="material-badge aluminum">Aluminium</span></td>
-                  <td><span class="inductie-no">❌</span></td>
-                  <td>2 cups (90ml)</td>
-                  <td><span class="price-badge budget">€</span></td>
-                  <td>Compact</td>
-                  <td><span class="rating-score">8.3/10</span></td>
-                  <td><a href="#bialetti-mini-express" class="btn-sm btn-outline">Review</a></td>
-                </tr>
-                <tr>
-                  <td><span class="rank-badge rank-9">9</span></td>
-                  <td><a href="#grosche-milano" class="font-medium">Grosche Milano 6c</a></td>
-                  <td><span class="material-badge steel">RVS</span></td>
-                  <td><span class="inductie-yes">✅</span></td>
-                  <td>6 cups (300ml)</td>
-                  <td><span class="price-badge mid">€€</span></td>
-                  <td>Moderne stijl</td>
-                  <td><span class="rating-score">8.2/10</span></td>
-                  <td><a href="#grosche-milano" class="btn-sm btn-outline">Review</a></td>
-                </tr>
-                <tr>
-                  <td><span class="rank-badge rank-10">10</span></td>
-                  <td><a href="#bialetti-brikka" class="font-medium">Bialetti Brikka 4c</a></td>
-                  <td><span class="material-badge aluminum">Aluminium</span></td>
-                  <td><span class="inductie-no">❌</span></td>
-                  <td>4 cups (200ml)</td>
-                  <td><span class="price-badge mid">€€</span></td>
-                  <td>Crema laag</td>
-                  <td><span class="rating-score">8.0/10</span></td>
-                  <td><a href="#bialetti-brikka" class="btn-sm btn-outline">Review</a></td>
-                </tr>
-              </tbody>
-            </table>
+  <!-- Tableau Comparatif Responsive -->
+  <div class="comparison-wrapper">
+    <div class="container">
+      <h2>📊 Snelle Vergelijking - Alle 10 Modellen</h2>
+      <p class="comparison-intro">Vergelijk alle eigenschappen in één overzicht. Klik op een modelnaam voor de volledige review.</p>
+      
+      <!-- Filtres sticky au-dessus -->
+      <div class="comparison-filters">
+        <button class="filter-btn active" data-filter="all">Alles</button>
+        <button class="filter-btn" data-filter="inductie">Inductie</button>
+        <button class="filter-btn" data-filter="budget">Budget €</button>
+        <button class="filter-btn" data-filter="premium">Premium €€€</button>
+      </div>
+      
+      <!-- Tableau desktop -->
+      <div class="comparison-table-desktop">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Ranking</th>
+              <th>Model</th>
+              <th>Materiaal</th>
+              <th>Inductie</th>
+              <th>Capaciteit</th>
+              <th>Prijsklasse</th>
+              <th>Beste voor</th>
+              <th>Rating</th>
+              <th>Acties</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-category="budget,3cups">
+              <td><span class="rank-badge rank-1">1</span></td>
+              <td><a href="#bialetti-fiammetta" class="font-medium">Bialetti Fiammetta 3c</a></td>
+              <td><span class="material-badge aluminum">Aluminium</span></td>
+              <td><span class="inductie-no">❌</span></td>
+              <td>3 cups (150ml)</td>
+              <td><span class="price-badge budget">€</span></td>
+              <td>Beginners</td>
+              <td><span class="rating-score">9.2/10</span></td>
+              <td><a href="#bialetti-fiammetta" class="btn-sm btn-outline">Review</a></td>
+            </tr>
+            <tr data-category="inductie,mid">
+              <td><span class="rank-badge rank-2">2</span></td>
+              <td><a href="#bialetti-venus" class="font-medium">Bialetti Venus 4c</a></td>
+              <td><span class="material-badge steel">RVS</span></td>
+              <td><span class="inductie-yes">✅</span></td>
+              <td>4 cups (200ml)</td>
+              <td><span class="price-badge mid">€€</span></td>
+              <td>Inductie</td>
+              <td><span class="rating-score">8.8/10</span></td>
+              <td><a href="#bialetti-venus" class="btn-sm btn-outline">Review</a></td>
+            </tr>
+            <tr data-category="budget,3cups">
+              <td><span class="rank-badge rank-3">3</span></td>
+              <td><a href="#bialetti-moka" class="font-medium">Bialetti Moka Express 3c</a></td>
+              <td><span class="material-badge aluminum">Aluminium</span></td>
+              <td><span class="inductie-no">❌</span></td>
+              <td>3 cups (150ml)</td>
+              <td><span class="price-badge budget">€</span></td>
+              <td>Klassiek</td>
+              <td><span class="rating-score">9.0/10</span></td>
+              <td><a href="#bialetti-moka" class="btn-sm btn-outline">Review</a></td>
+            </tr>
+            <tr data-category="inductie,mid">
+              <td><span class="rank-badge rank-4">4</span></td>
+              <td><a href="#bialetti-musa" class="font-medium">Bialetti Musa 6c</a></td>
+              <td><span class="material-badge steel">RVS</span></td>
+              <td><span class="inductie-yes">✅</span></td>
+              <td>6 cups (300ml)</td>
+              <td><span class="price-badge mid">€€</span></td>
+              <td>Gezinnen</td>
+              <td><span class="rating-score">8.6/10</span></td>
+              <td><a href="#bialetti-musa" class="btn-sm btn-outline">Review</a></td>
+            </tr>
+            <tr data-category="inductie,mid">
+              <td><span class="rank-badge rank-5">5</span></td>
+              <td><a href="#bialetti-dama" class="font-medium">Bialetti Dama 3c</a></td>
+              <td><span class="material-badge steel">RVS</span></td>
+              <td><span class="inductie-yes">✅</span></td>
+              <td>3 cups (150ml)</td>
+              <td><span class="price-badge mid">€€</span></td>
+              <td>Design</td>
+              <td><span class="rating-score">8.7/10</span></td>
+              <td><a href="#bialetti-dama" class="btn-sm btn-outline">Review</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <!-- Cards mobile -->
+      <div class="comparison-cards-mobile">
+        <div class="comparison-card" data-category="budget,3cups">
+          <div class="card-rank">
+            <span class="rank-number">1</span>
+            <span class="rank-label">Best choice</span>
           </div>
-          
-          <div class="mt-4 text-sm text-dim">
-            <p><strong>Legenda:</strong> € = €15-30 | €€ = €30-60 | €€€ = €60+ | c = cups (kopjes)</p>
+          <div class="card-header">
+            <h4>Bialetti Fiammetta 3c</h4>
+            <span class="card-rating">9.2/10</span>
           </div>
+          <div class="card-image">
+            <img src="Images/bialetti_fiammetta.jpg" alt="Fiammetta" loading="lazy">
+          </div>
+          <div class="card-specs">
+            <div class="spec-row">
+              <span class="spec-label">Materiaal</span>
+              <span class="spec-value badge-aluminum">Aluminium</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label">Inductie</span>
+              <span class="spec-value">❌</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label">Capaciteit</span>
+              <span class="spec-value">3 cups</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label">Prijs</span>
+              <span class="spec-value badge-price">€35</span>
+            </div>
+          </div>
+          <a href="#bialetti-fiammetta" class="card-cta">Bekijk review</a>
         </div>
+        
+        <div class="comparison-card" data-category="inductie,mid">
+          <div class="card-rank">
+            <span class="rank-number">2</span>
+            <span class="rank-label">Best inductie</span>
+          </div>
+          <div class="card-header">
+            <h4>Bialetti Venus 4c</h4>
+            <span class="card-rating">8.8/10</span>
+          </div>
+          <div class="card-image">
+            <img src="Images/bialetti_venus.jpg" alt="Venus" loading="lazy">
+          </div>
+          <div class="card-specs">
+            <div class="spec-row">
+              <span class="spec-label">Materiaal</span>
+              <span class="spec-value badge-steel">RVS</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label">Inductie</span>
+              <span class="spec-value">✅</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label">Capaciteit</span>
+              <span class="spec-value">4 cups</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label">Prijs</span>
+              <span class="spec-value badge-price">€48</span>
+            </div>
+          </div>
+          <a href="#bialetti-venus" class="card-cta">Bekijk review</a>
+        </div>
+        
+        <div class="comparison-card" data-category="budget,3cups">
+          <div class="card-rank">
+            <span class="rank-number">3</span>
+            <span class="rank-label">Klassiek</span>
+          </div>
+          <div class="card-header">
+            <h4>Bialetti Moka Express 3c</h4>
+            <span class="card-rating">9.0/10</span>
+          </div>
+          <div class="card-image">
+            <img src="Images/bialetti_moka.jpg" alt="Moka Express" loading="lazy">
+          </div>
+          <div class="card-specs">
+            <div class="spec-row">
+              <span class="spec-label">Materiaal</span>
+              <span class="spec-value badge-aluminum">Aluminium</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label">Inductie</span>
+              <span class="spec-value">❌</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label">Capaciteit</span>
+              <span class="spec-value">3 cups</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-label">Prijs</span>
+              <span class="spec-value badge-price">€25</span>
+            </div>
+          </div>
+          <a href="#bialetti-moka" class="card-cta">Bekijk review</a>
+        </div>
+      </div>
+      
+      <div class="comparison-legend">
+        <p><strong>Legenda:</strong> € = €15-30 | €€ = €30-60 | €€€ = €60+ | c = cups (kopjes)</p>
+      </div>
+    </div>
+  </div>
 
         <!-- Test Methodology (Condensed) -->
         <div class="card mb-8">
