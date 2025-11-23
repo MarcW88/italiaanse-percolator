@@ -486,6 +486,47 @@ h4 {
   flex-wrap: wrap;
 }
 
+/* Quick Pick Cards */
+.quick-pick-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: var(--sp-4);
+  transition: all 0.2s ease;
+}
+
+.quick-pick-card:hover {
+  border-color: var(--coffee);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.quick-pick-card .rating-badge {
+  display: inline-block;
+  padding: var(--sp-1) var(--sp-3);
+  border-radius: var(--r-md);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.quick-pick-card h4 {
+  margin: var(--sp-2) 0;
+  font-size: var(--fs-lg);
+  font-weight: 600;
+}
+
+.quick-pick-card h4 a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.quick-pick-card h4 a:hover {
+  color: var(--coffee);
+}
+
 /* Comparison Table */
 .comparison-table {
   width: 100%;
@@ -495,6 +536,139 @@ h4 {
   overflow: hidden;
   box-shadow: var(--shadow-sm);
   margin: var(--sp-8) 0;
+}
+
+.comparison-table th {
+  background: var(--coffee);
+  color: white;
+  padding: var(--sp-3) var(--sp-2);
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  text-align: left;
+}
+
+.comparison-table td {
+  padding: var(--sp-3) var(--sp-2);
+  border-bottom: 1px solid var(--border);
+  font-size: var(--fs-sm);
+  vertical-align: middle;
+}
+
+.comparison-table tr:hover {
+  background: var(--sage-light);
+}
+
+/* Table Badges */
+.rank-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: var(--fs-xs);
+  color: white;
+}
+
+.rank-1, .rank-2, .rank-3 { background: var(--coffee); }
+.rank-4, .rank-5, .rank-6 { background: var(--sage); }
+.rank-7, .rank-8, .rank-9, .rank-10 { background: var(--text-dim); }
+
+.material-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: var(--r-sm);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+}
+
+.material-badge.aluminum {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.material-badge.steel {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.price-badge {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: var(--r-sm);
+  font-weight: 600;
+  font-size: var(--fs-xs);
+}
+
+.price-badge.budget {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.price-badge.mid {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.price-badge.premium {
+  background: #fce7f3;
+  color: #be185d;
+}
+
+.inductie-yes {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.inductie-no {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.rating-score {
+  font-weight: 600;
+  color: var(--coffee);
+}
+
+.btn-sm {
+  padding: var(--sp-1) var(--sp-3);
+  font-size: var(--fs-xs);
+  border-radius: var(--r-md);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-sm.btn-outline {
+  border: 1px solid var(--coffee);
+  color: var(--coffee);
+  background: transparent;
+}
+
+.btn-sm.btn-outline:hover {
+  background: var(--coffee);
+  color: white;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 768px) {
+  .comparison-table {
+    font-size: var(--fs-xs);
+  }
+  
+  .comparison-table th,
+  .comparison-table td {
+    padding: var(--sp-2) var(--sp-1);
+  }
+  
+  .quick-pick-card {
+    margin-bottom: var(--sp-4);
+  }
 }
 
 .comparison-table th {
