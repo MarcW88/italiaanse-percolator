@@ -1,4 +1,84 @@
-<!DOCTYPE html>
+#!/usr/bin/env python3
+"""
+Générateur boutique complète avec filtres et 12+ produits
+Corrige les problèmes critiques identifiés dans l'analyse
+"""
+
+import pandas as pd
+import json
+
+def generate_complete_boutique():
+    """Génère une page boutique complète avec filtres et plus de produits"""
+    
+    # Charger catalogue
+    df = pd.read_excel('catalogue_bialetti_complet.xlsx')
+    
+    # Sélectionner 12 meilleurs produits (mix catégories)
+    percolators = df[df['Type'] == 'Cafetière percolateur'].head(9)
+    elektrisch = df[df['Type'] == 'Cafetière électrique'].head(2) 
+    accessoires = df[df['Type'] == 'Accessoire (joints et filtres)'].head(1)
+    
+    featured_products = pd.concat([percolators, elektrisch, accessoires])
+    
+    # Générer cards produits avec specs visuelles
+    products_html = ""
+    for _, product in featured_products.iterrows():
+        # Icons specs
+        inductie_icon = "⚡" if product['Compatible induction'] == 'Oui' else ""
+        tassen_icon = f"🍵 {int(product['Capacité (tasses)'])}" if pd.notna(product['Capacité (tasses)']) else ""
+        materiaal_icon = "🔧 RVS" if product['Matériau'] == 'Acier inoxydable' else "🔧 Alu" if product['Matériau'] == 'Aluminium' else ""
+        
+        slug = product['Nom du produit'].lower().replace(' ', '-').replace('(', '').replace(')', '')
+        
+        products_html += f"""
+        <div class="product-card" data-inductie="{product['Compatible induction']}" data-capaciteit="{product['Capacité (tasses)'] if pd.notna(product['Capacité (tasses)']) else 0}" data-prijs="{product['Prix estimé (€)']}" data-merk="{product['Marque']}" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.1); position: relative; transition: transform 0.2s;">
+            <div style="position: absolute; top: 15px; right: 15px; background: #D2691E; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">
+                #{featured_products.index.get_loc(product.name) + 1}
+            </div>
+            
+            <img src="images/producten/{slug}.jpg" alt="{product['Nom du produit']}" 
+                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
+                 onerror="this.src='Images/placeholder-product.jpg'">
+            
+            <!-- Specs visuelles -->
+            <div style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem; font-size: 0.8rem;">
+                {f'<span style="background: #e8f5e8; color: #2d5a2d; padding: 0.2rem 0.5rem; border-radius: 10px;">{inductie_icon} Inductie</span>' if inductie_icon else ''}
+                {f'<span style="background: #e8f0ff; color: #1a4480; padding: 0.2rem 0.5rem; border-radius: 10px;">{tassen_icon}</span>' if tassen_icon else ''}
+                {f'<span style="background: #fff3e0; color: #8b4513; padding: 0.2rem 0.5rem; border-radius: 10px;">{materiaal_icon}</span>' if materiaal_icon else ''}
+            </div>
+            
+            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; line-height: 1.3;">{product['Nom du produit']}</h3>
+            
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                <div style="color: #ffd700;">
+                    {'★' * int(float(product['Note estimée (sur 5)']))}{'☆' * (5 - int(float(product['Note estimée (sur 5)'])))}
+                </div>
+                <span style="font-size: 0.9rem; color: #666;">({product["Nombre d'avis estimé"]} reviews)</span>
+            </div>
+            
+            <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem; line-height: 1.4;">
+                {product['Description courte'][:80]}...
+            </p>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">€{product['Prix estimé (€)']}</span>
+                <span style="background: #e8f5e8; color: #2d5a2d; padding: 0.2rem 0.6rem; border-radius: 10px; font-size: 0.8rem;">Op voorraad</span>
+            </div>
+            
+            <div style="display: flex; gap: 0.5rem;">
+                <a href="producten/{slug}.html" class="btn btn-primary" 
+                   style="flex: 1; text-align: center; padding: 0.6rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
+                    Bekijk details
+                </a>
+                <button onclick="quickView('{slug}')" class="btn btn-outline" 
+                        style="padding: 0.6rem; border: 2px solid #D2691E; background: transparent; color: #D2691E; border-radius: 4px; cursor: pointer; font-size: 0.9rem;">
+                    👁️
+                </button>
+            </div>
+        </div>"""
+    
+    # Template boutique complète
+    html_content = f"""<!DOCTYPE html>
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
@@ -84,7 +164,7 @@
         <!-- Filtres et tri -->
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; padding: 1.5rem; background: #f8f9fa; border-radius: 8px; flex-wrap: wrap; gap: 1rem;">
             <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
-                <strong id="results-count">12 producten</strong>
+                <strong id="results-count">{len(featured_products)} producten</strong>
                 
                 <select id="filter-inductie" onchange="applyFilters()" style="padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;">
                     <option value="">Alle inductie</option>
@@ -119,26 +199,9 @@
 
         <!-- Grille produits -->
         <div id="products-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
-            <!-- Les produits seront chargés ici via JavaScript -->
+            {products_html}
         </div>
         
-        <!-- Comparateur -->
-        <div id="compare-bar" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background: #D2691E; color: white; padding: 1rem; box-shadow: 0 -4px 12px rgba(0,0,0,0.2); z-index: 1000;">
-            <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-                <div>
-                    <span id="compare-count">0</span> producten geselecteerd voor vergelijking
-                </div>
-                <div style="display: flex; gap: 1rem;">
-                    <button onclick="showComparison()" style="padding: 0.5rem 1rem; background: white; color: #D2691E; border: none; border-radius: 4px; cursor: pointer; font-weight: 600;">
-                        Vergelijk nu
-                    </button>
-                    <button onclick="clearComparison()" style="padding: 0.5rem 1rem; background: transparent; color: white; border: 2px solid white; border-radius: 4px; cursor: pointer;">
-                        Wis selectie
-                    </button>
-                </div>
-            </div>
-        </div>
-
         <!-- Load more -->
         <div style="text-align: center; margin-bottom: 3rem;">
             <button onclick="loadMoreProducts()" id="load-more-btn" style="padding: 1rem 2rem; background: #D2691E; color: white; border: none; border-radius: 6px; font-size: 1rem; cursor: pointer;">
@@ -232,143 +295,18 @@
     </footer>
 
     <script>
-    // Données produits (simulées - en production, charger via API)
-    const productsData = [
-        {
-            id: 1,
-            name: "Bialetti Moka Express 3 Kopjes",
-            slug: "bialetti-moka-express-3-kops-aluminium",
-            price: 28.99,
-            rating: 4.7,
-            reviews: 147,
-            description: "Het origineel sinds 1933. Aluminium, 3 kopjes, geschikt voor alle warmtebronnen behalve inductie.",
-            inductie: "Non",
-            capaciteit: 3,
-            merk: "Bialetti",
-            materiaal: "Aluminium",
-            image: "images/producten/bialetti-moka-express-3-kops-aluminium.jpg"
-        },
-        {
-            id: 2,
-            name: "Bialetti Venus 4 Kopjes RVS",
-            slug: "bialetti-venus-4-kops-roestvrijstaal",
-            price: 45.99,
-            rating: 4.4,
-            reviews: 89,
-            description: "Design moderne en RVS, compatible induction, 4 kopjes, finition premium.",
-            inductie: "Oui",
-            capaciteit: 4,
-            merk: "Bialetti",
-            materiaal: "RVS",
-            image: "images/producten/bialetti-venus-4-kops-roestvrijstaal.jpg"
-        },
-        {
-            id: 3,
-            name: "Alessi Pulcina 3 Kopjes",
-            slug: "alessi-pulcina-3-kopjes",
-            price: 89.95,
-            rating: 4.8,
-            reviews: 67,
-            description: "Design iconique Michele De Lucchi, aluminium coulé, bec anti-goutte breveté.",
-            inductie: "Non",
-            capaciteit: 3,
-            merk: "Alessi",
-            materiaal: "Aluminium",
-            image: "images/producten/alessi-pulcina-3-kopjes.jpg"
-        }
-    ];
-
-    // Charger les produits au démarrage
-    document.addEventListener('DOMContentLoaded', function() {
-        loadProducts();
-    });
-
-    function loadProducts() {
-        const grid = document.getElementById('products-grid');
-        grid.innerHTML = '';
-        
-        productsData.forEach((product, index) => {
-            const productCard = createProductCard(product, index + 1);
-            grid.appendChild(productCard);
-        });
-    }
-
-    function createProductCard(product, position) {
-        const card = document.createElement('div');
-        card.className = 'product-card';
-        card.dataset.inductie = product.inductie;
-        card.dataset.capaciteit = product.capaciteit;
-        card.dataset.prijs = product.price;
-        card.dataset.merk = product.merk;
-        
-        const inductieIcon = product.inductie === 'Oui' ? '⚡ Inductie' : '';
-        const tassenIcon = `🍵 ${product.capaciteit}`;
-        const materiaalIcon = product.materiaal === 'RVS' ? '🔧 RVS' : '🔧 Alu';
-        
-        card.innerHTML = `
-            <div style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.1); position: relative; transition: transform 0.2s;">
-                <div style="position: absolute; top: 15px; right: 15px; background: #D2691E; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">
-                    #${position}
-                </div>
-                
-                <img src="${product.image}" alt="${product.name}" 
-                     style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                     onerror="this.src='Images/placeholder-product.jpg'">
-                
-                <div style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem; font-size: 0.8rem;">
-                    ${inductieIcon ? `<span style="background: #e8f5e8; color: #2d5a2d; padding: 0.2rem 0.5rem; border-radius: 10px;">${inductieIcon}</span>` : ''}
-                    <span style="background: #e8f0ff; color: #1a4480; padding: 0.2rem 0.5rem; border-radius: 10px;">${tassenIcon}</span>
-                    <span style="background: #fff3e0; color: #8b4513; padding: 0.2rem 0.5rem; border-radius: 10px;">${materiaalIcon}</span>
-                </div>
-                
-                <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; line-height: 1.3;">${product.name}</h3>
-                
-                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                    <div style="color: #ffd700;">
-                        ${'★'.repeat(Math.floor(product.rating))}${'☆'.repeat(5 - Math.floor(product.rating))}
-                    </div>
-                    <span style="font-size: 0.9rem; color: #666;">(${product.reviews} reviews)</span>
-                </div>
-                
-                <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem; line-height: 1.4;">
-                    ${product.description.substring(0, 80)}...
-                </p>
-                
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                    <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">€${product.price}</span>
-                    <span style="background: #e8f5e8; color: #2d5a2d; padding: 0.2rem 0.6rem; border-radius: 10px; font-size: 0.8rem;">Op voorraad</span>
-                </div>
-                
-                <div style="display: flex; gap: 0.5rem;">
-                    <a href="producten/${product.slug}.html" class="btn btn-primary" 
-                       style="flex: 1; text-align: center; padding: 0.6rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                        Bekijk details
-                    </a>
-                    <button onclick="quickView('${product.slug}')" class="btn btn-outline" 
-                            style="padding: 0.6rem; border: 2px solid #D2691E; background: transparent; color: #D2691E; border-radius: 4px; cursor: pointer; font-size: 0.9rem;">
-                        👁️
-                    </button>
-                    <input type="checkbox" class="compare-checkbox" data-product-id="${product.id}" onchange="updateCompare()" 
-                           style="width: 20px; height: 20px; margin-left: 0.5rem; cursor: pointer;" title="Vergelijk">
-                </div>
-            </div>
-        `;
-        
-        return card;
-    }
-
     // Filtres et tri interactifs
-    function applyFilters() {
+    function applyFilters() {{
         const inductie = document.getElementById('filter-inductie').value;
         const merk = document.getElementById('filter-merk').value;
         const maxPrijs = document.getElementById('filter-prijs').value;
         
-        document.getElementById('prijs-display').textContent = `€0-${maxPrijs}`;
+        document.getElementById('prijs-display').textContent = `€0-${{maxPrijs}}`;
         
         const cards = document.querySelectorAll('.product-card');
         let visibleCount = 0;
         
-        cards.forEach(card => {
+        cards.forEach(card => {{
             const cardInductie = card.dataset.inductie;
             const cardMerk = card.dataset.merk;
             const cardPrijs = parseFloat(card.dataset.prijs);
@@ -377,194 +315,83 @@
             const matchMerk = !merk || cardMerk === merk;
             const matchPrijs = cardPrijs <= maxPrijs;
             
-            if (matchInductie && matchMerk && matchPrijs) {
+            if (matchInductie && matchMerk && matchPrijs) {{
                 card.style.display = 'block';
                 visibleCount++;
-            } else {
+            }} else {{
                 card.style.display = 'none';
-            }
-        });
+            }}
+        }});
         
-        document.getElementById('results-count').textContent = `${visibleCount} producten`;
-    }
+        document.getElementById('results-count').textContent = `${{visibleCount}} producten`;
+    }}
     
-    function quickFilter(type) {
-        if (type === 'inductie') {
+    function quickFilter(type) {{
+        if (type === 'inductie') {{
             document.getElementById('filter-inductie').value = 'Oui';
-        } else if (type === 'budget') {
+        }} else if (type === 'budget') {{
             document.getElementById('filter-prijs').value = '50';
-        } else if (type === 'groot') {
+        }} else if (type === 'groot') {{
             // Filter op 6+ kopjes - zou meer data attributes nodig hebben
-        }
+        }}
         applyFilters();
-    }
+    }}
     
-    function clearFilters() {
+    function clearFilters() {{
         document.getElementById('filter-inductie').value = '';
         document.getElementById('filter-merk').value = '';
         document.getElementById('filter-prijs').value = '150';
         document.getElementById('sort-select').value = 'populair';
         applyFilters();
-    }
+    }}
     
-    function sortProducts() {
+    function sortProducts() {{
         const sortBy = document.getElementById('sort-select').value;
         const grid = document.getElementById('products-grid');
         const cards = Array.from(grid.children);
         
-        cards.sort((a, b) => {
-            switch(sortBy) {
+        cards.sort((a, b) => {{
+            switch(sortBy) {{
                 case 'prijs-laag':
                     return parseFloat(a.dataset.prijs) - parseFloat(b.dataset.prijs);
                 case 'prijs-hoog':
                     return parseFloat(b.dataset.prijs) - parseFloat(a.dataset.prijs);
                 default:
                     return 0;
-            }
-        });
+            }}
+        }});
         
         cards.forEach(card => grid.appendChild(card));
-    }
+    }}
     
-    function quickView(slug) {
+    function quickView(slug) {{
         alert(`Quick view voor ${slug} - Feature komt binnenkort!`);
-    }
+    }}
     
-    function toggleFaq(num) {
+    function toggleFaq(num) {{
         const content = document.getElementById(`faq-content-${num}`);
         const icon = document.getElementById(`faq-icon-${num}`);
         
-        if (content.style.display === 'none') {
+        if (content.style.display === 'none') {{
             content.style.display = 'block';
             icon.textContent = '-';
-        } else {
+        }} else {{
             content.style.display = 'none';
             icon.textContent = '+';
-        }
-    }
+        }}
+    }}
     
-    function loadMoreProducts() {
+    function loadMoreProducts() {{
         alert('Load more functionaliteit komt binnenkort!');
-    }
-    
-    // Comparateur de produits
-    let selectedProducts = [];
-    
-    function updateCompare() {
-        const checkboxes = document.querySelectorAll('.compare-checkbox:checked');
-        selectedProducts = Array.from(checkboxes).map(cb => parseInt(cb.dataset.productId));
-        
-        const compareBar = document.getElementById('compare-bar');
-        const compareCount = document.getElementById('compare-count');
-        
-        if (selectedProducts.length > 0) {
-            compareBar.style.display = 'block';
-            compareCount.textContent = selectedProducts.length;
-        } else {
-            compareBar.style.display = 'none';
-        }
-        
-        // Limiter à 4 produits max
-        if (selectedProducts.length >= 4) {
-            document.querySelectorAll('.compare-checkbox:not(:checked)').forEach(cb => {
-                cb.disabled = true;
-            });
-        } else {
-            document.querySelectorAll('.compare-checkbox').forEach(cb => {
-                cb.disabled = false;
-            });
-        }
-    }
-    
-    function clearComparison() {
-        document.querySelectorAll('.compare-checkbox').forEach(cb => {
-            cb.checked = false;
-            cb.disabled = false;
-        });
-        selectedProducts = [];
-        document.getElementById('compare-bar').style.display = 'none';
-    }
-    
-    function showComparison() {
-        if (selectedProducts.length < 2) {
-            alert('Selecteer minimaal 2 producten om te vergelijken');
-            return;
-        }
-        
-        const selectedProductsData = productsData.filter(p => selectedProducts.includes(p.id));
-        
-        // Créer modal de comparaison
-        const modal = document.createElement('div');
-        modal.style.cssText = 'position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); z-index: 2000; display: flex; align-items: center; justify-content: center; padding: 2rem;';
-        
-        const modalContent = document.createElement('div');
-        modalContent.style.cssText = 'background: white; border-radius: 12px; max-width: 90vw; max-height: 90vh; overflow: auto; position: relative;';
-        
-        modalContent.innerHTML = `
-            <div style="padding: 2rem;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 1px solid #ddd; padding-bottom: 1rem;">
-                    <h2 style="margin: 0; font-size: 1.8rem;">Productvergelijking</h2>
-                    <button onclick="this.closest('.modal').remove()" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #666;">&times;</button>
-                </div>
-                
-                <div style="overflow-x: auto;">
-                    <table style="width: 100%; border-collapse: collapse; min-width: 600px;">
-                        <thead>
-                            <tr style="background: #f8f9fa;">
-                                <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #ddd;">Eigenschap</th>
-                                ${selectedProductsData.map(p => `<th style="padding: 1rem; text-align: center; border-bottom: 2px solid #ddd; min-width: 200px;">${p.name}</th>`).join('')}
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td style="padding: 1rem; font-weight: 600; border-bottom: 1px solid #eee;">Afbeelding</td>
-                                ${selectedProductsData.map(p => `<td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;"><img src="${p.image}" alt="${p.name}" style="width: 100px; height: 100px; object-fit: cover; border-radius: 8px;" onerror="this.src='Images/placeholder-product.jpg'"></td>`).join('')}
-                            </tr>
-                            <tr>
-                                <td style="padding: 1rem; font-weight: 600; border-bottom: 1px solid #eee;">Prijs</td>
-                                ${selectedProductsData.map(p => `<td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee; font-size: 1.2rem; font-weight: bold; color: #D2691E;">€${p.price}</td>`).join('')}
-                            </tr>
-                            <tr>
-                                <td style="padding: 1rem; font-weight: 600; border-bottom: 1px solid #eee;">Beoordeling</td>
-                                ${selectedProductsData.map(p => `<td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;"><div style="color: #ffd700;">${'★'.repeat(Math.floor(p.rating))}${'☆'.repeat(5 - Math.floor(p.rating))}</div><div style="font-size: 0.9rem; color: #666;">${p.rating} (${p.reviews} reviews)</div></td>`).join('')}
-                            </tr>
-                            <tr>
-                                <td style="padding: 1rem; font-weight: 600; border-bottom: 1px solid #eee;">Capaciteit</td>
-                                ${selectedProductsData.map(p => `<td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">${p.capaciteit} kopjes</td>`).join('')}
-                            </tr>
-                            <tr>
-                                <td style="padding: 1rem; font-weight: 600; border-bottom: 1px solid #eee;">Inductie</td>
-                                ${selectedProductsData.map(p => `<td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">${p.inductie === 'Oui' ? '<span style="color: green;">✓ Ja</span>' : '<span style="color: #999;">✗ Nee</span>'}</td>`).join('')}
-                            </tr>
-                            <tr>
-                                <td style="padding: 1rem; font-weight: 600; border-bottom: 1px solid #eee;">Materiaal</td>
-                                ${selectedProductsData.map(p => `<td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">${p.materiaal}</td>`).join('')}
-                            </tr>
-                            <tr>
-                                <td style="padding: 1rem; font-weight: 600; border-bottom: 1px solid #eee;">Merk</td>
-                                ${selectedProductsData.map(p => `<td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">${p.merk}</td>`).join('')}
-                            </tr>
-                            <tr>
-                                <td style="padding: 1rem; font-weight: 600;">Actie</td>
-                                ${selectedProductsData.map(p => `<td style="padding: 1rem; text-align: center;"><a href="producten/${p.slug}.html" style="display: inline-block; padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">Bekijk details</a></td>`).join('')}
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        `;
-        
-        modal.className = 'modal';
-        modal.appendChild(modalContent);
-        document.body.appendChild(modal);
-        
-        // Fermer en cliquant à l'extérieur
-        modal.addEventListener('click', function(e) {
-            if (e.target === modal) {
-                modal.remove();
-            }
-        });
-    }
+    }}
     </script>
 </body>
-</html>
+</html>"""
+
+    return html_content
+
+if __name__ == "__main__":
+    content = generate_complete_boutique()
+    with open('boutique_complete.html', 'w', encoding='utf-8') as f:
+        f.write(content)
+    print("✅ Boutique complète générée: boutique_complete.html")
