@@ -28,11 +28,11 @@
                 <a href="index.html" class="nav-brand">Italiaanse Percolator</a>
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="boutique.html" class="nav-link active">🛒 Winkel</a></li>
                     <li><a href="beste-italiaanse-percolators.html" class="nav-link">Top 10</a></li>
                     <li><a href="koopgids/index.html" class="nav-link">Koopgids</a></li>
                     <li><a href="vergelijking/index.html" class="nav-link">Vergelijking</a></li>
                     <li><a href="over-ons.html" class="nav-link">Over ons</a></li>
+                    <li><a href="boutique.html" class="nav-link" style="background: #D2691E; color: white; padding: 0.5rem 1rem; border-radius: 6px; font-weight: 600;">Winkel</a></li>
                 </ul>
             </div>
         </div>
@@ -42,7 +42,7 @@
     <section class="hero" style="background: linear-gradient(135deg, rgba(210, 105, 30, 0.95), rgba(139, 69, 19, 0.9)), url('Images/background_homepage.jpg') center/cover; min-height: 500px; display: flex; align-items: center; color: white; position: relative;">
         <div class="container" style="text-align: center; position: relative; z-index: 2;">
             <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; max-width: 800px; margin: 0 auto; border: 1px solid rgba(255,255,255,0.2);">
-                <h1 style="font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700; background: linear-gradient(45deg, #fff, #f0f0f0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: none;">
+                <h1 style="font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700; background: linear-gradient(45deg, #fff, #f0f0f0); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: none;">
                     Italiaanse Percolator Winkel
                 </h1>
                 <p style="font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.95; font-weight: 500;">
@@ -51,27 +51,27 @@
                 
                 <!-- Barre recherche améliorée -->
                 <div style="max-width: 500px; margin: 0 auto 2rem; position: relative;">
-                    <input type="text" id="search-input" placeholder="🔍 Zoek je perfecte percolator..." 
+                    <input type="text" id="search-input" placeholder="Zoek je perfecte percolator..." 
                            style="width: 100%; padding: 1.2rem 1.5rem; border: none; border-radius: 30px; font-size: 1.1rem; box-shadow: 0 8px 25px rgba(0,0,0,0.3); background: rgba(255,255,255,0.95); backdrop-filter: blur(10px);">
                 </div>
                 
                 <!-- Quick filters stylés -->
                 <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
-                    <button onclick="quickFilter('inductie')" class="quick-filter" style="background: rgba(255,255,255,0.25); border: 2px solid rgba(255,255,255,0.6); color: white; padding: 0.8rem 1.5rem; border-radius: 25px; cursor: pointer; backdrop-filter: blur(15px); font-weight: 600; transition: all 0.3s ease;">⚡ Inductie</button>
-                    <button onclick="quickFilter('budget')" class="quick-filter" style="background: rgba(255,255,255,0.25); border: 2px solid rgba(255,255,255,0.6); color: white; padding: 0.8rem 1.5rem; border-radius: 25px; cursor: pointer; backdrop-filter: blur(15px); font-weight: 600; transition: all 0.3s ease;">💰 Budget <€50</button>
-                    <button onclick="quickFilter('groot')" class="quick-filter" style="background: rgba(255,255,255,0.25); border: 2px solid rgba(255,255,255,0.6); color: white; padding: 0.8rem 1.5rem; border-radius: 25px; cursor: pointer; backdrop-filter: blur(15px); font-weight: 600; transition: all 0.3s ease;">🍵 6+ Kopjes</button>
+                    <button onclick="quickFilter('inductie')" class="quick-filter" style="background: rgba(255,255,255,0.25); border: 2px solid rgba(255,255,255,0.6); color: white; padding: 0.8rem 1.5rem; border-radius: 25px; cursor: pointer; backdrop-filter: blur(15px); font-weight: 600; transition: all 0.3s ease;">Inductie</button>
+                    <button onclick="quickFilter('budget')" class="quick-filter" style="background: rgba(255,255,255,0.25); border: 2px solid rgba(255,255,255,0.6); color: white; padding: 0.8rem 1.5rem; border-radius: 25px; cursor: pointer; backdrop-filter: blur(15px); font-weight: 600; transition: all 0.3s ease;">Budget onder 50 euro</button>
+                    <button onclick="quickFilter('groot')" class="quick-filter" style="background: rgba(255,255,255,0.25); border: 2px solid rgba(255,255,255,0.6); color: white; padding: 0.8rem 1.5rem; border-radius: 25px; cursor: pointer; backdrop-filter: blur(15px); font-weight: 600; transition: all 0.3s ease;">6+ Kopjes</button>
                 </div>
                 
                 <!-- Trust badges modernisés -->
                 <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
                     <div style="background: rgba(255,255,255,0.2); padding: 0.8rem 1.2rem; border-radius: 25px; backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.3); font-weight: 600;">
-                        ✓ 64 producten getest
+                        64 producten getest
                     </div>
                     <div style="background: rgba(255,255,255,0.2); padding: 0.8rem 1.2rem; border-radius: 25px; backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.3); font-weight: 600;">
-                        ✓ Gratis verzending €20+
+                        Onafhankelijke reviews
                     </div>
                     <div style="background: rgba(255,255,255,0.2); padding: 0.8rem 1.2rem; border-radius: 25px; backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.3); font-weight: 600;">
-                        ✓ 30 dagen retour
+                        Expert advies
                     </div>
                 </div>
             </div>
@@ -267,9 +267,9 @@
         const card = document.createElement('div');
         card.className = 'product-card';
         
-        const inductieIcon = product.inductie === 'Oui' ? '⚡ Inductie' : '';
-        const tassenIcon = product.capaciteit > 0 ? `🍵 ${product.capaciteit}` : '';
-        const materiaalIcon = (product.materiaal && (product.materiaal.includes('inox') || product.materiaal.includes('RVS'))) ? '🔧 RVS' : '🔧 Alu';
+        const inductieIcon = product.inductie === 'Oui' ? 'Inductie' : '';
+        const tassenIcon = product.capaciteit > 0 ? `${product.capaciteit} kopjes` : '';
+        const materiaalIcon = (product.materiaal && (product.materiaal.includes('inox') || product.materiaal.includes('RVS'))) ? 'RVS' : 'Aluminium';
         
         card.innerHTML = `
             <div style="background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1); position: relative; transition: all 0.3s ease; height: 100%;">
