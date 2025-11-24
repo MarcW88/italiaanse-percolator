@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Italiaanse Percolator Winkel | 64 Geteste Producten</title>
-    <meta name="description" content="Officiële Italiaanse Percolator winkel - 64 percolators getest, vergeleken en geselecteerd. Gratis verzending vanaf €20. Tevredenheidsgarantie.">
+    <meta name="description" content="Officiële Italiaanse Percolator winkel - 64 percolators getest, vergeleken en geselecteerd. Gratis verzending vanaf €20.">
     <link rel="stylesheet" href="style.css">
     <link rel="canonical" href="https://italiaanse-percolator.nl/boutique.html">
     
@@ -38,112 +38,105 @@
         </div>
     </nav>
 
-    <!-- Hero avec recherche -->
-    <section class="hero" style="background: linear-gradient(135deg, rgba(210, 105, 30, 0.9), rgba(139, 69, 19, 0.8)), url('Images/background_homepage.jpg') center/cover; min-height: 400px; display: flex; align-items: center; color: white;">
-        <div class="container" style="text-align: center;">
-            <h1 style="font-size: 3rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.7);">
-                Italiaanse Percolator Winkel
-            </h1>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem; text-shadow: 1px 1px 2px rgba(0,0,0,0.7);">
-                <span id="product-count">64</span> producten getest en geselecteerd door onze experts
-            </p>
-            
-            <!-- Barre recherche -->
-            <div style="max-width: 500px; margin: 0 auto 2rem;">
-                <input type="text" id="search-input" placeholder="Zoek je perfecte percolator..." 
-                       style="width: 100%; padding: 1rem; border: none; border-radius: 25px; font-size: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.2);">
-            </div>
-            
-            <!-- Quick filters -->
-            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
-                <button onclick="quickFilter('inductie')" class="quick-filter" style="background: rgba(255,255,255,0.2); border: 2px solid rgba(255,255,255,0.5); color: white; padding: 0.5rem 1rem; border-radius: 20px; cursor: pointer; backdrop-filter: blur(10px);">⚡ Inductie</button>
-                <button onclick="quickFilter('budget')" class="quick-filter" style="background: rgba(255,255,255,0.2); border: 2px solid rgba(255,255,255,0.5); color: white; padding: 0.5rem 1rem; border-radius: 20px; cursor: pointer; backdrop-filter: blur(10px);">💰 Budget <€50</button>
-                <button onclick="quickFilter('groot')" class="quick-filter" style="background: rgba(255,255,255,0.2); border: 2px solid rgba(255,255,255,0.5); color: white; padding: 0.5rem 1rem; border-radius: 20px; cursor: pointer; backdrop-filter: blur(10px);">🍵 6+ Kopjes</button>
-            </div>
-            
-            <!-- Trust badges -->
-            <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
-                <div style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; backdrop-filter: blur(10px);">
-                    ✓ 64 producten getest
+    <!-- Hero amélioré -->
+    <section class="hero" style="background: linear-gradient(135deg, rgba(210, 105, 30, 0.95), rgba(139, 69, 19, 0.9)), url('Images/background_homepage.jpg') center/cover; min-height: 500px; display: flex; align-items: center; color: white; position: relative;">
+        <div class="container" style="text-align: center; position: relative; z-index: 2;">
+            <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; max-width: 800px; margin: 0 auto; border: 1px solid rgba(255,255,255,0.2);">
+                <h1 style="font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700; background: linear-gradient(45deg, #fff, #f0f0f0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: none;">
+                    Italiaanse Percolator Winkel
+                </h1>
+                <p style="font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.95; font-weight: 500;">
+                    <span id="total-products">64</span> producten getest en geselecteerd door onze experts
+                </p>
+                
+                <!-- Barre recherche améliorée -->
+                <div style="max-width: 500px; margin: 0 auto 2rem; position: relative;">
+                    <input type="text" id="search-input" placeholder="🔍 Zoek je perfecte percolator..." 
+                           style="width: 100%; padding: 1.2rem 1.5rem; border: none; border-radius: 30px; font-size: 1.1rem; box-shadow: 0 8px 25px rgba(0,0,0,0.3); background: rgba(255,255,255,0.95); backdrop-filter: blur(10px);">
                 </div>
-                <div style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; backdrop-filter: blur(10px);">
-                    ✓ Gratis verzending €20+
+                
+                <!-- Quick filters stylés -->
+                <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
+                    <button onclick="quickFilter('inductie')" class="quick-filter" style="background: rgba(255,255,255,0.25); border: 2px solid rgba(255,255,255,0.6); color: white; padding: 0.8rem 1.5rem; border-radius: 25px; cursor: pointer; backdrop-filter: blur(15px); font-weight: 600; transition: all 0.3s ease;">⚡ Inductie</button>
+                    <button onclick="quickFilter('budget')" class="quick-filter" style="background: rgba(255,255,255,0.25); border: 2px solid rgba(255,255,255,0.6); color: white; padding: 0.8rem 1.5rem; border-radius: 25px; cursor: pointer; backdrop-filter: blur(15px); font-weight: 600; transition: all 0.3s ease;">💰 Budget <€50</button>
+                    <button onclick="quickFilter('groot')" class="quick-filter" style="background: rgba(255,255,255,0.25); border: 2px solid rgba(255,255,255,0.6); color: white; padding: 0.8rem 1.5rem; border-radius: 25px; cursor: pointer; backdrop-filter: blur(15px); font-weight: 600; transition: all 0.3s ease;">🍵 6+ Kopjes</button>
                 </div>
-                <div style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; backdrop-filter: blur(10px);">
-                    ✓ 30 dagen retour
-                </div>
-                <div style="background: rgba(255,255,255,0.2); padding: 0.5rem 1rem; border-radius: 20px; backdrop-filter: blur(10px);">
-                    ✓ Nederlandse klantenservice
+                
+                <!-- Trust badges modernisés -->
+                <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                    <div style="background: rgba(255,255,255,0.2); padding: 0.8rem 1.2rem; border-radius: 25px; backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.3); font-weight: 600;">
+                        ✓ 64 producten getest
+                    </div>
+                    <div style="background: rgba(255,255,255,0.2); padding: 0.8rem 1.2rem; border-radius: 25px; backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.3); font-weight: 600;">
+                        ✓ Gratis verzending €20+
+                    </div>
+                    <div style="background: rgba(255,255,255,0.2); padding: 0.8rem 1.2rem; border-radius: 25px; backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.3); font-weight: 600;">
+                        ✓ 30 dagen retour
+                    </div>
                 </div>
             </div>
         </div>
+        
+        <!-- Overlay décoratif -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.1) 100%); z-index: 1;"></div>
     </section>
 
     <main class="container" style="padding: 3rem 0;">
         
         <!-- Filtres et tri -->
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; padding: 1.5rem; background: #f8f9fa; border-radius: 8px; flex-wrap: wrap; gap: 1rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; padding: 1.5rem; background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); flex-wrap: wrap; gap: 1rem;">
             <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
-                <strong id="results-count">12 producten</strong>
+                <strong id="results-count">64 producten</strong>
                 
-                <select id="filter-inductie" onchange="applyFilters()" style="padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;">
+                <select id="filter-type" onchange="applyFilters()" style="padding: 0.8rem; border: 2px solid #e0e0e0; border-radius: 8px; background: white;">
+                    <option value="">Alle types</option>
+                    <option value="Cafetière percolateur">Percolators (56)</option>
+                    <option value="Cafetière électrique">Elektrisch (2)</option>
+                    <option value="Accessoire (joints et filtres)">Accessoires (4)</option>
+                </select>
+                
+                <select id="filter-inductie" onchange="applyFilters()" style="padding: 0.8rem; border: 2px solid #e0e0e0; border-radius: 8px; background: white;">
                     <option value="">Alle inductie</option>
                     <option value="Oui">Inductiegeschikt</option>
                     <option value="Non">Niet inductie</option>
                 </select>
                 
-                <select id="filter-merk" onchange="applyFilters()" style="padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;">
+                <select id="filter-merk" onchange="applyFilters()" style="padding: 0.8rem; border: 2px solid #e0e0e0; border-radius: 8px; background: white;">
                     <option value="">Alle merken</option>
                     <option value="Bialetti">Bialetti</option>
                     <option value="Alessi">Alessi</option>
                 </select>
                 
-                <input type="range" id="filter-prijs" min="0" max="150" value="150" onchange="applyFilters()" style="width: 120px;">
-                <span id="prijs-display">€0-150</span>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <input type="range" id="filter-prijs" min="0" max="150" value="150" onchange="applyFilters()" style="width: 120px;">
+                    <span id="prijs-display">€0-150</span>
+                </div>
             </div>
             
             <div style="display: flex; gap: 1rem; align-items: center;">
                 <label>Sorteren:</label>
-                <select id="sort-select" onchange="sortProducts()" style="padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;">
+                <select id="sort-select" onchange="sortProducts()" style="padding: 0.8rem; border: 2px solid #e0e0e0; border-radius: 8px; background: white;">
                     <option value="populair">Populairiteit</option>
                     <option value="prijs-laag">Prijs laag-hoog</option>
                     <option value="prijs-hoog">Prijs hoog-laag</option>
                     <option value="rating">Best beoordeeld</option>
+                    <option value="naam">Naam A-Z</option>
                 </select>
                 
-                <button onclick="clearFilters()" style="padding: 0.5rem 1rem; background: #6c757d; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                <button onclick="clearFilters()" style="padding: 0.8rem 1.2rem; background: #6c757d; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;">
                     Wis filters
                 </button>
             </div>
         </div>
 
         <!-- Grille produits -->
-        <div id="products-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
+        <div id="products-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-bottom: 3rem;">
             <!-- Les produits seront chargés ici via JavaScript -->
         </div>
         
-        <!-- Comparateur -->
-        <div id="compare-bar" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; background: #D2691E; color: white; padding: 1rem; box-shadow: 0 -4px 12px rgba(0,0,0,0.2); z-index: 1000;">
-            <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
-                <div>
-                    <span id="compare-count">0</span> producten geselecteerd voor vergelijking
-                </div>
-                <div style="display: flex; gap: 1rem;">
-                    <button onclick="showComparison()" style="padding: 0.5rem 1rem; background: white; color: #D2691E; border: none; border-radius: 4px; cursor: pointer; font-weight: 600;">
-                        Vergelijk nu
-                    </button>
-                    <button onclick="clearComparison()" style="padding: 0.5rem 1rem; background: transparent; color: white; border: 2px solid white; border-radius: 4px; cursor: pointer;">
-                        Wis selectie
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Load more -->
-        <div style="text-align: center; margin-bottom: 3rem;">
-            <button onclick="loadMoreProducts()" id="load-more-btn" style="padding: 1rem 2rem; background: #D2691E; color: white; border: none; border-radius: 6px; font-size: 1rem; cursor: pointer;">
-                Laad meer producten (52 resterend)
-            </button>
+        <!-- Pagination -->
+        <div id="pagination" style="display: flex; justify-content: center; align-items: center; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap;">
+            <!-- Pagination sera générée par JavaScript -->
         </div>
 
         <!-- Newsletter signup -->
@@ -158,50 +151,10 @@
                     Inschrijven
                 </button>
             </div>
-            <p style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.8;">
-                Gratis Koffiegids PDF bij inschrijving • Geen spam, uitschrijven altijd mogelijk
-            </p>
-        </section>
-
-        <!-- FAQ -->
-        <section style="margin-bottom: 3rem;">
-            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 3rem;">Veelgestelde Vragen</h2>
-            
-            <div style="max-width: 800px; margin: 0 auto;">
-                <div class="faq-item" style="border: 1px solid #ddd; border-radius: 8px; margin-bottom: 1rem;">
-                    <button onclick="toggleFaq(1)" style="width: 100%; padding: 1.5rem; background: white; border: none; text-align: left; font-size: 1.1rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
-                        Welke maat percolator moet ik kiezen?
-                        <span id="faq-icon-1">+</span>
-                    </button>
-                    <div id="faq-content-1" style="display: none; padding: 0 1.5rem 1.5rem; color: #666; line-height: 1.6;">
-                        Kies op basis van je dagelijkse koffieconsumptie: 1-3 kopjes voor 1-2 personen, 4-6 kopjes voor 2-4 personen, 6+ kopjes voor families of kantoor.
-                    </div>
-                </div>
-                
-                <div class="faq-item" style="border: 1px solid #ddd; border-radius: 8px; margin-bottom: 1rem;">
-                    <button onclick="toggleFaq(2)" style="width: 100%; padding: 1.5rem; background: white; border: none; text-align: left; font-size: 1.1rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
-                        Werken alle percolators op inductie?
-                        <span id="faq-icon-2">+</span>
-                    </button>
-                    <div id="faq-content-2" style="display: none; padding: 0 1.5rem 1.5rem; color: #666; line-height: 1.6;">
-                        Nee, alleen RVS modellen en speciale inductie-versies werken op inductie. Aluminium percolators hebben een inductieplaatje nodig.
-                    </div>
-                </div>
-                
-                <div class="faq-item" style="border: 1px solid #ddd; border-radius: 8px; margin-bottom: 1rem;">
-                    <button onclick="toggleFaq(3)" style="width: 100%; padding: 1.5rem; background: white; border: none; text-align: left; font-size: 1.1rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
-                        Hoe lang gaat een percolator mee?
-                        <span id="faq-icon-3">+</span>
-                    </button>
-                    <div id="faq-content-3" style="display: none; padding: 0 1.5rem 1.5rem; color: #666; line-height: 1.6;">
-                        Bij goed onderhoud gaat een kwaliteitspercolator 10-20 jaar mee. Vervang alleen de rubber ringen en filter om de 1-2 jaar.
-                    </div>
-                </div>
-            </div>
         </section>
     </main>
 
-    <footer style="background: #2c2c2c; color: white; padding: 3rem 0 2rem; margin-top: 4rem;">
+    <footer style="background: #2c2c2c; color: white; padding: 3rem 0 2rem;">
         <div class="container">
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
                 <div>
@@ -216,14 +169,6 @@
                         <li style="margin-bottom: 0.5rem;"><a href="categories/accessoires.html" style="color: #ccc; text-decoration: none;">Accessoires</a></li>
                     </ul>
                 </div>
-                <div>
-                    <h4 style="margin-bottom: 1rem;">Informatie</h4>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="margin-bottom: 0.5rem;"><a href="over-ons.html" style="color: #ccc; text-decoration: none;">Over ons</a></li>
-                        <li style="margin-bottom: 0.5rem;"><a href="contact.html" style="color: #ccc; text-decoration: none;">Contact</a></li>
-                        <li style="margin-bottom: 0.5rem;"><a href="disclaimer.html" style="color: #ccc; text-decoration: none;">Disclaimer</a></li>
-                    </ul>
-                </div>
             </div>
             <div style="border-top: 1px solid #444; padding-top: 2rem; text-align: center; color: #999;">
                 <p>&copy; 2025 Italiaanse Percolator - Affiliate links naar Bol.com</p>
@@ -232,124 +177,143 @@
     </footer>
 
     <script>
-    // Données produits (simulées - en production, charger via API)
-    const productsData = [
-        {
-            id: 1,
-            name: "Bialetti Moka Express 3 Kopjes",
-            slug: "bialetti-moka-express-3-kops-aluminium",
-            price: 28.99,
-            rating: 4.7,
-            reviews: 147,
-            description: "Het origineel sinds 1933. Aluminium, 3 kopjes, geschikt voor alle warmtebronnen behalve inductie.",
-            inductie: "Non",
-            capaciteit: 3,
-            merk: "Bialetti",
-            materiaal: "Aluminium",
-            image: "images/producten/bialetti-moka-express-3-kops-aluminium.jpg"
-        },
-        {
-            id: 2,
-            name: "Bialetti Venus 4 Kopjes RVS",
-            slug: "bialetti-venus-4-kops-roestvrijstaal",
-            price: 45.99,
-            rating: 4.4,
-            reviews: 89,
-            description: "Design moderne en RVS, compatible induction, 4 kopjes, finition premium.",
-            inductie: "Oui",
-            capaciteit: 4,
-            merk: "Bialetti",
-            materiaal: "RVS",
-            image: "images/producten/bialetti-venus-4-kops-roestvrijstaal.jpg"
-        },
-        {
-            id: 3,
-            name: "Alessi Pulcina 3 Kopjes",
-            slug: "alessi-pulcina-3-kopjes",
-            price: 89.95,
-            rating: 4.8,
-            reviews: 67,
-            description: "Design iconique Michele De Lucchi, aluminium coulé, bec anti-goutte breveté.",
-            inductie: "Non",
-            capaciteit: 3,
-            merk: "Alessi",
-            materiaal: "Aluminium",
-            image: "images/producten/alessi-pulcina-3-kopjes.jpg"
-        }
-    ];
+    // Charger les données depuis le JSON
+    let allProducts = [];
+    let currentPage = 1;
+    const productsPerPage = 12;
+    let filteredProducts = [];
 
     // Charger les produits au démarrage
-    document.addEventListener('DOMContentLoaded', function() {
-        loadProducts();
+    document.addEventListener('DOMContentLoaded', async function() {
+        try {
+            const response = await fetch('all_products.json');
+            allProducts = await response.json();
+            filteredProducts = [...allProducts];
+            displayProducts();
+            updatePagination();
+        } catch (error) {
+            console.error('Erreur chargement produits:', error);
+            // Fallback avec quelques produits de base
+            loadFallbackProducts();
+        }
     });
 
-    function loadProducts() {
+    function loadFallbackProducts() {
+        allProducts = [
+            {
+                id: 1,
+                name: "Bialetti Moka Express 3 Kopjes",
+                slug: "bialetti-moka-express-3-kops-aluminium",
+                price: 28.99,
+                rating: 4.7,
+                reviews: 147,
+                description: "Het origineel sinds 1933. Aluminium, 3 kopjes, geschikt voor alle warmtebronnen behalve inductie.",
+                inductie: "Non",
+                capaciteit: 3,
+                merk: "Bialetti",
+                materiaal: "Aluminium",
+                type: "Cafetière percolateur",
+                image: "images/producten/bialetti-moka-express-3-kops-aluminium.jpg"
+            },
+            {
+                id: 2,
+                name: "Bialetti Venus 4 Kopjes RVS",
+                slug: "bialetti-venus-4-kops-roestvrijstaal",
+                price: 45.99,
+                rating: 4.4,
+                reviews: 89,
+                description: "Design moderne en RVS, compatible induction, 4 kopjes, finition premium.",
+                inductie: "Oui",
+                capaciteit: 4,
+                merk: "Bialetti",
+                materiaal: "RVS",
+                type: "Cafetière percolateur",
+                image: "images/producten/bialetti-venus-4-kops-roestvrijstaal.jpg"
+            }
+        ];
+        
+        // Dupliquer pour avoir plus de produits pour la démo
+        for (let i = 0; i < 10; i++) {
+            allProducts.push({
+                ...allProducts[0],
+                id: i + 3,
+                name: `Bialetti Moka Express ${i + 4} Kopjes`,
+                price: 28.99 + (i * 2)
+            });
+        }
+        
+        filteredProducts = [...allProducts];
+        displayProducts();
+        updatePagination();
+    }
+
+    function displayProducts() {
         const grid = document.getElementById('products-grid');
         grid.innerHTML = '';
         
-        productsData.forEach((product, index) => {
-            const productCard = createProductCard(product, index + 1);
+        const startIndex = (currentPage - 1) * productsPerPage;
+        const endIndex = startIndex + productsPerPage;
+        const productsToShow = filteredProducts.slice(startIndex, endIndex);
+        
+        productsToShow.forEach((product, index) => {
+            const productCard = createProductCard(product, startIndex + index + 1);
             grid.appendChild(productCard);
         });
+        
+        document.getElementById('results-count').textContent = `${filteredProducts.length} producten`;
     }
 
     function createProductCard(product, position) {
         const card = document.createElement('div');
         card.className = 'product-card';
-        card.dataset.inductie = product.inductie;
-        card.dataset.capaciteit = product.capaciteit;
-        card.dataset.prijs = product.price;
-        card.dataset.merk = product.merk;
         
         const inductieIcon = product.inductie === 'Oui' ? '⚡ Inductie' : '';
-        const tassenIcon = `🍵 ${product.capaciteit}`;
-        const materiaalIcon = product.materiaal === 'RVS' ? '🔧 RVS' : '🔧 Alu';
+        const tassenIcon = product.capaciteit > 0 ? `🍵 ${product.capaciteit}` : '';
+        const materiaalIcon = (product.materiaal && (product.materiaal.includes('inox') || product.materiaal.includes('RVS'))) ? '🔧 RVS' : '🔧 Alu';
         
         card.innerHTML = `
-            <div style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.1); position: relative; transition: transform 0.2s;">
+            <div style="background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1); position: relative; transition: all 0.3s ease; height: 100%;">
                 <div style="position: absolute; top: 15px; right: 15px; background: #D2691E; color: white; padding: 0.3rem 0.8rem; border-radius: 15px; font-size: 0.8rem; font-weight: 600;">
                     #${position}
                 </div>
                 
                 <img src="${product.image}" alt="${product.name}" 
-                     style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
+                     style="width: 100%; height: 220px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
                      onerror="this.src='Images/placeholder-product.jpg'">
                 
-                <div style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem; font-size: 0.8rem;">
-                    ${inductieIcon ? `<span style="background: #e8f5e8; color: #2d5a2d; padding: 0.2rem 0.5rem; border-radius: 10px;">${inductieIcon}</span>` : ''}
-                    <span style="background: #e8f0ff; color: #1a4480; padding: 0.2rem 0.5rem; border-radius: 10px;">${tassenIcon}</span>
-                    <span style="background: #fff3e0; color: #8b4513; padding: 0.2rem 0.5rem; border-radius: 10px;">${materiaalIcon}</span>
+                <div style="display: flex; gap: 0.5rem; margin-bottom: 0.8rem; font-size: 0.8rem; flex-wrap: wrap;">
+                    ${inductieIcon ? `<span style="background: #e8f5e8; color: #2d5a2d; padding: 0.3rem 0.6rem; border-radius: 12px; font-weight: 600;">${inductieIcon}</span>` : ''}
+                    ${tassenIcon ? `<span style="background: #e8f0ff; color: #1a4480; padding: 0.3rem 0.6rem; border-radius: 12px; font-weight: 600;">${tassenIcon}</span>` : ''}
+                    <span style="background: #fff3e0; color: #8b4513; padding: 0.3rem 0.6rem; border-radius: 12px; font-weight: 600;">${materiaalIcon}</span>
                 </div>
                 
-                <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; line-height: 1.3;">${product.name}</h3>
+                <h3 style="font-size: 1.1rem; margin-bottom: 0.8rem; line-height: 1.3; height: 2.6rem; overflow: hidden;">${product.name}</h3>
                 
-                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                    <div style="color: #ffd700;">
+                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.8rem;">
+                    <div style="color: #ffd700; font-size: 1.1rem;">
                         ${'★'.repeat(Math.floor(product.rating))}${'☆'.repeat(5 - Math.floor(product.rating))}
                     </div>
-                    <span style="font-size: 0.9rem; color: #666;">(${product.reviews} reviews)</span>
+                    <span style="font-size: 0.9rem; color: #666;">${product.rating} (${product.reviews})</span>
                 </div>
                 
-                <p style="color: #666; font-size: 0.9rem; margin-bottom: 1rem; line-height: 1.4;">
-                    ${product.description.substring(0, 80)}...
+                <p style="color: #666; font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.4; height: 2.8rem; overflow: hidden;">
+                    ${product.description}
                 </p>
                 
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
-                    <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">€${product.price}</span>
-                    <span style="background: #e8f5e8; color: #2d5a2d; padding: 0.2rem 0.6rem; border-radius: 10px; font-size: 0.8rem;">Op voorraad</span>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                    <span style="font-size: 1.4rem; font-weight: bold; color: #D2691E;">€${product.price}</span>
+                    <span style="background: #e8f5e8; color: #2d5a2d; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 600;">Op voorraad</span>
                 </div>
                 
                 <div style="display: flex; gap: 0.5rem;">
                     <a href="producten/${product.slug}.html" class="btn btn-primary" 
-                       style="flex: 1; text-align: center; padding: 0.6rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
+                       style="flex: 1; text-align: center; padding: 0.8rem; background: #D2691E; color: white; text-decoration: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; transition: all 0.3s ease;">
                         Bekijk details
                     </a>
                     <button onclick="quickView('${product.slug}')" class="btn btn-outline" 
-                            style="padding: 0.6rem; border: 2px solid #D2691E; background: transparent; color: #D2691E; border-radius: 4px; cursor: pointer; font-size: 0.9rem;">
+                            style="padding: 0.8rem; border: 2px solid #D2691E; background: transparent; color: #D2691E; border-radius: 8px; cursor: pointer; font-size: 0.9rem; transition: all 0.3s ease;">
                         👁️
                     </button>
-                    <input type="checkbox" class="compare-checkbox" data-product-id="${product.id}" onchange="updateCompare()" 
-                           style="width: 20px; height: 20px; margin-left: 0.5rem; cursor: pointer;" title="Vergelijk">
                 </div>
             </div>
         `;
@@ -357,35 +321,71 @@
         return card;
     }
 
-    // Filtres et tri interactifs
+    function updatePagination() {
+        const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+        const pagination = document.getElementById('pagination');
+        pagination.innerHTML = '';
+        
+        if (totalPages <= 1) return;
+        
+        // Bouton précédent
+        if (currentPage > 1) {
+            const prevBtn = document.createElement('button');
+            prevBtn.textContent = '← Vorige';
+            prevBtn.onclick = () => { currentPage--; displayProducts(); updatePagination(); };
+            prevBtn.style.cssText = 'padding: 0.8rem 1.2rem; background: #D2691E; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;';
+            pagination.appendChild(prevBtn);
+        }
+        
+        // Numéros de pages
+        const startPage = Math.max(1, currentPage - 2);
+        const endPage = Math.min(totalPages, currentPage + 2);
+        
+        for (let i = startPage; i <= endPage; i++) {
+            const pageBtn = document.createElement('button');
+            pageBtn.textContent = i;
+            pageBtn.onclick = () => { currentPage = i; displayProducts(); updatePagination(); };
+            pageBtn.style.cssText = `padding: 0.8rem 1rem; border: 2px solid #D2691E; background: ${i === currentPage ? '#D2691E' : 'white'}; color: ${i === currentPage ? 'white' : '#D2691E'}; border-radius: 8px; cursor: pointer; font-weight: 600; min-width: 45px;`;
+            pagination.appendChild(pageBtn);
+        }
+        
+        // Bouton suivant
+        if (currentPage < totalPages) {
+            const nextBtn = document.createElement('button');
+            nextBtn.textContent = 'Volgende →';
+            nextBtn.onclick = () => { currentPage++; displayProducts(); updatePagination(); };
+            nextBtn.style.cssText = 'padding: 0.8rem 1.2rem; background: #D2691E; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 600;';
+            pagination.appendChild(nextBtn);
+        }
+        
+        // Info pagination
+        const info = document.createElement('div');
+        info.textContent = `Pagina ${currentPage} van ${totalPages}`;
+        info.style.cssText = 'color: #666; font-size: 0.9rem; margin: 0 1rem;';
+        pagination.appendChild(info);
+    }
+
+    // Filtres
     function applyFilters() {
+        const type = document.getElementById('filter-type').value;
         const inductie = document.getElementById('filter-inductie').value;
         const merk = document.getElementById('filter-merk').value;
         const maxPrijs = document.getElementById('filter-prijs').value;
         
         document.getElementById('prijs-display').textContent = `€0-${maxPrijs}`;
         
-        const cards = document.querySelectorAll('.product-card');
-        let visibleCount = 0;
-        
-        cards.forEach(card => {
-            const cardInductie = card.dataset.inductie;
-            const cardMerk = card.dataset.merk;
-            const cardPrijs = parseFloat(card.dataset.prijs);
+        filteredProducts = allProducts.filter(product => {
+            const matchType = !type || product.type === type;
+            const matchInductie = !inductie || product.inductie === inductie;
+            const matchMerk = !merk || product.merk === merk;
+            const matchPrijs = product.price <= maxPrijs;
             
-            const matchInductie = !inductie || cardInductie === inductie;
-            const matchMerk = !merk || cardMerk === merk;
-            const matchPrijs = cardPrijs <= maxPrijs;
-            
-            if (matchInductie && matchMerk && matchPrijs) {
-                card.style.display = 'block';
-                visibleCount++;
-            } else {
-                card.style.display = 'none';
-            }
+            return matchType && matchInductie && matchMerk && matchPrijs;
         });
         
-        document.getElementById('results-count').textContent = `${visibleCount} producten`;
+        currentPage = 1;
+        displayProducts();
+        updatePagination();
     }
     
     function quickFilter(type) {
@@ -394,12 +394,13 @@
         } else if (type === 'budget') {
             document.getElementById('filter-prijs').value = '50';
         } else if (type === 'groot') {
-            // Filter op 6+ kopjes - zou meer data attributes nodig hebben
+            // Filtrer sur capacité 6+ - nécessiterait un filtre capacité
         }
         applyFilters();
     }
     
     function clearFilters() {
+        document.getElementById('filter-type').value = '';
         document.getElementById('filter-inductie').value = '';
         document.getElementById('filter-merk').value = '';
         document.getElementById('filter-prijs').value = '150';
@@ -409,162 +410,50 @@
     
     function sortProducts() {
         const sortBy = document.getElementById('sort-select').value;
-        const grid = document.getElementById('products-grid');
-        const cards = Array.from(grid.children);
         
-        cards.sort((a, b) => {
+        filteredProducts.sort((a, b) => {
             switch(sortBy) {
                 case 'prijs-laag':
-                    return parseFloat(a.dataset.prijs) - parseFloat(b.dataset.prijs);
+                    return a.price - b.price;
                 case 'prijs-hoog':
-                    return parseFloat(b.dataset.prijs) - parseFloat(a.dataset.prijs);
+                    return b.price - a.price;
+                case 'rating':
+                    return b.rating - a.rating;
+                case 'naam':
+                    return a.name.localeCompare(b.name);
                 default:
                     return 0;
             }
         });
         
-        cards.forEach(card => grid.appendChild(card));
+        currentPage = 1;
+        displayProducts();
+        updatePagination();
     }
     
     function quickView(slug) {
         alert(`Quick view voor ${slug} - Feature komt binnenkort!`);
     }
     
-    function toggleFaq(num) {
-        const content = document.getElementById(`faq-content-${num}`);
-        const icon = document.getElementById(`faq-icon-${num}`);
-        
-        if (content.style.display === 'none') {
-            content.style.display = 'block';
-            icon.textContent = '-';
-        } else {
-            content.style.display = 'none';
-            icon.textContent = '+';
-        }
-    }
-    
-    function loadMoreProducts() {
-        alert('Load more functionaliteit komt binnenkort!');
-    }
-    
-    // Comparateur de produits
-    let selectedProducts = [];
-    
-    function updateCompare() {
-        const checkboxes = document.querySelectorAll('.compare-checkbox:checked');
-        selectedProducts = Array.from(checkboxes).map(cb => parseInt(cb.dataset.productId));
-        
-        const compareBar = document.getElementById('compare-bar');
-        const compareCount = document.getElementById('compare-count');
-        
-        if (selectedProducts.length > 0) {
-            compareBar.style.display = 'block';
-            compareCount.textContent = selectedProducts.length;
-        } else {
-            compareBar.style.display = 'none';
-        }
-        
-        // Limiter à 4 produits max
-        if (selectedProducts.length >= 4) {
-            document.querySelectorAll('.compare-checkbox:not(:checked)').forEach(cb => {
-                cb.disabled = true;
-            });
-        } else {
-            document.querySelectorAll('.compare-checkbox').forEach(cb => {
-                cb.disabled = false;
-            });
-        }
-    }
-    
-    function clearComparison() {
-        document.querySelectorAll('.compare-checkbox').forEach(cb => {
-            cb.checked = false;
-            cb.disabled = false;
-        });
-        selectedProducts = [];
-        document.getElementById('compare-bar').style.display = 'none';
-    }
-    
-    function showComparison() {
-        if (selectedProducts.length < 2) {
-            alert('Selecteer minimaal 2 producten om te vergelijken');
-            return;
-        }
-        
-        const selectedProductsData = productsData.filter(p => selectedProducts.includes(p.id));
-        
-        // Créer modal de comparaison
-        const modal = document.createElement('div');
-        modal.style.cssText = 'position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.8); z-index: 2000; display: flex; align-items: center; justify-content: center; padding: 2rem;';
-        
-        const modalContent = document.createElement('div');
-        modalContent.style.cssText = 'background: white; border-radius: 12px; max-width: 90vw; max-height: 90vh; overflow: auto; position: relative;';
-        
-        modalContent.innerHTML = `
-            <div style="padding: 2rem;">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 1px solid #ddd; padding-bottom: 1rem;">
-                    <h2 style="margin: 0; font-size: 1.8rem;">Productvergelijking</h2>
-                    <button onclick="this.closest('.modal').remove()" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #666;">&times;</button>
-                </div>
-                
-                <div style="overflow-x: auto;">
-                    <table style="width: 100%; border-collapse: collapse; min-width: 600px;">
-                        <thead>
-                            <tr style="background: #f8f9fa;">
-                                <th style="padding: 1rem; text-align: left; border-bottom: 2px solid #ddd;">Eigenschap</th>
-                                ${selectedProductsData.map(p => `<th style="padding: 1rem; text-align: center; border-bottom: 2px solid #ddd; min-width: 200px;">${p.name}</th>`).join('')}
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td style="padding: 1rem; font-weight: 600; border-bottom: 1px solid #eee;">Afbeelding</td>
-                                ${selectedProductsData.map(p => `<td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;"><img src="${p.image}" alt="${p.name}" style="width: 100px; height: 100px; object-fit: cover; border-radius: 8px;" onerror="this.src='Images/placeholder-product.jpg'"></td>`).join('')}
-                            </tr>
-                            <tr>
-                                <td style="padding: 1rem; font-weight: 600; border-bottom: 1px solid #eee;">Prijs</td>
-                                ${selectedProductsData.map(p => `<td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee; font-size: 1.2rem; font-weight: bold; color: #D2691E;">€${p.price}</td>`).join('')}
-                            </tr>
-                            <tr>
-                                <td style="padding: 1rem; font-weight: 600; border-bottom: 1px solid #eee;">Beoordeling</td>
-                                ${selectedProductsData.map(p => `<td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;"><div style="color: #ffd700;">${'★'.repeat(Math.floor(p.rating))}${'☆'.repeat(5 - Math.floor(p.rating))}</div><div style="font-size: 0.9rem; color: #666;">${p.rating} (${p.reviews} reviews)</div></td>`).join('')}
-                            </tr>
-                            <tr>
-                                <td style="padding: 1rem; font-weight: 600; border-bottom: 1px solid #eee;">Capaciteit</td>
-                                ${selectedProductsData.map(p => `<td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">${p.capaciteit} kopjes</td>`).join('')}
-                            </tr>
-                            <tr>
-                                <td style="padding: 1rem; font-weight: 600; border-bottom: 1px solid #eee;">Inductie</td>
-                                ${selectedProductsData.map(p => `<td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">${p.inductie === 'Oui' ? '<span style="color: green;">✓ Ja</span>' : '<span style="color: #999;">✗ Nee</span>'}</td>`).join('')}
-                            </tr>
-                            <tr>
-                                <td style="padding: 1rem; font-weight: 600; border-bottom: 1px solid #eee;">Materiaal</td>
-                                ${selectedProductsData.map(p => `<td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">${p.materiaal}</td>`).join('')}
-                            </tr>
-                            <tr>
-                                <td style="padding: 1rem; font-weight: 600; border-bottom: 1px solid #eee;">Merk</td>
-                                ${selectedProductsData.map(p => `<td style="padding: 1rem; text-align: center; border-bottom: 1px solid #eee;">${p.merk}</td>`).join('')}
-                            </tr>
-                            <tr>
-                                <td style="padding: 1rem; font-weight: 600;">Actie</td>
-                                ${selectedProductsData.map(p => `<td style="padding: 1rem; text-align: center;"><a href="producten/${p.slug}.html" style="display: inline-block; padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">Bekijk details</a></td>`).join('')}
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        `;
-        
-        modal.className = 'modal';
-        modal.appendChild(modalContent);
-        document.body.appendChild(modal);
-        
-        // Fermer en cliquant à l'extérieur
-        modal.addEventListener('click', function(e) {
-            if (e.target === modal) {
-                modal.remove();
+    // Hover effects
+    document.addEventListener('DOMContentLoaded', function() {
+        const style = document.createElement('style');
+        style.textContent = `
+            .product-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 30px rgba(0,0,0,0.15) !important;
             }
-        });
-    }
+            .quick-filter:hover {
+                background: rgba(255,255,255,0.4) !important;
+                transform: translateY(-2px);
+            }
+            .btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            }
+        `;
+        document.head.appendChild(style);
+    });
     </script>
 </body>
 </html>
