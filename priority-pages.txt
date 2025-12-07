@@ -1,0 +1,19 @@
+Pages produits prioritaires à corriger :
+
+1. bialetti-moka-express-percolator-3-kops-aluminium.html ✅ (déjà fait)
+2. bialetti-moka-express-percolator-6-kops-aluminium-rood.html ✅ (déjà fait)
+3. bialetti-cafetiere-preziosa-350ml.html ✅ (déjà fait)
+4. bialetti-moka-express-percolator-4-kops-aluminium.html
+5. bialetti-moka-express-percolator-2-kops-aluminium.html
+6. bialetti-moka-express-percolator-1-kops-aluminium.html
+7. bialetti-inductieplaatje-voor-inductiekooplaat-o13cm.html
+8. bialetti-mini-express-percolator-2-kops-inductiegeschikt-met-2-kopjes.html
+9. bialetti-brikka-percolator-2-kops-aluminium.html
+10. bialetti-moka-alpina-limited-editions-3-kops-120ml.html
+
+Problèmes à corriger sur chaque page :
+- Navigation : italiaanse-percolator-kopen.html → boutique.html
+- Favicon manquant
+- Description courte sans lien vers homepage
+- FAQ non personnalisées
+- Footer non uniforme
