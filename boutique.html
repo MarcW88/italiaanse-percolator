@@ -104,6 +104,58 @@
         <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.1) 100%); z-index: 1;"></div>
     </section>
 
+    <!-- Categories Section -->
+    <section style="background: #f8f9fa; padding: 4rem 0;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: #333; font-family: 'DM Serif Display', serif;">Shop per Categorie</h2>
+                <p style="font-size: 1.2rem; color: #666; max-width: 600px; margin: 0 auto;">Vind precies wat je zoekt in onze zorgvuldig samengestelde categorieën</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto;">
+                <!-- Percolators -->
+                <a href="categories/percolators.html" style="text-decoration: none; color: inherit;">
+                    <div style="background: white; border-radius: 15px; padding: 2rem; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: all 0.3s ease; border: 2px solid transparent;">
+                        <div style="background: linear-gradient(135deg, #D2691E, #8B4513); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem;">☕</div>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: #333; font-weight: 600;">Percolators</h3>
+                        <p style="color: #666; margin-bottom: 1.5rem; line-height: 1.6;">Klassieke en moderne percolators voor de perfecte Italiaanse koffie</p>
+                        <span style="color: #D2691E; font-weight: 600; font-size: 1.1rem;">Bekijk alle percolators →</span>
+                    </div>
+                </a>
+                
+                <!-- Elektrische Percolators -->
+                <a href="categories/elektrische-percolators.html" style="text-decoration: none; color: inherit;">
+                    <div style="background: white; border-radius: 15px; padding: 2rem; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: all 0.3s ease; border: 2px solid transparent;">
+                        <div style="background: linear-gradient(135deg, #D2691E, #8B4513); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem;">⚡</div>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: #333; font-weight: 600;">Elektrische Percolators</h3>
+                        <p style="color: #666; margin-bottom: 1.5rem; line-height: 1.6;">Moderne elektrische modellen met timer en automatische functies</p>
+                        <span style="color: #D2691E; font-weight: 600; font-size: 1.1rem;">Bekijk elektrische modellen →</span>
+                    </div>
+                </a>
+                
+                <!-- Accessoires -->
+                <a href="categories/accessoires.html" style="text-decoration: none; color: inherit;">
+                    <div style="background: white; border-radius: 15px; padding: 2rem; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: all 0.3s ease; border: 2px solid transparent;">
+                        <div style="background: linear-gradient(135deg, #D2691E, #8B4513); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem;">🔧</div>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: #333; font-weight: 600;">Accessoires</h3>
+                        <p style="color: #666; margin-bottom: 1.5rem; line-height: 1.6;">Onderdelen, filters en accessoires voor optimaal onderhoud</p>
+                        <span style="color: #D2691E; font-weight: 600; font-size: 1.1rem;">Bekijk accessoires →</span>
+                    </div>
+                </a>
+                
+                <!-- Onderhoudssets -->
+                <a href="categories/onderhoudssets.html" style="text-decoration: none; color: inherit;">
+                    <div style="background: white; border-radius: 15px; padding: 2rem; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: all 0.3s ease; border: 2px solid transparent;">
+                        <div style="background: linear-gradient(135deg, #D2691E, #8B4513); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem;">🧽</div>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: #333; font-weight: 600;">Onderhoudssets</h3>
+                        <p style="color: #666; margin-bottom: 1.5rem; line-height: 1.6;">Complete sets voor reiniging en onderhoud van je percolator</p>
+                        <span style="color: #D2691E; font-weight: 600; font-size: 1.1rem;">Bekijk onderhoudssets →</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <main class="container" style="padding: 3rem 0;">
         
         <!-- Filtres et tri -->
@@ -476,6 +528,17 @@
         }
         applyFilters();
     }
+    
+    // Styles pour les catégories
+    const categoryStyles = document.createElement('style');
+    categoryStyles.textContent = `
+        .container a:hover div {
+            transform: translateY(-5px) !important;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15) !important;
+            border-color: #D2691E !important;
+        }
+    `;
+    document.head.appendChild(categoryStyles);
     
     function clearFilters() {
         document.getElementById('filter-type').value = '';
