@@ -12,7 +12,7 @@
     "merk": "Bialetti",
     "materiaal": "Aluminium",
     "type": "Adaptateur induction",
-    "image": "images/producten/bialetti-inductieplaatje-voor-inductiekooplaat-o13cm.jpg"
+    "image": "Images/Bialetti Inductieplaatje Voor Inductiekooplaat O13Cm .jpg"
   },
   {
     "id": 2,
@@ -27,7 +27,7 @@
     "merk": "Bialetti",
     "materiaal": "Aluminium",
     "type": "Cafetière percolateur",
-    "image": "images/producten/bialetti-moka-inductie-rood-4-kops-150ml-bialetti-koffie-proefpakket-3-x-250gr.jpg"
+    "image": "Images/Bialetti Moka Inductie Rood 4 Kops 150Ml Bialetti Koffie Proefpakket 3 X 250Gr .jpg"
   },
   {
     "id": 3,
@@ -42,7 +42,7 @@
     "merk": "Bialetti",
     "materiaal": "Aluminium",
     "type": "Cafetière percolateur",
-    "image": "images/producten/bialetti-cafetiere-preziosa-350ml.jpg"
+    "image": "Images/Bialetti Cafetiere Preziosa 350Ml .jpg"
   },
   {
     "id": 4,
@@ -57,7 +57,7 @@
     "merk": "Bialetti",
     "materiaal": "Aluminium",
     "type": "Cafetière percolateur",
-    "image": "images/producten/bialetti-moka-alpina-limited-editions-3-kops-120ml.jpg"
+    "image": "Images/Bialetti Moka Alpina Limited Editions 3 Kops 120Ml .jpg"
   },
   {
     "id": 5,
@@ -72,7 +72,7 @@
     "merk": "Bialetti",
     "materiaal": "Aluminium",
     "type": "Kit d'entretien",
-    "image": "images/producten/bialetti-percolator-onderhoudsset-12-kops.jpg"
+    "image": "Images/Bialetti Percolator Onderhoudsset 12 Kops .jpg"
   },
   {
     "id": 6,
@@ -87,7 +87,7 @@
     "merk": "Bialetti",
     "materiaal": "Aluminium",
     "type": "Cafetière percolateur",
-    "image": "images/producten/bialetti-brikka-evolution-percolator-2-kops-zwart-aluminium.jpg"
+    "image": "Images/Bialetti Brikka Evolution Percolator 2 Kops Zwart Aluminium .jpg"
   },
   {
     "id": 7,
@@ -102,7 +102,7 @@
     "merk": "Bialetti",
     "materiaal": "Aluminium",
     "type": "Cafetière percolateur",
-    "image": "images/producten/bialetti-brikka-percolator-2-kops-aluminium.jpg"
+    "image": "Images/Bialetti Brikka Percolator 2 Kops Aluminium .jpg"
   },
   {
     "id": 8,
@@ -117,7 +117,7 @@
     "merk": "Bialetti",
     "materiaal": "Aluminium",
     "type": "Cafetière percolateur",
-    "image": "images/producten/bialetti-brikka-induction-percolator-4-kops-inductiegeschikt.jpg"
+    "image": "Images/Bialetti Brikka Induction Percolator 4 Kops Inductiegeschikt .jpg"
   },
   {
     "id": 9,
@@ -132,7 +132,7 @@
     "merk": "Bialetti",
     "materiaal": "Aluminium",
     "type": "Cafetière percolateur",
-    "image": "images/producten/bialetti-brikka-espressopot-aluminium-4-kops-zilver.jpg"
+    "image": "Images/Bialetti Brikka Espressopot Aluminium 4 Kops Zilver .jpg"
   },
   {
     "id": 10,
@@ -147,7 +147,7 @@
     "merk": "Bialetti",
     "materiaal": "Aluminium",
     "type": "Cafetière électrique",
-    "image": "images/producten/bialetti-easy-timer-moka-espressomaker-percolator-6-kops-elektrisch-aluminium.jpg"
+    "image": "Images/Bialetti Easy Timer Moka Espressomaker Percolator 6 Kops Elektrisch Aluminium .jpg"
   },
   {
     "id": 11,
@@ -162,7 +162,7 @@
     "merk": "Bialetti",
     "materiaal": "Aluminium",
     "type": "Cafetière percolateur",
-    "image": "images/producten/bialetti-mini-express-percolator-2-kops-inductiegeschikt-met-2-kopjes.jpg"
+    "image": "Images/Bialetti Mini Express Percolator 2 Kops Inductiegeschikt Met 2 Kopjes .jpg"
   },
   {
     "id": 12,
@@ -177,7 +177,7 @@
     "merk": "Bialetti",
     "materiaal": "Aluminium",
     "type": "Cafetière percolateur",
-    "image": "images/producten/bialetti-mini-express-zwart-2-kops.jpg"
+    "image": "Images/Bialetti Mini Express Zwart 2 Kops .jpg"
   },
   {
     "id": 13,
@@ -357,7 +357,7 @@
     "merk": "Bialetti",
     "materiaal": "Aluminium",
     "type": "Cafetière percolateur",
-    "image": "images/producten/bialetti-moka-express-percolator-2-kops-aluminium.jpg"
+    "image": "Images/bialetti-moka-express-5.jpg"
   },
   {
     "id": 25,
@@ -372,7 +372,7 @@
     "merk": "Bialetti",
     "materiaal": "Aluminium",
     "type": "Cafetière percolateur",
-    "image": "images/producten/bialetti-moka-express-percolator-3-kops-aluminium.jpg"
+    "image": "Images/bialetti-moka-express-1.jpg"
   },
   {
     "id": 26,
@@ -387,7 +387,7 @@
     "merk": "Bialetti",
     "materiaal": "Aluminium",
     "type": "Cafetière percolateur",
-    "image": "images/producten/bialetti-moka-express-percolator-4-kops-aluminium.jpg"
+    "image": "Images/bialetti-moka-express-3.jpg"
   },
   {
     "id": 27,
@@ -402,7 +402,7 @@
     "merk": "Bialetti",
     "materiaal": "Aluminium",
     "type": "Cafetière percolateur",
-    "image": "images/producten/bialetti-moka-express-percolator-6-kops-aluminium.jpg"
+    "image": "Images/bialetti-moka-express-2.jpg"
   },
   {
     "id": 28,
@@ -492,7 +492,7 @@
     "merk": "Bialetti",
     "materiaal": "Aluminium",
     "type": "Cafetière percolateur",
-    "image": "images/producten/bialetti-moka-express-percolator-1-kops-aluminium.jpg"
+    "image": "Images/bialetti-moka-express-4.jpg"
   },
   {
     "id": 34,
@@ -822,7 +822,7 @@
     "merk": "Bialetti",
     "materiaal": "Acier inoxydable",
     "type": "Cafetière percolateur",
-    "image": "images/producten/bialetti-percolator-venus-2-kops-roestvrijstaal.jpg"
+    "image": "Images/bialetti_venus_3.jpg"
   },
   {
     "id": 56,
@@ -837,7 +837,7 @@
     "merk": "Bialetti",
     "materiaal": "Acier inoxydable",
     "type": "Cafetière percolateur",
-    "image": "images/producten/bialetti-percolator-venus-6-kops-roestvrijstaal-inductiegeschikt.jpg"
+    "image": "Images/bialetti_venus.jpg"
   },
   {
     "id": 57,
@@ -867,7 +867,7 @@
     "merk": "Bialetti",
     "materiaal": "Acier inoxydable",
     "type": "Cafetière percolateur",
-    "image": "images/producten/bialetti-venus-copper-percolator-2-kops-roestvrijstaal.jpg"
+    "image": "Images/bialetti_venus_3.jpg"
   },
   {
     "id": 59,
@@ -882,7 +882,7 @@
     "merk": "Bialetti",
     "materiaal": "Acier inoxydable",
     "type": "Cafetière percolateur",
-    "image": "images/producten/bialetti-venus-copper-percolator-4-kops-roestvrijstaal-inductiegeschikt.jpg"
+    "image": "Images/bialetti_venus_2.jpg"
   },
   {
     "id": 60,
@@ -897,7 +897,7 @@
     "merk": "Bialetti",
     "materiaal": "Acier inoxydable",
     "type": "Cafetière percolateur",
-    "image": "images/producten/bialetti-venus-copper-percolator-6-kops-roestvrijstaal-inductiegeschikt.jpg"
+    "image": "Images/bialetti_venus.jpg"
   },
   {
     "id": 61,
