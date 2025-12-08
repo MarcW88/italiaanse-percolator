@@ -13,6 +13,193 @@
     <link rel="icon" type="image/svg+xml" sizes="16x16" href="../favicon-simple.svg">
     <link rel="apple-touch-icon" sizes="180x180" href="../favicon.svg">
     <meta name="theme-color" content="#D2691E">
+
+    <style>
+    .filters-container {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+    
+    .filters-sidebar {
+        background: white;
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        height: fit-content;
+        position: sticky;
+        top: 2rem;
+    }
+    
+    .filter-section {
+        margin-bottom: 2rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .filter-section:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+    
+    .filter-title {
+        font-weight: 600;
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        color: #333;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .filter-option {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 0.75rem;
+        cursor: pointer;
+        padding: 0.5rem;
+        border-radius: 6px;
+        transition: background 0.2s;
+    }
+    
+    .filter-option:hover {
+        background: #f8f9fa;
+    }
+    
+    .filter-checkbox {
+        width: 18px;
+        height: 18px;
+        border: 2px solid #ddd;
+        border-radius: 4px;
+        position: relative;
+        transition: all 0.2s;
+    }
+    
+    .filter-checkbox.checked {
+        background: #D2691E;
+        border-color: #D2691E;
+    }
+    
+    .filter-checkbox.checked::after {
+        content: '✓';
+        position: absolute;
+        top: -2px;
+        left: 2px;
+        color: white;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    
+    .filter-label {
+        font-size: 0.95rem;
+        color: #555;
+        flex: 1;
+    }
+    
+    .filter-count {
+        font-size: 0.85rem;
+        color: #888;
+        background: #f0f0f0;
+        padding: 0.2rem 0.5rem;
+        border-radius: 10px;
+    }
+    
+    .price-slider {
+        width: 100%;
+        margin: 1rem 0;
+    }
+    
+    .price-range {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.9rem;
+        color: #666;
+        margin-top: 0.5rem;
+    }
+    
+    .clear-filters {
+        background: none;
+        border: 1px solid #ddd;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        color: #666;
+        width: 100%;
+        margin-top: 1rem;
+        transition: all 0.2s;
+    }
+    
+    .clear-filters:hover {
+        border-color: #D2691E;
+        color: #D2691E;
+    }
+    
+    .results-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        padding: 1rem;
+        background: #f8f9fa;
+        border-radius: 8px;
+    }
+    
+    .results-count {
+        font-weight: 600;
+        color: #333;
+    }
+    
+    .color-options {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        margin-top: 0.5rem;
+    }
+    
+    .color-option {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        border: 2px solid #ddd;
+        cursor: pointer;
+        transition: all 0.2s;
+        position: relative;
+    }
+    
+    .color-option.selected {
+        border-color: #D2691E;
+        transform: scale(1.1);
+    }
+    
+    .color-option.selected::after {
+        content: '✓';
+        position: absolute;
+        top: 2px;
+        left: 6px;
+        color: white;
+        font-size: 10px;
+        font-weight: bold;
+        text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+    }
+    
+    @media (max-width: 768px) {
+        .filters-container {
+            grid-template-columns: 1fr;
+        }
+        
+        .filters-sidebar {
+            position: static;
+            order: 2;
+        }
+        
+        .products-grid {
+            order: 1;
+        }
+    }
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -35,6 +222,13 @@
     </nav>
 
     <main class="container" style="padding: 2rem 0;">
+        
+        <!-- Breadcrumb -->
+        <nav style="margin-bottom: 2rem; font-size: 0.9rem; color: #666;">
+            <a href="../index.html" style="color: #666; text-decoration: none;">Home</a> > 
+            <a href="../boutique.html" style="color: #666; text-decoration: none;">Winkel</a> > 
+            <span style="color: #D2691E; font-weight: 600;">Percolators</span>
+        </nav>
         <!-- Header catégorie -->
         <header style="text-align: center; margin-bottom: 3rem;">
             <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Percolators</h1>
@@ -43,1817 +237,159 @@
             </p>
         </header>
 
-        <!-- Filtres et tri -->
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
-            <div>
-                <strong>56 producten</strong>
-            </div>
-            <div style="display: flex; gap: 1rem; align-items: center;">
-                <label>Sorteren op:</label>
-                <select onchange="sortProducts(this.value)" style="padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;">
-                    <option value="name">Naam A-Z</option>
-                    <option value="price-asc">Prijs laag-hoog</option>
-                    <option value="price-desc">Prijs hoog-laag</option>
-                    <option value="rating">Klantbeoordeling</option>
-                </select>
-            </div>
-        </div>
-
-        <!-- Grille produits -->
-        <div id="products-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-            
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-moka-inductie-rood-4-kops-150ml-bialetti-koffie-proefpakket-3-x-250gr.jpg" alt="Bialetti Moka Inductie Rood 4 Kops 150Ml Bialetti Koffie Proefpakket 3 X 250Gr" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-moka-inductie-rood-4-kops-150ml-bialetti-koffie-proefpakket-3-x-250gr.html" style="text-decoration: none; color: #333;">
-                    Bialetti Moka Inductie Rood 4 Kops 150Ml Bialetti Koffie Proefpakket 3 X 250Gr
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
+        <div class="filters-container">
+            <!-- Sidebar Filtres -->
+            <div class="filters-sidebar">
+                <h3 style="margin-bottom: 1.5rem; color: #333;">Filters</h3>
+                
+                <!-- Capacité -->
+                <div class="filter-section">
+                    <div class="filter-title">
+                        ☕ Capaciteit
+                    </div>
+                    <div class="filter-option" onclick="toggleFilter('capacity', '1-2')">
+                        <div class="filter-checkbox" id="capacity-1-2"></div>
+                        <span class="filter-label">1-2 kopjes (solo)</span>
+                        <span class="filter-count">8</span>
+                    </div>
+                    <div class="filter-option" onclick="toggleFilter('capacity', '3')">
+                        <div class="filter-checkbox" id="capacity-3"></div>
+                        <span class="filter-label">3 kopjes (1-2 pers)</span>
+                        <span class="filter-count">15</span>
+                    </div>
+                    <div class="filter-option" onclick="toggleFilter('capacity', '4')">
+                        <div class="filter-checkbox" id="capacity-4"></div>
+                        <span class="filter-label">4 kopjes (2-3 pers)</span>
+                        <span class="filter-count">12</span>
+                    </div>
+                    <div class="filter-option" onclick="toggleFilter('capacity', '6')">
+                        <div class="filter-checkbox" id="capacity-6"></div>
+                        <span class="filter-label">6 kopjes (3-4 pers)</span>
+                        <span class="filter-count">18</span>
+                    </div>
+                    <div class="filter-option" onclick="toggleFilter('capacity', '9+')">
+                        <div class="filter-checkbox" id="capacity-9+"></div>
+                        <span class="filter-label">9+ kopjes (gezinnen)</span>
+                        <span class="filter-count">3</span>
+                    </div>
                 </div>
-                <span style="font-size: 0.9rem; color: #666;">(147)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-Rood - inductiegeschikt...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €28,99
-                </span>
-                <a href="../producten/bialetti-moka-inductie-rood-4-kops-150ml-bialetti-koffie-proefpakket-3-x-250gr.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-cafetiere-preziosa-350ml.jpg" alt="Bialetti Cafetiere Preziosa 350Ml" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-cafetiere-preziosa-350ml.html" style="text-decoration: none; color: #333;">
-                    Bialetti Cafetiere Preziosa 350Ml
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
+                
+                <!-- Matériau -->
+                <div class="filter-section">
+                    <div class="filter-title">
+                        🔧 Materiaal
+                    </div>
+                    <div class="filter-option" onclick="toggleFilter('material', 'aluminium')">
+                        <div class="filter-checkbox" id="material-aluminium"></div>
+                        <span class="filter-label">Aluminium (klassiek)</span>
+                        <span class="filter-count">42</span>
+                    </div>
+                    <div class="filter-option" onclick="toggleFilter('material', 'rvs')">
+                        <div class="filter-checkbox" id="material-rvs"></div>
+                        <span class="filter-label">RVS (inductie, modern)</span>
+                        <span class="filter-count">14</span>
+                    </div>
                 </div>
-                <span style="font-size: 0.9rem; color: #666;">(51)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière percolateur...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €28,99
-                </span>
-                <a href="../producten/bialetti-cafetiere-preziosa-350ml.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-moka-alpina-limited-editions-3-kops-120ml.jpg" alt="Bialetti Moka Alpina Limited Editions 3 Kops 120Ml" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-moka-alpina-limited-editions-3-kops-120ml.html" style="text-decoration: none; color: #333;">
-                    Bialetti Moka Alpina Limited Editions 3 Kops 120Ml
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
+                
+                <!-- Compatibilité -->
+                <div class="filter-section">
+                    <div class="filter-title">
+                        ⚡ Kookplaat
+                    </div>
+                    <div class="filter-option" onclick="toggleFilter('compatibility', 'all')">
+                        <div class="filter-checkbox" id="compatibility-all"></div>
+                        <span class="filter-label">Alle kookplaten</span>
+                        <span class="filter-count">42</span>
+                    </div>
+                    <div class="filter-option" onclick="toggleFilter('compatibility', 'induction')">
+                        <div class="filter-checkbox" id="compatibility-induction"></div>
+                        <span class="filter-label">Speciaal voor inductie</span>
+                        <span class="filter-count">14</span>
+                    </div>
                 </div>
-                <span style="font-size: 0.9rem; color: #666;">(25)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                3 tasses...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €28,99
-                </span>
-                <a href="../producten/bialetti-moka-alpina-limited-editions-3-kops-120ml.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-brikka-evolution-percolator-2-kops-zwart-aluminium.jpg" alt="Bialetti Brikka Evolution Percolator 2 Kops Zwart Aluminium" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-brikka-evolution-percolator-2-kops-zwart-aluminium.html" style="text-decoration: none; color: #333;">
-                    Bialetti Brikka Evolution Percolator 2 Kops Zwart Aluminium
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
+                
+                <!-- Gamme -->
+                <div class="filter-section">
+                    <div class="filter-title">
+                        🏷️ Model type
+                    </div>
+                    <div class="filter-option" onclick="toggleFilter('model', 'moka-express')">
+                        <div class="filter-checkbox" id="model-moka-express"></div>
+                        <span class="filter-label">Moka Express (klassiek)</span>
+                        <span class="filter-count">28</span>
+                    </div>
+                    <div class="filter-option" onclick="toggleFilter('model', 'venus')">
+                        <div class="filter-checkbox" id="model-venus"></div>
+                        <span class="filter-label">Venus (RVS/inductie)</span>
+                        <span class="filter-count">12</span>
+                    </div>
+                    <div class="filter-option" onclick="toggleFilter('model', 'brikka')">
+                        <div class="filter-checkbox" id="model-brikka"></div>
+                        <span class="filter-label">Brikka (crema)</span>
+                        <span class="filter-count">6</span>
+                    </div>
+                    <div class="filter-option" onclick="toggleFilter('model', 'mini-express')">
+                        <div class="filter-checkbox" id="model-mini-express"></div>
+                        <span class="filter-label">Mini Express (compact)</span>
+                        <span class="filter-count">5</span>
+                    </div>
+                    <div class="filter-option" onclick="toggleFilter('model', 'rainbow')">
+                        <div class="filter-checkbox" id="model-rainbow"></div>
+                        <span class="filter-label">Rainbow (kleur)</span>
+                        <span class="filter-count">5</span>
+                    </div>
                 </div>
-                <span style="font-size: 0.9rem; color: #666;">(25)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Brikka - 2 tasses - Aluminium - Noir...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €25,99
-                </span>
-                <a href="../producten/bialetti-brikka-evolution-percolator-2-kops-zwart-aluminium.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-brikka-percolator-2-kops-aluminium.jpg" alt="Bialetti Brikka Percolator 2 Kops Aluminium" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-brikka-percolator-2-kops-aluminium.html" style="text-decoration: none; color: #333;">
-                    Bialetti Brikka Percolator 2 Kops Aluminium
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
+                
+                <!-- Prix -->
+                <div class="filter-section">
+                    <div class="filter-title">
+                        💰 Prijsrange
+                    </div>
+                    <input type="range" class="price-slider" min="20" max="65" value="65" id="priceRange" oninput="updatePriceFilter(this.value)">
+                    <div class="price-range">
+                        <span>€20</span>
+                        <span id="maxPrice">€65</span>
+                    </div>
                 </div>
-                <span style="font-size: 0.9rem; color: #666;">(147)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Brikka - 2 tasses - Aluminium...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €25,99
-                </span>
-                <a href="../producten/bialetti-brikka-percolator-2-kops-aluminium.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-brikka-induction-percolator-4-kops-inductiegeschikt.jpg" alt="Bialetti Brikka Induction Percolator 4 Kops Inductiegeschikt" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-brikka-induction-percolator-4-kops-inductiegeschikt.html" style="text-decoration: none; color: #333;">
-                    Bialetti Brikka Induction Percolator 4 Kops Inductiegeschikt
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
+                
+                <!-- Couleurs -->
+                <div class="filter-section">
+                    <div class="filter-title">
+                        🎨 Kleur
+                    </div>
+                    <div class="color-options">
+                        <div class="color-option" style="background: #c41e3a;" onclick="toggleColorFilter('red')" id="color-red" title="Rood"></div>
+                        <div class="color-option" style="background: #2c2c2c;" onclick="toggleColorFilter('black')" id="color-black" title="Zwart"></div>
+                        <div class="color-option" style="background: #b87333;" onclick="toggleColorFilter('copper')" id="color-copper" title="Koper"></div>
+                        <div class="color-option" style="background: #4169e1;" onclick="toggleColorFilter('blue')" id="color-blue" title="Blauw"></div>
+                        <div class="color-option" style="background: #ffd700;" onclick="toggleColorFilter('yellow')" id="color-yellow" title="Geel"></div>
+                        <div class="color-option" style="background: #228b22;" onclick="toggleColorFilter('green')" id="color-green" title="Groen"></div>
+                        <div class="color-option" style="background: #f5f5dc;" onclick="toggleColorFilter('cream')" id="color-cream" title="Crème"></div>
+                    </div>
                 </div>
-                <span style="font-size: 0.9rem; color: #666;">(25)</span>
+                
+                <button class="clear-filters" onclick="clearAllFilters()">
+                    Wis alle filters
+                </button>
             </div>
             
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Brikka - 4 tasses - compatible induction...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €31,99
-                </span>
-                <a href="../producten/bialetti-brikka-induction-percolator-4-kops-inductiegeschikt.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-brikka-espressopot-aluminium-4-kops-zilver.jpg" alt="Bialetti Brikka Espressopot Aluminium 4 Kops Zilver" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-brikka-espressopot-aluminium-4-kops-zilver.html" style="text-decoration: none; color: #333;">
-                    Bialetti Brikka Espressopot Aluminium 4 Kops Zilver
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
+            <!-- Zone produits -->
+            <div class="products-grid">
+                <div class="results-header">
+                    <div class="results-count" id="resultsCount">56 producten</div>
+                    <select id="sortSelect" onchange="sortProducts()" style="padding: 0.5rem; border: 1px solid #ddd; border-radius: 6px;">
+                        <option value="popular">Meest populair</option>
+                        <option value="price-low">Prijs: laag naar hoog</option>
+                        <option value="price-high">Prijs: hoog naar laag</option>
+                        <option value="rating">Beste beoordelingen</option>
+                        <option value="name">Naam A-Z</option>
+                    </select>
                 </div>
-                <span style="font-size: 0.9rem; color: #666;">(51)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Brikka - 4 tasses - Aluminium...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €31,99
-                </span>
-                <a href="../producten/bialetti-brikka-espressopot-aluminium-4-kops-zilver.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-mini-express-percolator-2-kops-inductiegeschikt-met-2-kopjes.jpg" alt="Bialetti Mini Express Percolator 2 Kops Inductiegeschikt Met 2 Kopjes" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-mini-express-percolator-2-kops-inductiegeschikt-met-2-kopjes.html" style="text-decoration: none; color: #333;">
-                    Bialetti Mini Express Percolator 2 Kops Inductiegeschikt Met 2 Kopjes
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
+                
+                <div id="productsContainer">
+                    <!-- Les produits seront chargés ici -->
                 </div>
-                <span style="font-size: 0.9rem; color: #666;">(34)</span>
             </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Mini Express - compatible induction...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €28,99
-                </span>
-                <a href="../producten/bialetti-mini-express-percolator-2-kops-inductiegeschikt-met-2-kopjes.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-mini-express-zwart-2-kops.jpg" alt="Bialetti Mini Express Zwart 2 Kops" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-mini-express-zwart-2-kops.html" style="text-decoration: none; color: #333;">
-                    Bialetti Mini Express Zwart 2 Kops
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(78)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Mini Express - Noir...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €28,99
-                </span>
-                <a href="../producten/bialetti-mini-express-zwart-2-kops.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-mini-express-2tz-red-2-cups.jpg" alt="Bialetti Mini Express 2Tz Red 2 Cups" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-mini-express-2tz-red-2-cups.html" style="text-decoration: none; color: #333;">
-                    Bialetti Mini Express 2Tz Red 2 Cups
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(51)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Mini Express...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €28,99
-                </span>
-                <a href="../producten/bialetti-mini-express-2tz-red-2-cups.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-mini-express-winterwonderland-set-2-espressobekers.jpg" alt="Bialetti Mini Express Winterwonderland Set 2 Espressobekers" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-mini-express-winterwonderland-set-2-espressobekers.html" style="text-decoration: none; color: #333;">
-                    Bialetti Mini Express Winterwonderland Set 2 Espressobekers
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(34)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Mini Express...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €28,99
-                </span>
-                <a href="../producten/bialetti-mini-express-winterwonderland-set-2-espressobekers.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-set-mini-express-nutcracker.jpg" alt="Bialetti Set Mini Express Nutcracker" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-set-mini-express-nutcracker.html" style="text-decoration: none; color: #333;">
-                    Bialetti Set Mini Express Nutcracker
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(51)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Mini Express...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €28,99
-                </span>
-                <a href="../producten/bialetti-set-mini-express-nutcracker.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-moka-express-3-kops-nutcracker.jpg" alt="Bialetti Moka Express 3 Kops Nutcracker" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-moka-express-3-kops-nutcracker.html" style="text-decoration: none; color: #333;">
-                    Bialetti Moka Express 3 Kops Nutcracker
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(51)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Moka Express - Nutcracker Edition...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €34,99
-                </span>
-                <a href="../producten/bialetti-moka-express-3-kops-nutcracker.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-moka-express-6.jpg" alt="Bialetti Moka Express 6" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-moka-express-6.html" style="text-decoration: none; color: #333;">
-                    Bialetti Moka Express 6
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(78)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Moka Express...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €28,99
-                </span>
-                <a href="../producten/bialetti-moka-express-6.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-moka-express-6-kops-nutcracker.jpg" alt="Bialetti Moka Express 6 Kops Nutcracker" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-moka-express-6-kops-nutcracker.html" style="text-decoration: none; color: #333;">
-                    Bialetti Moka Express 6 Kops Nutcracker
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(34)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Moka Express - Nutcracker Edition...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €34,99
-                </span>
-                <a href="../producten/bialetti-moka-express-6-kops-nutcracker.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-moka-express-percolator-2-kops-aluminium.jpg" alt="Bialetti Moka Express Percolator 2 Kops Aluminium" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-moka-express-percolator-2-kops-aluminium.html" style="text-decoration: none; color: #333;">
-                    Bialetti Moka Express Percolator 2 Kops Aluminium
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(34)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Moka Express - Aluminium...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €28,99
-                </span>
-                <a href="../producten/bialetti-moka-express-percolator-2-kops-aluminium.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-moka-express-percolator-3-kops-aluminium.jpg" alt="Bialetti Moka Express Percolator 3 Kops Aluminium" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-moka-express-percolator-3-kops-aluminium.html" style="text-decoration: none; color: #333;">
-                    Bialetti Moka Express Percolator 3 Kops Aluminium
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(147)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Moka Express - Aluminium...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €28,99
-                </span>
-                <a href="../producten/bialetti-moka-express-percolator-3-kops-aluminium.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-moka-express-percolator-4-kops-aluminium.jpg" alt="Bialetti Moka Express Percolator 4 Kops Aluminium" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-moka-express-percolator-4-kops-aluminium.html" style="text-decoration: none; color: #333;">
-                    Bialetti Moka Express Percolator 4 Kops Aluminium
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(34)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Moka Express - Aluminium...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €28,99
-                </span>
-                <a href="../producten/bialetti-moka-express-percolator-4-kops-aluminium.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-moka-express-percolator-6-kops-aluminium.jpg" alt="Bialetti Moka Express Percolator 6 Kops Aluminium" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-moka-express-percolator-6-kops-aluminium.html" style="text-decoration: none; color: #333;">
-                    Bialetti Moka Express Percolator 6 Kops Aluminium
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(78)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Moka Express - Aluminium...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €28,99
-                </span>
-                <a href="../producten/bialetti-moka-express-percolator-6-kops-aluminium.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-moka-express-percolator-6-kops-aluminium-rood.jpg" alt="Bialetti Moka Express Percolator 6 Kops Aluminium Rood" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-moka-express-percolator-6-kops-aluminium-rood.html" style="text-decoration: none; color: #333;">
-                    Bialetti Moka Express Percolator 6 Kops Aluminium Rood
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(51)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Moka Express - Aluminium - Rouge...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €28,99
-                </span>
-                <a href="../producten/bialetti-moka-express-percolator-6-kops-aluminium-rood.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-moka-express-percolator-6-kops-aluminium-zwart.jpg" alt="Bialetti Moka Express Percolator 6 Kops Aluminium Zwart" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-moka-express-percolator-6-kops-aluminium-zwart.html" style="text-decoration: none; color: #333;">
-                    Bialetti Moka Express Percolator 6 Kops Aluminium Zwart
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(51)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Moka Express - Aluminium - Noir...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €28,99
-                </span>
-                <a href="../producten/bialetti-moka-express-percolator-6-kops-aluminium-zwart.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-moka-express-percolator-9-kops-aluminium.jpg" alt="Bialetti Moka Express Percolator 9 Kops Aluminium" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-moka-express-percolator-9-kops-aluminium.html" style="text-decoration: none; color: #333;">
-                    Bialetti Moka Express Percolator 9 Kops Aluminium
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(25)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Moka Express - Aluminium...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €28,99
-                </span>
-                <a href="../producten/bialetti-moka-express-percolator-9-kops-aluminium.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-moka-exclusive-moka-express-creme.jpg" alt="Bialetti Moka Exclusive Moka Express Creme" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-moka-exclusive-moka-express-creme.html" style="text-decoration: none; color: #333;">
-                    Bialetti Moka Exclusive Moka Express Creme
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(78)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Moka Express...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €28,99
-                </span>
-                <a href="../producten/bialetti-moka-exclusive-moka-express-creme.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-moka-exclusive-moka-express-groen.jpg" alt="Bialetti Moka Exclusive Moka Express Groen" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-moka-exclusive-moka-express-groen.html" style="text-decoration: none; color: #333;">
-                    Bialetti Moka Exclusive Moka Express Groen
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(147)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Moka Express - Vert...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €28,99
-                </span>
-                <a href="../producten/bialetti-moka-exclusive-moka-express-groen.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-moka-express-percolator-1-kops-aluminium.jpg" alt="Bialetti Moka Express Percolator 1 Kops Aluminium" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-moka-express-percolator-1-kops-aluminium.html" style="text-decoration: none; color: #333;">
-                    Bialetti Moka Express Percolator 1 Kops Aluminium
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(78)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Moka Express - 1 tasses - Aluminium...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €22,99
-                </span>
-                <a href="../producten/bialetti-moka-express-percolator-1-kops-aluminium.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-moka-express-percolator-12-kops-aluminium.jpg" alt="Bialetti Moka Express Percolator 12 Kops Aluminium" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-moka-express-percolator-12-kops-aluminium.html" style="text-decoration: none; color: #333;">
-                    Bialetti Moka Express Percolator 12 Kops Aluminium
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(125)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Moka Express - 12 tasses - Aluminium...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €55,99
-                </span>
-                <a href="../producten/bialetti-moka-express-percolator-12-kops-aluminium.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-moka-express-2-kops-carosello-espresso-kop-en-schotel-4-stuks.jpg" alt="Bialetti Moka Express 2 Kops Carosello Espresso Kop En Schotel 4 Stuks" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-moka-express-2-kops-carosello-espresso-kop-en-schotel-4-stuks.html" style="text-decoration: none; color: #333;">
-                    Bialetti Moka Express 2 Kops Carosello Espresso Kop En Schotel 4 Stuks
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(12)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Moka Express - 2 tasses...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €25,99
-                </span>
-                <a href="../producten/bialetti-moka-express-2-kops-carosello-espresso-kop-en-schotel-4-stuks.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-moka-express-italia-percolator-3-kops-aluminium.jpg" alt="Bialetti Moka Express Italia Percolator 3 Kops Aluminium" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-moka-express-italia-percolator-3-kops-aluminium.html" style="text-decoration: none; color: #333;">
-                    Bialetti Moka Express Italia Percolator 3 Kops Aluminium
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(12)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Moka Express - 3 tasses - Aluminium...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €28,99
-                </span>
-                <a href="../producten/bialetti-moka-express-italia-percolator-3-kops-aluminium.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-moka-express-3-kops-carosello-espresso-kop-en-schotel-4-stuks.jpg" alt="Bialetti Moka Express 3 Kops Carosello Espresso Kop En Schotel 4 Stuks" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-moka-express-3-kops-carosello-espresso-kop-en-schotel-4-stuks.html" style="text-decoration: none; color: #333;">
-                    Bialetti Moka Express 3 Kops Carosello Espresso Kop En Schotel 4 Stuks
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(78)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Moka Express - 3 tasses...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €28,99
-                </span>
-                <a href="../producten/bialetti-moka-express-3-kops-carosello-espresso-kop-en-schotel-4-stuks.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-moka-express-percolator-3-kops-aluminium-rood.jpg" alt="Bialetti Moka Express Percolator 3 Kops Aluminium Rood" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-moka-express-percolator-3-kops-aluminium-rood.html" style="text-decoration: none; color: #333;">
-                    Bialetti Moka Express Percolator 3 Kops Aluminium Rood
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(34)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Moka Express - 3 tasses - Aluminium - Rouge...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €28,99
-                </span>
-                <a href="../producten/bialetti-moka-express-percolator-3-kops-aluminium-rood.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-moka-express-i-love-coffee-percolator-rood-3-kops-130ml.jpg" alt="Bialetti Moka Express I Love Coffee Percolator Rood 3 Kops 130Ml" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-moka-express-i-love-coffee-percolator-rood-3-kops-130ml.html" style="text-decoration: none; color: #333;">
-                    Bialetti Moka Express I Love Coffee Percolator Rood 3 Kops 130Ml
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(78)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Moka Express - 3 tasses - Rouge...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €28,99
-                </span>
-                <a href="../producten/bialetti-moka-express-i-love-coffee-percolator-rood-3-kops-130ml.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-moka-express-percolator-3-kops-aluminium-zwart.jpg" alt="Bialetti Moka Express Percolator 3 Kops Aluminium Zwart" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-moka-express-percolator-3-kops-aluminium-zwart.html" style="text-decoration: none; color: #333;">
-                    Bialetti Moka Express Percolator 3 Kops Aluminium Zwart
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(51)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Moka Express - 3 tasses - Aluminium - Noir...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €28,99
-                </span>
-                <a href="../producten/bialetti-moka-express-percolator-3-kops-aluminium-zwart.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-moka-express-4-kops-carosello-espresso-kop-en-schotel-4-stuks.jpg" alt="Bialetti Moka Express 4 Kops Carosello Espresso Kop En Schotel 4 Stuks" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-moka-express-4-kops-carosello-espresso-kop-en-schotel-4-stuks.html" style="text-decoration: none; color: #333;">
-                    Bialetti Moka Express 4 Kops Carosello Espresso Kop En Schotel 4 Stuks
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(34)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Moka Express - 4 tasses...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €31,99
-                </span>
-                <a href="../producten/bialetti-moka-express-4-kops-carosello-espresso-kop-en-schotel-4-stuks.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-moka-express-italia-percolator-6-kops-aluminium.jpg" alt="Bialetti Moka Express Italia Percolator 6 Kops Aluminium" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-moka-express-italia-percolator-6-kops-aluminium.html" style="text-decoration: none; color: #333;">
-                    Bialetti Moka Express Italia Percolator 6 Kops Aluminium
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(34)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Moka Express - 6 tasses - Aluminium...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €37,99
-                </span>
-                <a href="../producten/bialetti-moka-express-italia-percolator-6-kops-aluminium.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-moka-induction-percolator-rood-2-kops.jpg" alt="Bialetti Moka Induction Percolator Rood 2 Kops" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-moka-induction-percolator-rood-2-kops.html" style="text-decoration: none; color: #333;">
-                    Bialetti Moka Induction Percolator Rood 2 Kops
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(51)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Moka Induction - Rouge - compatible induction...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €36,95
-                </span>
-                <a href="../producten/bialetti-moka-induction-percolator-rood-2-kops.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-moka-induction-percolator-zwart-2-kops.jpg" alt="Bialetti Moka Induction Percolator Zwart 2 Kops" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-moka-induction-percolator-zwart-2-kops.html" style="text-decoration: none; color: #333;">
-                    Bialetti Moka Induction Percolator Zwart 2 Kops
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(25)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Moka Induction - Noir - compatible induction...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €36,95
-                </span>
-                <a href="../producten/bialetti-moka-induction-percolator-zwart-2-kops.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-moka-induction-percolator-zwart-4-kops.jpg" alt="Bialetti Moka Induction Percolator Zwart 4 Kops" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-moka-induction-percolator-zwart-4-kops.html" style="text-decoration: none; color: #333;">
-                    Bialetti Moka Induction Percolator Zwart 4 Kops
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(219)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Moka Induction - Noir - compatible induction...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €36,95
-                </span>
-                <a href="../producten/bialetti-moka-induction-percolator-zwart-4-kops.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-moka-induction-percolator-zwart-6-kops.jpg" alt="Bialetti Moka Induction Percolator Zwart 6 Kops" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-moka-induction-percolator-zwart-6-kops.html" style="text-decoration: none; color: #333;">
-                    Bialetti Moka Induction Percolator Zwart 6 Kops
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(125)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Moka Induction - Noir - compatible induction...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €36,95
-                </span>
-                <a href="../producten/bialetti-moka-induction-percolator-zwart-6-kops.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-moka-induction-percolator-rood-6-kops.jpg" alt="Bialetti Moka Induction Percolator Rood 6 Kops" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-moka-induction-percolator-rood-6-kops.html" style="text-decoration: none; color: #333;">
-                    Bialetti Moka Induction Percolator Rood 6 Kops
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(25)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Moka Induction - 6 tasses - Rouge - compatible induction...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €47,95
-                </span>
-                <a href="../producten/bialetti-moka-induction-percolator-rood-6-kops.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-rainbow-azzurro-percolator-200ml-3-kops.jpg" alt="Bialetti Rainbow Azzurro Percolator 200Ml 3 Kops" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-rainbow-azzurro-percolator-200ml-3-kops.html" style="text-decoration: none; color: #333;">
-                    Bialetti Rainbow Azzurro Percolator 200Ml 3 Kops
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(51)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Rainbow - Bleu azur...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €33,95
-                </span>
-                <a href="../producten/bialetti-rainbow-azzurro-percolator-200ml-3-kops.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-rainbow-azzurro-percolator-300ml-6-kops.jpg" alt="Bialetti Rainbow Azzurro Percolator 300Ml 6 Kops" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-rainbow-azzurro-percolator-300ml-6-kops.html" style="text-decoration: none; color: #333;">
-                    Bialetti Rainbow Azzurro Percolator 300Ml 6 Kops
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(147)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Rainbow - Bleu azur...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €33,95
-                </span>
-                <a href="../producten/bialetti-rainbow-azzurro-percolator-300ml-6-kops.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-rainbow-geel-percolator-200ml-3-kops.jpg" alt="Bialetti Rainbow Geel Percolator 200Ml 3 Kops" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-rainbow-geel-percolator-200ml-3-kops.html" style="text-decoration: none; color: #333;">
-                    Bialetti Rainbow Geel Percolator 200Ml 3 Kops
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(78)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Rainbow - Jaune...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €33,95
-                </span>
-                <a href="../producten/bialetti-rainbow-geel-percolator-200ml-3-kops.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-rainbow-groen-percolator-200ml-3-kops.jpg" alt="Bialetti Rainbow Groen Percolator 200Ml 3 Kops" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-rainbow-groen-percolator-200ml-3-kops.html" style="text-decoration: none; color: #333;">
-                    Bialetti Rainbow Groen Percolator 200Ml 3 Kops
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(34)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Rainbow - Vert...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €33,95
-                </span>
-                <a href="../producten/bialetti-rainbow-groen-percolator-200ml-3-kops.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-rainbow-groen-percolator-300ml-6-kops.jpg" alt="Bialetti Rainbow Groen Percolator 300Ml 6 Kops" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-rainbow-groen-percolator-300ml-6-kops.html" style="text-decoration: none; color: #333;">
-                    Bialetti Rainbow Groen Percolator 300Ml 6 Kops
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(147)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Rainbow - Vert...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €33,95
-                </span>
-                <a href="../producten/bialetti-rainbow-groen-percolator-300ml-6-kops.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-rainbow-rood-percolator-200ml-3-kops.jpg" alt="Bialetti Rainbow Rood Percolator 200Ml 3 Kops" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-rainbow-rood-percolator-200ml-3-kops.html" style="text-decoration: none; color: #333;">
-                    Bialetti Rainbow Rood Percolator 200Ml 3 Kops
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(147)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Rainbow - Rouge...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €33,95
-                </span>
-                <a href="../producten/bialetti-rainbow-rood-percolator-200ml-3-kops.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-rainbow-1tz-yellow.jpg" alt="Bialetti Rainbow 1Tz Yellow" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-rainbow-1tz-yellow.html" style="text-decoration: none; color: #333;">
-                    Bialetti Rainbow 1Tz Yellow
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(147)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Rainbow - 1 tasses - Jaune...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €26,95
-                </span>
-                <a href="../producten/bialetti-rainbow-1tz-yellow.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-percolator-venus-2-kops-roestvrijstaal.jpg" alt="Bialetti Percolator Venus 2 Kops Roestvrijstaal" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-percolator-venus-2-kops-roestvrijstaal.html" style="text-decoration: none; color: #333;">
-                    Bialetti Percolator Venus 2 Kops Roestvrijstaal
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(25)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Venus - Acier inoxydable...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €37,99
-                </span>
-                <a href="../producten/bialetti-percolator-venus-2-kops-roestvrijstaal.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-percolator-venus-6-kops-roestvrijstaal-inductiegeschikt.jpg" alt="Bialetti Percolator Venus 6 Kops Roestvrijstaal Inductiegeschikt" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-percolator-venus-6-kops-roestvrijstaal-inductiegeschikt.html" style="text-decoration: none; color: #333;">
-                    Bialetti Percolator Venus 6 Kops Roestvrijstaal Inductiegeschikt
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(12)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Venus - Acier inoxydable - compatible induction...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €37,99
-                </span>
-                <a href="../producten/bialetti-percolator-venus-6-kops-roestvrijstaal-inductiegeschikt.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-venus-blue-metallic-percolator-6-kops-roestvrijstaal-inductiegeschikt.jpg" alt="Bialetti Venus Blue Metallic Percolator 6 Kops Roestvrijstaal Inductiegeschikt" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-venus-blue-metallic-percolator-6-kops-roestvrijstaal-inductiegeschikt.html" style="text-decoration: none; color: #333;">
-                    Bialetti Venus Blue Metallic Percolator 6 Kops Roestvrijstaal Inductiegeschikt
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(219)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Venus - Acier inoxydable - Bleu métallique - compatible induction...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €45,95
-                </span>
-                <a href="../producten/bialetti-venus-blue-metallic-percolator-6-kops-roestvrijstaal-inductiegeschikt.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-venus-copper-percolator-2-kops-roestvrijstaal.jpg" alt="Bialetti Venus Copper Percolator 2 Kops Roestvrijstaal" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-venus-copper-percolator-2-kops-roestvrijstaal.html" style="text-decoration: none; color: #333;">
-                    Bialetti Venus Copper Percolator 2 Kops Roestvrijstaal
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(125)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Venus - Acier inoxydable - Cuivre...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €45,95
-                </span>
-                <a href="../producten/bialetti-venus-copper-percolator-2-kops-roestvrijstaal.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-venus-copper-percolator-4-kops-roestvrijstaal-inductiegeschikt.jpg" alt="Bialetti Venus Copper Percolator 4 Kops Roestvrijstaal Inductiegeschikt" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-venus-copper-percolator-4-kops-roestvrijstaal-inductiegeschikt.html" style="text-decoration: none; color: #333;">
-                    Bialetti Venus Copper Percolator 4 Kops Roestvrijstaal Inductiegeschikt
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(34)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Venus - Acier inoxydable - Cuivre - compatible induction...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €45,95
-                </span>
-                <a href="../producten/bialetti-venus-copper-percolator-4-kops-roestvrijstaal-inductiegeschikt.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-venus-copper-percolator-6-kops-roestvrijstaal-inductiegeschikt.jpg" alt="Bialetti Venus Copper Percolator 6 Kops Roestvrijstaal Inductiegeschikt" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-venus-copper-percolator-6-kops-roestvrijstaal-inductiegeschikt.html" style="text-decoration: none; color: #333;">
-                    Bialetti Venus Copper Percolator 6 Kops Roestvrijstaal Inductiegeschikt
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(78)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Venus - Acier inoxydable - Cuivre - compatible induction...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €45,95
-                </span>
-                <a href="../producten/bialetti-venus-copper-percolator-6-kops-roestvrijstaal-inductiegeschikt.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/biatetti-new-venus-4-tz-4-kops-percolator-rvs-inductiegeschikt-170-ml.jpg" alt="Biatetti New Venus 4 Tz 4 Kops Percolator Rvs Inductiegeschikt 170 Ml" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/biatetti-new-venus-4-tz-4-kops-percolator-rvs-inductiegeschikt-170-ml.html" style="text-decoration: none; color: #333;">
-                    Biatetti New Venus 4 Tz 4 Kops Percolator Rvs Inductiegeschikt 170 Ml
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(51)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Venus - Acier inoxydable - compatible induction...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €37,99
-                </span>
-                <a href="../producten/biatetti-new-venus-4-tz-4-kops-percolator-rvs-inductiegeschikt-170-ml.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-new-venus-6tz-percolator.jpg" alt="Bialetti New Venus 6Tz Percolator" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-new-venus-6tz-percolator.html" style="text-decoration: none; color: #333;">
-                    Bialetti New Venus 6Tz Percolator
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(51)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Venus...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €37,99
-                </span>
-                <a href="../producten/bialetti-new-venus-6tz-percolator.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-venus-percolator-rvs-10-kops-bialetti-koffie-proefpakket-3-x-250gr.jpg" alt="Bialetti Venus Percolator Rvs 10 Kops Bialetti Koffie Proefpakket 3 X 250Gr" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-venus-percolator-rvs-10-kops-bialetti-koffie-proefpakket-3-x-250gr.html" style="text-decoration: none; color: #333;">
-                    Bialetti Venus Percolator Rvs 10 Kops Bialetti Koffie Proefpakket 3 X 250Gr
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(147)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Venus - 10 tasses - Acier inoxydable...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €64,99
-                </span>
-                <a href="../producten/bialetti-venus-percolator-rvs-10-kops-bialetti-koffie-proefpakket-3-x-250gr.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-percolator-venus-10-kops-roestvrijstaal-inductiegeschikt.jpg" alt="Bialetti Percolator Venus 10 Kops Roestvrijstaal Inductiegeschikt" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-percolator-venus-10-kops-roestvrijstaal-inductiegeschikt.html" style="text-decoration: none; color: #333;">
-                    Bialetti Percolator Venus 10 Kops Roestvrijstaal Inductiegeschikt
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
-                </div>
-                <span style="font-size: 0.9rem; color: #666;">(12)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Venus - 10 tasses - Acier inoxydable - compatible induction...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €64,99
-                </span>
-                <a href="../producten/bialetti-percolator-venus-10-kops-roestvrijstaal-inductiegeschikt.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
         </div>
     </main>
 
@@ -1920,5 +456,344 @@ Rood - inductiegeschikt...
         
         products.forEach(product => grid.appendChild(product));
     }
+    </script>
+
+    <script>
+    // État des filtres
+    let activeFilters = {
+        capacity: [],
+        material: [],
+        compatibility: [],
+        model: [],
+        colors: [],
+        maxPrice: 65
+    };
+    
+    // Données produits (simulées pour l'exemple - à remplacer par vraies données)
+    let allProducts = [];
+    
+    // Charger les produits depuis all_products.json
+    async function loadProducts() {
+        try {
+            const response = await fetch('../all_products.json');
+            const products = await response.json();
+            
+            // Filtrer seulement les percolators (pas les accessoires)
+            allProducts = products.filter(product => 
+                product.type && product.type.includes('percolateur') || 
+                product.name.toLowerCase().includes('percolator') ||
+                product.name.toLowerCase().includes('moka') ||
+                product.name.toLowerCase().includes('venus') ||
+                product.name.toLowerCase().includes('brikka')
+            );
+            
+            displayProducts(allProducts);
+            updateResultsCount(allProducts.length);
+        } catch (error) {
+            console.error('Erreur chargement produits:', error);
+            // Fallback avec produits de démonstration
+            loadDemoProducts();
+        }
+    }
+    
+    function loadDemoProducts() {
+        // Produits de démonstration pour tester les filtres
+        allProducts = [
+            {
+                name: "Bialetti Moka Express 3 Kops Aluminium",
+                slug: "bialetti-moka-express-percolator-3-kops-aluminium",
+                prijs: 28.99,
+                image: "../Images/bialetti-moka-express-1.jpg",
+                rating: 4.7,
+                reviews: 147,
+                capacity: "3",
+                material: "aluminium",
+                compatibility: "all",
+                model: "moka-express",
+                color: "silver",
+                badges: ["Beste voor beginners", "Meest populair"]
+            },
+            {
+                name: "Bialetti Venus 6 Kops RVS Inductie",
+                slug: "bialetti-percolator-venus-6-kops-roestvrijstaal-inductiegeschikt",
+                prijs: 45.95,
+                image: "../Images/bialetti_venus.jpg",
+                rating: 4.5,
+                reviews: 89,
+                capacity: "6",
+                material: "rvs",
+                compatibility: "induction",
+                model: "venus",
+                color: "silver",
+                badges: ["Beste voor inductie"]
+            }
+            // Plus de produits seraient ajoutés ici...
+        ];
+        
+        displayProducts(allProducts);
+        updateResultsCount(allProducts.length);
+    }
+    
+    // Fonction pour basculer un filtre
+    function toggleFilter(category, value) {
+        const checkbox = document.getElementById(category + '-' + value);
+        
+        if (activeFilters[category].includes(value)) {
+            // Retirer le filtre
+            activeFilters[category] = activeFilters[category].filter(item => item !== value);
+            checkbox.classList.remove('checked');
+        } else {
+            // Ajouter le filtre
+            activeFilters[category].push(value);
+            checkbox.classList.add('checked');
+        }
+        
+        applyFilters();
+    }
+    
+    // Fonction pour les filtres couleur
+    function toggleColorFilter(color) {
+        const colorElement = document.getElementById('color-' + color);
+        
+        if (activeFilters.colors.includes(color)) {
+            activeFilters.colors = activeFilters.colors.filter(c => c !== color);
+            colorElement.classList.remove('selected');
+        } else {
+            activeFilters.colors.push(color);
+            colorElement.classList.add('selected');
+        }
+        
+        applyFilters();
+    }
+    
+    // Fonction pour le filtre prix
+    function updatePriceFilter(maxPrice) {
+        activeFilters.maxPrice = parseInt(maxPrice);
+        document.getElementById('maxPrice').textContent = '€' + maxPrice;
+        applyFilters();
+    }
+    
+    // Appliquer tous les filtres
+    function applyFilters() {
+        let filteredProducts = allProducts.filter(product => {
+            // Filtre capacité
+            if (activeFilters.capacity.length > 0) {
+                let matchesCapacity = false;
+                for (let cap of activeFilters.capacity) {
+                    if (cap === '1-2' && (product.capacity === '1' || product.capacity === '2')) {
+                        matchesCapacity = true;
+                    } else if (cap === '9+' && parseInt(product.capacity) >= 9) {
+                        matchesCapacity = true;
+                    } else if (product.capacity === cap) {
+                        matchesCapacity = true;
+                    }
+                }
+                if (!matchesCapacity) return false;
+            }
+            
+            // Filtre matériau
+            if (activeFilters.material.length > 0) {
+                if (!activeFilters.material.includes(product.material)) return false;
+            }
+            
+            // Filtre compatibilité
+            if (activeFilters.compatibility.length > 0) {
+                if (!activeFilters.compatibility.includes(product.compatibility)) return false;
+            }
+            
+            // Filtre modèle
+            if (activeFilters.model.length > 0) {
+                if (!activeFilters.model.includes(product.model)) return false;
+            }
+            
+            // Filtre couleur
+            if (activeFilters.colors.length > 0) {
+                if (!activeFilters.colors.includes(product.color)) return false;
+            }
+            
+            // Filtre prix
+            if (product.prijs > activeFilters.maxPrice) return false;
+            
+            return true;
+        });
+        
+        displayProducts(filteredProducts);
+        updateResultsCount(filteredProducts.length);
+    }
+    
+    // Afficher les produits
+    function displayProducts(products) {
+        const container = document.getElementById('productsContainer');
+        
+        if (products.length === 0) {
+            container.innerHTML = `
+                <div style="text-align: center; padding: 3rem; color: #666;">
+                    <h3>😔 Geen producten gevonden</h3>
+                    <p>Probeer:</p>
+                    <button onclick="clearAllFilters()" style="margin: 1rem; padding: 0.5rem 1rem; background: #D2691E; color: white; border: none; border-radius: 6px; cursor: pointer;">Wis alle filters</button>
+                    <br>
+                    <a href="../koopgids/index.html" style="color: #D2691E;">Lees onze koopgids</a>
+                </div>
+            `;
+            return;
+        }
+        
+        const productsHTML = products.map(product => `
+            <div class="product-card" style="background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: transform 0.2s; margin-bottom: 1.5rem;">
+                <div style="position: relative; margin-bottom: 1rem;">
+                    <img src="${product.image}" alt="${product.name}" 
+                         style="width: 100%; height: 200px; object-fit: contain; border-radius: 8px;"
+                         onerror="this.src='../Images/placeholder-product.jpg'">
+                    ${product.badges ? product.badges.map(badge => `
+                        <span style="position: absolute; top: 8px; left: 8px; background: #D2691E; color: white; padding: 0.3rem 0.6rem; border-radius: 12px; font-size: 0.8rem; font-weight: 600;">
+                            ${badge}
+                        </span>
+                    `).join('') : ''}
+                </div>
+                
+                <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; line-height: 1.3;">${product.name}</h3>
+                
+                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                    <span style="color: #ffd700;">⭐ ${product.rating}</span>
+                    <span style="color: #666; font-size: 0.9rem;">(${product.reviews} reviews)</span>
+                </div>
+                
+                <div style="margin-bottom: 1rem; font-size: 0.9rem; color: #666;">
+                    <div>📏 Capaciteit: ${product.capacity} kopjes</div>
+                    <div>🔧 Materiaal: ${product.material === 'rvs' ? 'RVS' : 'Aluminium'}</div>
+                    <div>⚡ Geschikt voor: ${product.compatibility === 'induction' ? 'Inductie' : 'Alle kookplaten'}</div>
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">€${product.prijs}</span>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button onclick="addToWishlist('${product.slug}')" style="background: none; border: 1px solid #ddd; padding: 0.5rem; border-radius: 6px; cursor: pointer;">❤️</button>
+                        <a href="../producten/${product.slug}.html" style="background: #D2691E; color: white; padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; font-weight: 600;">Bekijk details</a>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+        
+        container.innerHTML = `
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem;">
+                ${productsHTML}
+            </div>
+        `;
+    }
+    
+    // Mettre à jour le compteur de résultats
+    function updateResultsCount(count) {
+        document.getElementById('resultsCount').textContent = count + ' producten';
+    }
+    
+    // Effacer tous les filtres
+    function clearAllFilters() {
+        activeFilters = {
+            capacity: [],
+            material: [],
+            compatibility: [],
+            model: [],
+            colors: [],
+            maxPrice: 65
+        };
+        
+        // Réinitialiser l'interface
+        document.querySelectorAll('.filter-checkbox').forEach(cb => cb.classList.remove('checked'));
+        document.querySelectorAll('.color-option').forEach(co => co.classList.remove('selected'));
+        document.getElementById('priceRange').value = 65;
+        document.getElementById('maxPrice').textContent = '€65';
+        
+        // Réappliquer (montrer tous les produits)
+        applyFilters();
+    }
+    
+    // Trier les produits
+    function sortProducts() {
+        const sortValue = document.getElementById('sortSelect').value;
+        const container = document.getElementById('productsContainer');
+        const currentProducts = getCurrentDisplayedProducts();
+        
+        let sortedProducts = [...currentProducts];
+        
+        switch(sortValue) {
+            case 'price-low':
+                sortedProducts.sort((a, b) => a.prijs - b.prijs);
+                break;
+            case 'price-high':
+                sortedProducts.sort((a, b) => b.prijs - a.prijs);
+                break;
+            case 'rating':
+                sortedProducts.sort((a, b) => b.rating - a.rating);
+                break;
+            case 'name':
+                sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
+                break;
+            default: // popular
+                // Garder l'ordre par défaut
+                break;
+        }
+        
+        displayProducts(sortedProducts);
+    }
+    
+    function getCurrentDisplayedProducts() {
+        // Récupérer les produits actuellement affichés après filtrage
+        return allProducts.filter(product => {
+            // Même logique que applyFilters()
+            if (activeFilters.capacity.length > 0) {
+                let matchesCapacity = false;
+                for (let cap of activeFilters.capacity) {
+                    if (cap === '1-2' && (product.capacity === '1' || product.capacity === '2')) {
+                        matchesCapacity = true;
+                    } else if (cap === '9+' && parseInt(product.capacity) >= 9) {
+                        matchesCapacity = true;
+                    } else if (product.capacity === cap) {
+                        matchesCapacity = true;
+                    }
+                }
+                if (!matchesCapacity) return false;
+            }
+            
+            if (activeFilters.material.length > 0) {
+                if (!activeFilters.material.includes(product.material)) return false;
+            }
+            
+            if (activeFilters.compatibility.length > 0) {
+                if (!activeFilters.compatibility.includes(product.compatibility)) return false;
+            }
+            
+            if (activeFilters.model.length > 0) {
+                if (!activeFilters.model.includes(product.model)) return false;
+            }
+            
+            if (activeFilters.colors.length > 0) {
+                if (!activeFilters.colors.includes(product.color)) return false;
+            }
+            
+            if (product.prijs > activeFilters.maxPrice) return false;
+            
+            return true;
+        });
+    }
+    
+    // Fonction wishlist (localStorage)
+    function addToWishlist(productSlug) {
+        let wishlist = JSON.parse(localStorage.getItem('wishlist') || '[]');
+        
+        if (!wishlist.includes(productSlug)) {
+            wishlist.push(productSlug);
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+            
+            // Feedback visuel
+            alert('Toegevoegd aan verlanglijst! ❤️');
+        } else {
+            alert('Al in verlanglijst!');
+        }
+    }
+    
+    // Initialiser au chargement de la page
+    document.addEventListener('DOMContentLoaded', function() {
+        loadProducts();
+    });
     </script>
 </body>
