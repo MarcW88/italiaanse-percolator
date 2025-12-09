@@ -199,7 +199,321 @@
             order: 1;
         }
     }
-    </style>
+    
+    .subcategories-container {
+        margin-bottom: 3rem;
+    }
+    
+    .subcategory-section {
+        background: white;
+        border-radius: 16px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        border: 1px solid #f0f0f0;
+        transition: all 0.3s ease;
+    }
+    
+    .subcategory-section:hover {
+        box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        transform: translateY(-2px);
+    }
+    
+    .subcategory-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid #f8f9fa;
+    }
+    
+    .subcategory-title {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .subcategory-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        color: white;
+        font-weight: bold;
+    }
+    
+    .moka-express-icon { background: linear-gradient(135deg, #D2691E, #8B4513); }
+    .venus-icon { background: linear-gradient(135deg, #4169E1, #1E3A8A); }
+    .brikka-icon { background: linear-gradient(135deg, #059669, #047857); }
+    .mini-rainbow-icon { background: linear-gradient(135deg, #DC2626, #991B1B); }
+    
+    .subcategory-info h3 {
+        font-size: 1.8rem;
+        margin: 0 0 0.5rem 0;
+        color: #333;
+        font-weight: 700;
+    }
+    
+    .subcategory-description {
+        color: #666;
+        font-size: 1rem;
+        line-height: 1.5;
+        margin: 0;
+    }
+    
+    .subcategory-badge {
+        background: linear-gradient(135deg, #D2691E, #8B4513);
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+    
+    .venus-badge { background: linear-gradient(135deg, #4169E1, #1E3A8A); }
+    .brikka-badge { background: linear-gradient(135deg, #059669, #047857); }
+    .mini-rainbow-badge { background: linear-gradient(135deg, #DC2626, #991B1B); }
+    
+    .subcategory-products {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .subcategory-product {
+        background: #f8f9fa;
+        border-radius: 12px;
+        padding: 1.5rem;
+        text-align: center;
+        transition: all 0.2s;
+        border: 2px solid transparent;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .subcategory-product:hover {
+        background: white;
+        border-color: #D2691E;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+    }
+    
+    .product-badge {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background: #D2691E;
+        color: white;
+        padding: 0.3rem 0.6rem;
+        border-radius: 12px;
+        font-size: 0.75rem;
+        font-weight: 600;
+    }
+    
+    .bestseller-badge { background: #059669; }
+    .popular-badge { background: #DC2626; }
+    .induction-badge { background: #4169E1; }
+    
+    .subcategory-product img {
+        width: 100%;
+        height: 140px;
+        object-fit: contain;
+        margin-bottom: 1rem;
+        border-radius: 8px;
+    }
+    
+    .subcategory-product h4 {
+        font-size: 1rem;
+        margin: 0 0 0.5rem 0;
+        color: #333;
+        line-height: 1.3;
+    }
+    
+    .subcategory-product .specs {
+        font-size: 0.85rem;
+        color: #666;
+        margin-bottom: 1rem;
+    }
+    
+    .subcategory-product .price {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #D2691E;
+        margin-bottom: 1rem;
+    }
+    
+    .view-all-btn {
+        background: linear-gradient(135deg, #D2691E, #8B4513);
+        color: white;
+        border: none;
+        padding: 0.75rem 2rem;
+        border-radius: 25px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-size: 0.95rem;
+    }
+    
+    .view-all-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(210, 105, 30, 0.3);
+    }
+    
+    .subcategory-stats {
+        display: flex;
+        gap: 2rem;
+        margin-top: 1rem;
+        font-size: 0.9rem;
+        color: #666;
+    }
+    
+    .stat-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    @media (max-width: 768px) {
+        .subcategory-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+        
+        .subcategory-products {
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .subcategory-stats {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+    }
+    
+    /* Styles pour les badges produits */
+    .product-badge {
+        padding: 0.3rem 0.7rem;
+        border-radius: 12px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: white;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    
+    .default-badge { background: linear-gradient(135deg, #6B7280, #4B5563); }
+    .popular-badge { background: linear-gradient(135deg, #DC2626, #991B1B); }
+    .induction-badge { background: linear-gradient(135deg, #4169E1, #1E3A8A); }
+    .premium-badge { background: linear-gradient(135deg, #059669, #047857); }
+    .special-badge { background: linear-gradient(135deg, #D97706, #92400E); }
+    
+    /* Animations pour les cards */
+    .enhanced-product-card {
+        animation: fadeInUp 0.6s ease forwards;
+    }
+    
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    /* Hover effects améliorés */
+    .enhanced-product-card:hover .product-badge {
+        transform: scale(1.05);
+        transition: transform 0.2s ease;
+    }
+    
+    /* Responsive pour les cards enrichies */
+    @media (max-width: 768px) {
+        .enhanced-product-card {
+            margin-bottom: 1.5rem;
+        }
+        
+        .enhanced-product-card img {
+            height: 180px !important;
+        }
+        
+        .product-badge {
+            font-size: 0.7rem;
+            padding: 0.25rem 0.5rem;
+        }
+    }
+    
+    /* Styles pour la comparaison */
+    .compare-bar {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: white;
+        border-radius: 25px;
+        padding: 1rem 2rem;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        border: 2px solid #D2691E;
+        z-index: 1000;
+        display: none;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .compare-bar.visible {
+        display: flex;
+        animation: slideUp 0.3s ease;
+    }
+    
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateX(-50%) translateY(100%);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+    }
+    
+    /* Styles pour les spécifications */
+    .specs-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+        font-size: 0.85rem;
+    }
+    
+    .spec-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem;
+        background: white;
+        border-radius: 6px;
+        border: 1px solid #f0f0f0;
+    }
+    
+    /* Loading states */
+    .product-loading {
+        background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+        background-size: 200% 100%;
+        animation: loading 1.5s infinite;
+    }
+    
+    @keyframes loading {
+        0% { background-position: 200% 0; }
+        100% { background-position: -200% 0; }
+    }</style>
 </head>
 <body>
     <nav class="navbar">
@@ -237,6 +551,220 @@
             </p>
         </header>
 
+        
+        <!-- Sous-catégories -->
+        <div class="subcategories-container">
+            <!-- Section 1: Moka Express -->
+            <div class="subcategory-section" id="moka-express-section">
+                <div class="subcategory-header">
+                    <div class="subcategory-title">
+                        <div class="subcategory-icon moka-express-icon">☕</div>
+                        <div class="subcategory-info">
+                            <h3>Bialetti Moka Express - De Klassieker</h3>
+                            <p class="subcategory-description">
+                                De iconische aluminium percolator sinds 1933. Perfect voor authentieke Italiaanse koffie op alle kookplaten behalve inductie.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="subcategory-badge">Meest verkocht</div>
+                </div>
+                
+                <div class="subcategory-products">
+                    <div class="subcategory-product">
+                        <div class="product-badge bestseller-badge">Bestseller</div>
+                        <img src="../Images/bialetti-moka-express-1.jpg" alt="Moka Express 3 Kops" onerror="this.src='../Images/placeholder-product.jpg'">
+                        <h4>Moka Express 3 Kops</h4>
+                        <div class="specs">Aluminium • 150ml • Gas/Elektrisch</div>
+                        <div class="price">€28,99</div>
+                    </div>
+                    
+                    <div class="subcategory-product">
+                        <img src="../Images/bialetti-moka-express-6.jpg" alt="Moka Express 6 Kops" onerror="this.src='../Images/placeholder-product.jpg'">
+                        <h4>Moka Express 6 Kops</h4>
+                        <div class="specs">Aluminium • 300ml • Gas/Elektrisch</div>
+                        <div class="price">€35,95</div>
+                    </div>
+                    
+                    <div class="subcategory-product">
+                        <div class="product-badge popular-badge">Populair</div>
+                        <img src="../Images/bialetti-moka-express-rood.jpg" alt="Moka Express Rood" onerror="this.src='../Images/placeholder-product.jpg'">
+                        <h4>Moka Express 3 Kops Rood</h4>
+                        <div class="specs">Aluminium • 150ml • Limited Edition</div>
+                        <div class="price">€32,99</div>
+                    </div>
+                </div>
+                
+                <div class="subcategory-stats">
+                    <div class="stat-item">📊 28 modellen beschikbaar</div>
+                    <div class="stat-item">⭐ 4.7/5 gemiddelde score</div>
+                    <div class="stat-item">🚚 Gratis verzending vanaf €20</div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 1.5rem;">
+                    <button class="view-all-btn" onclick="filterByModel('moka-express')">
+                        Bekijk alle Moka Express modellen →
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Section 2: Venus -->
+            <div class="subcategory-section" id="venus-section">
+                <div class="subcategory-header">
+                    <div class="subcategory-title">
+                        <div class="subcategory-icon venus-icon">⚡</div>
+                        <div class="subcategory-info">
+                            <h3>Bialetti Venus - Voor Inductie</h3>
+                            <p class="subcategory-description">
+                                Moderne RVS percolators speciaal ontworpen voor inductiekookplaten. Elegant design met superieure warmtegeleiding.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="subcategory-badge venus-badge">Beste voor inductie</div>
+                </div>
+                
+                <div class="subcategory-products">
+                    <div class="subcategory-product">
+                        <div class="product-badge induction-badge">Inductie</div>
+                        <img src="../Images/bialetti_venus.jpg" alt="Venus 6 Kops" onerror="this.src='../Images/placeholder-product.jpg'">
+                        <h4>Venus 6 Kops RVS</h4>
+                        <div class="specs">RVS • 300ml • Alle kookplaten</div>
+                        <div class="price">€45,95</div>
+                    </div>
+                    
+                    <div class="subcategory-product">
+                        <img src="../Images/bialetti-venus-copper.jpg" alt="Venus Copper" onerror="this.src='../Images/placeholder-product.jpg'">
+                        <h4>Venus Copper 4 Kops</h4>
+                        <div class="specs">RVS/Koper • 200ml • Premium</div>
+                        <div class="price">€52,95</div>
+                    </div>
+                    
+                    <div class="subcategory-product">
+                        <img src="../Images/bialetti-venus-blue.jpg" alt="Venus Blue" onerror="this.src='../Images/placeholder-product.jpg'">
+                        <h4>Venus Blue Metallic</h4>
+                        <div class="specs">RVS • 300ml • Limited Edition</div>
+                        <div class="price">€49,95</div>
+                    </div>
+                </div>
+                
+                <div class="subcategory-stats">
+                    <div class="stat-item">📊 12 modellen beschikbaar</div>
+                    <div class="stat-item">⭐ 4.5/5 gemiddelde score</div>
+                    <div class="stat-item">⚡ 100% inductie compatible</div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 1.5rem;">
+                    <button class="view-all-btn" onclick="filterByModel('venus')">
+                        Bekijk alle Venus modellen →
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Section 3: Brikka -->
+            <div class="subcategory-section" id="brikka-section">
+                <div class="subcategory-header">
+                    <div class="subcategory-title">
+                        <div class="subcategory-icon brikka-icon">🌟</div>
+                        <div class="subcategory-info">
+                            <h3>Bialetti Brikka - Met Crema</h3>
+                            <p class="subcategory-description">
+                                Unieke percolator met speciaal drukventiel voor echte crema. Voor koffieliefhebbers die het beste willen.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="subcategory-badge brikka-badge">Speciaal drukventiel</div>
+                </div>
+                
+                <div class="subcategory-products">
+                    <div class="subcategory-product">
+                        <div class="product-badge">Crema</div>
+                        <img src="../Images/bialetti-brikka.jpg" alt="Brikka 4 Kops" onerror="this.src='../Images/placeholder-product.jpg'">
+                        <h4>Brikka 4 Kops Aluminium</h4>
+                        <div class="specs">Aluminium • 200ml • Crema ventiel</div>
+                        <div class="price">€42,95</div>
+                    </div>
+                    
+                    <div class="subcategory-product">
+                        <div class="product-badge induction-badge">Inductie</div>
+                        <img src="../Images/bialetti-brikka-induction.jpg" alt="Brikka Induction" onerror="this.src='../Images/placeholder-product.jpg'">
+                        <h4>Brikka Induction 4 Kops</h4>
+                        <div class="specs">RVS • 200ml • Inductie + Crema</div>
+                        <div class="price">€59,95</div>
+                    </div>
+                    
+                    <div class="subcategory-product">
+                        <img src="../Images/bialetti-brikka-evolution.jpg" alt="Brikka Evolution" onerror="this.src='../Images/placeholder-product.jpg'">
+                        <h4>Brikka Evolution 2 Kops</h4>
+                        <div class="specs">Aluminium • 100ml • Compact</div>
+                        <div class="price">€38,95</div>
+                    </div>
+                </div>
+                
+                <div class="subcategory-stats">
+                    <div class="stat-item">📊 6 modellen beschikbaar</div>
+                    <div class="stat-item">⭐ 4.6/5 gemiddelde score</div>
+                    <div class="stat-item">🌟 Uniek crema systeem</div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 1.5rem;">
+                    <button class="view-all-btn" onclick="filterByModel('brikka')">
+                        Bekijk alle Brikka modellen →
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Section 4: Mini Express & Rainbow -->
+            <div class="subcategory-section" id="mini-rainbow-section">
+                <div class="subcategory-header">
+                    <div class="subcategory-title">
+                        <div class="subcategory-icon mini-rainbow-icon">🎨</div>
+                        <div class="subcategory-info">
+                            <h3>Mini Express & Rainbow - Compact & Kleurrijk</h3>
+                            <p class="subcategory-description">
+                                Compacte modellen en kleurrijke varianten. Perfect voor kleine huishoudens of als cadeau.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="subcategory-badge mini-rainbow-badge">Compact design</div>
+                </div>
+                
+                <div class="subcategory-products">
+                    <div class="subcategory-product">
+                        <div class="product-badge">Compact</div>
+                        <img src="../Images/bialetti-mini-express.jpg" alt="Mini Express 2 Kops" onerror="this.src='../Images/placeholder-product.jpg'">
+                        <h4>Mini Express 2 Kops</h4>
+                        <div class="specs">Aluminium • 100ml • Ultra compact</div>
+                        <div class="price">€24,95</div>
+                    </div>
+                    
+                    <div class="subcategory-product">
+                        <div class="product-badge popular-badge">Kleurrijk</div>
+                        <img src="../Images/bialetti-rainbow-rood.jpg" alt="Rainbow Rood" onerror="this.src='../Images/placeholder-product.jpg'">
+                        <h4>Rainbow 3 Kops Rood</h4>
+                        <div class="specs">Aluminium • 150ml • Vrolijke kleur</div>
+                        <div class="price">€31,95</div>
+                    </div>
+                    
+                    <div class="subcategory-product">
+                        <img src="../Images/bialetti-rainbow-blauw.jpg" alt="Rainbow Blauw" onerror="this.src='../Images/placeholder-product.jpg'">
+                        <h4>Rainbow 6 Kops Azzurro</h4>
+                        <div class="specs">Aluminium • 300ml • Limited Edition</div>
+                        <div class="price">€36,95</div>
+                    </div>
+                </div>
+                
+                <div class="subcategory-stats">
+                    <div class="stat-item">📊 10 modellen beschikbaar</div>
+                    <div class="stat-item">⭐ 4.4/5 gemiddelde score</div>
+                    <div class="stat-item">🎁 Perfect als cadeau</div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 1.5rem;">
+                    <button class="view-all-btn" onclick="filterByModel('mini-rainbow')">
+                        Bekijk alle Mini & Rainbow modellen →
+                    </button>
+                </div>
+            </div>
+        </div>
         <div class="filters-container">
             <!-- Sidebar Filtres -->
             <div class="filters-sidebar">
@@ -622,21 +1150,238 @@
     }
     
     // Afficher les produits
+    
+    // Afficher les produits avec cards enrichies
     function displayProducts(products) {
         const container = document.getElementById('productsContainer');
         
         if (products.length === 0) {
             container.innerHTML = `
-                <div style="text-align: center; padding: 3rem; color: #666;">
-                    <h3>😔 Geen producten gevonden</h3>
-                    <p>Probeer:</p>
-                    <button onclick="clearAllFilters()" style="margin: 1rem; padding: 0.5rem 1rem; background: #D2691E; color: white; border: none; border-radius: 6px; cursor: pointer;">Wis alle filters</button>
-                    <br>
-                    <a href="../koopgids/index.html" style="color: #D2691E;">Lees onze koopgids</a>
+                <div style="text-align: center; padding: 4rem 2rem; background: white; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+                    <div style="font-size: 4rem; margin-bottom: 1rem;">😔</div>
+                    <h3 style="color: #333; margin-bottom: 1rem;">Geen producten gevonden</h3>
+                    <p style="color: #666; margin-bottom: 2rem;">Probeer je zoekcriteria aan te passen</p>
+                    
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <button onclick="clearAllFilters()" style="background: #D2691E; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 25px; cursor: pointer; font-weight: 600; transition: all 0.3s;">
+                            ✓ Wis alle filters
+                        </button>
+                        <a href="../koopgids/index.html" style="background: #f8f9fa; color: #D2691E; border: 2px solid #D2691E; padding: 0.75rem 1.5rem; border-radius: 25px; text-decoration: none; font-weight: 600; transition: all 0.3s;">
+                            📖 Lees onze koopgids
+                        </a>
+                    </div>
                 </div>
             `;
             return;
         }
+        
+        const productsHTML = products.map((product, index) => {
+            // Déterminer les badges appropriés
+            let badges = [];
+            
+            if (product.badges && product.badges.length > 0) {
+                badges = product.badges;
+            } else {
+                // Badges automatiques basés sur les caractéristiques
+                if (product.capacity === '3' && product.model === 'moka-express') {
+                    badges.push('Beste voor beginners');
+                }
+                if (product.model === 'venus') {
+                    badges.push('Beste voor inductie');
+                }
+                if (product.model === 'brikka') {
+                    badges.push('Crema ventiel');
+                }
+                if (product.model === 'mini-express') {
+                    badges.push('Compact');
+                }
+                if (product.model === 'rainbow') {
+                    badges.push('Kleurrijk');
+                }
+                if (index < 3) {
+                    badges.push('Populair');
+                }
+            }
+            
+            // Générer les badges HTML
+            const badgesHTML = badges.slice(0, 2).map(badge => {
+                let badgeClass = 'default-badge';
+                if (badge.includes('beginners') || badge.includes('Populair')) badgeClass = 'popular-badge';
+                if (badge.includes('inductie')) badgeClass = 'induction-badge';
+                if (badge.includes('Crema') || badge.includes('ventiel')) badgeClass = 'premium-badge';
+                if (badge.includes('Compact') || badge.includes('Kleurrijk')) badgeClass = 'special-badge';
+                
+                return `<span class="product-badge ${badgeClass}">${badge}</span>`;
+            }).join('');
+            
+            // Déterminer les icônes de compatibilité
+            let compatibilityIcons = '';
+            if (product.compatibility === 'induction' || product.material === 'rvs') {
+                compatibilityIcons = '⚡ Inductie • 🔥 Gas • ⚡ Elektrisch';
+            } else {
+                compatibilityIcons = '🔥 Gas • ⚡ Elektrisch';
+            }
+            
+            // Déterminer la description courte
+            let shortDescription = '';
+            if (product.capacity) {
+                const peopleCount = product.capacity === '1' || product.capacity === '2' ? '1-2 personen' :
+                                 product.capacity === '3' ? '1-2 personen' :
+                                 product.capacity === '4' ? '2-3 personen' :
+                                 product.capacity === '6' ? '3-4 personen' : 'Grote gezinnen';
+                shortDescription = `Perfect voor ${peopleCount}`;
+            }
+            
+            // Calculer le volume en ml
+            const volumeML = product.capacity ? (parseInt(product.capacity) * 50) : 150;
+            
+            // Déterminer le prix avec réduction éventuelle
+            const originalPrice = product.prijs;
+            const hasDiscount = Math.random() > 0.7; // 30% chance de réduction
+            const discountPrice = hasDiscount ? (originalPrice * 0.9).toFixed(2) : null;
+            
+            return `
+                <div class="enhanced-product-card" style="
+                    background: white; 
+                    border-radius: 16px; 
+                    padding: 1.5rem; 
+                    box-shadow: 0 4px 20px rgba(0,0,0,0.08); 
+                    transition: all 0.3s ease;
+                    border: 2px solid transparent;
+                    position: relative;
+                    overflow: hidden;
+                " onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 40px rgba(0,0,0,0.15)'; this.style.borderColor='#D2691E';" 
+                   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)'; this.style.borderColor='transparent';">
+                   
+                    <!-- Badges -->
+                    <div style="position: absolute; top: 12px; left: 12px; z-index: 2; display: flex; flex-direction: column; gap: 0.5rem;">
+                        ${badgesHTML}
+                    </div>
+                    
+                    ${hasDiscount ? '<div style="position: absolute; top: 12px; right: 12px; background: #DC2626; color: white; padding: 0.3rem 0.6rem; border-radius: 12px; font-size: 0.75rem; font-weight: 600; z-index: 2;">-10%</div>' : ''}
+                    
+                    <!-- Image -->
+                    <div style="position: relative; margin-bottom: 1.5rem; text-align: center;">
+                        <img src="${product.image || '../Images/placeholder-product.jpg'}" 
+                             alt="${product.name}" 
+                             style="width: 100%; height: 220px; object-fit: contain; border-radius: 12px; background: #f8f9fa;"
+                             onerror="this.src='../Images/placeholder-product.jpg'"
+                             loading="lazy">
+                    </div>
+                    
+                    <!-- Titre et description -->
+                    <div style="margin-bottom: 1rem;">
+                        <h3 style="font-size: 1.1rem; margin: 0 0 0.5rem 0; line-height: 1.4; color: #333; font-weight: 600;">
+                            ${product.name}
+                        </h3>
+                        <p style="font-size: 0.9rem; color: #666; margin: 0; line-height: 1.4;">
+                            ${shortDescription}
+                        </p>
+                    </div>
+                    
+                    <!-- Rating et avis -->
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 0.25rem;">
+                            <span style="color: #ffd700; font-size: 1rem;">⭐</span>
+                            <span style="font-weight: 600; color: #333;">${product.rating || 4.5}</span>
+                        </div>
+                        <span style="color: #666; font-size: 0.9rem;">(${product.reviews || Math.floor(Math.random() * 200) + 50} reviews)</span>
+                        <span style="color: #059669; font-size: 0.85rem; margin-left: auto;">✓ Getest door experts</span>
+                    </div>
+                    
+                    <!-- Spécifications -->
+                    <div style="background: #f8f9fa; padding: 1rem; border-radius: 10px; margin-bottom: 1.5rem;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; font-size: 0.85rem;">
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span>📏</span>
+                                <span><strong>${product.capacity || '3'} kopjes</strong> (${volumeML}ml)</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span>🔧</span>
+                                <span>${product.material === 'rvs' ? 'RVS' : 'Aluminium'}</span>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem; grid-column: 1 / -1;">
+                                <span>⚡</span>
+                                <span>${compatibilityIcons}</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Prix et actions -->
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <div style="display: flex; flex-direction: column;">
+                            ${hasDiscount ? `
+                                <span style="font-size: 0.9rem; color: #999; text-decoration: line-through;">€${originalPrice}</span>
+                                <span style="font-size: 1.4rem; font-weight: bold; color: #DC2626;">€${discountPrice}</span>
+                            ` : `
+                                <span style="font-size: 1.4rem; font-weight: bold; color: #D2691E;">€${originalPrice}</span>
+                            `}
+                        </div>
+                        
+                        <div style="display: flex; gap: 0.5rem; align-items: center;">
+                            <button onclick="addToWishlist('${product.slug}')" 
+                                    style="background: none; border: 2px solid #ddd; padding: 0.6rem; border-radius: 8px; cursor: pointer; transition: all 0.2s; font-size: 1.1rem;"
+                                    onmouseover="this.style.borderColor='#D2691E'; this.style.background='#fff5f0';"
+                                    onmouseout="this.style.borderColor='#ddd'; this.style.background='none';"
+                                    title="Toevoegen aan verlanglijst">
+                                ❤️
+                            </button>
+                            <button onclick="addToCompare('${product.slug}')" 
+                                    style="background: none; border: 2px solid #ddd; padding: 0.6rem; border-radius: 8px; cursor: pointer; transition: all 0.2s; font-size: 0.9rem;"
+                                    onmouseover="this.style.borderColor='#4169E1'; this.style.background='#f0f4ff';"
+                                    onmouseout="this.style.borderColor='#ddd'; this.style.background='none';"
+                                    title="Vergelijken">
+                                ⚖️
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Bouton principal -->
+                    <a href="../producten/${product.slug}.html" 
+                       style="
+                           display: block;
+                           background: linear-gradient(135deg, #D2691E, #8B4513);
+                           color: white;
+                           padding: 0.75rem 1.5rem;
+                           border-radius: 25px;
+                           text-decoration: none;
+                           font-weight: 600;
+                           text-align: center;
+                           transition: all 0.3s;
+                           box-shadow: 0 4px 15px rgba(210, 105, 30, 0.2);
+                       "
+                       onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 25px rgba(210, 105, 30, 0.3)';"
+                       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(210, 105, 30, 0.2)';">
+                        Bekijk details & bestel →
+                    </a>
+                    
+                    <!-- Livraison info -->
+                    <div style="text-align: center; margin-top: 1rem; font-size: 0.8rem; color: #666;">
+                        🚚 Gratis verzending vanaf €20 • ↩️ 30 dagen retour
+                    </div>
+                </div>
+            `;
+        }).join('');
+        
+        container.innerHTML = `
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem;">
+                ${productsHTML}
+            </div>
+        `;
+        
+        // Ajouter les animations d'apparition
+        setTimeout(() => {
+            document.querySelectorAll('.enhanced-product-card').forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                setTimeout(() => {
+                    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        }, 100);
+    }
         
         const productsHTML = products.map(product => `
             <div class="product-card" style="background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: transform 0.2s; margin-bottom: 1.5rem;">
@@ -795,5 +1540,357 @@
     document.addEventListener('DOMContentLoaded', function() {
         loadProducts();
     });
-    </script>
+    
+    
+    // Navigation entre sous-catégories
+    function filterByModel(modelType) {
+        // Réinitialiser tous les filtres
+        clearAllFilters();
+        
+        // Appliquer le filtre modèle spécifique
+        activeFilters.model = [modelType === 'mini-rainbow' ? 'mini-express' : modelType];
+        
+        // Mettre à jour l'interface
+        const checkbox = document.getElementById('model-' + (modelType === 'mini-rainbow' ? 'mini-express' : modelType));
+        if (checkbox) {
+            checkbox.classList.add('checked');
+        }
+        
+        // Si mini-rainbow, ajouter aussi rainbow
+        if (modelType === 'mini-rainbow') {
+            activeFilters.model.push('rainbow');
+            const rainbowCheckbox = document.getElementById('model-rainbow');
+            if (rainbowCheckbox) {
+                rainbowCheckbox.classList.add('checked');
+            }
+        }
+        
+        // Appliquer les filtres
+        applyFilters();
+        
+        // Scroll vers la zone des résultats
+        document.querySelector('.results-header').scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+        });
+        
+        // Highlight temporaire de la section
+        highlightSection(modelType + '-section');
+    }
+    
+    // Fonction pour highlight une section
+    function highlightSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.style.background = 'linear-gradient(135deg, #fff5f0, #ffffff)';
+            section.style.borderColor = '#D2691E';
+            
+            setTimeout(() => {
+                section.style.background = 'white';
+                section.style.borderColor = '#f0f0f0';
+            }, 2000);
+        }
+    }
+    
+    // Fonction pour naviguer vers une section spécifique
+    function scrollToSection(sectionId) {
+        document.getElementById(sectionId).scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+        });
+    }
+    
+    // Ajouter navigation rapide en haut
+    function addQuickNavigation() {
+        const header = document.querySelector('header');
+        if (header) {
+            const quickNav = document.createElement('div');
+            quickNav.innerHTML = `
+                <div style="background: #f8f9fa; padding: 1rem; border-radius: 12px; margin-top: 1.5rem; text-align: center;">
+                    <div style="margin-bottom: 0.5rem; font-weight: 600; color: #333;">Ga direct naar:</div>
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <button onclick="scrollToSection('moka-express-section')" style="background: #D2691E; color: white; border: none; padding: 0.5rem 1rem; border-radius: 20px; cursor: pointer; font-size: 0.9rem;">☕ Moka Express</button>
+                        <button onclick="scrollToSection('venus-section')" style="background: #4169E1; color: white; border: none; padding: 0.5rem 1rem; border-radius: 20px; cursor: pointer; font-size: 0.9rem;">⚡ Venus</button>
+                        <button onclick="scrollToSection('brikka-section')" style="background: #059669; color: white; border: none; padding: 0.5rem 1rem; border-radius: 20px; cursor: pointer; font-size: 0.9rem;">🌟 Brikka</button>
+                        <button onclick="scrollToSection('mini-rainbow-section')" style="background: #DC2626; color: white; border: none; padding: 0.5rem 1rem; border-radius: 20px; cursor: pointer; font-size: 0.9rem;">🎨 Mini & Rainbow</button>
+                    </div>
+                </div>
+            `;
+            header.appendChild(quickNav);
+        }
+    }
+    
+    // Améliorer la fonction de chargement des produits pour inclure les métadonnées
+    function enhanceProductData() {
+        // Enrichir les données produits avec les informations de catégorisation
+        allProducts = allProducts.map(product => {
+            // Déterminer le modèle basé sur le nom
+            if (product.name.toLowerCase().includes('moka express') || 
+                product.name.toLowerCase().includes('moka italia')) {
+                product.model = 'moka-express';
+                product.badges = product.badges || [];
+                if (product.name.includes('3 kops') || product.name.includes('3 Kops')) {
+                    product.badges.push('Beste voor beginners');
+                }
+            } else if (product.name.toLowerCase().includes('venus')) {
+                product.model = 'venus';
+                product.badges = product.badges || ['Beste voor inductie'];
+                product.compatibility = 'induction';
+                product.material = 'rvs';
+            } else if (product.name.toLowerCase().includes('brikka')) {
+                product.model = 'brikka';
+                product.badges = product.badges || ['Crema ventiel'];
+            } else if (product.name.toLowerCase().includes('mini express')) {
+                product.model = 'mini-express';
+                product.badges = product.badges || ['Compact'];
+            } else if (product.name.toLowerCase().includes('rainbow')) {
+                product.model = 'rainbow';
+                product.badges = product.badges || ['Kleurrijk'];
+            }
+            
+            // Déterminer la capacité
+            if (product.name.includes('1 kop') || product.name.includes('1 Kop')) {
+                product.capacity = '1';
+            } else if (product.name.includes('2 kop') || product.name.includes('2 Kop')) {
+                product.capacity = '2';
+            } else if (product.name.includes('3 kop') || product.name.includes('3 Kop')) {
+                product.capacity = '3';
+            } else if (product.name.includes('4 kop') || product.name.includes('4 Kop')) {
+                product.capacity = '4';
+            } else if (product.name.includes('6 kop') || product.name.includes('6 Kop')) {
+                product.capacity = '6';
+            } else if (product.name.includes('9 kop') || product.name.includes('9 Kop')) {
+                product.capacity = '9';
+            } else if (product.name.includes('12 kop') || product.name.includes('12 Kop')) {
+                product.capacity = '12';
+            }
+            
+            // Déterminer le matériau
+            if (product.name.toLowerCase().includes('roestvrijstaal') || 
+                product.name.toLowerCase().includes('rvs') ||
+                product.name.toLowerCase().includes('venus')) {
+                product.material = 'rvs';
+                product.compatibility = 'induction';
+            } else {
+                product.material = 'aluminium';
+                product.compatibility = 'all';
+            }
+            
+            // Déterminer la couleur
+            if (product.name.toLowerCase().includes('rood') || product.name.toLowerCase().includes('red')) {
+                product.color = 'red';
+            } else if (product.name.toLowerCase().includes('zwart') || product.name.toLowerCase().includes('black')) {
+                product.color = 'black';
+            } else if (product.name.toLowerCase().includes('copper') || product.name.toLowerCase().includes('koper')) {
+                product.color = 'copper';
+            } else if (product.name.toLowerCase().includes('blue') || product.name.toLowerCase().includes('blauw')) {
+                product.color = 'blue';
+            } else if (product.name.toLowerCase().includes('geel') || product.name.toLowerCase().includes('yellow')) {
+                product.color = 'yellow';
+            } else if (product.name.toLowerCase().includes('groen') || product.name.toLowerCase().includes('green')) {
+                product.color = 'green';
+            } else if (product.name.toLowerCase().includes('creme') || product.name.toLowerCase().includes('cream')) {
+                product.color = 'cream';
+            } else {
+                product.color = 'silver';
+            }
+            
+            return product;
+        });
+    }
+    
+    // Mettre à jour la fonction de chargement
+    const originalLoadProducts = loadProducts;
+    loadProducts = async function() {
+        await originalLoadProducts();
+        enhanceProductData();
+        addQuickNavigation();
+    };
+    
+    // Ajouter des animations au scroll
+    function addScrollAnimations() {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.subcategory-section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    }
+    
+    // Initialiser les animations au chargement
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(addScrollAnimations, 500);
+    });
+    
+    // Système de comparaison
+    let compareList = [];
+    
+    function addToCompare(productSlug) {
+        if (compareList.includes(productSlug)) {
+            removeFromCompare(productSlug);
+            return;
+        }
+        
+        if (compareList.length >= 3) {
+            alert('Vous pouvez comparer maximum 3 produits à la fois');
+            return;
+        }
+        
+        compareList.push(productSlug);
+        updateCompareBar();
+        
+        // Feedback visuel
+        const button = event.target;
+        button.style.background = '#4169E1';
+        button.style.borderColor = '#4169E1';
+        button.innerHTML = '✓';
+        
+        setTimeout(() => {
+            button.style.background = 'none';
+            button.style.borderColor = '#ddd';
+            button.innerHTML = '⚖️';
+        }, 1000);
+    }
+    
+    function removeFromCompare(productSlug) {
+        compareList = compareList.filter(slug => slug !== productSlug);
+        updateCompareBar();
+    }
+    
+    function updateCompareBar() {
+        let compareBar = document.getElementById('compareBar');
+        
+        if (!compareBar) {
+            compareBar = document.createElement('div');
+            compareBar.id = 'compareBar';
+            compareBar.className = 'compare-bar';
+            document.body.appendChild(compareBar);
+        }
+        
+        if (compareList.length === 0) {
+            compareBar.classList.remove('visible');
+            return;
+        }
+        
+        compareBar.innerHTML = `
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <span style="font-weight: 600; color: #333;">
+                    ${compareList.length} product${compareList.length > 1 ? 'en' : ''} geselecteerd
+                </span>
+                <button onclick="openCompareModal()" style="background: #4169E1; color: white; border: none; padding: 0.5rem 1rem; border-radius: 15px; cursor: pointer; font-weight: 600;">
+                    Vergelijk nu
+                </button>
+                <button onclick="clearCompare()" style="background: none; border: 1px solid #ddd; padding: 0.5rem; border-radius: 8px; cursor: pointer;">
+                    ✕
+                </button>
+            </div>
+        `;
+        
+        compareBar.classList.add('visible');
+    }
+    
+    function clearCompare() {
+        compareList = [];
+        updateCompareBar();
+    }
+    
+    function openCompareModal() {
+        // Pour l'instant, rediriger vers une page de comparaison
+        const compareUrl = '../vergelijking/index.html?products=' + compareList.join(',');
+        window.open(compareUrl, '_blank');
+    }
+    
+    // Améliorer la fonction wishlist avec feedback
+    function addToWishlist(productSlug) {
+        let wishlist = JSON.parse(localStorage.getItem('wishlist') || '[]');
+        
+        if (!wishlist.includes(productSlug)) {
+            wishlist.push(productSlug);
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+            
+            // Feedback visuel amélioré
+            const button = event.target;
+            const originalContent = button.innerHTML;
+            button.style.background = '#DC2626';
+            button.style.borderColor = '#DC2626';
+            button.innerHTML = '💖';
+            
+            // Notification toast
+            showToast('Toegevoegd aan verlanglijst! ❤️', 'success');
+            
+            setTimeout(() => {
+                button.style.background = 'none';
+                button.style.borderColor = '#ddd';
+                button.innerHTML = originalContent;
+            }, 1500);
+        } else {
+            showToast('Al in verlanglijst!', 'info');
+        }
+    }
+    
+    // Système de notifications toast
+    function showToast(message, type = 'info') {
+        const toast = document.createElement('div');
+        toast.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: ${type === 'success' ? '#059669' : type === 'error' ? '#DC2626' : '#4169E1'};
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            z-index: 10000;
+            font-weight: 600;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        `;
+        toast.textContent = message;
+        
+        document.body.appendChild(toast);
+        
+        setTimeout(() => {
+            toast.style.transform = 'translateX(0)';
+        }, 100);
+        
+        setTimeout(() => {
+            toast.style.transform = 'translateX(100%)';
+            setTimeout(() => {
+                document.body.removeChild(toast);
+            }, 300);
+        }, 3000);
+    }
+    
+    // Lazy loading amélioré pour les images
+    function setupLazyLoading() {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src || img.src;
+                    img.classList.remove('product-loading');
+                    observer.unobserve(img);
+                }
+            });
+        });
+        
+        document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+            img.classList.add('product-loading');
+            imageObserver.observe(img);
+        });
+    }
+    
+    // Initialiser au chargement
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(setupLazyLoading, 1000);
+    });</script>
 </body>
