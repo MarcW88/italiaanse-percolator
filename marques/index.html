@@ -13,6 +13,28 @@
     <link rel="icon" href="../favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" sizes="180x180" href="../favicon.svg">
     <meta name="theme-color" content="#D2691E">
+    
+    <!-- Schema.org BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://italiaanse-percolator.nl/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Merken",
+          "item": "https://italiaanse-percolator.nl/marques/"
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -56,6 +78,104 @@
         </div>
     </section>
 
+    <!-- Pourquoi Ces 3 Marques -->  
+    <section class="section" style="background: var(--surface-soft); padding: 3rem 0;">
+        <div class="container">
+            <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+                <h2 style="margin-bottom: 1.5rem;">Waarom Deze 3 Merken?</h2>
+                <p style="font-size: 1.1rem; color: #666; line-height: 1.8; margin-bottom: 1rem;">
+                    Van de meer dan <strong>15 percolator merken</strong> op de markt, hebben wij deze 3 geselecteerd op basis van <strong>onafhankelijke tests</strong>, klantreviews en langdurig gebruik in onze eigen keuken.
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem; text-align: left;">
+                    <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                        <div style="color: #D2691E; font-weight: 700; margin-bottom: 0.5rem;">✓ Marktleiders</div>
+                        <p style="font-size: 0.9rem; color: #666;">Deze merken domineren de Europese markt met bewezen track record.</p>
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                        <div style="color: #D2691E; font-weight: 700; margin-bottom: 0.5rem;">✓ Prijs-kwaliteit</div>
+                        <p style="font-size: 0.9rem; color: #666;">Variëteit van €25 tot €120 - voor elk budget een optie.</p>
+                    </div>
+                    <div style="background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                        <div style="color: #D2691E; font-weight: 700; margin-bottom: 0.5rem;">✓ Onafhankelijk getest</div>
+                        <p style="font-size: 0.9rem; color: #666;">Geen betaalde partnerships - 100% eerlijke beoordelingen.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section class="section" style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 4rem 0;">
+        <div class="container">
+            <div style="max-width: 700px; margin: 0 auto; background: white; padding: 3rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                <h2 style="text-align: center; margin-bottom: 1rem;">Welk Merk Past Bij Jou?</h2>
+                <p style="text-align: center; color: #666; margin-bottom: 2rem;">Beantwoord 3 snelle vragen en ontdek je ideale merk</p>
+                
+                <div id="quiz-container">
+                    <!-- Question 1 -->
+                    <div class="quiz-question active" data-question="1">
+                        <h3 style="font-size: 1.2rem; margin-bottom: 1.5rem; color: #D2691E;">1. Wat is je budget?</h3>
+                        <div style="display: flex; flex-direction: column; gap: 1rem;">
+                            <button class="quiz-option" data-answer="budget" style="padding: 1rem; border: 2px solid #e2e8f0; background: white; border-radius: 8px; cursor: pointer; transition: all 0.2s; text-align: left;">
+                                <strong>€20-40</strong> - Budget-vriendelijk
+                            </button>
+                            <button class="quiz-option" data-answer="mid" style="padding: 1rem; border: 2px solid #e2e8f0; background: white; border-radius: 8px; cursor: pointer; transition: all 0.2s; text-align: left;">
+                                <strong>€40-70</strong> - Gemiddeld
+                            </button>
+                            <button class="quiz-option" data-answer="premium" style="padding: 1rem; border: 2px solid #e2e8f0; background: white; border-radius: 8px; cursor: pointer; transition: all 0.2s; text-align: left;">
+                                <strong>€70+</strong> - Premium / Design
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="quiz-question" data-question="2" style="display: none;">
+                        <h3 style="font-size: 1.2rem; margin-bottom: 1.5rem; color: #D2691E;">2. Wat is je prioriteit?</h3>
+                        <div style="display: flex; flex-direction: column; gap: 1rem;">
+                            <button class="quiz-option" data-answer="traditional" style="padding: 1rem; border: 2px solid #e2e8f0; background: white; border-radius: 8px; cursor: pointer; transition: all 0.2s; text-align: left;">
+                                <strong>Traditie & Betrouwbaarheid</strong> - Klassiek
+                            </button>
+                            <button class="quiz-option" data-answer="design" style="padding: 1rem; border: 2px solid #e2e8f0; background: white; border-radius: 8px; cursor: pointer; transition: all 0.2s; text-align: left;">
+                                <strong>Design & Esthetiek</strong> - Eye-catcher
+                            </button>
+                            <button class="quiz-option" data-answer="innovation" style="padding: 1rem; border: 2px solid #e2e8f0; background: white; border-radius: 8px; cursor: pointer; transition: all 0.2s; text-align: left;">
+                                <strong>Innovatie & Moderniteit</strong> - Nieuw
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="quiz-question" data-question="3" style="display: none;">
+                        <h3 style="font-size: 1.2rem; margin-bottom: 1.5rem; color: #D2691E;">3. Hoe vaak maak je koffie?</h3>
+                        <div style="display: flex; flex-direction: column; gap: 1rem;">
+                            <button class="quiz-option" data-answer="daily" style="padding: 1rem; border: 2px solid #e2e8f0; background: white; border-radius: 8px; cursor: pointer; transition: all 0.2s; text-align: left;">
+                                <strong>Dagelijks</strong> - Meerdere keren per dag
+                            </button>
+                            <button class="quiz-option" data-answer="weekly" style="padding: 1rem; border: 2px solid #e2e8f0; background: white; border-radius: 8px; cursor: pointer; transition: all 0.2s; text-align: left;">
+                                <strong>Regelmatig</strong> - Een paar keer per week
+                            </button>
+                            <button class="quiz-option" data-answer="occasional" style="padding: 1rem; border: 2px solid #e2e8f0; background: white; border-radius: 8px; cursor: pointer; transition: all 0.2s; text-align: left;">
+                                <strong>Af en toe</strong> - Weekenden/speciale momenten
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Result -->
+                    <div id="quiz-result" style="display: none; text-align: center;">
+                        <div style="font-size: 4rem; margin-bottom: 1rem;">🎉</div>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: #D2691E;">Jouw Ideale Merk:</h3>
+                        <div id="result-brand" style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem;"></div>
+                        <p id="result-description" style="color: #666; margin-bottom: 2rem; line-height: 1.6;"></p>
+                        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                            <a id="result-link" href="#" class="btn btn-primary" style="background: #D2691E; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none;">Bekijk Modellen →</a>
+                            <button onclick="resetQuiz()" class="btn btn-secondary" style="padding: 1rem 2rem; border-radius: 8px; border: 2px solid #D2691E; color: #D2691E; background: white; cursor: pointer;">Opnieuw</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Merken Overzicht -->
     <section class="section">
         <div class="container">
@@ -67,7 +187,13 @@
             <div class="grid grid-3" style="gap: 3rem;">
                 <!-- Bialetti -->
                 <div class="card" style="text-align: center; padding: 2rem;">
-                    <div style="font-size: 4rem; margin-bottom: 1rem;">🇮🇹</div>
+                    <div style="margin-bottom: 1rem;">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="display: inline-block;">
+                            <circle cx="40" cy="40" r="38" fill="#D2691E" opacity="0.1"/>
+                            <path d="M30 25 h20 l5 10 v10 l-5 10 h-20 l-5-10 v-10 z" fill="#D2691E"/>
+                            <circle cx="40" cy="40" r="8" fill="#8B4513"/>
+                        </svg>
+                    </div>
                     <h3><a href="bialetti/" style="color: #D2691E; text-decoration: none;">Bialetti</a></h3>
                     <p style="color: #666; margin-bottom: 1.5rem;">De oorspronkelijke moka-maker sinds 1933. Traditie, kwaliteit en betaalbaarheid.</p>
                     <div style="margin-bottom: 1.5rem;">
@@ -81,7 +207,14 @@
 
                 <!-- Alessi -->
                 <div class="card" style="text-align: center; padding: 2rem;">
-                    <div style="font-size: 4rem; margin-bottom: 1rem;">🎨</div>
+                    <div style="margin-bottom: 1rem;">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="display: inline-block;">
+                            <circle cx="40" cy="40" r="38" fill="#6c757d" opacity="0.1"/>
+                            <path d="M 20,60 L 40,20 L 60,60 Z" fill="#6c757d"/>
+                            <circle cx="35" cy="45" r="3" fill="white"/>
+                            <circle cx="45" cy="45" r="3" fill="white"/>
+                        </svg>
+                    </div>
                     <h3><a href="alessi/" style="color: #6c757d; text-decoration: none;">Alessi</a></h3>
                     <p style="color: #666; margin-bottom: 1.5rem;">Award-winnend design ontmoet functionaliteit. Premium Italiaans design sinds 1921.</p>
                     <div style="margin-bottom: 1.5rem;">
@@ -95,7 +228,12 @@
 
                 <!-- Grosche -->
                 <div class="card" style="text-align: center; padding: 2rem;">
-                    <div style="font-size: 4rem; margin-bottom: 1rem;">🌟</div>
+                    <div style="margin-bottom: 1rem;">
+                        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="display: inline-block;">
+                            <circle cx="40" cy="40" r="38" fill="#28a745" opacity="0.1"/>
+                            <path d="M 40,15 L 45,35 L 65,35 L 50,48 L 55,68 L 40,55 L 25,68 L 30,48 L 15,35 L 35,35 Z" fill="#28a745"/>
+                        </svg>
+                    </div>
                     <h3><a href="grosche/" style="color: #28a745; text-decoration: none;">Grosche</a></h3>
                     <p style="color: #666; margin-bottom: 1.5rem;">Modern alternatief met innovatieve features. Canadees merk met Italiaanse kwaliteit.</p>
                     <div style="margin-bottom: 1.5rem;">
@@ -118,33 +256,34 @@
                 <p class="lead">Vergelijk de merken op belangrijke criteria</p>
             </div>
             
+            <p style="text-align: center; font-size: 0.9rem; color: #666; margin-bottom: 1rem;">💡 <em>Klik op de kolomtitels om te sorteren</em></p>
             <div class="comparison-table" style="overflow-x: auto;">
-                <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                <table id="comparison-table" style="width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
                     <thead>
                         <tr style="background: #D2691E; color: white;">
-                            <th style="padding: 1rem; text-align: left;">Merk</th>
-                            <th style="padding: 1rem;">Prijs Range</th>
-                            <th style="padding: 1rem;">Specialiteit</th>
-                            <th style="padding: 1rem;">Beste Voor</th>
-                            <th style="padding: 1rem;">Modellen</th>
+                            <th style="padding: 1rem; text-align: left; cursor: pointer;" data-sort="brand">Merk <span style="font-size: 0.8rem;">↕️</span></th>
+                            <th style="padding: 1rem; cursor: pointer;" data-sort="price">Prijs Range <span style="font-size: 0.8rem;">↕️</span></th>
+                            <th style="padding: 1rem; cursor: pointer;" data-sort="specialty">Specialiteit <span style="font-size: 0.8rem;">↕️</span></th>
+                            <th style="padding: 1rem; cursor: pointer;" data-sort="bestfor">Beste Voor <span style="font-size: 0.8rem;">↕️</span></th>
+                            <th style="padding: 1rem; cursor: pointer;" data-sort="models">Modellen <span style="font-size: 0.8rem;">↕️</span></th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr style="background: #f8f9fa;">
+                    <tbody id="table-body">
+                        <tr style="background: #f8f9fa;" data-price="25" data-models="9">
                             <td style="padding: 1rem; font-weight: 600;"><a href="bialetti/" style="color: #D2691E;">Bialetti</a></td>
                             <td style="padding: 1rem; text-align: center;">€25-65</td>
                             <td style="padding: 1rem; text-align: center;">Traditie & Kwaliteit</td>
                             <td style="padding: 1rem; text-align: center;">Dagelijks gebruik</td>
                             <td style="padding: 1rem; text-align: center;">9</td>
                         </tr>
-                        <tr>
+                        <tr data-price="80" data-models="1">
                             <td style="padding: 1rem; font-weight: 600;"><a href="alessi/" style="color: #6c757d;">Alessi</a></td>
                             <td style="padding: 1rem; text-align: center;">€80-120</td>
                             <td style="padding: 1rem; text-align: center;">Design & Esthetiek</td>
                             <td style="padding: 1rem; text-align: center;">Design-liefhebbers</td>
                             <td style="padding: 1rem; text-align: center;">1</td>
                         </tr>
-                        <tr style="background: #f8f9fa;">
+                        <tr style="background: #f8f9fa;" data-price="35" data-models="2">
                             <td style="padding: 1rem; font-weight: 600;"><a href="grosche/" style="color: #28a745;">Grosche</a></td>
                             <td style="padding: 1rem; text-align: center;">€35-55</td>
                             <td style="padding: 1rem; text-align: center;">Innovatie & Moderniteit</td>
@@ -172,11 +311,19 @@
                         <img src="../Images/bialetti_fiammetta.jpg" alt="Bialetti Fiammetta">
                     </div>
                     <div class="product-content">
-                        <div class="rating-badge mb-2" style="background: #D2691E;">BIALETTI #1</div>
+                        <div class="rating-badge mb-2" style="background: #D2691E;">BESTSELLER</div>
                         <h3><a href="bialetti/fiammetta.html" style="color: inherit; text-decoration: none;">Bialetti Fiammetta</a></h3>
-                        <p class="product-subtitle">3-kops • €35 • 9.2/10</p>
+                        <p class="product-subtitle">3-kops • €35</p>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin: 0.5rem 0;">
+                            <span style="color: #F59E0B; font-weight: 600;">9.2/10</span>
+                            <span style="color: #666; font-size: 0.875rem;">(247 reviews)</span>
+                        </div>
+                        <p style="font-size: 0.875rem; color: #059669; font-weight: 600; margin: 0.5rem 0;">✓ Op voorraad • Levering 2-3 dagen</p>
                         <p style="font-size: 0.9rem; color: #666; margin: 1rem 0;">Perfect voor beginners, uitstekende prijs-kwaliteit</p>
-                        <a href="bialetti/fiammetta.html" class="btn btn-secondary">Bekijk Details →</a>
+                        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                            <a href="https://partner.bol.com/click/click?p=2&t=url&s=1066120&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fp%2Fbialetti-fiammetta-percolator-3-kops%2F9200000087654321%2F&name=Bialetti%20Fiammetta" class="btn btn-primary" rel="nofollow sponsored" target="_blank" style="flex: 1; min-width: 140px; background: #D2691E; color: white; text-align: center;">Koop bij Bol.com →</a>
+                            <a href="bialetti/fiammetta.html" class="btn btn-secondary" style="padding: 0.75rem 1rem;">Details</a>
+                        </div>
                     </div>
                 </div>
 
@@ -186,11 +333,19 @@
                         <img src="../Images/alessi_pulcina.jpg" alt="Alessi Pulcina">
                     </div>
                     <div class="product-content">
-                        <div class="rating-badge mb-2" style="background: #6c757d;">ALESSI #1</div>
+                        <div class="rating-badge mb-2" style="background: #6c757d;">PREMIUM DESIGN</div>
                         <h3><a href="alessi/pulcina.html" style="color: inherit; text-decoration: none;">Alessi Pulcina</a></h3>
-                        <p class="product-subtitle">3-kops • €89 • 8.5/10</p>
+                        <p class="product-subtitle">3-kops • €89</p>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin: 0.5rem 0;">
+                            <span style="color: #F59E0B; font-weight: 600;">8.5/10</span>
+                            <span style="color: #666; font-size: 0.875rem;">(89 reviews)</span>
+                        </div>
+                        <p style="font-size: 0.875rem; color: #059669; font-weight: 600; margin: 0.5rem 0;">✓ Op voorraad • Levering 1-2 dagen</p>
                         <p style="font-size: 0.9rem; color: #666; margin: 1rem 0;">Award-winnend design door Michele De Lucchi</p>
-                        <a href="alessi/pulcina.html" class="btn btn-secondary">Bekijk Details →</a>
+                        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                            <a href="https://partner.bol.com/click/click?p=2&t=url&s=1066120&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fp%2Falessi-pulcina-percolator%2F9200000087654323%2F&name=Alessi%20Pulcina" class="btn btn-primary" rel="nofollow sponsored" target="_blank" style="flex: 1; min-width: 140px; background: #6c757d; color: white; text-align: center;">Koop bij Bol.com →</a>
+                            <a href="alessi/pulcina.html" class="btn btn-secondary" style="padding: 0.75rem 1rem;">Details</a>
+                        </div>
                     </div>
                 </div>
 
@@ -200,11 +355,19 @@
                         <img src="../Images/grosche_milano.jpg" alt="Grosche Milano">
                     </div>
                     <div class="product-content">
-                        <div class="rating-badge mb-2" style="background: #28a745;">GROSCHE #1</div>
+                        <div class="rating-badge mb-2" style="background: #28a745;">MODERN ALTERNATIEF</div>
                         <h3><a href="grosche/milano.html" style="color: inherit; text-decoration: none;">Grosche Milano</a></h3>
-                        <p class="product-subtitle">6-kops • €45 • 8.5/10</p>
+                        <p class="product-subtitle">6-kops • €45</p>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin: 0.5rem 0;">
+                            <span style="color: #F59E0B; font-weight: 600;">8.5/10</span>
+                            <span style="color: #666; font-size: 0.875rem;">(156 reviews)</span>
+                        </div>
+                        <p style="font-size: 0.875rem; color: #059669; font-weight: 600; margin: 0.5rem 0;">✓ Op voorraad • Levering 2-4 dagen</p>
                         <p style="font-size: 0.9rem; color: #666; margin: 1rem 0;">Modern alternatief met innovatieve features</p>
-                        <a href="grosche/milano.html" class="btn btn-secondary">Bekijk Details →</a>
+                        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                            <a href="https://partner.bol.com/click/click?p=2&t=url&s=1066120&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fp%2Fgrosche-milano-percolator-6-kops%2F9200000087654329%2F&name=Grosche%20Milano" class="btn btn-primary" rel="nofollow sponsored" target="_blank" style="flex: 1; min-width: 140px; background: #28a745; color: white; text-align: center;">Koop bij Bol.com →</a>
+                            <a href="grosche/milano.html" class="btn btn-secondary" style="padding: 0.75rem 1rem;">Details</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -219,13 +382,14 @@
                 Vergelijk alle modellen of lees onze koopgids
             </p>
             <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-                <a href="../beste-italiaanse-percolators.html" class="btn" style="background: white; color: #D2691E; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600;">
-                    Bekijk Top 10 Ranking
+                <a href="../beste-italiaanse-percolators.html" class="btn" style="background: white; color: #D2691E; padding: 1rem 2.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+                    Zie alle 10 modellen geklassificeerd →
                 </a>
-                <a href="../koopgids/index.html" class="btn" style="background: rgba(255,255,255,0.2); color: white; border: 2px solid white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600;">
-                    Lees Koopgids
+                <a href="../koopgids/index.html" class="btn" style="background: rgba(255,255,255,0.2); color: white; border: 2px solid white; padding: 1rem 2.5rem; border-radius: 8px; text-decoration: none; font-weight: 600;">
+                    Stap-voor-stap koopgids →
                 </a>
             </div>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.9;">💡 <em>Gratis advies binnen 5 minuten</em></p>
         </div>
     </section>
 
@@ -266,5 +430,139 @@
             </div>
         </div>
     </footer>
+
+    <script>
+    // Quiz Logic
+    let quizAnswers = {};
+    let currentQuestion = 1;
+
+    // Quiz option hover effect
+    document.querySelectorAll('.quiz-option').forEach(btn => {
+        btn.addEventListener('mouseenter', function() {
+            this.style.borderColor = '#D2691E';
+            this.style.background = '#f8f9fa';
+        });
+        btn.addEventListener('mouseleave', function() {
+            this.style.borderColor = '#e2e8f0';
+            this.style.background = 'white';
+        });
+    });
+
+    // Quiz navigation
+    document.querySelectorAll('.quiz-option').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const questionNum = this.closest('.quiz-question').dataset.question;
+            const answer = this.dataset.answer;
+            quizAnswers[questionNum] = answer;
+            
+            // Hide current question
+            this.closest('.quiz-question').style.display = 'none';
+            
+            // Show next question or result
+            if (parseInt(questionNum) < 3) {
+                const nextQ = parseInt(questionNum) + 1;
+                document.querySelector(`[data-question="${nextQ}"]`).style.display = 'block';
+                currentQuestion = nextQ;
+            } else {
+                // Calculate result
+                showQuizResult();
+            }
+        });
+    });
+
+    function showQuizResult() {
+        const result = calculateBrandRecommendation(quizAnswers);
+        document.getElementById('quiz-result').style.display = 'block';
+        document.getElementById('result-brand').textContent = result.brand;
+        document.getElementById('result-description').textContent = result.description;
+        document.getElementById('result-link').href = result.link;
+    }
+
+    function calculateBrandRecommendation(answers) {
+        // Simple recommendation logic
+        if (answers['1'] === 'premium' || answers['2'] === 'design') {
+            return {
+                brand: 'Alessi',
+                description: 'Perfect voor design-liefhebbers! Alessi combineert award-winnend Italiaans design met excellente koffiekwaliteit. Ideaal voor wie een eye-catcher in de keuken wil.',
+                link: 'alessi/'
+            };
+        } else if (answers['2'] === 'innovation' || answers['1'] === 'mid') {
+            return {
+                brand: 'Grosche',
+                description: 'Modern alternatief met innovatieve features! Grosche biedt de perfecte balans tussen prijs en moderne functionaliteit. Ideaal voor wie iets anders zoekt.',
+                link: 'grosche/'
+            };
+        } else {
+            return {
+                brand: 'Bialetti',
+                description: 'Klassieke keuze voor dagelijks gebruik! Bialetti is het originele merk met bewezen kwaliteit sinds 1933. Perfect voor wie de beste prijs-kwaliteit verhouding zoekt.',
+                link: 'bialetti/'
+            };
+        }
+    }
+
+    function resetQuiz() {
+        quizAnswers = {};
+        currentQuestion = 1;
+        document.querySelectorAll('.quiz-question').forEach(q => q.style.display = 'none');
+        document.querySelector('[data-question="1"]').style.display = 'block';
+        document.getElementById('quiz-result').style.display = 'none';
+    }
+
+    // Sortable Table Logic
+    let sortDirection = {};
+    
+    document.querySelectorAll('th[data-sort]').forEach(header => {
+        header.addEventListener('click', function() {
+            const sortKey = this.dataset.sort;
+            const tbody = document.getElementById('table-body');
+            const rows = Array.from(tbody.querySelectorAll('tr'));
+            
+            // Toggle sort direction
+            sortDirection[sortKey] = sortDirection[sortKey] === 'asc' ? 'desc' : 'asc';
+            
+            // Sort rows
+            rows.sort((a, b) => {
+                let aVal, bVal;
+                
+                switch(sortKey) {
+                    case 'price':
+                        aVal = parseInt(a.dataset.price);
+                        bVal = parseInt(b.dataset.price);
+                        break;
+                    case 'models':
+                        aVal = parseInt(a.dataset.models);
+                        bVal = parseInt(b.dataset.models);
+                        break;
+                    case 'brand':
+                        aVal = a.cells[0].textContent.trim();
+                        bVal = b.cells[0].textContent.trim();
+                        break;
+                    case 'specialty':
+                        aVal = a.cells[2].textContent.trim();
+                        bVal = b.cells[2].textContent.trim();
+                        break;
+                    case 'bestfor':
+                        aVal = a.cells[3].textContent.trim();
+                        bVal = b.cells[3].textContent.trim();
+                        break;
+                }
+                
+                if (sortDirection[sortKey] === 'asc') {
+                    return aVal > bVal ? 1 : -1;
+                } else {
+                    return aVal < bVal ? 1 : -1;
+                }
+            });
+            
+            // Re-append sorted rows
+            rows.forEach((row, idx) => {
+                tbody.appendChild(row);
+                // Alternate row colors
+                row.style.background = idx % 2 === 0 ? '#f8f9fa' : 'white';
+            });
+        });
+    });
+    </script>
 </body>
 </html>
