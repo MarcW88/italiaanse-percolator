@@ -61,8 +61,8 @@
         </div>
     </div>
 
-    <!-- Hero Section avec gradient moderne -->
-    <section class="hero" style="background: linear-gradient(135deg, rgba(210, 105, 30, 0.95), rgba(139, 69, 19, 0.9)), url('Images/background_homepage.jpg') center/cover; min-height: 500px; display: flex; align-items: center; color: white; position: relative;">
+    <!-- Hero Section avec image Unsplash -->
+    <section class="hero" style="background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1511920170033-f8396924c348?w=1600&q=80') center/cover; min-height: 500px; display: flex; align-items: center; color: white; position: relative;">
         <div class="container" style="text-align: center; position: relative; z-index: 2;">
             <div style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border-radius: 20px; padding: 3rem 2rem; max-width: 800px; margin: 0 auto; border: 1px solid rgba(255,255,255,0.2);">
                 <h1 style="font-size: 3.5rem; margin-bottom: 1rem; font-weight: 700; background: linear-gradient(45deg, #fff, #f0f0f0); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: none;">
@@ -112,10 +112,10 @@
                 <p style="font-size: 1.2rem; color: #666; max-width: 600px; margin: 0 auto;">Vind precies wat je zoekt in onze zorgvuldig samengestelde categorieën</p>
             </div>
             
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1000px; margin: 0 auto;">
+            <div style="display: flex; gap: 1.5rem; overflow-x: auto; padding-bottom: 1rem; scroll-snap-type: x mandatory;">
                 <!-- Percolators -->
-                <a href="categories/percolators.html" style="text-decoration: none; color: inherit;">
-                    <div style="background: white; border-radius: 15px; padding: 2rem; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: all 0.3s ease; border: 2px solid transparent;">
+                <a href="categories/percolators.html" style="text-decoration: none; color: inherit; flex: 0 0 280px; scroll-snap-align: start;">
+                    <div style="background: white; border-radius: 15px; padding: 2rem; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: all 0.3s ease; border: 2px solid transparent; height: 100%;">
                         <div style="background: linear-gradient(135deg, #D2691E, #8B4513); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem;">☕</div>
                         <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: #333; font-weight: 600;">Percolators</h3>
                         <p style="color: #666; margin-bottom: 1.5rem; line-height: 1.6;">Klassieke en moderne percolators voor de perfecte Italiaanse koffie</p>
@@ -124,18 +124,18 @@
                 </a>
                 
                 <!-- Elektrische Percolators -->
-                <a href="categories/elektrische-percolators.html" style="text-decoration: none; color: inherit;">
-                    <div style="background: white; border-radius: 15px; padding: 2rem; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: all 0.3s ease; border: 2px solid transparent;">
+                <a href="categories/elektrische-percolators.html" style="text-decoration: none; color: inherit; flex: 0 0 280px; scroll-snap-align: start;">
+                    <div style="background: white; border-radius: 15px; padding: 2rem; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: all 0.3s ease; border: 2px solid transparent; height: 100%;">
                         <div style="background: linear-gradient(135deg, #D2691E, #8B4513); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem;">⚡</div>
-                        <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: #333; font-weight: 600;">Elektrische Percolators</h3>
+                        <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: #333; font-weight: 600;">Elektrische percolators</h3>
                         <p style="color: #666; margin-bottom: 1.5rem; line-height: 1.6;">Moderne elektrische modellen met timer en automatische functies</p>
                         <span style="color: #D2691E; font-weight: 600; font-size: 1.1rem;">Bekijk elektrische modellen →</span>
                     </div>
                 </a>
                 
                 <!-- Accessoires -->
-                <a href="categories/accessoires.html" style="text-decoration: none; color: inherit;">
-                    <div style="background: white; border-radius: 15px; padding: 2rem; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: all 0.3s ease; border: 2px solid transparent;">
+                <a href="categories/accessoires.html" style="text-decoration: none; color: inherit; flex: 0 0 280px; scroll-snap-align: start;">
+                    <div style="background: white; border-radius: 15px; padding: 2rem; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: all 0.3s ease; border: 2px solid transparent; height: 100%;">
                         <div style="background: linear-gradient(135deg, #D2691E, #8B4513); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem;">🔧</div>
                         <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: #333; font-weight: 600;">Accessoires</h3>
                         <p style="color: #666; margin-bottom: 1.5rem; line-height: 1.6;">Onderdelen, filters en accessoires voor optimaal onderhoud</p>
@@ -144,8 +144,8 @@
                 </a>
                 
                 <!-- Onderhoudssets -->
-                <a href="categories/onderhoudssets.html" style="text-decoration: none; color: inherit;">
-                    <div style="background: white; border-radius: 15px; padding: 2rem; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: all 0.3s ease; border: 2px solid transparent;">
+                <a href="categories/onderhoudssets.html" style="text-decoration: none; color: inherit; flex: 0 0 280px; scroll-snap-align: start;">
+                    <div style="background: white; border-radius: 15px; padding: 2rem; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: all 0.3s ease; border: 2px solid transparent; height: 100%;">
                         <div style="background: linear-gradient(135deg, #D2691E, #8B4513); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2rem;">🧽</div>
                         <h3 style="font-size: 1.5rem; margin-bottom: 1rem; color: #333; font-weight: 600;">Onderhoudssets</h3>
                         <p style="color: #666; margin-bottom: 1.5rem; line-height: 1.6;">Complete sets voor reiniging en onderhoud van je percolator</p>
@@ -435,15 +435,18 @@
                     <span style="background: #e8f5e8; color: #2d5a2d; padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 600;">Op voorraad</span>
                 </div>
                 
-                <div style="display: flex; gap: 0.5rem;">
-                    <a href="producten/${product.slug}.html" class="btn btn-primary" 
-                       style="flex: 1; text-align: center; padding: 0.8rem; background: #D2691E; color: white; text-decoration: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; transition: all 0.3s ease;">
+                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    <a href="${product.bol_link || 'https://partner.bol.com/click/click?p=2&t=url&s=1066120&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fp%2F' + encodeURIComponent(product.name) + '%2F&name=' + encodeURIComponent(product.name)}" 
+                       class="btn btn-primary" 
+                       rel="nofollow sponsored" 
+                       target="_blank"
+                       style="text-align: center; padding: 0.8rem; background: #D2691E; color: white; text-decoration: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; transition: all 0.3s ease;">
+                        Koop op Bol.com →
+                    </a>
+                    <a href="producten/${product.slug}.html" class="btn btn-outline" 
+                       style="text-align: center; padding: 0.8rem; border: 2px solid #D2691E; background: transparent; color: #D2691E; text-decoration: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; transition: all 0.3s ease;">
                         Bekijk details
                     </a>
-                    <button onclick="quickView('${product.slug}')" class="btn btn-outline" 
-                            style="padding: 0.8rem; border: 2px solid #D2691E; background: transparent; color: #D2691E; border-radius: 8px; cursor: pointer; font-size: 0.9rem; transition: all 0.3s ease;">
-                        👁️
-                    </button>
                 </div>
             </div>
         `;
