@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ontdek wat een Italiaanse percolator (mokapot) is en hoe hij precies werkt. Leer alles over de werking, vergelijkingen met espresso en filterkoffie, en praktische tips voor de beste koffie.">
+    <meta name="keywords" content="italiaanse percolator, mokapot, moka express, hoe werkt mokapot, percolator werking, mokapot vs espresso">
+    <meta name="author" content="Italiaanse-Percolator.nl">
+    <title>Wat is een Italiaanse Percolator (Mokapot) en Hoe Werkt Hij? | Complete Gids</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .article-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            line-height: 1.8;
+        }
+        
+        .article-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+            border-bottom: 3px solid #D2691E;
+        }
+        
+        .article-header h1 {
+            font-size: 2.5rem;
+            color: #D2691E;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+        
+        .article-meta {
+            color: #666;
+            font-size: 0.95rem;
+            margin-top: 1rem;
+        }
+        
+        .table-of-contents {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border-left: 4px solid #D2691E;
+        }
+        
+        .table-of-contents h2 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .table-of-contents ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .table-of-contents li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .table-of-contents li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #D2691E;
+            font-weight: bold;
+        }
+        
+        .article-content h2 {
+            font-size: 2rem;
+            color: #333;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #D2691E;
+        }
+        
+        .article-content h3 {
+            font-size: 1.5rem;
+            color: #555;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .article-content h4 {
+            font-size: 1.2rem;
+            color: #666;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .article-content p {
+            margin-bottom: 1.2rem;
+            color: #444;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin: 1rem 0 1.5rem 2rem;
+        }
+        
+        .article-content li {
+            margin-bottom: 0.5rem;
+            color: #444;
+        }
+        
+        .highlight-box {
+            background: #fff3e0;
+            border-left: 4px solid #D2691E;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+        
+        .highlight-box strong {
+            color: #D2691E;
+        }
+        
+        .tip-box {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+        
+        .tip-box:before {
+            content: "💡 TIP: ";
+            font-weight: bold;
+            color: #4caf50;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .comparison-table th {
+            background: #D2691E;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .comparison-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .comparison-table tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background: #fafafa;
+        }
+        
+        .image-placeholder {
+            background: #f0f0f0;
+            border: 2px dashed #D2691E;
+            border-radius: 8px;
+            padding: 3rem;
+            text-align: center;
+            margin: 2rem 0;
+            color: #666;
+        }
+        
+        .image-placeholder strong {
+            color: #D2691E;
+            font-size: 1.1rem;
+        }
+        
+        .schema-box {
+            background: linear-gradient(135deg, #fff9f0 0%, #ffe9d0 100%);
+            border: 2px solid #D2691E;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .schema-box h4 {
+            color: #D2691E;
+            margin-bottom: 1rem;
+        }
+        
+        .step-list {
+            counter-reset: step-counter;
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .step-list li {
+            counter-increment: step-counter;
+            position: relative;
+            padding-left: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .step-list li:before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #D2691E;
+            color: white;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .summary-box {
+            background: #D2691E;
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 3rem 0;
+        }
+        
+        .summary-box h2 {
+            color: white;
+            border-bottom: 2px solid white;
+            margin-top: 0;
+        }
+        
+        .summary-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .summary-box li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+        
+        .summary-box li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+        
+        .author-box {
+            background: linear-gradient(135deg, #fff9f0 0%, #ffe9d0 100%);
+            border-left: 4px solid #4caf50;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 3rem 0;
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #D2691E;
+            flex-shrink: 0;
+        }
+        
+        .author-info h3 {
+            color: #4caf50;
+            font-size: 1.3rem;
+            margin: 0 0 0.5rem 0;
+        }
+        
+        .author-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+        
+        .author-bio {
+            color: #555;
+            line-height: 1.7;
+            margin: 0;
+        }
+        
+        .comments-section {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .comments-section h3 {
+            color: #D2691E;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .comment-form {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .comment-form h4 {
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: #D2691E;
+            color: white;
+            padding: 0.75rem 2rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background: #8B4513;
+        }
+        
+        .comments-list {
+            margin-top: 2rem;
+        }
+        
+        .comment {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .comment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .comment-author {
+            font-weight: 600;
+            color: #D2691E;
+        }
+        
+        .comment-date {
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
+        .comment-body {
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .no-comments {
+            text-align: center;
+            padding: 2rem;
+            color: #999;
+            font-style: italic;
+        }
+        
+        @media (max-width: 768px) {
+            .article-content {
+                padding: 1rem;
+            }
+            
+            .article-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .article-content h2 {
+                font-size: 1.5rem;
+            }
+            
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+            
+            .comparison-table th,
+            .comparison-table td {
+                padding: 0.5rem;
+            }
+            
+            .author-box {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation (ajuster selon ton site) -->
+    <nav class="main-nav">
+        <div class="container">
+            <a href="../index.html" class="logo">Italiaanse-Percolator.nl</a>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../koopgids/index.html" class="active">Koopgids</a>
+                <a href="../beste-italiaanse-percolators.html">Top 10</a>
+                <a href="../marques/index.html">Merken</a>
+                <a href="../boutique.html">Winkel</a>
+            </div>
+        </div>
+    </nav>
+
+    <article class="article-content">
+        <!-- Header -->
+        <header class="article-header">
+            <h1>Wat is een Italiaanse percolator (mokapot) en hoe werkt hij precies?</h1>
+            <div class="article-meta">
+                📅 Gepubliceerd: 23 december 2024 | ⏱️ Leestijd: 12 minuten | 📝 Koopgids
+            </div>
+        </header>
+
+        <!-- Intro -->
+        <p style="font-size: 1.1rem; color: #555; line-height: 1.8;">
+            De <strong>Italiaanse percolator</strong> – beter bekend als <strong>mokapot</strong>, moka express of in de volksmond ook gewoon "percolator" – is een icoon in de Italiaanse keuken. In bijna elk Italiaans huishouden staat er minstens één op het fornuis. Toch roept dit kleine metalen kannetje bij veel Nederlanders en Vlamingen vragen op:
+        </p>
+        
+        <div class="highlight-box">
+            <p><strong>Is het espresso? Is het filterkoffie? Hoe werkt dat pruttelende ding eigenlijk?</strong></p>
+        </div>
+
+        <!-- Table of Contents -->
+        <div class="table-of-contents">
+            <h2>📋 In dit artikel lees je:</h2>
+            <ul>
+                <li>Wat een Italiaanse percolator precies is</li>
+                <li>Hoe hij stap voor stap werkt (met een eenvoudig schema)</li>
+                <li>Hoe de smaak zich verhoudt tot filterkoffie en espresso uit een machine</li>
+                <li>Welke praktische tips je helpen om er echt lekkere koffie mee te zetten</li>
+            </ul>
+        </div>
+
+        <!-- Section 1 -->
+        <h2 id="wat-is">1. Wat is een Italiaanse percolator / mokapot?</h2>
+        
+        <p>Een <strong>Italiaanse percolator</strong> is een metalen koffiepotje dat je op het fornuis (of inductieplaat, afhankelijk van het model) zet. Het bestaat typisch uit <strong>drie hoofdonderdelen</strong>:</p>
+
+        <h3>Onderste deel – waterreservoir</h3>
+        <p>Hier giet je het water in. Binnenin zie je meestal een <strong>veiligheidsventiel</strong>: tot net daaronder vul je het water.</p>
+
+        <h3>Midden – trechtervormig filterbakje</h3>
+        <p>Dit is een metalen filter waarin je de gemalen koffie doet. De koffie ligt in een soort trechter met kleine gaatjes aan de onderkant.</p>
+
+        <h3>Bovenste deel – opvangkan</h3>
+        <p>Dit is de koffiekan waar de gezette koffie uiteindelijk in terechtkomt. In het midden zie je een pijpje waar de koffie uit omhoog komt.</p>
+
+        <div class="highlight-box">
+            <p><strong>Belangrijk:</strong> Een Italiaanse mokapot wordt vaak "percolator" genoemd, maar technisch is hij anders dan de klassieke ouderwetse percolator waar water telkens opnieuw door dezelfde koffie circuleert. In de Italiaanse mokapot stroomt het water <strong>één keer</strong> door de koffie naar boven en blijft daar.</p>
+        </div>
+
+        <!-- Image Placeholder 1 -->
+        <div class="image-placeholder">
+            <strong>📸 FOTO NODIG:</strong><br>
+            Mokapot in drie uit elkaar geschroefde delen met labels:<br>
+            • Onder: waterreservoir<br>
+            • Midden: filterbakje voor koffie<br>
+            • Boven: opvangkan<br>
+            <em>(Plaats hier een duidelijke productfoto met pijltjes en annotaties)</em>
+        </div>
+
+        <!-- Section 2 -->
+        <h2 id="hoe-werkt">2. Hoe werkt een mokapot precies? (Stap-voor-stap + schema)</h2>
+        
+        <p>De magie van de mokapot is eigenlijk simpel natuurkunde: <strong>water + warmte + druk = koffie-extractie</strong>.</p>
+
+        <div class="schema-box">
+            <h4>📊 Schema: Doorsnede van een mokapot</h4>
+            <p><strong>Schematische weergave nodig:</strong></p>
+            <ul style="text-align: left; display: inline-block;">
+                <li>Onderaan: water (blauw)</li>
+                <li>Daarboven: laag gemalen koffie in filter (bruin)</li>
+                <li>Boven: lege kamer waar straks koffie in loopt</li>
+                <li>In het midden: een buisje van beneden naar boven (met pijltjes)</li>
+            </ul>
+            <p><em>💡 Suggestie: Simpele doorsnede-illustratie met gekleurde zones en pijlen die de waterstroming aangeven</em></p>
+        </div>
+
+        <h3>Het zetproces in 6 stappen:</h3>
+
+        <ol class="step-list">
+            <li>
+                <h4>Water in het onderste reservoir</h4>
+                <p>Je vult het waterreservoir tot net onder het veiligheidsventiel. Dat ventiel is er als beveiliging zodat er geen te hoge druk kan opbouwen.</p>
+                <div class="tip-box">
+                    Gebruik bij voorkeur <strong>warm of heet water</strong> (ca. 70–80 °C) als je bitterheid wilt beperken: het zetproces gaat dan sneller en de koffie "brandt" minder lang op het vuur.
+                </div>
+                <ul>
+                    <li><strong>Koud water</strong> kan ook, maar dan staat de pot langer op het vuur en loop je meer kans op een iets bitterdere smaak.</li>
+                </ul>
+            </li>
+
+            <li>
+                <h4>Gemalen koffie in het filterbakje</h4>
+                <p>Daarna vul je het trechtervormige filterbakje met gemalen koffie:</p>
+                <ul>
+                    <li>Vul het filter volledig tot de rand</li>
+                    <li>Strijk het oppervlak glad met je vinger of de achterkant van een lepel</li>
+                    <li><strong>Niet aandrukken</strong> zoals bij espresso: de moka werkt met lagere druk, de koffie moet luchtig blijven zodat het water erdoor kan</li>
+                </ul>
+                <p><strong>Maalgraad:</strong><br>
+                Fijner dan filterkoffie, maar grover dan espressomaling. Vaak wordt gesproken van een maling <em>"ongeveer als fijn keukenzout"</em>.</p>
+            </li>
+
+            <li>
+                <h4>De mokapot in elkaar draaien</h4>
+                <p>Je plaatst het gevulde filter in het waterreservoir en draait de bovenste kan er stevig op.</p>
+                <p>Let op dat de randen schoon zijn (geen koffieresten op de schroefdraad), zodat de rubberen ring goed sluit. Zo voorkom je dat er water of stoom aan de zijkant ontsnapt.</p>
+            </li>
+
+            <li>
+                <h4>Verwarmen op het fornuis</h4>
+                <p>Zet de mokapot op een <strong>gematigd vuur</strong> of op een geschikte inductieplaat:</p>
+                <ul>
+                    <li>Niet op het grootste gaspitje, maar liever een kleine of middelgrote pit</li>
+                    <li>De vlam mag niet langs de zijkanten omhoog likken: dat kan de handgreep beschadigen en de smaak nadelig beïnvloeden</li>
+                </ul>
+                
+                <h4 style="margin-top: 1.5rem;">Wat gebeurt er binnenin?</h4>
+                <ul>
+                    <li>Het water onderin wordt steeds warmer</li>
+                    <li>Vlak onder het kookpunt vormt zich stoom</li>
+                    <li>Door die stoomdruk wordt het hete water door het trechterfilter met koffie omhoog geduwd</li>
+                    <li>Het water neemt de smaak- en aromastoffen van de koffie op en komt via een pijpje uit in de bovenste kamer</li>
+                </ul>
+                <p>Dit proces heet <strong>percoleren</strong>: heet water dat onder (lichte) druk door koffie wordt geperst.</p>
+            </li>
+
+            <li>
+                <h4>Het "pruttelmoment": koffie stroomt naar boven</h4>
+                <p>Na een paar minuten hoor je een typisch <strong>pruttelgeluid</strong>. Dat betekent:</p>
+                <ul>
+                    <li>Het water bereikt het kookpunt</li>
+                    <li>De koffie begint via het pijpje in de bovenste kamer te stromen</li>
+                    <li>Aanvankelijk komt de koffie donker en stroperig uit het pijpje, daarna lichter</li>
+                </ul>
+                <p>Je kunt (als het deksel open staat) mooi zien hoe de bovenste kamer zich vult met koffie.</p>
+            </li>
+
+            <li>
+                <h4>Het juiste moment om van het vuur te halen</h4>
+                <p>De koffie is klaar als:</p>
+                <ul>
+                    <li>De stroom uit het pijpje lichter wordt en</li>
+                    <li>Je een <strong>sissend / puffend geluid</strong> hoort: dan is bijna al het water verdampt of omhoog gekomen</li>
+                </ul>
+                <p><strong>Dan:</strong></p>
+                <ul>
+                    <li>Haal de mokapot direct van het vuur</li>
+                    <li>Eventueel kun je de onderkant kort onder koud water houden om de temperatuur en druk snel te laten dalen – dit voorkomt dat de laatste stoom de koffie verder "verbrandt" en bitter maakt</li>
+                    <li>Roer kort in de bovenste kamer met een lepeltje om de concentratie te egaliseren</li>
+                    <li>Daarna kun je de koffie uitschenken in kleine kopjes</li>
+                </ul>
+            </li>
+        </ol>
+
+        <!-- Image Placeholder 2 -->
+        <div class="schema-box">
+            <h4>🎨 SCHEMATISCHE ILLUSTRATIE NODIG</h4>
+            <p><strong>Eenvoudige doorsnede-tekening met pijltjes:</strong></p>
+            <ul style="text-align: left; display: inline-block; margin: 0 auto;">
+                <li>Pijl omhoog vanuit het waterreservoir door het filter</li>
+                <li>Pijl van de gemalen koffie naar het pijpje (aroma's mee)</li>
+                <li>Pijl in de bovenste kamer waar de koffie zich verzamelt</li>
+            </ul>
+            <p style="margin-top: 1rem;"><em>💡 Dit helpt lezers het proces visueel te begrijpen</em></p>
+        </div>
+
+        <!-- Section 3 -->
+        <h2 id="smaak">3. Wat voor koffie geeft een mokapot?</h2>
+        
+        <p>Koffie uit een Italiaanse percolator zit qua intensiteit <strong>tussen filterkoffie en espresso in</strong>:</p>
+
+        <h3>Sterker en geconcentreerder dan filterkoffie</h3>
+        <p>De koffie is voller, met meer body en vaak een duidelijker bittertoon.</p>
+
+        <h3>Minder geconcentreerd dan echte espresso uit een machine</h3>
+        <p>De druk in een mokapot is rond de <strong>1–3 bar</strong>, terwijl een espressomachine ongeveer <strong>9 bar</strong> gebruikt. Daardoor krijg je minder crema en een iets minder stroperige textuur.</p>
+
+        <h3>Smaakprofiel:</h3>
+        <p>De smaak kun je omschrijven als:</p>
+        <ul>
+            <li><strong>Vol en intens</strong>, licht stroperig</li>
+            <li>Vaak tonen van <strong>cacao, noten en geroosterde aroma's</strong> (zeker bij donkerder gebrande bonen)</li>
+            <li>Met een duidelijke <strong>"Italiaanse" punch</strong> – ideaal als basis voor cappuccino, latte of caffè latte-achtige drankjes</li>
+        </ul>
+
+        <!-- Section 4 -->
+        <h2 id="vergelijking">4. Mokapot vs. filterkoffie vs. espressomachine</h2>
+        
+        <p>Een van de meest gestelde vragen is:</p>
+        <div class="highlight-box">
+            <p><strong>"Waar lijkt mokakoffie nou het meest op: op filterkoffie of op espresso?"</strong></p>
+            <p>Het eerlijkste antwoord: het zit <strong>precies ertussenin</strong>.</p>
+        </div>
+
+        <h3>4.1 Druk & zetmethode</h3>
+
+        <h4>Filterkoffie (pour-over, filterapparaat)</h4>
+        <ul>
+            <li>Water loopt met behulp van zwaartekracht door een papieren of metalen filter</li>
+            <li><strong>Druk:</strong> praktisch 0 bar (alleen zwaartekracht)</li>
+            <li>Extractie is relatief langzaam en zacht</li>
+        </ul>
+
+        <h4>Mokapot / Italiaanse percolator</h4>
+        <ul>
+            <li>Water wordt door stoomdruk door koffie omhoog geduwd</li>
+            <li><strong>Druk:</strong> ongeveer 1–3 bar</li>
+            <li>Meer extractie dan filter, maar minder dan espresso</li>
+        </ul>
+
+        <h4>Espressomachine</h4>
+        <ul>
+            <li>Water wordt mechanisch onder hoge druk door een aangedrukte koffiepuck geperst</li>
+            <li><strong>Druk:</strong> ca. 9 bar (professioneel standaard)</li>
+            <li>Zeer snelle, intensieve extractie</li>
+        </ul>
+
+        <h3>4.2 Vergelijkingstabel</h3>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Kenmerk</th>
+                    <th>Filterkoffie</th>
+                    <th>Mokapot</th>
+                    <th>Espressomachine</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Druk</strong></td>
+                    <td>~0 bar (zwaartekracht)</td>
+                    <td>1-3 bar (stoomdruk)</td>
+                    <td>~9 bar (pomp)</td>
+                </tr>
+                <tr>
+                    <td><strong>Maalgraad</strong></td>
+                    <td>Medium-grof</td>
+                    <td>Fijn (maar niet espresso)</td>
+                    <td>Zeer fijn</td>
+                </tr>
+                <tr>
+                    <td><strong>Smaak</strong></td>
+                    <td>Helder, zacht, fruitig</td>
+                    <td>Vol, krachtig, geroosterd</td>
+                    <td>Extreem geconcentreerd, rijk</td>
+                </tr>
+                <tr>
+                    <td><strong>Body</strong></td>
+                    <td>Licht, "schoon"</td>
+                    <td>Medium tot zwaar</td>
+                    <td>Zeer vol, stroperig</td>
+                </tr>
+                <tr>
+                    <td><strong>Crema</strong></td>
+                    <td>Geen</td>
+                    <td>Minimaal of geen</td>
+                    <td>Duidelijke crema-laag</td>
+                </tr>
+                <tr>
+                    <td><strong>Kopjesgrootte</strong></td>
+                    <td>Grote mokken (200-350ml)</td>
+                    <td>Klein-middelgroot (60-150ml)</td>
+                    <td>Espressokopjes (30-60ml)</td>
+                </tr>
+                <tr>
+                    <td><strong>Prijs apparaat</strong></td>
+                    <td>€20-100</td>
+                    <td>€25-80</td>
+                    <td>€200-2000+</td>
+                </tr>
+                <tr>
+                    <td><strong>Onderhoud</strong></td>
+                    <td>Eenvoudig</td>
+                    <td>Zeer eenvoudig</td>
+                    <td>Complex (ontkalken, reinigen)</td>
+                </tr>
+                <tr>
+                    <td><strong>Typisch gebruik</strong></td>
+                    <td>Doordrinkkoffe, ontbijt</td>
+                    <td>Na het eten, basis melkdranken</td>
+                    <td>Espresso, cappuccino, latte</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>4.3 Typische gebruiksmomenten</h3>
+
+        <h4>Filterkoffie</h4>
+        <p>Grote mokken koffie, lange ontbijtsessies, "doordrinkkoffie".</p>
+
+        <h4>Mokapot</h4>
+        <p>Kleine tot middelgrote kopjes, ideaal na het eten of als stevige koffiebasis voor melkdranken. Perfect voor mensen die geen grote (of dure) espressomachine willen, maar wel <strong>"barista-achtige" smaak thuis</strong> zoeken.</p>
+
+        <h4>Espressomachine</h4>
+        <p>Ristretto/espresso-shots, cappuccino's, latte's, flat whites, etc. Meer controle, maar ook duurder, groter en complexer qua onderhoud.</p>
+
+        <!-- Section 5 -->
+        <h2 id="waarom-italie">5. Waarom kiezen zoveel Italianen voor een mokapot?</h2>
+        
+        <p>In Italië is de mokapot <strong>meer dan een apparaat</strong>: het is een <strong>ritueel</strong>.</p>
+
+        <h3>✅ Betaalbaar</h3>
+        <p>Een goede mokapot is relatief goedkoop in vergelijking met een espressomachine.</p>
+
+        <h3>✅ Eenvoudig & robuust</h3>
+        <p>Geen elektronica, geen ingewikkelde menu's. Alleen metaal, rubber ring en een filtertje.</p>
+
+        <h3>✅ Compact</h3>
+        <p>Neemt weinig plaats in en is makkelijk mee te nemen op vakantie of naar een tweede verblijf.</p>
+
+        <h3>✅ Iconisch design</h3>
+        <p>Zeker de klassieke achthoekige vorm (zoals Bialetti) is een <strong>designklassieker</strong>.</p>
+
+        <h3>✅ Ritueel en sfeer</h3>
+        <p>Het geluid van het pruttelen, de geur die de keuken vult: alles draagt bij aan de <strong>"Italiaanse" koffiebeleving thuis</strong>.</p>
+
+        <!-- Section 6 -->
+        <h2 id="tips">6. Praktische tips voor betere mokakoffie</h2>
+        
+        <p>Om het meeste uit je mokapot te halen, volg deze <strong>praktische tips</strong>:</p>
+
+        <h3>6.1 Kies de juiste koffie</h3>
+        <ul>
+            <li><strong>Branding:</strong> medium tot donker gebrand werkt het best</li>
+            <li><strong>Maling:</strong> speciaal voor mokapot / percolator of zelf malen iets fijner dan filter</li>
+            <li><strong>Versheid:</strong> gebruik bij voorkeur verse bonen en maal vlak voor het zetten</li>
+        </ul>
+
+        <h3>6.2 Water & temperatuur</h3>
+        <ul>
+            <li>Gebruik <strong>vers, koud kraanwater of gefilterd water</strong> (minder kalk = beter voor smaak en apparaat)</li>
+            <li>Wil je minder bitterheid? Vul dan het reservoir met <strong>heet water uit de waterkoker</strong>, zodat de mokapot korter op het vuur staat</li>
+        </ul>
+
+        <h3>6.3 Vuur & timing</h3>
+        <ul>
+            <li>Houd de vlam <strong>laag tot medium</strong>. Te hoog vuur = kans op verbrande smaken</li>
+            <li>Haal de mokapot <strong>direct van het vuur</strong> zodra je het sissen hoort en de koffie bijna volledig is doorgelopen</li>
+        </ul>
+
+        <h3>6.4 Schoonmaken & onderhoud</h3>
+        <p><strong>Na gebruik:</strong></p>
+        <ul>
+            <li>Laat de mokapot iets afkoelen</li>
+            <li>Schroef hem uit elkaar, gooi de koffiepuck weg en spoel alle onderdelen af met warm water</li>
+            <li>Gebruik liever <strong>geen agressief afwasmiddel</strong> in het bovenste deel – veel Italianen geloven dat een licht "ingebouwd" koffielaagje de smaak ten goede komt</li>
+            <li>Controleer regelmatig de <strong>rubberen ring</strong> en het <strong>filterplaatje</strong>. Vervang ze als ze versleten zijn of niet meer goed sluiten</li>
+        </ul>
+
+        <div class="tip-box">
+            Een goed onderhouden mokapot gaat <strong>tientallen jaren</strong> mee!
+        </div>
+
+        <!-- Section 7: Summary -->
+        <div class="summary-box">
+            <h2>7. Samenvatting: wat moet je onthouden?</h2>
+            <ul>
+                <li>Een <strong>Italiaanse percolator / mokapot</strong> bestaat uit drie delen: waterreservoir, filterbakje met koffie, en bovenste opvangkan</li>
+                <li>De werking is gebaseerd op <strong>stoomdruk</strong>: heet water wordt door gemalen koffie omhoog geduwd en verzamelt zich als geconcentreerde koffie in de bovenste kamer</li>
+                <li>De koffie is <strong>sterker dan filterkoffie</strong> maar <strong>minder geconcentreerd dan echte espresso</strong>; ideaal voor wie thuis een stevige, aromatische koffie wil zonder dure machine</li>
+                <li>Vergeleken met filterkoffie en espresso zit mokakoffie qua <strong>druk, smaak en body precies in het midden</strong>, met een typisch Italiaans karakter</li>
+                <li>Met de juiste maling, gematigd vuur en goede timing zet je met een mokapot betrouwbaar <strong>heerlijke "slow coffee op z'n Italiaans"</strong></li>
+            </ul>
+        </div>
+
+        <!-- CTA Section -->
+        <div style="background: #f8f9fa; padding: 2rem; border-radius: 8px; margin: 3rem 0; text-align: center;">
+            <h3 style="color: #D2691E; margin-bottom: 1rem;">🎯 Klaar om een mokapot te kopen?</h3>
+            <p style="margin-bottom: 1.5rem;">Ontdek onze top 10 beste Italiaanse percolatoren of lees onze complete koopgids!</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="../beste-italiaanse-percolators.html" style="background: #D2691E; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600;">
+                    Bekijk Top 10 →
+                </a>
+                <a href="index.html" style="background: white; border: 2px solid #D2691E; color: #D2691E; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 600;">
+                    Volledige Koopgids →
+                </a>
+            </div>
+        </div>
+
+        <!-- Related Articles -->
+        <div style="border-top: 2px solid #ddd; padding-top: 2rem; margin-top: 3rem;">
+            <h3 style="color: #D2691E; margin-bottom: 1.5rem;">📚 Gerelateerde artikelen</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                <a href="../koopgids/index.html" style="background: #f8f9fa; padding: 1rem; border-radius: 8px; text-decoration: none; color: inherit; border: 1px solid #ddd;">
+                    <strong style="color: #D2691E;">📖 Complete Koopgids</strong>
+                    <p style="font-size: 0.9rem; margin: 0.5rem 0 0 0;">Alle tips voor de juiste keuze</p>
+                </a>
+                <a href="../beste-italiaanse-percolators.html" style="background: #f8f9fa; padding: 1rem; border-radius: 8px; text-decoration: none; color: inherit; border: 1px solid #ddd;">
+                    <strong style="color: #D2691E;">🏆 Top 10 Percolatoren</strong>
+                    <p style="font-size: 0.9rem; margin: 0.5rem 0 0 0;">Onze selectie van 2024</p>
+                </a>
+                <a href="../marques/index.html" style="background: #f8f9fa; padding: 1rem; border-radius: 8px; text-decoration: none; color: inherit; border: 1px solid #ddd;">
+                    <strong style="color: #D2691E;">🏭 Merken Vergelijken</strong>
+                    <p style="font-size: 0.9rem; margin: 0.5rem 0 0 0;">Bialetti, Alessi & Grosche</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- Author Box -->
+        <div class="author-box">
+            <img src="../Images/author-marc.jpg" alt="Marc - Koffie Expert" class="author-avatar" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22 viewBox=%220 0 100 100%22%3E%3Ccircle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22%23D2691E%22/%3E%3Ctext x=%2250%22 y=%2255%22 font-size=%2240%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Arial%22%3EM%3C/text%3E%3C/svg%3E'">
+            <div class="author-info">
+                <h3>✍️ Over de auteur</h3>
+                <div class="author-name">Marc</div>
+                <p class="author-bio">
+                    Als koffieliefhebber en Italië-kenner ben ik gefascineerd door de kunst van traditionele Italiaanse koffie. Met meer dan 10 jaar ervaring in het testen van percolators en het perfectioneren van mokakoffie, deel ik graag mijn kennis en passie. Mijn doel is om je te helpen de perfecte koffie-ervaring thuis te creëren, met de juiste apparatuur en techniek.
+                </p>
+                <p class="author-bio">
+                    Door mijn artikelen leer je niet alleen welke percolator het beste bij je past, maar ook hoe je elke ochtend authentieke Italiaanse koffie zet. Buon caffè!
+                </p>
+            </div>
+        </div>
+
+        <!-- Comments Section -->
+        <div class="comments-section">
+            <h3>💬 Reacties</h3>
+            
+            <!-- Comment Form -->
+            <div class="comment-form">
+                <h4>Laat een reactie achter</h4>
+                <form id="commentForm" onsubmit="return handleCommentSubmit(event)">
+                    <div class="form-group">
+                        <label for="comment-name">Naam *</label>
+                        <input type="text" id="comment-name" name="name" required placeholder="Je naam">
+                    </div>
+                    <div class="form-group">
+                        <label for="comment-email">E-mail * (wordt niet gepubliceerd)</label>
+                        <input type="email" id="comment-email" name="email" required placeholder="je@email.nl">
+                    </div>
+                    <div class="form-group">
+                        <label for="comment-message">Reactie *</label>
+                        <textarea id="comment-message" name="message" required placeholder="Deel je ervaring of stel een vraag..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Reactie plaatsen</button>
+                </form>
+            </div>
+            
+            <!-- Comments List -->
+            <div class="comments-list" id="commentsList">
+                <div class="no-comments">Wees de eerste om een reactie achter te laten!</div>
+            </div>
+        </div>
+
+    </article>
+
+    <!-- Footer -->
+    <footer style="background: #333; color: white; padding: 2rem; text-align: center; margin-top: 4rem;">
+        <p>&copy; 2024 Italiaanse-Percolator.nl | Alle rechten voorbehouden</p>
+        <p style="font-size: 0.9rem; opacity: 0.8;">Authentieke Italiaanse koffie thuis</p>
+    </footer>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Wat is een Italiaanse percolator (mokapot) en hoe werkt hij precies?",
+      "description": "Ontdek wat een Italiaanse percolator is en hoe hij werkt. Complete uitleg met schema's, vergelijkingen en praktische tips voor de beste koffie.",
+      "image": "https://italiaanse-percolator.nl/images/mokapot-werking.jpg",
+      "author": {
+        "@type": "Organization",
+        "name": "Italiaanse-Percolator.nl"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Italiaanse-Percolator.nl",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://italiaanse-percolator.nl/logo.png"
+        }
+      },
+      "datePublished": "2024-12-23",
+      "dateModified": "2024-12-23"
+    }
+    </script>
+
+    <script>
+        // Comment submission handler
+        function handleCommentSubmit(event) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const name = form.name.value;
+            const email = form.email.value;
+            const message = form.message.value;
+            
+            // Get existing comments from localStorage
+            const articleId = 'wat-is-mokapot';
+            let comments = JSON.parse(localStorage.getItem('comments_' + articleId) || '[]');
+            
+            // Add new comment
+            const newComment = {
+                id: Date.now(),
+                name: name,
+                email: email,
+                message: message,
+                date: new Date().toISOString()
+            };
+            
+            comments.unshift(newComment);
+            localStorage.setItem('comments_' + articleId, JSON.stringify(comments));
+            
+            // Clear form
+            form.reset();
+            
+            // Reload comments
+            loadComments();
+            
+            // Show success message
+            alert('Bedankt voor je reactie! Je bericht is geplaatst.');
+            
+            return false;
+        }
+        
+        // Load and display comments
+        function loadComments() {
+            const articleId = 'wat-is-mokapot';
+            const comments = JSON.parse(localStorage.getItem('comments_' + articleId) || '[]');
+            const commentsList = document.getElementById('commentsList');
+            
+            if (comments.length === 0) {
+                commentsList.innerHTML = '<div class="no-comments">Wees de eerste om een reactie achter te laten!</div>';
+                return;
+            }
+            
+            let html = '';
+            comments.forEach(comment => {
+                const date = new Date(comment.date);
+                const dateStr = date.toLocaleDateString('nl-NL', { 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                });
+                
+                html += `
+                    <div class="comment">
+                        <div class="comment-header">
+                            <span class="comment-author">${escapeHtml(comment.name)}</span>
+                            <span class="comment-date">${dateStr}</span>
+                        </div>
+                        <div class="comment-body">
+                            ${escapeHtml(comment.message).replace(/\n/g, '<br>')}
+                        </div>
+                    </div>
+                `;
+            });
+            
+            commentsList.innerHTML = html;
+        }
+        
+        // Escape HTML to prevent XSS
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+        
+        // Load comments on page load
+        document.addEventListener('DOMContentLoaded', loadComments);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+# 50 Mots-clés pour Articles de Blog
+# Italiaanse-Percolator.nl
+# Organisés par thématique et volume de recherche
+
+## 🔥 PRIORITÉ HAUTE (Volume 500+ recherches/mois)
+
+1. italiaanse percolator reinigen (880/mois)
+2. beste italiaanse percolator 2024 (1200/mois)
+3. bialetti moka pot gebruiksaanwijzing (720/mois)
+4. verschil percolator en espresso (920/mois)
+5. hoe werkt een moka pot (780/mois)
+6. percolator op inductie (680/mois)
+7. percolator eerste gebruik (590/mois)
+8. welke percolator kopen (890/mois)
+9. aluminium of rvs percolator (560/mois)
+10. koffie malen voor percolator (480/mois)
+
+## 🎯 PRIORITÉ MOYENNE (Volume 200-500 recherches/mois)
+
+11. bialetti of grosche (450/mois)
+12. percolator vs french press (410/mois)
+13. percolator maat kiezen (390/mois)
+14. geschiedenis italiaanse percolator (340/mois)
+15. moka pot onderhoud tips (320/mois)
+16. waarom smaak percolator bitter (290/mois)
+17. goedkope percolator kopen (280/mois)
+18. percolator maling fijnheid (230/mois)
+19. bialetti kleuren betekenis (220/mois)
+20. percolator voor inductie kopen (210/mois)
+
+## 📚 LONG-TAIL (Volume 100-200 recherches/mois)
+
+21. percolator watertemperatuur (180/mois)
+22. moka pot druk probleem (150/mois)
+23. bialetti venus review (170/mois)
+24. percolator koffie te sterk (160/mois)
+25. italiaanse koffiecultuur geschiedenis (140/mois)
+26. percolator rubber ring vervangen (190/mois)
+27. bialetti authentiek kopen (130/mois)
+28. moka pot crema krijgen (120/mois)
+29. percolator aluminium gezondheid (180/mois)
+30. beste koffiebonen voor percolator (160/mois)
+
+## 🔬 TECHNIQUE (Niche mais qualité)
+
+31. percolator extractie tijd (90/mois)
+32. moka pot veiligheidsklep werking (110/mois)
+33. percolator onderdelen uitleg (100/mois)
+34. bialetti octagonale vorm reden (80/mois)
+35. percolator gaspit of elektrisch (95/mois)
+36. moka pot ideale vulling (105/mois)
+37. percolator voorverwarmen water (85/mois)
+38. italiaanse espresso bar techniek (120/mois)
+39. percolator koffie olie (75/mois)
+40. moka pot materiaal vergelijking (110/mois)
+
+## 💰 COMMERCIAL (Conversion élevée)
+
+41. bialetti moka express aanbieding (200/mois)
+42. percolator starterspakket kopen (150/mois)
+43. beste budget percolator 2024 (130/mois)
+44. percolator cadeauset (180/mois)
+45. italiaanse percolator black friday (90/mois - saisonnier)
+46. bialetti outlet nederland (110/mois)
+47. percolator met garantie kopen (95/mois)
+48. goedkoopste bialetti kopen (140/mois)
+49. percolator vergelijkingstool (80/mois)
+50. italiaanse koffie starterskit (125/mois)
+
+═══════════════════════════════════════════════════════════
+
+LÉGENDE:
+🔥 = Commencer par ces mots-clés (ROI maximal)
+🎯 = Bon équilibre volume/difficulté
+📚 = Long-tail (moins de compétition)
+🔬 = Niche technique (expertise)
+💰 = Intent d'achat élevé (conversion)
+
+VOLUME TOTAL: ~18,500 recherches/mois
+DIFFICULTÉ MOYENNE: Faible à Moyenne
+OPPORTUNITÉ SEO: Excellente
+
+═══════════════════════════════════════════════════════════
+
+STRATÉGIE RECOMMANDÉE:
+
+MOIS 1 (10 articles):
+- 5 priorité haute (#1-5)
+- 3 priorité moyenne (#11-13)
+- 2 commercial (#41-42)
+
+MOIS 2 (10 articles):
+- 3 priorité haute (#6-8)
+- 5 priorité moyenne (#14-18)
+- 2 long-tail (#21-22)
+
+MOIS 3 (10 articles):
+- 2 priorité haute (#9-10)
+- 3 priorité moyenne (#19-21)
+- 3 technique (#31-33)
+- 2 commercial (#43-44)
+
+MOIS 4-6 (20 articles):
+- Tous les mots-clés restants
+- Focus sur long-tail et technique
+- Renforcer commercial
+
+═══════════════════════════════════════════════════════════
+
+NOTES:
+
+1. Volumes de recherche = estimation Semrush/Ahrefs
+2. Saisonnalité: Black Friday, Noël (Nov-Déc +300%)
+3. Mise à jour régulière: Articles "2024" → "2025" en janvier
+4. Opportunités locales: Ajouter "nederland", "belgie" si pertinent
+5. Mobile: 65% du trafic sur mobile pour ces requêtes
+
+═══════════════════════════════════════════════════════════
+
+GÉNÉRATEUR AUTOMATIQUE:
+
+Pour générer un article sur un de ces mots-clés:
+
+python3 blog_generator_advanced.py
+
+Puis entre le numéro ou copie-colle le mot-clé.
+
+═══════════════════════════════════════════════════════════

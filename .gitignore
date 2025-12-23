@@ -1,0 +1,57 @@
+# ===================================
+# Blog Generator - Sensitive Files
+# ===================================
+
+# API Keys et configuration sensible
+.env
+.env.local
+.env.*.local
+*.key
+config_private.json
+
+# Dossier de sortie des articles
+blog/
+blog/*.html
+blog/*.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+
+# Cache
+.cache/
+*.cache
