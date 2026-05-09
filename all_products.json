@@ -67,7 +67,9 @@
     "materiaal": "Aluminium",
     "type": "Cafetière percolateur",
     "image": "Images/Bialetti Moka Alpina Limited Editions 3 Kops 120Ml .jpg",
-    "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1519207&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fbialetti-moka-alpina-limited-editions-3-kops-120ml%2F&name=Bialetti%20Moka%20Alpina%20Limited%20Editions%203%20Kops%20120Ml"
+    "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1519207&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fbialetti-moka-alpina-limited-editions-3-kops-120ml%2F9200000104569191%2F&name=Bialetti%20Moka%20Alpina%20-%20Limited%20Edition%20percolator%20-%203%20kops%20-%20120ml",
+    "product_id": "9200000104569191",
+    "bol_name": "Bialetti Moka Alpina - Limited Edition percolator - 3 kops - 120ml"
   },
   {
     "id": 5,
@@ -155,7 +157,9 @@
     "materiaal": "Aluminium",
     "type": "Cafetière percolateur",
     "image": "Images/Bialetti Brikka Espressopot Aluminium 4 Kops Zilver .jpg",
-    "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1519207&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fbialetti-brikka-espressopot-aluminium-4-kops-zilver%2F&name=Bialetti%20Brikka%20Espressopot%20Aluminium%204%20Kops%20Zilver"
+    "product_id": "9200000035721506",
+    "bol_name": "Bialetti Brikka espressopot - 4 kops - Aluminium - zilver",
+    "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1519207&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fbialetti-brikka-espressopot-aluminium-4-kops-zilver%2F9200000035721506%2F&name=Bialetti%20Brikka%20espressopot%20-%204%20kops%20-%20Aluminium%20-%20zilver"
   },
   {
     "id": 10,
@@ -963,7 +967,9 @@
     "materiaal": "Aluminium",
     "type": "Cafetière percolateur",
     "image": "images/producten/bialetti-rainbow-1tz-yellow.jpg",
-    "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1519207&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fbialetti-rainbow-1tz-yellow%2F&name=Bialetti%20Rainbow%201Tz%20Yellow"
+    "product_id": "9300000004098442",
+    "bol_name": "Bialetti Rainbow 1Tz - Yellow - Percolator - 1 kops",
+    "affiliate_url": "https://partner.bol.com/click/click?p=2&t=url&s=1519207&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fbialetti-rainbow-1tz-yellow%2F9300000004098442%2F&name=Bialetti%20Rainbow%201Tz%20-%20Yellow%20-%20Percolator%20-%201%20kops"
   },
   {
     "id": 55,
