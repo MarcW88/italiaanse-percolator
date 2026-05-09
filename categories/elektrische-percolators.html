@@ -3,10 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cafetière électrique | Italiaanse Percolator</title>
-    <meta name="description" content="Découvrez notre sélection de cafetière électrique - 2 produits testés et comparés. Livraison gratuite dès €20.">
+    <title>Elektrische percolators kopen | 5 modellen | Italiaanse Percolator</title>
+    <meta name="description" content="Koop de beste elektrische percolator: Bialetti Easy Timer, Moka Elektrikka, De&#x27;Longhi Alicia. Authentieke Italiaanse koffie zonder kookplaat, ideaal thuis of op kantoor.">
     <link rel="stylesheet" href="../style.css">
     <link rel="canonical" href="https://italiaanse-percolator.nl/categories/elektrische-percolators.html">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/svg+xml" sizes="16x16" href="../favicon-simple.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon.svg">
+    <meta name="theme-color" content="#D2691E">
+    <style>
+        .filters-container {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+        .filters-sidebar {
+            position: sticky;
+            top: 100px;
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .products-grid { min-width: 0; }
+        .filter-section {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .filter-section:last-child { border-bottom: none; margin-bottom: 0; }
+        .filter-title {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: #333;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .filter-option {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 0;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: background 0.15s;
+        }
+        .filter-option:hover { background: #f8f9fa; }
+        .filter-checkbox {
+            width: 18px;
+            height: 18px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            flex-shrink: 0;
+            transition: all 0.2s;
+        }
+        .filter-checkbox.checked {
+            background: #D2691E;
+            border-color: #D2691E;
+        }
+        .filter-checkbox.checked::after {
+            content: "✓";
+            color: white;
+            font-size: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+        .filter-label { font-size: 0.9rem; color: #555; }
+        .filter-count {
+            margin-left: auto;
+            font-size: 0.8rem;
+            color: #999;
+            background: #f0f0f0;
+            padding: 0.1rem 0.4rem;
+            border-radius: 10px;
+        }
+        .price-slider { width: 100%; accent-color: #D2691E; }
+        .price-range {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+        .clear-filters {
+            width: 100%;
+            padding: 0.6rem;
+            background: #fff5f0;
+            color: #D2691E;
+            border: 1px solid #D2691E;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+        }
+        .clear-filters:hover { background: #D2691E; color: white; }
+        .results-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding: 0.75rem 1rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .results-count { font-weight: 600; color: #333; }
+        .product-badge {
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 0.25rem 0.6rem;
+            border-radius: 12px;
+        }
+        .popular-badge   { background: #D2691E; color: white; }
+        .premium-badge   { background: #7c3aed; color: white; }
+        .special-badge   { background: #059669; color: white; }
+        .timer-badge     { background: #0891b2; color: white; }
+        @media (max-width: 768px) {
+            .filters-container { grid-template-columns: 1fr; }
+            .filters-sidebar { position: static; order: -1; }
+            .products-grid { order: 1; }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -14,120 +136,159 @@
             <div class="nav-container">
                 <a href="../index.html" class="nav-brand">Italiaanse Percolator</a>
                 <ul class="nav-menu">
-                <ul class="nav-menu">
-          <li><a href="../index.html" class="nav-link">Home</a></li>
-          <li><a href="../beste-italiaanse-percolators.html" class="nav-link">Top 10</a></li>
-          <li><a href="../koopgids/index.html" class="nav-link">Koopgids</a></li>
-          <li><a href="../marques/index.html" class="nav-link">Merken</a></li>
-          <li><a href="../vergelijking/index.html" class="nav-link">Vergelijking</a></li>
-          <li><a href="../over-ons.html" class="nav-link">Over ons</a></li>
-          <li><a href="../boutique.html" class="nav-link" style="background: #D2691E; color: white; padding: 0.5rem 1rem; border-radius: 6px; font-weight: 600;">Winkel</a></li>
-        </ul>
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="../beste-italiaanse-percolators.html" class="nav-link">Top 10</a></li>
+                    <li><a href="../koopgids/index.html" class="nav-link">Koopgids</a></li>
+                    <li><a href="../marques/index.html" class="nav-link">Merken</a></li>
+                    <li><a href="../vergelijking/index.html" class="nav-link">Vergelijking</a></li>
+                    <li><a href="../over-ons.html" class="nav-link">Over ons</a></li>
+                    <li><a href="../boutique.html" class="nav-link" style="background: #D2691E; color: white; padding: 0.5rem 1rem; border-radius: 6px; font-weight: 600;">Winkel</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
     <main class="container" style="padding: 2rem 0;">
-        <!-- Header catégorie -->
-        <header style="text-align: center; margin-bottom: 3rem;">
-            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Cafetière électrique</h1>
-            <p style="font-size: 1.1rem; color: #666; max-width: 600px; margin: 0 auto;">
-                Découvrez notre sélection de 2 cafetière électrique testés et comparés par nos experts.
+
+        <nav style="margin-bottom: 2rem; font-size: 0.9rem; color: #666;">
+            <a href="../index.html" style="color: #666; text-decoration: none;">Home</a> &gt;
+            <a href="../boutique.html" style="color: #666; text-decoration: none;">Winkel</a> &gt;
+            <span style="color: #D2691E; font-weight: 600;">Elektrische percolators</span>
+        </nav>
+
+        <header style="margin-bottom: 2.5rem;">
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem; color: #2c2c2c;">Elektrische percolators kopen</h1>
+            <p style="font-size: 1.05rem; color: #555; max-width: 820px; line-height: 1.7; margin-bottom: 1rem;">
+                Ontdek onze elektrische percolators voor wie wil genieten van authentieke Italiaanse koffie zonder kookplaat. Een elektrische percolator combineert de typische smaak van een klassieke moka met extra gebruiksgemak &mdash; ideaal voor thuis, op kantoor of op reis.
+            </p>
+            <p style="font-size: 1.05rem; color: #555; max-width: 820px; line-height: 1.7;">
+                Kies het model dat past bij jouw gebruik op basis van capaciteit, merk en functies zoals automatisch uitschakelen of een 24-uurs timer. Gebruik de filters links om snel het juiste model te vinden.
             </p>
         </header>
 
-        <!-- Filtres et tri -->
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; padding: 1rem; background: #f8f9fa; border-radius: 8px;">
-            <div>
-                <strong>2 produits</strong>
+        <div class="filters-container">
+
+            <div class="filters-sidebar">
+                <h3 style="margin-bottom: 1.5rem; color: #333;">Filters</h3>
+
+                <div class="filter-section">
+                    <div class="filter-title">&#9749; Capaciteit</div>
+                    <div class="filter-option" onclick="toggleFilter('capacity', '2')">
+                        <div class="filter-checkbox" id="capacity-2"></div>
+                        <span class="filter-label">2 kopjes</span>
+                        <span class="filter-count">1</span>
+                    </div>
+                    <div class="filter-option" onclick="toggleFilter('capacity', '4')">
+                        <div class="filter-checkbox" id="capacity-4"></div>
+                        <span class="filter-label">4 kopjes</span>
+                        <span class="filter-count">2</span>
+                    </div>
+                    <div class="filter-option" onclick="toggleFilter('capacity', '6')">
+                        <div class="filter-checkbox" id="capacity-6"></div>
+                        <span class="filter-label">6 kopjes</span>
+                        <span class="filter-count">1</span>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <div class="filter-title">&#127991; Merk</div>
+                    <div class="filter-option" onclick="toggleFilter('brand', 'bialetti')">
+                        <div class="filter-checkbox" id="brand-bialetti"></div>
+                        <span class="filter-label">Bialetti</span>
+                        <span class="filter-count">2</span>
+                    </div>
+                    <div class="filter-option" onclick="toggleFilter('brand', 'delonghi')">
+                        <div class="filter-checkbox" id="brand-delonghi"></div>
+                        <span class="filter-label">De'Longhi</span>
+                        <span class="filter-count">3</span>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <div class="filter-title">&#9881; Functies</div>
+                    <div class="filter-option" onclick="toggleFilter('feature', 'timer')">
+                        <div class="filter-checkbox" id="feature-timer"></div>
+                        <span class="filter-label">Timer</span>
+                        <span class="filter-count">2</span>
+                    </div>
+                    <div class="filter-option" onclick="toggleFilter('feature', 'automatisch')">
+                        <div class="filter-checkbox" id="feature-automatisch"></div>
+                        <span class="filter-label">Automatisch</span>
+                        <span class="filter-count">3</span>
+                    </div>
+                </div>
+
+                <div class="filter-section">
+                    <div class="filter-title">&#128176; Prijsrange</div>
+                    <input type="range" class="price-slider" min="60" max="110" value="110" id="priceRange" oninput="updatePriceFilter(this.value)">
+                    <div class="price-range">
+                        <span>&euro;60</span>
+                        <span id="maxPrice">&euro;110</span>
+                    </div>
+                </div>
+
+                <button class="clear-filters" onclick="clearAllFilters()">Wis alle filters</button>
             </div>
-            <div style="display: flex; gap: 1rem; align-items: center;">
-                <label>Trier par:</label>
-                <select onchange="sortProducts(this.value)" style="padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;">
-                    <option value="name">Nom A-Z</option>
-                    <option value="price-asc">Prix croissant</option>
-                    <option value="price-desc">Prix décroissant</option>
-                    <option value="rating">Note client</option>
-                </select>
+
+            <div class="products-grid">
+                <div class="results-header">
+                    <div class="results-count" id="resultsCount">5 producten</div>
+                    <select id="sortSelect" onchange="sortProducts()" style="padding: 0.5rem; border: 1px solid #ddd; border-radius: 6px;">
+                        <option value="popular">Meest populair</option>
+                        <option value="price-low">Prijs: laag naar hoog</option>
+                        <option value="price-high">Prijs: hoog naar laag</option>
+                        <option value="rating">Beste beoordelingen</option>
+                        <option value="name">Naam A-Z</option>
+                    </select>
+                </div>
+                <div id="productsContainer"></div>
             </div>
         </div>
 
-        <!-- Grille produits -->
-        <div id="products-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-            
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-easy-timer-moka-espressomaker-percolator-6-kops-elektrisch-aluminium.jpg" alt="Bialetti Easy Timer Moka Espressomaker Percolator 6 Kops Elektrisch Aluminium" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-easy-timer-moka-espressomaker-percolator-6-kops-elektrisch-aluminium.html" style="text-decoration: none; color: #333;">
-                    Bialetti Easy Timer Moka Espressomaker Percolator 6 Kops Elektrisch Aluminium
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
+        <section style="margin-top: 4rem; padding-top: 3rem; border-top: 2px solid #f0f0f0;">
+            <div style="max-width: 860px;">
+
+                <h2 style="font-size: 1.8rem; margin-bottom: 1.5rem; color: #2c2c2c;">Waarom kiezen voor een elektrische percolator?</h2>
+
+                <p style="color: #444; line-height: 1.8; margin-bottom: 1.5rem;">Een elektrische percolator is de ideale keuze voor wie houdt van de smaak van Italiaanse koffie, maar extra comfort zoekt in het dagelijks gebruik. In tegenstelling tot een klassieke percolator heb je geen gasvuur, elektrische kookplaat of inductieplaat nodig &mdash; het toestel voorziet zelf de warmte via een elektrische aansluiting. Dat maakt elektrische percolators bijzonder handig in situaties waar snelheid en eenvoud belangrijk zijn.</p>
+
+                <h3 style="font-size: 1.3rem; margin: 2rem 0 1rem; color: #2c2c2c;">Elektrische percolator zonder kookplaat</h3>
+                <p style="color: #444; line-height: 1.8; margin-bottom: 1.5rem;">Elektrische percolators zijn populair in kleinere keukens, op kantoor, in studentenkamers, op vakantie of op plaatsen waar je geen traditionele kookplaat wilt of kunt gebruiken. Je hebt enkel een stopcontact nodig. Modellen zoals de Bialetti Easy Timer of de De&#x27;Longhi Alicia zijn speciaal ontworpen voor dit gebruik en combineren een compact formaat met eenvoudige bediening.</p>
+
+                <h3 style="font-size: 1.3rem; margin: 2rem 0 1rem; color: #2c2c2c;">Waar let je op bij het kopen van een elektrische percolator?</h3>
+                <p style="color: #444; line-height: 1.8; margin-bottom: 1.5rem;">Veel elektrische percolators zijn ontworpen met praktische extra&#x27;s zoals automatische uitschakeling, een vaste elektrische basis of een 24-uurs timer. Zo zet je koffie nog eenvoudiger en veiliger. De De&#x27;Longhi EMKP 42.B beschikt over een programmaatimer, terwijl de De&#x27;Longhi Alicia Plus volledig automatisch werkt. Let ook op het vermogen, de capaciteit en of het toestel eenvoudig te reinigen is.</p>
+
+                <h3 style="font-size: 1.3rem; margin: 2rem 0 1rem; color: #2c2c2c;">Hoeveel kopjes heb je nodig?</h3>
+                <p style="color: #444; line-height: 1.8; margin-bottom: 1.5rem;">Een 2-kops model zoals de Bialetti Moka Elektrikka is handig voor individueel gebruik en zet circa 100 ml per beurt. Een 4-kops model past bij twee koffiedrinkers. De Bialetti Easy Timer (6 kops) zet tot 300 ml en past goed bij een klein gezin of kantooromgeving. Meer tips vind je in onze <a href="../koopgids/index.html" style="color: #D2691E; text-decoration: none; font-weight: 600;">uitgebreide koopgids</a> of op de <a href="percolators.html" style="color: #D2691E; text-decoration: none; font-weight: 600;">overzichtspagina van alle percolators</a>.</p>
+
+                <h2 style="font-size: 1.8rem; margin: 3rem 0 1.5rem; color: #2c2c2c;">Veelgestelde vragen over elektrische percolators</h2>
+
+                <div style="border: 1px solid #ddd; border-radius: 10px; overflow: hidden; margin-bottom: 1rem;">
+                    <button onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'none' ? 'block' : 'none'" style="width: 100%; padding: 1.2rem 1.5rem; background: white; border: none; text-align: left; font-size: 1rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between;">Hoe werkt een elektrische percolator? <span>+</span></button>
+                    <div style="display: none; padding: 1rem 1.5rem 1.5rem; color: #555; line-height: 1.7;">Een elektrische percolator werkt op hetzelfde principe als een klassieke moka: water in het onderste reservoir wordt verwarmd en stijgt door druk door de gemalen koffie naar het bovenste reservoir. Het verschil is dat de warmte direct vanuit het toestel zelf komt via een ingebouwde verwarmingsplaat, zonder aparte kookplaat.</div>
                 </div>
-                <span style="font-size: 0.9rem; color: #666;">(125)</span>
-            </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Easy Timer - Aluminium...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €84,99
-                </span>
-                <a href="../producten/bialetti-easy-timer-moka-espressomaker-percolator-6-kops-elektrisch-aluminium.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        <div class="product-card" style="background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s;">
-            <img src="../images/producten/bialetti-moka-elektrikka-percolator-2-kops-aluminium-elektrisch-230v.jpg" alt="Bialetti Moka Elektrikka Percolator 2 Kops Aluminium Elektrisch 230V" 
-                 style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;"
-                 onerror="this.src='../Images/placeholder-product.jpg'">
-            
-            <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem;">
-                <a href="../producten/bialetti-moka-elektrikka-percolator-2-kops-aluminium-elektrisch-230v.html" style="text-decoration: none; color: #333;">
-                    Bialetti Moka Elektrikka Percolator 2 Kops Aluminium Elektrisch 230V
-                </a>
-            </h3>
-            
-            <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-                <div style="color: #ffd700;">
-                    ★★★★☆
+
+                <div style="border: 1px solid #ddd; border-radius: 10px; overflow: hidden; margin-bottom: 1rem;">
+                    <button onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'none' ? 'block' : 'none'" style="width: 100%; padding: 1.2rem 1.5rem; background: white; border: none; text-align: left; font-size: 1rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between;">Wat is het verschil tussen Bialetti en De&#x27;Longhi elektrisch? <span>+</span></button>
+                    <div style="display: none; padding: 1rem 1.5rem 1.5rem; color: #555; line-height: 1.7;">Bialetti elektrische modellen (Easy Timer, Moka Elektrikka) zijn compacter en dichter bij de traditionele moka-beleving, met aluminium body en eenvoudige bediening. De&#x27;Longhi modellen (Alicia, Moka Express EMKP) bieden meer functies zoals een programmaatimer of volledige automatisering, met een modernere uitstraling. Bialetti voor traditie, De&#x27;Longhi voor comfort.</div>
                 </div>
-                <span style="font-size: 0.9rem; color: #666;">(25)</span>
+
+                <div style="border: 1px solid #ddd; border-radius: 10px; overflow: hidden; margin-bottom: 1rem;">
+                    <button onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'none' ? 'block' : 'none'" style="width: 100%; padding: 1.2rem 1.5rem; background: white; border: none; text-align: left; font-size: 1rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between;">Kan ik een elektrische percolator meenemen op reis? <span>+</span></button>
+                    <div style="display: none; padding: 1rem 1.5rem 1.5rem; color: #555; line-height: 1.7;">Ja, elektrische percolators zijn compact en licht. Let op het voltage (230V voor Europese stopcontacten) en neem een reisadapter mee buiten Europa. De Bialetti Moka Elektrikka (2 kops) is het meest compact voor onderweg.</div>
+                </div>
+
+                <div style="border: 1px solid #ddd; border-radius: 10px; overflow: hidden; margin-bottom: 1rem;">
+                    <button onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'none' ? 'block' : 'none'" style="width: 100%; padding: 1.2rem 1.5rem; background: white; border: none; text-align: left; font-size: 1rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between;">Welke koffie gebruik ik in een elektrische percolator? <span>+</span></button>
+                    <div style="display: none; padding: 1rem 1.5rem 1.5rem; color: #555; line-height: 1.7;">Gebruik dezelfde koffie als bij een klassieke moka: fijner dan filterkoffie maar grover dan espresso. Vul het filterbasketje losjes &mdash; niet aandrukken &mdash; voor de beste smaak en goede drukopbouw.</div>
+                </div>
+
             </div>
-            
-            <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem; line-height: 1.4;">
-                Cafetière Moka Elektrikka - 2 tasses - Aluminium...
-            </p>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 1.3rem; font-weight: bold; color: #D2691E;">
-                    €68,99
-                </span>
-                <a href="../producten/bialetti-moka-elektrikka-percolator-2-kops-aluminium-elektrisch-230v.html" class="btn btn-primary" 
-                   style="padding: 0.5rem 1rem; background: #D2691E; color: white; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                    Bekijk details
-                </a>
-            </div>
-        </div>
-        </div>
+        </section>
+
     </main>
 
-    <!-- Footer -->
-        <!-- Footer Optimized v2.0 -->
-        <!-- Footer Optimized v2.0 -->
-        <!-- Footer Optimized v2.0 -->
-    <footer class="footer">
+<footer class="footer">
         <div class="container">
             <!-- SECTION 1: Main Branding + Newsletter -->
             <div class="footer-top" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.1);">
@@ -285,27 +446,117 @@
     </footer>
 
     <script>
-    function sortProducts(criteria) {
-        // JavaScript pour tri dynamique
-        const grid = document.getElementById('products-grid');
-        const products = Array.from(grid.children);
-        
-        products.sort((a, b) => {
-            switch(criteria) {
-                case 'name':
-                    return a.querySelector('h3').textContent.localeCompare(b.querySelector('h3').textContent);
-                case 'price-asc':
-                    return parseFloat(a.querySelector('.price').textContent.replace('€', '')) - 
-                           parseFloat(b.querySelector('.price').textContent.replace('€', ''));
-                case 'price-desc':
-                    return parseFloat(b.querySelector('.price').textContent.replace('€', '')) - 
-                           parseFloat(a.querySelector('.price').textContent.replace('€', ''));
-                default:
-                    return 0;
-            }
-        });
-        
-        products.forEach(product => grid.appendChild(product));
+    let allProducts = [];
+    let activeFilters = { capacity: [], brand: [], feature: [], maxPrice: 110 };
+
+    async function loadProducts() {
+        try {
+            const response = await fetch('../all_products.json');
+            const products = await response.json();
+            allProducts = products
+                .filter(p => p.type === 'Caf\u00e9ti\u00e8re \u00e9lectrique')
+                .map(enrichProduct);
+            displayProducts(allProducts);
+            updateResultsCount(allProducts.length);
+        } catch (err) {
+            console.error('Fout bij laden producten:', err);
+        }
     }
+
+    function enrichProduct(p) {
+        const n = (p.name || '').toLowerCase();
+        p.brand = (p.merk || '').toLowerCase().includes('bialetti') ? 'bialetti' : 'delonghi';
+        p.hasTimer = n.includes('timer') || n.includes('24-uurs') || n.includes('easy timer');
+        p.isAutomatic = n.includes('automatisch') || n.includes('automatic') || n.includes('alicia');
+        return p;
+    }
+
+    function displayProducts(products) {
+        const container = document.getElementById('productsContainer');
+        if (products.length === 0) {
+            container.innerHTML = '<div style="text-align:center;padding:4rem 2rem;background:white;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,0.1);"><div style="font-size:4rem;margin-bottom:1rem;">&#128532;</div><h3 style="color:#333;margin-bottom:1rem;">Geen producten gevonden</h3><p style="color:#666;margin-bottom:2rem;">Probeer je zoekcriteria aan te passen</p><button onclick="clearAllFilters()" style="background:#D2691E;color:white;border:none;padding:0.75rem 1.5rem;border-radius:25px;cursor:pointer;font-weight:600;">Wis alle filters</button></div>';
+            return;
+        }
+        const html = products.map(p => {
+            const badges = [];
+            if (p.hasTimer) badges.push({label:'Timer', cls:'timer-badge'});
+            if (p.isAutomatic) badges.push({label:'Automatisch', cls:'premium-badge'});
+            const badgesHTML = badges.slice(0,2).map(b => '<span class="product-badge ' + b.cls + '">' + b.label + '</span>').join('');
+            const capLabel = p.capaciteit <= 2 ? '1-2 pers.' : p.capaciteit <= 4 ? '2-3 pers.' : '3-4 pers.';
+            return '<div class="enhanced-product-card" style="background:white;border-radius:16px;padding:1.5rem;box-shadow:0 4px 20px rgba(0,0,0,0.08);transition:all 0.3s;border:2px solid transparent;position:relative;overflow:hidden;" onmouseover="this.style.transform=\'translateY(-6px)\';this.style.boxShadow=\'0 12px 40px rgba(0,0,0,0.15)\';this.style.borderColor=\'#D2691E\';" onmouseout="this.style.transform=\'translateY(0)\';this.style.boxShadow=\'0 4px 20px rgba(0,0,0,0.08)\';this.style.borderColor=\'transparent\';">' +
+                '<div style="position:absolute;top:12px;left:12px;z-index:2;display:flex;flex-direction:column;gap:0.4rem;">' + badgesHTML + '</div>' +
+                '<div style="text-align:center;margin-bottom:1.25rem;"><img src="' + (p.image || '../Images/bialetti-moka-express-1.jpg') + '" alt="' + p.name + '" style="width:100%;height:190px;object-fit:contain;border-radius:10px;background:#f8f9fa;" onerror="this.src=\'../Images/bialetti-moka-express-1.jpg\'" loading="lazy"></div>' +
+                '<h3 style="font-size:0.95rem;margin:0 0 0.4rem;line-height:1.4;color:#333;font-weight:600;height:2.7rem;overflow:hidden;">' + p.name + '</h3>' +
+                '<p style="font-size:0.82rem;color:#888;margin:0 0 0.6rem;">Perfect voor ' + capLabel + '</p>' +
+                '<div style="display:flex;align-items:center;gap:0.5rem;margin-bottom:0.8rem;"><span style="color:#ffd700;font-size:0.9rem;">&#11088; ' + (p.rating || 4.3) + '</span><span style="color:#666;font-size:0.82rem;">(' + (p.reviews || 25) + ' reviews)</span></div>' +
+                '<div style="background:#f8f9fa;padding:0.6rem 0.75rem;border-radius:8px;margin-bottom:1rem;font-size:0.8rem;display:flex;flex-wrap:wrap;gap:0.5rem;"><span>&#128207; <strong>' + p.capaciteit + ' kops</strong></span><span>&#128295; ' + (p.materiaal || 'Aluminium') + '</span><span style="color:#0891b2;">&#9889; Elektrisch</span></div>' +
+                '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.9rem;"><span style="font-size:1.25rem;font-weight:bold;color:#D2691E;">&euro;' + p.price + '</span><span style="color:#059669;font-size:0.8rem;">&#10003; Op voorraad</span></div>' +
+                '<div style="display:flex;flex-direction:column;gap:0.4rem;">' +
+                '<a href="' + p.affiliate_url + '" target="_blank" rel="sponsored" style="display:block;background:linear-gradient(135deg,#D2691E,#8B4513);color:white;padding:0.65rem 1rem;border-radius:8px;text-decoration:none;font-weight:600;text-align:center;font-size:0.88rem;">Koop op Bol.com &rarr;</a>' +
+                '<a href="../producten/' + p.slug + '.html" style="display:block;border:2px solid #D2691E;color:#D2691E;padding:0.55rem 1rem;border-radius:8px;text-decoration:none;font-weight:600;text-align:center;font-size:0.82rem;">Bekijk details</a>' +
+                '</div></div>';
+        }).join('');
+        container.innerHTML = '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.5rem;">' + html + '</div>';
+    }
+
+    function matchesFilters(p) {
+        if (activeFilters.capacity.length > 0 && !activeFilters.capacity.includes(String(p.capaciteit))) return false;
+        if (activeFilters.brand.length > 0 && !activeFilters.brand.includes(p.brand)) return false;
+        if (activeFilters.feature.includes('timer') && !p.hasTimer) return false;
+        if (activeFilters.feature.includes('automatisch') && !p.isAutomatic) return false;
+        if (p.price > activeFilters.maxPrice) return false;
+        return true;
+    }
+
+    function applyFilters() {
+        const filtered = allProducts.filter(matchesFilters);
+        displayProducts(filtered);
+        updateResultsCount(filtered.length);
+    }
+
+    function toggleFilter(category, value) {
+        const cb = document.getElementById(category + '-' + value);
+        if (activeFilters[category].includes(value)) {
+            activeFilters[category] = activeFilters[category].filter(v => v !== value);
+            cb.classList.remove('checked');
+        } else {
+            activeFilters[category].push(value);
+            cb.classList.add('checked');
+        }
+        applyFilters();
+    }
+
+    function updatePriceFilter(val) {
+        activeFilters.maxPrice = parseInt(val);
+        document.getElementById('maxPrice').textContent = '\u20ac' + val;
+        applyFilters();
+    }
+
+    function updateResultsCount(count) {
+        document.getElementById('resultsCount').textContent = count + ' producten';
+    }
+
+    function clearAllFilters() {
+        activeFilters = { capacity: [], brand: [], feature: [], maxPrice: 110 };
+        document.querySelectorAll('.filter-checkbox').forEach(cb => cb.classList.remove('checked'));
+        document.getElementById('priceRange').value = 110;
+        document.getElementById('maxPrice').textContent = '\u20ac110';
+        displayProducts(allProducts);
+        updateResultsCount(allProducts.length);
+    }
+
+    function sortProducts() {
+        const val = document.getElementById('sortSelect').value;
+        let sorted = allProducts.filter(matchesFilters);
+        if (val === 'price-low')  sorted.sort((a, b) => a.price - b.price);
+        else if (val === 'price-high') sorted.sort((a, b) => b.price - a.price);
+        else if (val === 'rating')     sorted.sort((a, b) => (b.rating || 0) - (a.rating || 0));
+        else if (val === 'name')       sorted.sort((a, b) => a.name.localeCompare(b.name));
+        displayProducts(sorted);
+        updateResultsCount(sorted.length);
+    }
+
+    document.addEventListener('DOMContentLoaded', loadProducts);
     </script>
 </body>
+</html>
