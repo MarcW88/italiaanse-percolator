@@ -454,7 +454,7 @@
             const response = await fetch('../all_products.json');
             const products = await response.json();
             allProducts = products
-                .filter(p => p.type === 'Caf\u00e9ti\u00e8re \u00e9lectrique')
+                .filter(p => p.type === 'Cafeti\u00e8re \u00e9lectrique')
                 .map(enrichProduct);
             displayProducts(allProducts);
             updateResultsCount(allProducts.length);
