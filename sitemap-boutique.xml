@@ -40,6 +40,86 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Filter Pages (Percolators) -->
+  <url>
+    <loc>https://italiaanse-percolator.nl/categories/percolators-inductie.html</loc>
+    <lastmod>2025-12-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://italiaanse-percolator.nl/categories/percolators-aluminium.html</loc>
+    <lastmod>2025-12-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://italiaanse-percolator.nl/categories/percolators-rvs.html</loc>
+    <lastmod>2025-12-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://italiaanse-percolator.nl/categories/percolators-1-2-kops.html</loc>
+    <lastmod>2025-12-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://italiaanse-percolator.nl/categories/percolators-3-kops.html</loc>
+    <lastmod>2025-12-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://italiaanse-percolator.nl/categories/percolators-6-kops.html</loc>
+    <lastmod>2025-12-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://italiaanse-percolator.nl/categories/percolators-9-kops.html</loc>
+    <lastmod>2025-12-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://italiaanse-percolator.nl/categories/percolators-bialetti-moka-express.html</loc>
+    <lastmod>2025-12-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://italiaanse-percolator.nl/categories/percolators-bialetti-venus.html</loc>
+    <lastmod>2025-12-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://italiaanse-percolator.nl/categories/percolators-bialetti-brikka.html</loc>
+    <lastmod>2025-12-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://italiaanse-percolator.nl/categories/percolators-bialetti-mini-express.html</loc>
+    <lastmod>2025-12-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://italiaanse-percolator.nl/categories/percolators-bialetti-rainbow.html</loc>
+    <lastmod>2025-12-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://italiaanse-percolator.nl/categories/percolators-bialetti-moka-induction.html</loc>
+    <lastmod>2025-12-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Brand Product Pages -->
   <url>
     <loc>https://italiaanse-percolator.nl/marques/bialetti/fiammetta.html</loc>
