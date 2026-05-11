@@ -1,8 +1,10 @@
 User-agent: *
 Allow: /
 
-# Sitemap
+# Sitemaps
 Sitemap: https://italiaanse-percolator.nl/sitemap.xml
+Sitemap: https://italiaanse-percolator.nl/sitemap-site.xml
+Sitemap: https://italiaanse-percolator.nl/sitemap-boutique.xml
 
 # Crawl-delay for respectful crawling
 Crawl-delay: 1

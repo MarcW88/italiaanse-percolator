@@ -34,15 +34,8 @@
         "availability": "https://schema.org/InStock",
         "seller": {
             "@type": "Organization",
-            "name": "Italiaanse Percolator"
+            "name": "Bol.com"
         }
-    },
-    "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": 4.3,
-        "reviewCount": 25,
-        "bestRating": "5",
-        "worstRating": "1"
     },
     "additionalProperty": [
         {
@@ -81,102 +74,155 @@
         </div>
     </nav>
 
-    <main class="container" style="padding: 2rem 0;"><div style="display: flex; flex-direction: column; width: 100%;">
-        <nav style="margin-bottom: 2rem; font-size: 0.9rem; color: #666;">
-            <a href="../index.html" style="color: #666; text-decoration: none;">Home</a> &gt;
-            <a href="../boutique.html" style="color: #666; text-decoration: none;">Winkel</a> &gt;
-            <span style="color: #D2691E; font-weight: 600;">Espressomaker, 6 kops - Kela | Latina</span>
+    <main>
+    <style>
+        .product-layout { max-width: 1180px; margin: 0 auto; padding: 2rem 1.5rem; }
+        .product-breadcrumb { font-size: 0.85rem; color: #888; margin-bottom: 2.5rem; }
+        .product-breadcrumb a { color: #888; text-decoration: none; }
+        .product-breadcrumb a:hover { color: #D2691E; }
+        .product-hero { display: grid; grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.2fr); gap: 3rem; align-items: start; margin-bottom: 3.5rem; }
+        .product-gallery img { width: 100%; max-height: 460px; object-fit: contain; background: #faf7f2; border-radius: 16px; padding: 2rem; }
+        .product-summary h1 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); line-height: 1.1; margin-bottom: 0.75rem; color: #111; }
+        .product-kicker { font-size: 0.85rem; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; }
+        .product-rating { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1.25rem; }
+        .product-rating .stars { color: #ffd700; font-size: 1.3rem; }
+        .product-rating .score { font-size: 1rem; font-weight: 600; color: #111; }
+        .product-rating a { color: #666; font-size: 0.9rem; text-decoration: underline; text-underline-offset: 2px; }
+        .product-intro { font-size: 1.05rem; line-height: 1.7; color: #555; margin-bottom: 1.5rem; max-width: 580px; }
+        .product-quick-pros { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0; }
+        .product-quick-pros span { font-size: 0.85rem; color: #333; background: #f5f5f5; padding: 0.4rem 0.75rem; border-radius: 4px; }
+        .content-grid { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 3rem; align-items: start; }
+        .product-content { display: flex; flex-direction: column; gap: 2.5rem; }
+        .buy-box { position: sticky; top: 90px; border: 1px solid #e5e5e5; border-radius: 12px; padding: 1.75rem; }
+        .buy-box .price { font-size: 2.2rem; font-weight: 700; color: #D2691E; margin-bottom: 1.25rem; }
+        .buy-box .cta { display: block; width: 100%; text-align: center; background: #D2691E; color: white; padding: 1rem; text-decoration: none; border-radius: 8px; font-size: 1rem; font-weight: 600; margin-bottom: 1.25rem; transition: background 0.2s; }
+        .buy-box .cta:hover { background: #b8541a; }
+        .buy-box .trust { font-size: 0.8rem; color: #666; line-height: 1.8; }
+        .buy-box .trust span { display: block; }
+        .buy-box .specs { border-top: 1px solid #eee; margin-top: 1.25rem; padding-top: 1.25rem; }
+        .buy-box .specs li { display: flex; justify-content: space-between; font-size: 0.85rem; padding: 0.4rem 0; color: #444; }
+        .buy-box .specs li span:first-child { font-weight: 600; }
+        .section-title { font-size: 1.2rem; font-weight: 600; color: #111; margin-bottom: 1rem; }
+        .description p { color: #444; line-height: 1.8; font-size: 0.95rem; margin-bottom: 1rem; }
+        .analyse-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+        .analyse-grid h4 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; color: #111; margin-bottom: 0.75rem; }
+        .analyse-grid ul { list-style: none; padding: 0; margin: 0; font-size: 0.9rem; color: #444; line-height: 2; }
+        .analyse-verdict { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #eee; font-size: 0.9rem; color: #444; line-height: 1.8; }
+        .analyse-verdict a { color: #D2691E; text-decoration: underline; }
+        .faq-item { border: 1px solid #e5e5e5; border-radius: 6px; margin-bottom: 0.75rem; }
+        .faq-item button { width: 100%; padding: 1.1rem 1.25rem; background: white; border: none; text-align: left; font-size: 0.95rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; color: #222; }
+        .faq-item .faq-body { display: none; padding: 0 1.25rem 1.25rem; color: #555; line-height: 1.7; font-size: 0.9rem; }
+        .similar-section { margin-top: 3.5rem; border-top: 1px solid #eee; padding-top: 2.5rem; }
+        .similar-section h2 { font-size: 1.2rem; font-weight: 600; margin-bottom: 1.5rem; color: #111; }
+        .similar-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+        .similar-card { text-decoration: none; color: inherit; border: 1px solid #eee; border-radius: 8px; padding: 1rem; transition: box-shadow 0.2s; }
+        .similar-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+        .similar-card img { width: 100%; height: 100px; object-fit: contain; margin-bottom: 0.75rem; }
+        .similar-card h4 { font-size: 0.8rem; line-height: 1.4; margin-bottom: 0.5rem; color: #333; font-weight: 500; }
+        .similar-card .card-price { font-size: 0.95rem; font-weight: 700; color: #D2691E; }
+        @media (max-width: 900px) {
+            .product-hero { grid-template-columns: 1fr; }
+            .content-grid { grid-template-columns: 1fr; }
+            .buy-box { position: static; }
+            .similar-grid { grid-template-columns: repeat(2, 1fr); }
+            .analyse-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+
+    <div class="product-layout">
+        <!-- Breadcrumb -->
+        <nav class="product-breadcrumb">
+            <a href="../index.html">Home</a> / <a href="../boutique.html">Winkel</a> / <a href="../categories/percolators.html">Percolators</a> / Espressomaker, 6 kops - Kela
         </nav>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 3rem;">
-            <div>
-                <img src="../images/producten/espressomaker-6-kops-kela-latina.jpg" alt="Espressomaker, 6 kops - Kela | Latina"
-                     style="width: 100%; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.15);"
-                     onerror="this.src='../Images/bialetti-moka-express-1.jpg'">
+        <!-- Hero: Image + Summary -->
+        <div class="product-hero">
+            <div class="product-gallery">
+                <img src="../Images/bialetti-moka-express-1.jpg" alt="Espressomaker, 6 kops - Kela" onerror="this.src='../Images/bialetti-moka-express-1.jpg'">
             </div>
-            <div>
-                <h1 style="font-size: 2.2rem; margin-bottom: 1rem; line-height: 1.2;">Espressomaker, 6 kops - Kela | Latina</h1>
-                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
-                    <div style="color: #ffd700; font-size: 1.3rem;">★★★★☆</div>
-                    <span style="color: #666; font-size: 1rem;">(25 beoordelingen)</span>
+
+            <div class="product-summary">
+                <p class="product-kicker">Kela · 6 kopjes</p>
+                <h1>Espressomaker, 6 kops - Kela</h1>
+
+                <div class="product-rating">
+                    <span class="stars">★★★★☆</span>
+                    <span class="score">4,3/5</span>
+                    <a href="https://partner.bol.com/click/click?p=2&t=url&s=1519207&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fespressomaker-6-kops-kela-latina%2F9200000117267655%2F&name=Espressomaker%2C%206%20kops%20-%20Kela%20%7C%20Latina" target="_blank" rel="sponsored noopener">25 reviews op Bol.com</a>
                 </div>
-                <div style="font-size: 2.5rem; font-weight: bold; color: #D2691E; margin-bottom: 2rem;">€66,00</div>
-                <div style="margin-bottom: 2rem;">
-                    <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">Productbeschrijving</h3>
-                    <p style="color: #666; line-height: 1.6; font-size: 1rem;">
-                        De Espressomaker, 6 kops - Kela | Latina is een hoogwaardige <a href="../index.html" style="color: #D2691E; text-decoration: none; font-weight: 600;">italiaanse percolator</a> van Kela. Gemaakt van rvs voor een authentieke espresso-ervaring. Geschikt voor inductie.
-                    </p>
-                </div>
-                <div style="margin-bottom: 2rem;">
-                    <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">Specificaties</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee; display: flex; justify-content: space-between;"><span style="font-weight: 600;">Merk:</span><span> Kela</span></li>
-                        <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee; display: flex; justify-content: space-between;"><span style="font-weight: 600;">Materiaal:</span><span> RVS</span></li>
-                        <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee; display: flex; justify-content: space-between;"><span style="font-weight: 600;">Capaciteit:</span><span> 6 kopjes</span></li>
-                        <li style="padding: 0.5rem 0; border-bottom: 1px solid #eee; display: flex; justify-content: space-between;"><span style="font-weight: 600;">Inductie:</span><span> Ja</span></li>
-                    </ul>
-                </div>
-                <div style="margin-bottom: 2rem;">
-                    <a href="https://partner.bol.com/click/click?p=2&t=url&s=1519207&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fespressomaker-6-kops-kela-latina%2F9200000117267655%2F&name=Espressomaker%2C%206%20kops%20-%20Kela%20%7C%20Latina" target="_blank" rel="sponsored"
-                       style="display: inline-block; background: linear-gradient(135deg, #D2691E, #B8541A); color: white; padding: 1rem 2rem; text-decoration: none; border-radius: 8px; font-size: 1.1rem; font-weight: 600; box-shadow: 0 4px 15px rgba(210, 105, 30, 0.3); transition: all 0.3s ease;">
-                        Koop nu op Bol.com →
-                    </a>
-                </div>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; font-size: 0.9rem; color: #666;">
-                    <div style="display: flex; align-items: center; gap: 0.5rem;"><span style="color: #28a745;">✓</span>Gratis retourneren binnen 30 dagen</div>
-                    <div style="display: flex; align-items: center; gap: 0.5rem;"><span style="color: #28a745;">✓</span>Snelle levering via Bol.com</div>
-                    <div style="display: flex; align-items: center; gap: 0.5rem;"><span style="color: #28a745;">✓</span>Betrouwbare klantenservice</div>
-                    <div style="display: flex; align-items: center; gap: 0.5rem;"><span style="color: #28a745;">✓</span>Veilig betalen</div>
+
+                <p class="product-intro">
+                    De Espressomaker, 6 kops - Kela | Latina is een hoogwaardige italiaanse percolator van Kela. Gemaakt van rvs voor een authentieke espresso-ervaring. Geschikt voor inductie.
+                </p>
+
+                <div class="product-quick-pros">
+                    <span>✓ RVS</span>
+                    <span>✓ Inductiegeschikt</span>
+                    <span>✓ 6 kopjes</span>
                 </div>
             </div>
         </div>
 
-        <section style="margin: 3rem 0; display: block; clear: both; width: 100%;">
-            <div style="max-width: 1000px; margin: 0 auto;">
-                <h3 style="font-size: 1.5rem; margin-bottom: 2rem; color: #2c2c2c; font-weight: 600; text-align: center;">Productbeschrijving</h3>
-                <div style="background: #f8f9fa; padding: 2.5rem; border-radius: 12px; border-left: 4px solid #D2691E; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
-                    <p style="margin-bottom: 1.5rem; color: #333; line-height: 1.7; font-size: 1rem;">De Espressomaker, 6 kops - Kela | Latina is een uitstekende keuze voor liefhebbers van authentieke Italiaanse espresso. Met zijn rvs constructie biedt dit apparaat duurzaamheid en stijl in één.</p>
-                    <p style="margin-bottom: 1.5rem; color: #333; line-height: 1.7; font-size: 1rem;">Geschikt voor inductie. Perfect voor dagelijks gebruik in de moderne keuken. De traditionele moka-methode zorgt voor een rijke, aromatische espresso die je direct aan een Italiaans café doet denken.</p>
-                    <p style="margin-bottom: 1.5rem; color: #333; line-height: 1.7; font-size: 1rem;">Met een capaciteit van 6 kopjes is deze percolator ideaal voor grotere groepen. Geniet elke ochtend van een perfect kopje espresso met de Kela | Latina.</p>
+        <!-- Content Grid: Editorial + Buy Box -->
+        <div class="content-grid">
+            <!-- Left: Editorial content -->
+            <div class="product-content">
+                <!-- Description -->
+                <section>
+                    <h2 class="section-title">Productbeschrijving</h2>
+                    <div class="description">
+                        <p>De Espressomaker, 6 kops - Kela | Latina is een uitstekende keuze voor liefhebbers van authentieke Italiaanse espresso. Met zijn rvs constructie biedt dit apparaat duurzaamheid en stijl in één.</p>
+                        <p>Geschikt voor inductie. Perfect voor dagelijks gebruik in de moderne keuken. De traditionele moka-methode zorgt voor een rijke, aromatische espresso die je direct aan een Italiaans café doet denken.</p>
+                        <p>Met een capaciteit van 6 kopjes is deze percolator ideaal voor grotere groepen. Geniet elke ochtend van een perfect kopje espresso met de Kela | Latina.</p>
+                    </div>
+                </section>
+
+                <!-- FAQ -->
+                <section>
+                    <h2 class="section-title">Veelgestelde Vragen</h2>
+                    <div class="faq-item">
+                        <button onclick="toggleFaq(1)">Waarom smaakt mijn koffie bitter? <span id="faq-icon-1">+</span></button>
+                        <div id="faq-content-1" class="faq-body">Bittere koffie komt vaak door te hoge temperatuur, te fijne maling, of te lang op het vuur laten staan. Gebruik middelhoog vuur en haal direct van het vuur wanneer de koffie klaar is.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button onclick="toggleFaq(2)">Is de Espressomaker, 6 kops - Kela | Latina geschikt voor inductie? <span id="faq-icon-2">+</span></button>
+                        <div id="faq-content-2" class="faq-body">Ja, deze percolator is geschikt voor inductieplaten.</div>
+                    </div>
+                    <div class="faq-item">
+                        <button onclick="toggleFaq(3)">Hoeveel kopjes koffie maakt de Espressomaker, 6 kops - Kela | Latina? <span id="faq-icon-3">+</span></button>
+                        <div id="faq-content-3" class="faq-body">Deze percolator maakt 6 kopjes per zetbeurt. Let op: dit zijn Italiaanse espresso-kopjes (ongeveer 50ml), niet grote mokken.</div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right: Sticky Buy Box -->
+            <aside class="buy-box">
+                <div class="price">€66,00</div>
+                <a href="https://partner.bol.com/click/click?p=2&t=url&s=1519207&f=TXL&url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Fespressomaker-6-kops-kela-latina%2F9200000117267655%2F&name=Espressomaker%2C%206%20kops%20-%20Kela%20%7C%20Latina" target="_blank" rel="sponsored" class="cta">Bekijk op Bol.com →</a>
+                <div class="trust">
+                    <span>✓ Gratis retourneren binnen 30 dagen</span>
+                    <span>✓ Snelle levering via Bol.com</span>
+                    <span>✓ Veilig betalen</span>
                 </div>
+                <ul class="specs" style="list-style: none; padding: 0; margin: 0;">
+                    <li><span>Merk</span><span>Kela</span></li>
+                    <li><span>Materiaal</span><span>RVS</span></li>
+                    <li><span>Capaciteit</span><span>6 kopjes</span></li>
+                    <li><span>Inductie</span><span>Ja</span></li>
+                </ul>
+            </aside>
+        </div>
+
+        <!-- Vergelijkbare producten -->
+        <section class="similar-section">
+            <h2>Vergelijkbare Producten</h2>
+            <div class="similar-grid">
             </div>
         </section>
+    </div>
+    </main>
 
-        <section style="margin-bottom: 3rem; display: block; clear: both; width: 100%;">
-            <h2 style="font-size: 2rem; margin-bottom: 2rem;">Veelgestelde Vragen over de Espressomaker, 6 kops - Kela | Latina</h2>
-            <div style="max-width: 800px;">
-                <div style="border: 1px solid #ddd; border-radius: 8px; margin-bottom: 1rem;">
-                    <button onclick="toggleFaq(1)" style="width: 100%; padding: 1.5rem; background: white; border: none; text-align: left; font-size: 1.1rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
-                        Waarom smaakt mijn koffie bitter?
-                        <span id="faq-icon-1">+</span>
-                    </button>
-                    <div id="faq-content-1" style="display: none; padding: 0 1.5rem 1.5rem; color: #666; line-height: 1.6;">
-                        Bittere koffie komt vaak door te hoge temperatuur, te fijne maling, of te lang op het vuur laten staan. Gebruik middelhoog vuur en haal direct van het vuur wanneer de koffie klaar is.
-                    </div>
-                </div>
-                <div style="border: 1px solid #ddd; border-radius: 8px; margin-bottom: 1rem;">
-                    <button onclick="toggleFaq(2)" style="width: 100%; padding: 1.5rem; background: white; border: none; text-align: left; font-size: 1.1rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
-                        Is de Espressomaker, 6 kops - Kela | Latina geschikt voor inductie?
-                        <span id="faq-icon-2">+</span>
-                    </button>
-                    <div id="faq-content-2" style="display: none; padding: 0 1.5rem 1.5rem; color: #666; line-height: 1.6;">
-                        Ja, deze percolator is geschikt voor inductieplaten.
-                    </div>
-                </div>
-                <div style="border: 1px solid #ddd; border-radius: 8px;">
-                    <button onclick="toggleFaq(3)" style="width: 100%; padding: 1.5rem; background: white; border: none; text-align: left; font-size: 1.1rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
-                        Hoeveel kopjes koffie maakt de Espressomaker, 6 kops - Kela | Latina?
-                        <span id="faq-icon-3">+</span>
-                    </button>
-                    <div id="faq-content-3" style="display: none; padding: 0 1.5rem 1.5rem; color: #666; line-height: 1.6;">
-                        Deze percolator maakt 6 kopjes per zetbeurt. Let op: dit zijn Italiaanse espresso-kopjes (ongeveer 50ml), niet grote mokken.
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div></main>
-
-    <footer class="footer">
+<footer class="footer">
         <div class="container">
             <div class="footer-top" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 3rem; padding-bottom: 3rem; border-bottom: 1px solid rgba(255,255,255,0.1);">
                 <div>
