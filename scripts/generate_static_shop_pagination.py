@@ -143,12 +143,15 @@ def card(p, prefix):
 
 def page_url(kind, slug, page):
     if kind == 'boutique':
-        return 'boutique.html' if page == 1 else f'boutique/page/{page}.html'
-    return f'categories/{slug}.html' if page == 1 else f'categories/{slug}/page/{page}.html'
+        return 'boutique.html' if page == 1 else f'boutique.html?page={page}'
+    return f'categories/{slug}.html' if page == 1 else f'categories/{slug}.html?page={page}'
 
 
 def local_path(kind, slug, page):
-    return ROOT / page_url(kind, slug, page)
+    # Only generate page 1 as base file; query parameters handled by JS
+    if kind == 'boutique':
+        return ROOT / 'boutique.html'
+    return ROOT / f'categories/{slug}.html'
 
 
 def pagination(kind, slug, current, total, prefix):
@@ -178,7 +181,7 @@ def pagination(kind, slug, current, total, prefix):
 
 
 def render(kind, slug, products, page, total_pages, title, h1, description):
-    prefix = '' if kind == 'boutique' and page == 1 else '../../' if kind == 'boutique' else '../' if page == 1 else '../../../'
+    prefix = '' if kind == 'boutique' else '../'
     url_path = page_url(kind, slug, page)
     canonical = f'{SITE}/{url_path}'
     title_full = title if page == 1 else f'{title} - pagina {page}'
@@ -195,6 +198,8 @@ def render(kind, slug, products, page, total_pages, title, h1, description):
         f'<a href="{cats_prefix}percolators-aluminium.html" style="color: var(--text-dim); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--border); border-radius: 0.5rem;">Aluminium</a>'
         f'<a href="{cats_prefix}percolators-rvs.html" style="color: var(--text-dim); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--border); border-radius: 0.5rem;">RVS</a>'
     )
+    products_json = json.dumps(products, ensure_ascii=False)
+    base_url = page_url(kind, slug, 1)
     return f'''<!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -204,28 +209,96 @@ def render(kind, slug, products, page, total_pages, title, h1, description):
     <meta name="description" content="{html.escape(meta)}">
     <link rel="stylesheet" href="{prefix}style.css">
     <link rel="canonical" href="{canonical}">
-    {'<link rel="prev" href="' + SITE + '/' + page_url(kind, slug, page - 1) + '">' if page > 1 else ''}
-    {'<link rel="next" href="' + SITE + '/' + page_url(kind, slug, page + 1) + '">' if page < total_pages else ''}
     <link rel="icon" type="image/svg+xml" href="{prefix}favicon.svg">
 </head>
 <body>
 {NAV_ROOT.format(prefix=prefix)}
     <section style="background:#f5f0ea;padding:3rem 0 2.5rem;"><div class="container" style="max-width:780px;">
         <p style="font-size:0.78rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem;"><a href="{prefix}index.html" style="color:var(--text-light);text-decoration:none;">Home</a> / Shop</p>
-        <h1 style="font-family:var(--font-serif);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:400;margin-bottom:0.75rem;">{html.escape(h1)}{f' - pagina {page}' if page > 1 else ''}</h1>
+        <h1 style="font-family:var(--font-serif);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:400;margin-bottom:0.75rem;">{html.escape(h1)}</h1>
         <p style="color:var(--text-dim);font-size:1rem;max-width:540px;">{html.escape(description)} {len(products)} producten gevonden.</p>
     </div></section>
     <div style="border-bottom:1px solid var(--border);padding:1rem 0;"><div class="container" style="display:flex;gap:1.5rem;flex-wrap:wrap;font-size:0.85rem;">
         {category_links}
     </div></div>
     <main class="container" style="padding:2.5rem 0;">
-        <p style="color:var(--text-dim);margin-bottom:1.5rem;">Pagina {page} van {total_pages} · producten {start + 1}-{min(start + PER_PAGE, len(products))} van {len(products)}</p>
-        <div class="shop-product-grid">
-{grid}
-        </div>
-        {pagination(kind, slug, page, total_pages, prefix)}
+        <p id="page-info" style="color:var(--text-dim);margin-bottom:1.5rem;">Pagina laden...</p>
+        <div id="products-grid" class="shop-product-grid"></div>
+        <div id="pagination"></div>
     </main>
 {FOOTER.format(prefix=prefix)}
+    <script>
+    const allProducts = {products_json};
+    const perPage = {PER_PAGE};
+    const baseUrl = '{base_url}';
+    let currentPage = 1;
+    
+    function getPageUrl(page) {{
+        return page === 1 ? baseUrl : baseUrl + '?page=' + page;
+    }}
+    
+    function getPageFromUrl() {{
+        const params = new URLSearchParams(window.location.search);
+        const p = parseInt(params.get('page'));
+        return isNaN(p) ? 1 : p;
+    }}
+    
+    function renderPage(page) {{
+        const start = (page - 1) * perPage;
+        const items = allProducts.slice(start, start + perPage);
+        const totalPages = Math.ceil(allProducts.length / perPage);
+        
+        const grid = document.getElementById('products-grid');
+        grid.innerHTML = items.map(p => {{
+            const badges = [];
+            if (p.inductie === 'Oui') badges.push('Inductie');
+            if (p.capaciteit) badges.push(p.capaciteit + ' kops');
+            if (p.materiaal) badges.push(p.materiaal);
+            const badgeHTML = badges.map(b => `<span style="font-size:0.72rem;color:var(--text-light);border:1px solid var(--border);padding:0.2rem 0.5rem;border-radius:0.5rem;">${{b}}</span>`).join('');
+            const price = p.price ? `€${{p.price.toFixed(2)}}` : '';
+            const rating = p.rating ? `{{p.rating}}/5` : '';
+            const ratingHTML = rating ? `<span style="font-size:0.78rem;color:var(--text-light);">${{rating}}</span>` : '';
+            return `<div style="border:1px solid var(--border);overflow:hidden;background:white;transition:border-color 0.2s;border-radius:0.5rem;display:flex;flex-direction:column;height:100%;" onmouseover="this.style.borderColor='var(--coffee)'" onmouseout="this.style.borderColor='var(--border)'">
+                <div style="background:#fafafa;padding:1rem;text-align:center;"><img src="${{p.image || '{prefix}Images/placeholder-product.jpg'}}" alt="${{p.name}}" loading="lazy" style="height:160px;width:100%;object-fit:contain;" onerror="this.src='{prefix}Images/placeholder-product.jpg'"></div>
+                <div style="padding:1rem;">
+                    <div style="display:flex;gap:0.35rem;flex-wrap:wrap;margin-bottom:0.5rem;">${{badgeHTML}}</div>
+                    <h3 style="font-size:0.88rem;font-weight:600;line-height:1.35;margin-bottom:0.5rem;height:2.4rem;overflow:hidden;">${{p.name}}</h3>
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+                        <span style="font-size:1.1rem;font-weight:700;">${{price}}</span>
+                        ${{ratingHTML}}
+                    </div>
+                    <a href="${{p.affiliate_url || '#'}}" target="_blank" rel="sponsored" style="display:block;text-align:center;padding:0.55rem;background:var(--coffee);color:white;text-decoration:none;border-radius:0.3rem;font-size:0.82rem;font-weight:600;margin-bottom:0.4rem;">Bekijk op Bol.com</a>
+                    <a href="{prefix}producten/${{p.slug}}.html" style="display:block;text-align:center;padding:0.45rem;border:1px solid var(--border);color:var(--text-dim);text-decoration:none;border-radius:0.3rem;font-size:0.78rem;">Details</a>
+                </div>
+            </div>`;
+        }}).join('');
+        
+        document.getElementById('page-info').textContent = `Pagina ${{page}} van ${{totalPages}} · producten ${{start + 1}}-${{Math.min(start + perPage, allProducts.length)}} van ${{allProducts.length}}`;
+        
+        const pagination = document.getElementById('pagination');
+        if (totalPages <= 1) {{ pagination.innerHTML = ''; return; }}
+        
+        let html = '';
+        if (page > 1) {{
+            html += `<a href="${{getPageUrl(page - 1)}}" class="pagination-link">Vorige</a>`;
+        }}
+        const startPage = Math.max(1, page - 2);
+        const endPage = Math.min(totalPages, page + 2);
+        for (let i = startPage; i <= endPage; i++) {{
+            const active = i === page ? ' active' : '';
+            html += `<a href="${{getPageUrl(i)}}" class="pagination-link${{active}}">${{i}}</a>`;
+        }}
+        if (page < totalPages) {{
+            html += `<a href="${{getPageUrl(page + 1)}}" class="pagination-link">Volgende</a>`;
+        }}
+        pagination.innerHTML = html;
+    }}
+    
+    document.addEventListener('DOMContentLoaded', () => {{
+        currentPage = getPageFromUrl();
+        renderPage(currentPage);
+    }});
+    </script>
 </body>
 </html>'''
 
