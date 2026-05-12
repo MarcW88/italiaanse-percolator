@@ -6,14 +6,14 @@
     <title>FAQ Template Generator</title>
     <style>
         body { font-family: Arial, sans-serif; padding: 2rem; max-width: 1200px; margin: 0 auto; }
-        .generator { background: #f8f9fa; padding: 2rem; border-radius: 8px; margin-bottom: 2rem; }
-        .output { background: white; padding: 2rem; border: 1px solid #ddd; border-radius: 8px; }
-        input, select { padding: 0.5rem; margin: 0.5rem; border: 1px solid #ddd; border-radius: 4px; }
-        button { padding: 0.75rem 1.5rem; background: #D2691E; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        .generator { background: #f8f9fa; padding: 2rem;   }
+        .output { background: white; padding: 2rem; border: 1px solid #ddd;  }
+        input, select { padding: 0.5rem; margin: 0.5rem; border: 1px solid #ddd;  }
+        button { padding: 0.75rem 1.5rem; background: var(--coffee); color: white; border: none;  cursor: pointer; }
         .question-bank { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin: 1rem 0; }
-        .question-item { background: white; padding: 1rem; border: 1px solid #ddd; border-radius: 4px; cursor: pointer; }
+        .question-item { background: white; padding: 1rem; border: 1px solid #ddd;  cursor: pointer; }
         .question-item.selected { background: #e8f5e8; border-color: #28a745; }
-        .output-code { background: #f8f9fa; padding: 1rem; border-radius: 4px; font-family: monospace; white-space: pre-wrap; }
+        .output-code { background: #f8f9fa; padding: 1rem;  font-family: monospace; white-space: pre-wrap; }
     </style>
 </head>
 <body>
@@ -207,8 +207,8 @@
             }
             
             let html = `        <!-- FAQ Section -->
-        <section style="margin-bottom: 3rem; display: block; clear: both; width: 100%;">
-            <h2 style="font-size: 2rem; margin-bottom: 2rem;">Veelgestelde Vragen over de ${productName}</h2>
+        <section style=" display: block; clear: both; width: 100%;">
+            <h2 style="font-size: 2rem; ">Veelgestelde Vragen over de ${productName}</h2>
             
             <div style="max-width: 800px;">`;
             
@@ -217,8 +217,8 @@
                 const isLast = index === selectedQuestions.length - 1;
                 
                 html += `
-                <div style="border: 1px solid #ddd; border-radius: 8px;${isLast ? '' : ' margin-bottom: 1rem;'}">
-                    <button onclick="toggleFaq(${index + 1})" style="width: 100%; padding: 1.5rem; background: white; border: none; text-align: left; font-size: 1.1rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+                <div style="border: 1px solid #ddd; ${isLast ? '' : ' margin-bottom: 1rem;'} border: 1px solid var(--border); border-radius: 0.5rem;">
+                    <button onclick="toggleFaq(${index + 1})" style="width: 100%; padding: 1.5rem; background: white; border: none; text-align: left; font-size: 1.1rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; border: 1px solid var(--border); border-radius: 0.5rem;">
                         ${question.question.replace('{productName}', productName)}
                         <span id="faq-icon-${index + 1}">+</span>
                     </button>

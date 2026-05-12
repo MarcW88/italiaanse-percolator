@@ -34,7 +34,7 @@
     <!-- Header -->
     <section style="background: #f5f0ea; padding: 3rem 0 2.5rem;">
         <div class="container" style="max-width: 780px;">
-            <p style="font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--coffee); margin-bottom: 0.75rem;">
+            <p style="font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem;">
                 <a href="index.html" style="color: var(--text-light); text-decoration: none;">Home</a> / Alle modellen
             </p>
             <h1 style="font-family: var(--font-serif); font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 400; margin-bottom: 0.75rem;">Alle modellen vergeleken</h1>
@@ -45,12 +45,12 @@
     <!-- Categories -->
     <div style="border-bottom: 1px solid var(--border); padding: 1rem 0;">
         <div class="container" style="display: flex; gap: 1.5rem; flex-wrap: wrap; font-size: 0.85rem;">
-            <a href="categories/percolators.html" style="color: var(--text-dim); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--border); border-radius: 0.25rem;">Percolators (322)</a>
-            <a href="categories/elektrische-percolators.html" style="color: var(--text-dim); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--border); border-radius: 0.25rem;">Elektrisch (247)</a>
-            <a href="categories/accessoires.html" style="color: var(--text-dim); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--border); border-radius: 0.25rem;">Accessoires (862)</a>
-            <a href="categories/percolators-inductie.html" style="color: var(--text-dim); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--border); border-radius: 0.25rem;">Inductie</a>
-            <a href="categories/percolators-aluminium.html" style="color: var(--text-dim); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--border); border-radius: 0.25rem;">Aluminium</a>
-            <a href="categories/percolators-rvs.html" style="color: var(--text-dim); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--border); border-radius: 0.25rem;">RVS</a>
+            <a href="categories/percolators.html" style="color: var(--text-dim); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--border); .25rem; border: 1px solid var(--border); border-radius: 0.5rem;">Percolators (322)</a>
+            <a href="categories/elektrische-percolators.html" style="color: var(--text-dim); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--border); .25rem; border: 1px solid var(--border); border-radius: 0.5rem;">Elektrisch (247)</a>
+            <a href="categories/accessoires.html" style="color: var(--text-dim); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--border); .25rem; border: 1px solid var(--border); border-radius: 0.5rem;">Accessoires (862)</a>
+            <a href="categories/percolators-inductie.html" style="color: var(--text-dim); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--border); .25rem; border: 1px solid var(--border); border-radius: 0.5rem;">Inductie</a>
+            <a href="categories/percolators-aluminium.html" style="color: var(--text-dim); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--border); .25rem; border: 1px solid var(--border); border-radius: 0.5rem;">Aluminium</a>
+            <a href="categories/percolators-rvs.html" style="color: var(--text-dim); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--border); .25rem; border: 1px solid var(--border); border-radius: 0.5rem;">RVS</a>
         </div>
     </div>
 
@@ -59,18 +59,18 @@
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border);">
             <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;">
                 <strong id="results-count" style="font-size: 0.9rem;">Laden...</strong>
-                <select id="filter-type" onchange="applyFilters()" style="padding: 0.5rem 0.75rem; border: 1px solid var(--border); border-radius: 0.25rem; font-size: 0.85rem; background: white;">
+                <select id="filter-type" onchange="applyFilters()" style="padding: 0.5rem 0.75rem; border: 1px solid var(--border); .25rem; font-size: 0.85rem; background: white; border: 1px solid var(--border); border-radius: 0.5rem;">
                     <option value="">Alle types</option>
                     <option value="Cafetière percolateur">Percolators</option>
                     <option value="Cafetière électrique">Elektrisch</option>
                     <option value="Accessoire">Accessoires</option>
                 </select>
-                <select id="filter-inductie" onchange="applyFilters()" style="padding: 0.5rem 0.75rem; border: 1px solid var(--border); border-radius: 0.25rem; font-size: 0.85rem; background: white;">
+                <select id="filter-inductie" onchange="applyFilters()" style="padding: 0.5rem 0.75rem; border: 1px solid var(--border); .25rem; font-size: 0.85rem; background: white; border: 1px solid var(--border); border-radius: 0.5rem;">
                     <option value="">Inductie</option>
                     <option value="Oui">Ja</option>
                     <option value="Non">Nee</option>
                 </select>
-                <select id="filter-merk" onchange="applyFilters()" style="padding: 0.5rem 0.75rem; border: 1px solid var(--border); border-radius: 0.25rem; font-size: 0.85rem; background: white;">
+                <select id="filter-merk" onchange="applyFilters()" style="padding: 0.5rem 0.75rem; border: 1px solid var(--border); .25rem; font-size: 0.85rem; background: white; border: 1px solid var(--border); border-radius: 0.5rem;">
                     <option value="">Merk</option>
                     <option value="Bialetti">Bialetti</option>
                     <option value="G.A.T. Italia">G.A.T. Italia</option>
@@ -86,14 +86,14 @@
                 </div>
             </div>
             <div style="display: flex; gap: 0.75rem; align-items: center; font-size: 0.85rem;">
-                <select id="sort-select" onchange="sortProducts()" style="padding: 0.5rem 0.75rem; border: 1px solid var(--border); border-radius: 0.25rem; font-size: 0.85rem; background: white;">
+                <select id="sort-select" onchange="sortProducts()" style="padding: 0.5rem 0.75rem; border: 1px solid var(--border); .25rem; font-size: 0.85rem; background: white; border: 1px solid var(--border); border-radius: 0.5rem;">
                     <option value="populair">Populair</option>
                     <option value="prijs-laag">Prijs laag-hoog</option>
                     <option value="prijs-hoog">Prijs hoog-laag</option>
                     <option value="rating">Beoordeling</option>
                     <option value="naam">Naam A-Z</option>
                 </select>
-                <button onclick="clearFilters()" style="padding: 0.5rem 0.75rem; background: none; border: 1px solid var(--border); border-radius: 0.25rem; cursor: pointer; font-size: 0.85rem; color: var(--text-dim);">Wis</button>
+                <button onclick="clearFilters()" style="padding: 0.5rem 0.75rem; background: none; border: 1px solid var(--border); .25rem; cursor: pointer; font-size: 0.85rem; color: var(--text-dim); border: 1px solid var(--border); border-radius: 0.5rem;">Wis</button>
             </div>
         </div>
 
@@ -106,13 +106,13 @@
         <div id="products-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.25rem; margin-bottom: 2.5rem;"></div>
         
         <!-- Pagination -->
-        <div id="pagination" style="display: flex; justify-content: center; align-items: center; gap: 0.5rem; margin-bottom: 3rem; flex-wrap: wrap;"></div>
+        <div id="pagination" style="display: flex; justify-content: center; align-items: center; gap: 0.5rem;  flex-wrap: wrap;"></div>
     </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div style="display: grid; grid-template-columns: 2fr repeat(3, 1fr); gap: 3rem; margin-bottom: 3rem;">
+            <div style="display: grid; grid-template-columns: 2fr repeat(3, 1fr); gap: 3rem; ">
                 <div>
                     <p style="font-family: var(--font-serif); font-size: 1.2rem; color: white; margin-bottom: 1rem;">Italiaanse Percolator</p>
                     <p style="color: #999; font-size: 0.85rem; line-height: 1.7; margin-bottom: 0;">
@@ -168,7 +168,7 @@
             updatePagination();
         } catch (error) {
             console.error('Fout:', error);
-            document.getElementById('loading-indicator').innerHTML = '<p style="color:var(--text-light);">Producten konden niet geladen worden. <a href="" style="color:var(--coffee);">Probeer opnieuw</a></p>';
+            document.getElementById('loading-indicator').innerHTML = '<p style="color:var(--text-light);">Producten konden niet geladen worden. <a href="" style="">Probeer opnieuw</a></p>';
         }
     });
 
@@ -182,12 +182,12 @@
             if (p.inductie === 'Oui') badges.push('Inductie');
             if (p.capaciteit) badges.push(p.capaciteit + ' kops');
             if (p.materiaal) badges.push(p.materiaal);
-            const badgeHTML = badges.map(b => `<span style="font-size:0.72rem;color:var(--text-light);border:1px solid var(--border);padding:0.2rem 0.5rem;border-radius:0.2rem;">${b}</span>`).join('');
+            const badgeHTML = badges.map(b => `<span style="font-size:0.72rem;color:var(--text-light);border:1px solid var(--border);padding:0.2rem 0.5rem;.2rem; border: 1px solid var(--border); border-radius: 0.5rem;">${b}</span>`).join('');
             const price = p.price ? `€${p.price.toFixed(2)}` : '';
             const rating = p.rating ? `${p.rating}` : '';
             
             return `
-            <div style="border:1px solid var(--border);border-radius:0.5rem;overflow:hidden;background:white;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--coffee)'" onmouseout="this.style.borderColor='var(--border)'">
+            <div style="border:1px solid var(--border);.5rem;overflow:hidden;background:white;transition:border-color 0.2s; border: 1px solid var(--border); border-radius: 0.5rem;" onmouseover="this.style.borderColor='var(--coffee)'" onmouseout="this.style.borderColor='var(--border)'">
                 <div style="background:#fafafa;padding:1rem;text-align:center;">
                     <img src="${p.image || 'Images/placeholder-product.jpg'}" alt="${p.name}" loading="lazy"
                          style="height:160px;width:100%;object-fit:contain;"
@@ -197,14 +197,14 @@
                     <div style="display:flex;gap:0.35rem;flex-wrap:wrap;margin-bottom:0.5rem;">${badgeHTML}</div>
                     <h3 style="font-size:0.88rem;font-weight:600;line-height:1.35;margin-bottom:0.5rem;height:2.4rem;overflow:hidden;">${p.name}</h3>
                     <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
-                        <span style="font-size:1.1rem;font-weight:700;color:var(--coffee);">${price}</span>
+                        <span style="font-size:1.1rem;font-weight:700;">${price}</span>
                         ${rating ? `<span style="font-size:0.78rem;color:var(--text-light);">${rating}/5</span>` : ''}
                     </div>
                     <a href="${p.affiliate_url || '#'}" target="_blank" rel="sponsored"
-                       style="display:block;text-align:center;padding:0.55rem;background:var(--coffee);color:white;text-decoration:none;border-radius:0.3rem;font-size:0.82rem;font-weight:600;margin-bottom:0.4rem;">
+                       style="display:block;text-align:center;padding:0.55rem;background:var(--coffee);color:white;text-decoration:none;.3rem;font-size:0.82rem;font-weight:600;margin-bottom:0.4rem;">
                         Bekijk op Bol.com
                     </a>
-                    <a href="producten/${p.slug}.html" style="display:block;text-align:center;padding:0.45rem;border:1px solid var(--border);color:var(--text-dim);text-decoration:none;border-radius:0.3rem;font-size:0.78rem;">
+                    <a href="producten/${p.slug}.html" style="display:block;text-align:center;padding:0.45rem;border:1px solid var(--border);color:var(--text-dim);text-decoration:none;.3rem;font-size:0.78rem; border: 1px solid var(--border); border-radius: 0.5rem;">
                         Details
                     </a>
                 </div>
@@ -221,16 +221,16 @@
         if (totalPages <= 1) { pagination.innerHTML = ''; return; }
         
         let html = '';
-        if (currentPage > 1) html += `<button onclick="goPage(${currentPage-1})" style="padding:0.5rem 0.75rem;border:1px solid var(--border);background:white;border-radius:0.25rem;cursor:pointer;font-size:0.82rem;">Vorige</button>`;
+        if (currentPage > 1) html += `<button onclick="goPage(${currentPage-1})" style="padding:0.5rem 0.75rem;border:1px solid var(--border);background:white;.25rem;cursor:pointer;font-size:0.82rem; border: 1px solid var(--border); border-radius: 0.5rem;">Vorige</button>`;
         
         const start = Math.max(1, currentPage - 2);
         const end = Math.min(totalPages, currentPage + 2);
         for (let i = start; i <= end; i++) {
-            const active = i === currentPage ? 'background:var(--coffee);color:white;border-color:var(--coffee);' : '';
-            html += `<button onclick="goPage(${i})" style="padding:0.5rem 0.75rem;border:1px solid var(--border);border-radius:0.25rem;cursor:pointer;font-size:0.82rem;min-width:36px;${active}">${i}</button>`;
+            const active = i === currentPage ? 'background:var(--coffee);color:white;border-' : '';
+            html += `<button onclick="goPage(${i})" style="padding:0.5rem 0.75rem;border:1px solid var(--border);.25rem;cursor:pointer;font-size:0.82rem;min-width:36px;${active} border: 1px solid var(--border); border-radius: 0.5rem;">${i}</button>`;
         }
         
-        if (currentPage < totalPages) html += `<button onclick="goPage(${currentPage+1})" style="padding:0.5rem 0.75rem;border:1px solid var(--border);background:white;border-radius:0.25rem;cursor:pointer;font-size:0.82rem;">Volgende</button>`;
+        if (currentPage < totalPages) html += `<button onclick="goPage(${currentPage+1})" style="padding:0.5rem 0.75rem;border:1px solid var(--border);background:white;.25rem;cursor:pointer;font-size:0.82rem; border: 1px solid var(--border); border-radius: 0.5rem;">Volgende</button>`;
         html += `<span style="font-size:0.8rem;color:var(--text-light);margin-left:0.5rem;">Pagina ${currentPage}/${totalPages}</span>`;
         pagination.innerHTML = html;
     }
