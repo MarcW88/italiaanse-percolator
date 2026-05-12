@@ -1592,8 +1592,15 @@ body.review-page {
 .shop-product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: var(--sp-5);
+  gap: 1.25rem;
   margin-bottom: var(--sp-10);
+  align-items: stretch;
+}
+
+.shop-product-grid > div {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .shop-pagination {

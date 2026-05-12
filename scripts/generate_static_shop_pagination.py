@@ -126,7 +126,7 @@ def card(p, prefix):
     aff = html.escape(p.get('affiliate_url') or '#')
     rating = p.get('rating') or ''
     rating_html = f'<span style="font-size:0.78rem;color:var(--text-light);">{rating}/5</span>' if rating else ''
-    return f'''            <div style="border:1px solid var(--border);overflow:hidden;background:white;transition:border-color 0.2s;border-radius:0.5rem;" onmouseover="this.style.borderColor='var(--coffee)'" onmouseout="this.style.borderColor='var(--border)'">
+    return f'''            <div style="border:1px solid var(--border);overflow:hidden;background:white;transition:border-color 0.2s;border-radius:0.5rem;display:flex;flex-direction:column;height:100%;" onmouseover="this.style.borderColor='var(--coffee)'" onmouseout="this.style.borderColor='var(--border)'">
                 <div style="background:#fafafa;padding:1rem;text-align:center;"><img src="{img}" alt="{name}" loading="lazy" style="height:160px;width:100%;object-fit:contain;" onerror="this.src='{prefix}Images/placeholder-product.jpg'"></div>
                 <div style="padding:1rem;">
                     <div style="display:flex;gap:0.35rem;flex-wrap:wrap;margin-bottom:0.5rem;">{badge_html}</div>
