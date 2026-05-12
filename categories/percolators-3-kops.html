@@ -62,6 +62,18 @@
         }
     }
     
+    function toggleFaq(id, btn) {
+        const el = document.getElementById(id);
+        const span = btn.querySelector('span');
+        if (el.style.display === 'none') {
+            el.style.display = 'block';
+            span.textContent = '-';
+        } else {
+            el.style.display = 'none';
+            span.textContent = '+';
+        }
+    }
+    
     function getPageUrl(page) {
         return page === 1 ? baseUrl : baseUrl + '?page=' + page;
     }

@@ -231,24 +231,24 @@ def render(kind, slug, products, page, total_pages, title, h1, description):
             <h2 style="font-family:var(--font-serif);font-size:1.8rem;font-weight:400;margin-bottom:2rem;">Veelgestelde vragen over een italiaanse percolator kopen</h2>
             <div style="display:flex;flex-direction:column;gap:1.5rem;">
                 <div>
-                    <h3 style="font-size:1.1rem;font-weight:600;margin-bottom:0.5rem;">Wat is een italiaanse percolator precies?</h3>
-                    <p style="color:var(--text-dim);line-height:1.7;">Een italiaanse percolator – vaak mokapot genoemd – is een klassiek koffiezetapparaat dat je op het fornuis gebruikt. Het water wordt onderin verwarmd, door de gemalen koffie omhoog geperst en komt als sterke, aromatische koffie in het bovenste deel terecht.</p>
+                    <button onclick="toggleFaq('faq-1', this)" style="width:100%;text-align:left;padding:1rem;background:white;border:1px solid var(--border);border-radius:0.5rem;font-size:1.1rem;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;">Wat is een italiaanse percolator precies? <span>+</span></button>
+                    <div id="faq-1" style="display:none;padding:1rem;color:var(--text-dim);line-height:1.7;">Een italiaanse percolator – vaak mokapot genoemd – is een klassiek koffiezetapparaat dat je op het fornuis gebruikt. Het water wordt onderin verwarmd, door de gemalen koffie omhoog geperst en komt als sterke, aromatische koffie in het bovenste deel terecht.</div>
                 </div>
                 <div>
-                    <h3 style="font-size:1.1rem;font-weight:600;margin-bottom:0.5rem;">Is een italiaanse percolator geschikt voor inductie?</h3>
-                    <p style="color:var(--text-dim);line-height:1.7;">Dat hangt af van het materiaal. Aluminium percolators werken meestal niet op inductie, terwijl roestvrijstalen modellen vaak wel inductiegeschikt zijn. In onze productbeschrijvingen staat altijd duidelijk aangegeven of een percolator op inductie gebruikt kan worden.</p>
+                    <button onclick="toggleFaq('faq-2', this)" style="width:100%;text-align:left;padding:1rem;background:white;border:1px solid var(--border);border-radius:0.5rem;font-size:1.1rem;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;">Is een italiaanse percolator geschikt voor inductie? <span>+</span></button>
+                    <div id="faq-2" style="display:none;padding:1rem;color:var(--text-dim);line-height:1.7;">Dat hangt af van het materiaal. Aluminium percolators werken meestal niet op inductie, terwijl roestvrijstalen modellen vaak wel inductiegeschikt zijn. In onze productbeschrijvingen staat altijd duidelijk aangegeven of een percolator op inductie gebruikt kan worden.</div>
                 </div>
                 <div>
-                    <h3 style="font-size:1.1rem;font-weight:600;margin-bottom:0.5rem;">Hoeveel kopjes koffie kan ik met een percolator zetten?</h3>
-                    <p style="color:var(--text-dim);line-height:1.7;">Percolators worden uitgedrukt in "koppen", meestal tussen 1 en 12. Een 3-kops percolator levert ongeveer 2 kleine tot 3 espresso-achtige kopjes op, een 6-kops is geschikt voor 3 à 4 koffiedrinkers. Kies liever iets groter als je vaak bezoek hebt of meerdere kopjes achter elkaar drinkt.</p>
+                    <button onclick="toggleFaq('faq-3', this)" style="width:100%;text-align:left;padding:1rem;background:white;border:1px solid var(--border);border-radius:0.5rem;font-size:1.1rem;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;">Hoeveel kopjes koffie kan ik met een percolator zetten? <span>+</span></button>
+                    <div id="faq-3" style="display:none;padding:1rem;color:var(--text-dim);line-height:1.7;">Percolators worden uitgedrukt in "koppen", meestal tussen 1 en 12. Een 3-kops percolator levert ongeveer 2 kleine tot 3 espresso-achtige kopjes op, een 6-kops is geschikt voor 3 à 4 koffiedrinkers. Kies liever iets groter als je vaak bezoek hebt of meerdere kopjes achter elkaar drinkt.</div>
                 </div>
                 <div>
-                    <h3 style="font-size:1.1rem;font-weight:600;margin-bottom:0.5rem;">Welke koffie gebruik ik in een italiaanse percolator?</h3>
-                    <p style="color:var(--text-dim);line-height:1.7;">Voor een Italiaanse percolator gebruik je een maling tussen espresso en filter in: fijner dan filterkoffie, maar niet zo fijn als voor een espressomachine. Te fijne maling kan bitterheid geven, te grof zorgt voor een waterige koffie.</p>
+                    <button onclick="toggleFaq('faq-4', this)" style="width:100%;text-align:left;padding:1rem;background:white;border:1px solid var(--border);border-radius:0.5rem;font-size:1.1rem;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;">Welke koffie gebruik ik in een italiaanse percolator? <span>+</span></button>
+                    <div id="faq-4" style="display:none;padding:1rem;color:var(--text-dim);line-height:1.7;">Voor een Italiaanse percolator gebruik je een maling tussen espresso en filter in: fijner dan filterkoffie, maar niet zo fijn als voor een espressomachine. Te fijne maling kan bitterheid geven, te grof zorgt voor een waterige koffie.</div>
                 </div>
                 <div>
-                    <h3 style="font-size:1.1rem;font-weight:600;margin-bottom:0.5rem;">Wat zijn de voordelen van een italiaanse percolator?</h3>
-                    <p style="color:var(--text-dim);line-height:1.7;">Je hebt geen dure machine nodig, zet snel sterke koffie met veel aroma en geniet van een authentiek Italiaans ritueel op het fornuis. Bovendien nemen percolators weinig ruimte in en zijn ze eenvoudig schoon te maken.</p>
+                    <button onclick="toggleFaq('faq-5', this)" style="width:100%;text-align:left;padding:1rem;background:white;border:1px solid var(--border);border-radius:0.5rem;font-size:1.1rem;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;">Wat zijn de voordelen van een italiaanse percolator? <span>+</span></button>
+                    <div id="faq-5" style="display:none;padding:1rem;color:var(--text-dim);line-height:1.7;">Je hebt geen dure machine nodig, zet snel sterke koffie met veel aroma en geniet van een authentiek Italiaans ritueel op het fornuis. Bovendien nemen percolators weinig ruimte in en zijn ze eenvoudig schoon te maken.</div>
                 </div>
             </div>
         </div>
@@ -278,24 +278,24 @@ def render(kind, slug, products, page, total_pages, title, h1, description):
             <h2 style="font-family:var(--font-serif);font-size:1.8rem;font-weight:400;margin-bottom:2rem;">Veelgestelde vragen over een elektrische percolator kopen</h2>
             <div style="display:flex;flex-direction:column;gap:1.5rem;">
                 <div>
-                    <h3 style="font-size:1.1rem;font-weight:600;margin-bottom:0.5rem;">Wat is een elektrische percolator precies?</h3>
-                    <p style="color:var(--text-dim);line-height:1.7;">Een elektrische percolator is een percolator met een ingebouwd verwarmingselement. In plaats van op gas of inductie plaats je het apparaat gewoon op het aanrecht, steekt de stekker in het stopcontact en het water wordt automatisch verhit tot de koffie klaar is.</p>
+                    <button onclick="toggleFaq('efaq-1', this)" style="width:100%;text-align:left;padding:1rem;background:white;border:1px solid var(--border);border-radius:0.5rem;font-size:1.1rem;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;">Wat is een elektrische percolator precies? <span>+</span></button>
+                    <div id="efaq-1" style="display:none;padding:1rem;color:var(--text-dim);line-height:1.7;">Een elektrische percolator is een percolator met een ingebouwd verwarmingselement. In plaats van op gas of inductie plaats je het apparaat gewoon op het aanrecht, steekt de stekker in het stopcontact en het water wordt automatisch verhit tot de koffie klaar is.</div>
                 </div>
                 <div>
-                    <h3 style="font-size:1.1rem;font-weight:600;margin-bottom:0.5rem;">Wat zijn de voordelen van een elektrische percolator?</h3>
-                    <p style="color:var(--text-dim);line-height:1.7;">Je hebt geen fornuis nodig, de temperatuur en zetduur zijn constant en veel modellen hebben een warmhoudfunctie. Dat maakt een elektrische percolator ideaal als je meerdere kopjes achter elkaar wilt schenken zonder erbij te moeten blijven.</p>
+                    <button onclick="toggleFaq('efaq-2', this)" style="width:100%;text-align:left;padding:1rem;background:white;border:1px solid var(--border);border-radius:0.5rem;font-size:1.1rem;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;">Wat zijn de voordelen van een elektrische percolator? <span>+</span></button>
+                    <div id="efaq-2" style="display:none;padding:1rem;color:var(--text-dim);line-height:1.7;">Je hebt geen fornuis nodig, de temperatuur en zetduur zijn constant en veel modellen hebben een warmhoudfunctie. Dat maakt een elektrische percolator ideaal als je meerdere kopjes achter elkaar wilt schenken zonder erbij te moeten blijven.</div>
                 </div>
                 <div>
-                    <h3 style="font-size:1.1rem;font-weight:600;margin-bottom:0.5rem;">Hoeveel kopjes koffie kan ik met een elektrische percolator zetten?</h3>
-                    <p style="color:var(--text-dim);line-height:1.7;">Dat verschilt per model: er zijn compacte toestellen voor 2–4 kopjes, maar ook grote elektrische percolators voor 10 tot 40+ kopjes. In de productinformatie staat altijd duidelijk het maximale aantal kopjes per zetbeurt vermeld.</p>
+                    <button onclick="toggleFaq('efaq-3', this)" style="width:100%;text-align:left;padding:1rem;background:white;border:1px solid var(--border);border-radius:0.5rem;font-size:1.1rem;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;">Hoeveel kopjes koffie kan ik met een elektrische percolator zetten? <span>+</span></button>
+                    <div id="efaq-3" style="display:none;padding:1rem;color:var(--text-dim);line-height:1.7;">Dat verschilt per model: er zijn compacte toestellen voor 2–4 kopjes, maar ook grote elektrische percolators voor 10 tot 40+ kopjes. In de productinformatie staat altijd duidelijk het maximale aantal kopjes per zetbeurt vermeld.</div>
                 </div>
                 <div>
-                    <h3 style="font-size:1.1rem;font-weight:600;margin-bottom:0.5rem;">Welke koffie gebruik ik in een elektrische percolator?</h3>
-                    <p style="color:var(--text-dim);line-height:1.7;">Gebruik gemalen koffie met een maling tussen filter en espresso in. Te fijne maling kan zorgen voor een bittere smaak, te grof geeft eerder een slappe koffie. Vaak werkt een speciale "percolator" of "moka" maling het best.</p>
+                    <button onclick="toggleFaq('efaq-4', this)" style="width:100%;text-align:left;padding:1rem;background:white;border:1px solid var(--border);border-radius:0.5rem;font-size:1.1rem;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;">Welke koffie gebruik ik in een elektrische percolator? <span>+</span></button>
+                    <div id="efaq-4" style="display:none;padding:1rem;color:var(--text-dim);line-height:1.7;">Gebruik gemalen koffie met een maling tussen filter en espresso in. Te fijne maling kan zorgen voor een bittere smaak, te grof geeft eerder een slappe koffie. Vaak werkt een speciale "percolator" of "moka" maling het best.</div>
                 </div>
                 <div>
-                    <h3 style="font-size:1.1rem;font-weight:600;margin-bottom:0.5rem;">Is een elektrische percolator geschikt voor op kantoor of bij feestjes?</h3>
-                    <p style="color:var(--text-dim);line-height:1.7;">Ja, zeker. Vooral de grotere modellen zijn ideaal voor kantoor, brunch of feest: je zet in één keer een volle kan en dankzij de warmhoudfunctie blijft de koffie langer op temperatuur. Dat is praktischer dan steeds aparte kopjes zetten met een volautomaat.</p>
+                    <button onclick="toggleFaq('efaq-5', this)" style="width:100%;text-align:left;padding:1rem;background:white;border:1px solid var(--border);border-radius:0.5rem;font-size:1.1rem;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;">Is een elektrische percolator geschikt voor op kantoor of bij feestjes? <span>+</span></button>
+                    <div id="efaq-5" style="display:none;padding:1rem;color:var(--text-dim);line-height:1.7;">Ja, zeker. Vooral de grotere modellen zijn ideaal voor kantoor, brunch of feest: je zet in één keer een volle kan en dankzij de warmhoudfunctie blijft de koffie langer op temperatuur. Dat is praktischer dan steeds aparte kopjes zetten met een volautomaat.</div>
                 </div>
             </div>
         </div>
@@ -345,6 +345,18 @@ def render(kind, slug, products, page, total_pages, title, h1, description):
         }} else {{
             el.style.display = 'none';
             link.textContent = link.textContent.replace('&laquo;', '&raquo;');
+        }}
+    }}
+    
+    function toggleFaq(id, btn) {{
+        const el = document.getElementById(id);
+        const span = btn.querySelector('span');
+        if (el.style.display === 'none') {{
+            el.style.display = 'block';
+            span.textContent = '-';
+        }} else {{
+            el.style.display = 'none';
+            span.textContent = '+';
         }}
     }}
     
