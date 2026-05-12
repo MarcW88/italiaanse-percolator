@@ -577,6 +577,7 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: var(--sp-6);
   padding: var(--sp-4) 0;
 }
 
@@ -591,13 +592,27 @@ h4 {
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: var(--sp-8);
+  justify-content: flex-end;
+  gap: var(--sp-6);
   list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: nowrap;
+}
+
+.nav-menu > li {
+  display: flex;
+  align-items: center;
+  margin: 0;
 }
 
 .nav-link {
+  display: inline-flex;
+  align-items: center;
   color: var(--text-dim);
   font-weight: 500;
+  line-height: 1;
+  text-decoration: none;
   transition: color 0.2s ease;
 }
 
@@ -613,8 +628,6 @@ h4 {
 
 .dropdown-toggle {
   cursor: pointer;
-  display: flex;
-  align-items: center;
   gap: 4px;
 }
 
@@ -1354,12 +1367,72 @@ img {
 
 /* Espacement pour les FAQ */
 .faq-item {
-  margin-bottom: var(--sp-4);
+  margin-bottom: var(--sp-4) !important;
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 0.5rem !important;
+  overflow: hidden !important;
 }
 
 .faq-answer {
-  padding-top: var(--sp-4);
-  margin-bottom: var(--sp-4);
+  padding: 0 var(--sp-6) var(--sp-6) !important;
+  margin-bottom: 0 !important;
+  color: var(--text-dim) !important;
+  line-height: 1.75 !important;
+}
+
+.faq-question {
+  width: 100% !important;
+  padding: var(--sp-5) var(--sp-6) !important;
+  background: var(--surface) !important;
+  border: 0 !important;
+  color: var(--text) !important;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: left;
+}
+
+.faq-question:hover {
+  color: var(--coffee);
+}
+
+.faq-question span {
+  color: var(--coffee);
+  font-size: 1rem !important;
+}
+
+.faq-item > button:not(.faq-question) {
+  width: 100% !important;
+  padding: var(--sp-5) var(--sp-6) !important;
+  background: var(--surface) !important;
+  border: 0 !important;
+  color: var(--text) !important;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: left;
+}
+
+.faq-body {
+  display: none;
+  padding: 0 var(--sp-6) var(--sp-6) !important;
+  color: var(--text-dim) !important;
+  line-height: 1.75 !important;
+}
+
+.faq-section h2 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  color: var(--text);
 }
 
 /* Espacement pour les chips/badges */
