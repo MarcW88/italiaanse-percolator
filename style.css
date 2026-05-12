@@ -308,8 +308,14 @@ h4 {
   background: var(--surface);
   border-radius: var(--r-lg);
   border: 1px solid var(--border);
+  padding: var(--sp-6);
   overflow: hidden;
   transition: border-color 0.2s ease;
+}
+
+.card > .card-body,
+.product-card > .card-body {
+  padding: var(--sp-6);
 }
 
 .card:hover {
@@ -318,6 +324,55 @@ h4 {
 
 .card-body {
   padding: var(--sp-6);
+}
+
+.card .card,
+.product-card .card {
+  background: #fafafa;
+}
+
+.card img,
+.product-card img {
+  max-width: 100%;
+}
+
+.card ul,
+.card ol {
+  padding-left: 1.25rem;
+}
+
+.card li {
+  margin-bottom: 0.45rem;
+}
+
+.card .flex {
+  min-width: 0;
+}
+
+.card .flex > div {
+  min-width: 0;
+}
+
+.card blockquote {
+  margin: 1rem 0;
+  max-width: 100%;
+}
+
+.card blockquote p {
+  overflow-wrap: anywhere;
+}
+
+.card .grid {
+  min-width: 0;
+}
+
+.card table {
+  max-width: 100%;
+}
+
+.card td,
+.card th {
+  overflow-wrap: anywhere;
 }
 
 .card-header {
