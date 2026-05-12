@@ -113,29 +113,32 @@ def fmt_price(p):
 
 def card(p, prefix):
     badges = []
-    if p.get('brand'):
-        badges.append(p['brand'])
     if p.get('inductie') == 'Oui':
         badges.append('Inductie')
     if p.get('capaciteit'):
         badges.append(f"{p['capaciteit']} kops")
+    if p.get('materiaal'):
+        badges.append(p['materiaal'])
     badge_html = ''.join(f'<span style="font-size:0.72rem;color:var(--text-light);border:1px solid var(--border);padding:0.2rem 0.5rem;border-radius:0.5rem;">{html.escape(str(b))}</span>' for b in badges[:3])
     name = html.escape(p.get('name') or '')
-    desc = html.escape((p.get('description') or '').strip()[:115])
     img = html.escape(p.get('image') or f'{prefix}Images/placeholder-product.jpg')
     slug = html.escape(p.get('slug') or '')
     aff = html.escape(p.get('affiliate_url') or '#')
-    return f'''            <article class="shop-product-card" style="border:1px solid var(--border);border-radius:0.75rem;overflow:hidden;background:white;display:flex;flex-direction:column;">
+    rating = p.get('rating') or ''
+    rating_html = f'<span style="font-size:0.78rem;color:var(--text-light);">{rating}/5</span>' if rating else ''
+    return f'''            <div style="border:1px solid var(--border);overflow:hidden;background:white;transition:border-color 0.2s;border-radius:0.5rem;" onmouseover="this.style.borderColor='var(--coffee)'" onmouseout="this.style.borderColor='var(--border)'">
                 <div style="background:#fafafa;padding:1rem;text-align:center;"><img src="{img}" alt="{name}" loading="lazy" style="height:160px;width:100%;object-fit:contain;" onerror="this.src='{prefix}Images/placeholder-product.jpg'"></div>
-                <div style="padding:1rem;display:flex;flex-direction:column;gap:0.65rem;flex:1;">
-                    <div style="display:flex;gap:0.35rem;flex-wrap:wrap;">{badge_html}</div>
-                    <h2 style="font-size:0.95rem;font-weight:700;line-height:1.35;margin:0;">{name}</h2>
-                    <p style="color:var(--text-dim);font-size:0.85rem;line-height:1.55;margin:0;">{desc}...</p>
-                    <strong style="font-size:1.1rem;color:var(--coffee);">{fmt_price(p)}</strong>
-                    <a href="{aff}" target="_blank" rel="sponsored" class="btn" style="text-align:center;">Bekijk op Bol.com</a>
-                    <a href="{prefix}producten/{slug}.html" class="btn btn-secondary" style="text-align:center;">Details</a>
+                <div style="padding:1rem;">
+                    <div style="display:flex;gap:0.35rem;flex-wrap:wrap;margin-bottom:0.5rem;">{badge_html}</div>
+                    <h3 style="font-size:0.88rem;font-weight:600;line-height:1.35;margin-bottom:0.5rem;height:2.4rem;overflow:hidden;">{name}</h3>
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+                        <span style="font-size:1.1rem;font-weight:700;">{fmt_price(p)}</span>
+                        {rating_html}
+                    </div>
+                    <a href="{aff}" target="_blank" rel="sponsored" style="display:block;text-align:center;padding:0.55rem;background:var(--coffee);color:white;text-decoration:none;border-radius:0.3rem;font-size:0.82rem;font-weight:600;margin-bottom:0.4rem;">Bekijk op Bol.com</a>
+                    <a href="{prefix}producten/{slug}.html" style="display:block;text-align:center;padding:0.45rem;border:1px solid var(--border);color:var(--text-dim);text-decoration:none;border-radius:0.3rem;font-size:0.78rem;">Details</a>
                 </div>
-            </article>'''
+            </div>'''
 
 
 def page_url(kind, slug, page):
@@ -184,6 +187,14 @@ def render(kind, slug, products, page, total_pages, title, h1, description):
     items = products[start:start + PER_PAGE]
     grid = '\n'.join(card(p, prefix) for p in items)
     cats_prefix = prefix + 'categories/'
+    category_links = (
+        f'<a href="{cats_prefix}percolators.html" style="color: var(--text-dim); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--border); border-radius: 0.5rem;">Percolators</a>'
+        f'<a href="{cats_prefix}elektrische-percolators.html" style="color: var(--text-dim); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--border); border-radius: 0.5rem;">Elektrisch</a>'
+        f'<a href="{cats_prefix}accessoires.html" style="color: var(--text-dim); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--border); border-radius: 0.5rem;">Accessoires</a>'
+        f'<a href="{cats_prefix}percolators-inductie.html" style="color: var(--text-dim); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--border); border-radius: 0.5rem;">Inductie</a>'
+        f'<a href="{cats_prefix}percolators-aluminium.html" style="color: var(--text-dim); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--border); border-radius: 0.5rem;">Aluminium</a>'
+        f'<a href="{cats_prefix}percolators-rvs.html" style="color: var(--text-dim); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--border); border-radius: 0.5rem;">RVS</a>'
+    )
     return f'''<!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -204,8 +215,8 @@ def render(kind, slug, products, page, total_pages, title, h1, description):
         <h1 style="font-family:var(--font-serif);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:400;margin-bottom:0.75rem;">{html.escape(h1)}{f' - pagina {page}' if page > 1 else ''}</h1>
         <p style="color:var(--text-dim);font-size:1rem;max-width:540px;">{html.escape(description)} {len(products)} producten gevonden.</p>
     </div></section>
-    <div style="border-bottom:1px solid var(--border);padding:1rem 0;"><div class="container" style="display:flex;gap:1rem;flex-wrap:wrap;font-size:0.85rem;">
-        <a href="{prefix}boutique.html" class="category-chip">Alle modellen</a><a href="{cats_prefix}percolators.html" class="category-chip">Percolators</a><a href="{cats_prefix}elektrische-percolators.html" class="category-chip">Elektrisch</a><a href="{cats_prefix}accessoires.html" class="category-chip">Accessoires</a><a href="{cats_prefix}percolators-inductie.html" class="category-chip">Inductie</a><a href="{cats_prefix}percolators-aluminium.html" class="category-chip">Aluminium</a><a href="{cats_prefix}percolators-rvs.html" class="category-chip">RVS</a>
+    <div style="border-bottom:1px solid var(--border);padding:1rem 0;"><div class="container" style="display:flex;gap:1.5rem;flex-wrap:wrap;font-size:0.85rem;">
+        {category_links}
     </div></div>
     <main class="container" style="padding:2.5rem 0;">
         <p style="color:var(--text-dim);margin-bottom:1.5rem;">Pagina {page} van {total_pages} · producten {start + 1}-{min(start + PER_PAGE, len(products))} van {len(products)}</p>
