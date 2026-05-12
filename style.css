@@ -1589,6 +1589,61 @@ body.review-page {
   margin-top: auto;
 }
 
+.shop-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--sp-5);
+  margin-bottom: var(--sp-10);
+}
+
+.shop-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin: var(--sp-10) 0 var(--sp-6);
+}
+
+.pagination-link,
+.pagination-gap,
+.category-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  color: var(--text-dim);
+  text-decoration: none;
+}
+
+.pagination-link {
+  min-width: 2.25rem;
+  min-height: 2.25rem;
+  padding: 0.45rem 0.75rem;
+  background: var(--surface);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.pagination-link:hover,
+.pagination-link.active,
+.category-chip:hover {
+  border-color: var(--coffee);
+  background: var(--coffee);
+  color: white;
+}
+
+.pagination-gap {
+  border-color: transparent;
+  padding: 0.45rem 0.2rem;
+}
+
+.category-chip {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.85rem;
+}
+
 @media (max-width: 900px) {
   .review-page .alternative-card-grid,
   .brand-product-grid {
