@@ -375,6 +375,113 @@ h4 {
   overflow-wrap: anywhere;
 }
 
+/* Editorial blog/article pages */
+.blog-page {
+  background: #fafafa;
+}
+
+.blog-page .breadcrumbs {
+  display: none;
+}
+
+.blog-page > section:first-of-type,
+.blog-page .hero-compact {
+  background: #f5f0ea !important;
+  padding: 3rem 0 2.5rem !important;
+}
+
+.blog-page > section:first-of-type .container {
+  max-width: 820px !important;
+}
+
+.blog-page > section:first-of-type .grid[style*="grid-template-columns"],
+.blog-page .grid[style*="grid-template-columns:1fr 380px"],
+.blog-page .grid[style*="grid-template-columns: 1fr 400px"] {
+  display: block !important;
+  max-width: 780px !important;
+  margin: 0 auto !important;
+}
+
+.blog-page .hero-header {
+  display: block !important;
+}
+
+.blog-page h1,
+.blog-page .display-title,
+.blog-page .hero-header h1 {
+  font-family: var(--font-serif) !important;
+  font-size: clamp(1.8rem, 3vw, 2.45rem) !important;
+  line-height: 1.15 !important;
+  font-weight: 400 !important;
+  color: var(--text) !important;
+  text-align: left !important;
+  max-width: 780px;
+}
+
+.blog-page .lead,
+.blog-page .lead-compact,
+.blog-page > section:first-of-type p {
+  color: var(--text-dim) !important;
+  font-size: 1rem !important;
+  line-height: 1.75 !important;
+  text-align: left !important;
+  max-width: 660px;
+}
+
+.blog-page .hero-badges,
+.blog-page .badge,
+.blog-page .rating-badge {
+  background: transparent !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 0.5rem !important;
+  color: var(--text-dim) !important;
+  box-shadow: none !important;
+}
+
+.blog-page .hero-badges {
+  border: 0 !important;
+  display: flex !important;
+  gap: 0.5rem !important;
+  flex-wrap: wrap !important;
+  margin-top: 1rem !important;
+}
+
+.blog-page section:not(:first-of-type) {
+  padding: 2.5rem 0 !important;
+}
+
+.blog-page section:not(:first-of-type) > .container,
+.blog-page main.container {
+  max-width: 900px !important;
+}
+
+.blog-page .card,
+.blog-page .pick-card,
+.blog-page .review-card {
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 0.5rem !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.blog-page .card:hover,
+.blog-page .pick-card:hover,
+.blog-page .review-card:hover {
+  border-color: var(--coffee) !important;
+  transform: none !important;
+}
+
+.blog-page .quick-picks,
+.blog-page .product-ranking,
+.blog-page .comparison-section {
+  background: transparent !important;
+}
+
+.blog-page img {
+  border-radius: 0.5rem !important;
+}
+
 .card-header {
   padding: var(--sp-6);
   padding-bottom: 0;
