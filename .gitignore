@@ -55,3 +55,7 @@ tmp/
 # Cache
 .cache/
 *.cache
+
+# Bol.com product feeds (too large for git)
+product-feed_*.csv.gz
+product-feed_*.xml.gz
