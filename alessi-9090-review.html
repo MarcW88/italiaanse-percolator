@@ -126,23 +126,24 @@
 </head>
 <body>
   <!-- Navigation -->
-      <nav class="navbar">
+    <nav class="navbar">
         <div class="container">
             <div class="nav-container">
                 <a href="index.html" class="nav-brand">Italiaanse Percolator</a>
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link">Home</a></li>
                     <li class="nav-item dropdown">
-                        <a href="beste-italiaanse-percolators.html" class="nav-link dropdown-toggle">Guides ▾</a>
+                        <a href="beste-italiaanse-percolators.html" class="nav-link dropdown-toggle active">Guides</a>
                         <ul class="dropdown-menu">
                             <li><a href="beste-italiaanse-percolators.html" class="dropdown-link">Top 10</a></li>
                             <li><a href="koopgids/index.html" class="dropdown-link">Koopgids</a></li>
                             <li><a href="alle-reviews.html" class="dropdown-link">Reviews</a></li>
+                            <li><a href="vergelijking/index.html" class="dropdown-link">Vergelijking</a></li>
                         </ul>
                     </li>
                     <li><a href="marques/index.html" class="nav-link">Merken</a></li>
                     <li class="nav-item dropdown">
-                        <a href="boutique.html" class="nav-link dropdown-toggle">Shop ▾</a>
+                        <a href="boutique.html" class="nav-link dropdown-toggle">Shop</a>
                         <ul class="dropdown-menu">
                             <li><a href="boutique.html" class="dropdown-link">Alle modellen</a></li>
                             <li><a href="categories/percolators.html" class="dropdown-link">Percolators</a></li>
@@ -154,23 +155,6 @@
             </div>
         </div>
     </nav>
-    <script>
-        // Dropdown toggle functionality
-        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
-            toggle.addEventListener('click', function(e) {
-                e.preventDefault();
-                const dropdown = this.parentElement;
-                dropdown.classList.toggle('active');
-            });
-        });
-        
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('.dropdown')) {
-                document.querySelectorAll('.dropdown.active').forEach(d => d.classList.remove('active'));
-            }
-        });
-    </script>
 
   <!-- Breadcrumbs -->
   <div class="container" style="padding-top: var(--sp-6);">
@@ -198,18 +182,18 @@
               <div class="grid grid-2 gap-4">
                 <div>
                   <ul class="toc-list" style="font-size: var(--fs-sm);">
-                    <li><a href="#design-story" style=""> Het verhaal achter het design</a></li>
-                    <li><a href="#testresultaten" style="">🧪 Testresultaten na 6 maanden</a></li>
-                    <li><a href="#vergelijking" style=""> 9090 vs Bialetti Venus</a></li>
-                    <li><a href="#inductie-test" style=""> Inductie prestaties</a></li>
+                    <li><a href="#design-story"> Het verhaal achter het design</a></li>
+                    <li><a href="#testresultaten">Testresultaten na 6 maanden</a></li>
+                    <li><a href="#vergelijking"> 9090 vs Bialetti Venus</a></li>
+                    <li><a href="#inductie-test"> Inductie prestaties</a></li>
                   </ul>
                 
                 <div>
                   <ul class="toc-list" style="font-size: var(--fs-sm);">
-                    <li><a href="#onderhoud" style="">🧽 RVS onderhoud</a></li>
-                    <li><a href="#voor-wie" style="">👤 Voor wie is dit?</a></li>
-                    <li><a href="#faq" style="">❓ Veelgestelde vragen</a></li>
-                    <li><a href="#conclusie" style=""> Eindconclusie</a></li>
+                    <li><a href="#onderhoud">🧽 RVS onderhoud</a></li>
+                    <li><a href="#voor-wie">👤 Voor wie is dit?</a></li>
+                    <li><a href="#faq">❓ Veelgestelde vragen</a></li>
+                    <li><a href="#conclusie"> Eindconclusie</a></li>
                   </ul>
                 </div>
               </div>
@@ -434,7 +418,7 @@
       <div class="mt-8" id="voor-wie">
         <h3 class="text-center mb-6">Voor wie is de Alessi 9090 perfect?</h3>
         <div class="grid grid-3 gap-6">
-          <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;" style="">
+          <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
             
               <h4 class="mb-3" style="color: #10b981;"> Koop de 9090 als je:</h4>
               <ul class="text-sm">
@@ -448,7 +432,7 @@
             
           </div>
           
-          <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;" style="">
+          <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
             
               <h4 class="mb-3" style="color: #f59e0b;"> Overweeg alternatieven als:</h4>
               <ul class="text-sm">
@@ -458,11 +442,11 @@
                 <li>Je vaak <strong>voor grotere groepen</strong> zet</li>
                 <li><strong>Licht gewicht</strong> voorkeur heeft</li>
               </ul>
-              <p class="text-xs mt-3"><strong>Alternatief:</strong> <a href="bialetti-venus-review.html" style="">Bialetti Venus</a> (€48) of <a href="bialetti-fiammetta-review.html" style="">Fiammetta</a> (€35) voor gas/elektrisch</p>
+              <p class="text-xs mt-3"><strong>Alternatief:</strong> <a href="bialetti-venus-review.html">Bialetti Venus</a> (€48) of <a href="bialetti-fiammetta-review.html">Fiammetta</a> (€35) voor gas/elektrisch</p>
             
           </div>
           
-          <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;" style="">
+          <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
             
               <h4 class="mb-3" style="color: #ef4444;"> NIET kopen als je:</h4>
               <ul class="text-sm">

@@ -18,23 +18,24 @@
 </head>
 <body>
   <!-- Navigation -->
-      <nav class="navbar">
+    <nav class="navbar">
         <div class="container">
             <div class="nav-container">
                 <a href="index.html" class="nav-brand">Italiaanse Percolator</a>
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link">Home</a></li>
                     <li class="nav-item dropdown">
-                        <a href="beste-italiaanse-percolators.html" class="nav-link dropdown-toggle">Guides ▾</a>
+                        <a href="beste-italiaanse-percolators.html" class="nav-link dropdown-toggle active">Guides</a>
                         <ul class="dropdown-menu">
                             <li><a href="beste-italiaanse-percolators.html" class="dropdown-link">Top 10</a></li>
                             <li><a href="koopgids/index.html" class="dropdown-link">Koopgids</a></li>
                             <li><a href="alle-reviews.html" class="dropdown-link">Reviews</a></li>
+                            <li><a href="vergelijking/index.html" class="dropdown-link">Vergelijking</a></li>
                         </ul>
                     </li>
                     <li><a href="marques/index.html" class="nav-link">Merken</a></li>
                     <li class="nav-item dropdown">
-                        <a href="boutique.html" class="nav-link dropdown-toggle">Shop ▾</a>
+                        <a href="boutique.html" class="nav-link dropdown-toggle">Shop</a>
                         <ul class="dropdown-menu">
                             <li><a href="boutique.html" class="dropdown-link">Alle modellen</a></li>
                             <li><a href="categories/percolators.html" class="dropdown-link">Percolators</a></li>
@@ -46,23 +47,6 @@
             </div>
         </div>
     </nav>
-    <script>
-        // Dropdown toggle functionality
-        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
-            toggle.addEventListener('click', function(e) {
-                e.preventDefault();
-                const dropdown = this.parentElement;
-                dropdown.classList.toggle('active');
-            });
-        });
-        
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('.dropdown')) {
-                document.querySelectorAll('.dropdown.active').forEach(d => d.classList.remove('active'));
-            }
-        });
-    </script>
 
   <!-- Breadcrumbs -->
   <div class="container" style="padding-top: var(--sp-6);">
@@ -230,7 +214,7 @@
           </div>
           <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;" style="border-left: 4px solid var(--coffee);">
             
-              <p class="text-sm mb-3">"Goede alternatief voor Bialetti Venus en <a href="bialetti-musa-review.html" style="">Musa</a>. Zelfde kwaliteit maar goedkoper. Zeer tevreden met de aankoop."</p>
+              <p class="text-sm mb-3">"Goede alternatief voor Bialetti Venus en <a href="bialetti-musa-review.html">Musa</a>. Zelfde kwaliteit maar goedkoper. Zeer tevreden met de aankoop."</p>
               <p class="text-xs text-dim">— Michiel R., Tilburg</p>
             
           </div>
@@ -244,7 +228,7 @@
             <h3 style="color: #dc2626; margin-bottom: 16px;"> De Milano is NIET voor jou als je:</h3>
             <div class="grid grid-2 gap-4">
               <ul style="font-size: 14px; color: #7f1d1d;">
-                <li><strong>Alleen gas/elektrisch hebt</strong> → Kies dan de <a href="bialetti-fiammetta-review.html" style="">Bialetti Fiammetta</a></li>
+                <li><strong>Alleen gas/elektrisch hebt</strong> → Kies dan de <a href="bialetti-fiammetta-review.html">Bialetti Fiammetta</a></li>
                 <li><strong>Gevestigd merk belangrijk is</strong> → Bialetti heeft meer reputatie</li>
                 <li><strong>Zeer intense koffie wilt</strong> → Aluminium geeft sterkere smaak</li>
               </ul>
@@ -471,7 +455,7 @@
               
               
               <div class="grid grid-2 gap-4 mt-4">
-                <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;" style="">
+                <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
                   
                     <h4>🌟 Kies Milano als je:</h4>
                     <ul class="text-sm">
@@ -483,7 +467,7 @@
                   
                 </div>
                 
-                <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;" style="">
+                <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
                   
                     <h4> Kies Venus als je:</h4>
                     <ul class="text-sm">

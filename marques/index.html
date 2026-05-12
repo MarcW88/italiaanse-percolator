@@ -88,43 +88,42 @@
 </head>
 <body>
     <!-- Navigation -->
-        <nav class="navbar">
+    <nav class="navbar">
         <div class="container">
             <div class="nav-container">
                 <a href="../index.html" class="nav-brand">Italiaanse Percolator</a>
                 <ul class="nav-menu">
                     <li><a href="../index.html" class="nav-link">Home</a></li>
-                    <li><a href="../beste-italiaanse-percolators.html" class="nav-link">Top 10</a></li>
-                    <li><a href="../alle-reviews.html" class="nav-link">Reviews</a></li>
-                    <li><a href="../koopgids/index.html" class="nav-link">Koopgids</a></li>
-                    <li><a href="../marques/index.html" class="nav-link">Merken</a></li>
-                    <li><a href="../boutique.html" class="nav-link">Alle modellen</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="../beste-italiaanse-percolators.html" class="nav-link dropdown-toggle">Guides</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../beste-italiaanse-percolators.html" class="dropdown-link">Top 10</a></li>
+                            <li><a href="../koopgids/index.html" class="dropdown-link">Koopgids</a></li>
+                            <li><a href="../alle-reviews.html" class="dropdown-link">Reviews</a></li>
+                            <li><a href="../vergelijking/index.html" class="dropdown-link">Vergelijking</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../marques/index.html" class="nav-link active">Merken</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="../boutique.html" class="nav-link dropdown-toggle">Shop</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../boutique.html" class="dropdown-link">Alle modellen</a></li>
+                            <li><a href="../categories/percolators.html" class="dropdown-link">Percolators</a></li>
+                            <li><a href="../categories/elektrische-percolators.html" class="dropdown-link">Elektrisch</a></li>
+                            <li><a href="../categories/accessoires.html" class="dropdown-link">Accessoires</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
-
-    <!-- Breadcrumbs -->
-    <div class="container" style="padding-top: var(--sp-6);">
-        <div class="breadcrumbs">
-            <a href="../index.html">Home</a>
-            <span>›</span>
-            <span>Merken</span>
-        </div>
-    </div>
-
-    <!-- Hero Section -->
-    <section class="hero" style="position: relative; color: white; padding: 6rem 0; background-image: url('https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=1600&q=80'); background-size: cover; background-position: center;">
-        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.5);"></div>
-        <div class="container" style="position: relative; z-index: 1;">
-            <div class="text-center">
-                <h1 style="font-size: 3rem; margin-bottom: 1rem; font-weight: 700; text-shadow: 2px 2px 8px rgba(0,0,0,0.7);">
-                    Percolator merken
-                </h1>
-                <p style="font-size: 1  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);">
-                    Ontdek de beste merken voor Italiaanse percolators • Van traditie tot modern design
-                </p>
-            </div>
+    <section style="background: #f5f0ea; padding: 3rem 0 2.5rem;">
+        <div class="container" style="max-width: 780px;">
+            <p style="font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem;">
+                <a href="../index.html" style="color: var(--text-light); text-decoration: none;">Home</a> / Merken
+            </p>
+            <h1 style="font-family: var(--font-serif); font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 400; margin-bottom: 0.75rem;">Percolator merken</h1>
+            <p style="color: var(--text-dim); font-size: 1rem; max-width: 540px;">Ontdek de beste merken voor Italiaanse percolators. Van traditie tot modern design, helder vergeleken op kwaliteit, prijs en beschikbaarheid.</p>
         </div>
     </section>
 
@@ -132,7 +131,7 @@
     <section style="padding: 3rem 0;">
         <div class="container">
             <div class="text-center mb-8">
-                <h2>De beste percolator merken van 2025</h2>
+                <h2 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--coffee); margin-bottom: 1rem;">De beste percolator merken van 2025</h2>
                 <p class="lead" style="max-width: 700px; margin: 0 auto; color: #666;">
                     Na uitgebreide tests van meer dan 15 merken, zijn dit de <strong>drie onbetwiste winnaars</strong> voor de Nederlandse en Belgische markt.
                 </p>
@@ -140,7 +139,7 @@
             
             <div class="grid grid-3" style="gap: 3rem;">
                 <!-- Bialetti -->
-                <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;" style="text-align: center; padding: 2rem;">
+                <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem; text-align: center; padding: 2rem;">
                     <div style="margin-bottom: 1rem;">
                         <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="display: inline-block;">
                             <circle cx="40" cy="40" r="38" fill="var(--coffee)" opacity="0.1"/>
@@ -151,16 +150,16 @@
                     <h3><a href="bialetti/" style="text-decoration: none;">Bialetti</a></h3>
                     <p style="color: #666; margin-bottom: 1.5rem;">De oorspronkelijke moka-maker sinds 1933. Traditie, kwaliteit en betaalbaarheid.</p>
                     <div style="margin-bottom: 1.5rem;">
-                        <span style="background: #f5f0ea; ">9 Modellen</span>
-                        <span style="background: #f5f0ea; ">€25-65</span>
+                        <span style="background: #f5f0ea; border: 1px solid var(--border); border-radius: 0.3rem; padding: 0.25rem 0.6rem; font-size: 0.8rem; color: var(--text-dim); display: inline-block; margin: 0.15rem;">9 Modellen</span>
+                        <span style="background: #f5f0ea; border: 1px solid var(--border); border-radius: 0.3rem; padding: 0.25rem 0.6rem; font-size: 0.8rem; color: var(--text-dim); display: inline-block; margin: 0.15rem;">€25-65</span>
                     </div>
-                    <a href="bialetti/" style="background: var(--coffee); color: white; padding: 0.5rem 1rem; text-decoration: none; font-weight: 600; border-radius: 0.3rem;" style="background: #f5f0ea; ">
+                    <a href="bialetti/" style="background: var(--coffee); color: white; padding: 0.5rem 1rem; text-decoration: none; font-weight: 600; border-radius: 0.3rem; display: inline-block;">
                         Ontdek Bialetti →
                     </a>
                 </div>
 
                 <!-- Alessi -->
-                <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;" style="text-align: center; padding: 2rem;">
+                <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem; text-align: center; padding: 2rem;">
                     <div style="margin-bottom: 1rem;">
                         <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="display: inline-block;">
                             <circle cx="40" cy="40" r="38" fill="#6c757d" opacity="0.1"/>
@@ -172,16 +171,16 @@
                     <h3><a href="alessi/" style="text-decoration: none;">Alessi</a></h3>
                     <p style="color: #666; margin-bottom: 1.5rem;">Award-winnend design ontmoet functionaliteit. Premium Italiaans design sinds 1921.</p>
                     <div style="margin-bottom: 1.5rem;">
-                        <span style="background: #f5f0ea; ">1 Model</span>
-                        <span style="background: #f5f0ea; ">€80-120</span>
+                        <span style="background: #f5f0ea; border: 1px solid var(--border); border-radius: 0.3rem; padding: 0.25rem 0.6rem; font-size: 0.8rem; color: var(--text-dim); display: inline-block; margin: 0.15rem;">1 Model</span>
+                        <span style="background: #f5f0ea; border: 1px solid var(--border); border-radius: 0.3rem; padding: 0.25rem 0.6rem; font-size: 0.8rem; color: var(--text-dim); display: inline-block; margin: 0.15rem;">€80-120</span>
                     </div>
-                    <a href="alessi/" style="background: var(--coffee); color: white; padding: 0.5rem 1rem; text-decoration: none; font-weight: 600; border-radius: 0.3rem;" style="background: #f5f0ea; ">
+                    <a href="alessi/" style="background: var(--coffee); color: white; padding: 0.5rem 1rem; text-decoration: none; font-weight: 600; border-radius: 0.3rem; display: inline-block;">
                         Ontdek Alessi →
                     </a>
                 </div>
 
                 <!-- Grosche -->
-                <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;" style="text-align: center; padding: 2rem;">
+                <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem; text-align: center; padding: 2rem;">
                     <div style="margin-bottom: 1rem;">
                         <svg width="80" height="80" viewBox="0 0 80 80" fill="none" style="display: inline-block;">
                             <circle cx="40" cy="40" r="38" fill="#28a745" opacity="0.1"/>
@@ -191,10 +190,10 @@
                     <h3><a href="grosche/" style="text-decoration: none;">Grosche</a></h3>
                     <p style="color: #666; margin-bottom: 1.5rem;">Modern alternatief met innovatieve features. Canadees merk met Italiaanse kwaliteit.</p>
                     <div style="margin-bottom: 1.5rem;">
-                        <span style="background: #f5f0ea; ">2 Modellen</span>
-                        <span style="background: #f5f0ea; ">€35-55</span>
+                        <span style="background: #f5f0ea; border: 1px solid var(--border); border-radius: 0.3rem; padding: 0.25rem 0.6rem; font-size: 0.8rem; color: var(--text-dim); display: inline-block; margin: 0.15rem;">2 Modellen</span>
+                        <span style="background: #f5f0ea; border: 1px solid var(--border); border-radius: 0.3rem; padding: 0.25rem 0.6rem; font-size: 0.8rem; color: var(--text-dim); display: inline-block; margin: 0.15rem;">€35-55</span>
                     </div>
-                    <a href="grosche/" style="background: var(--coffee); color: white; padding: 0.5rem 1rem; text-decoration: none; font-weight: 600; border-radius: 0.3rem;" style="background: #f5f0ea; ">
+                    <a href="grosche/" style="background: var(--coffee); color: white; padding: 0.5rem 1rem; text-decoration: none; font-weight: 600; border-radius: 0.3rem; display: inline-block;">
                         Ontdek Grosche →
                     </a>
                 </div>
@@ -384,7 +383,7 @@
                         <div id="result-brand" style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem;"></div>
                         <p id="result-description" style="color: #666;  line-height: 1.6;"></p>
                         <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                            <a id="result-link" href="#" style="background: var(--coffee); color: white; padding: 0.5rem 1rem; text-decoration: none; font-weight: 600; border-radius: 0.3rem;" style="background: #f5f0ea; ">Bekijk Modellen →</a>
+                            <a id="result-link" href="#" style="background: var(--coffee); color: white; padding: 0.5rem 1rem; text-decoration: none; font-weight: 600; border-radius: 0.3rem; display: inline-block;">Bekijk Modellen →</a>
                             <button onclick="resetQuiz()" class="btn btn-secondary" style="padding: 1rem 2rem;  border: 2px solid var(--coffee); background: white; cursor: pointer; border: 1px solid var(--border); border-radius: 0.5rem;">Opnieuw</button>
                         </div>
                     </div>
@@ -398,7 +397,7 @@
     <section class="section" style="background: #f5f0ea; ">
         <div class="container">
             <div style="max-width: 900px; margin: 0 auto;">
-                <h2 style="">De 3 merken: geschiedenis, positionering en wat je kunt verwachten</h2>
+                <h2>De 3 merken: geschiedenis, positionering en wat je kunt verwachten</h2>
 
                 <div style="display: grid; grid-template-columns: 1fr; gap: 2rem;">
                     <!-- Bialetti Context -->
@@ -472,7 +471,7 @@
                     </thead>
                     <tbody id="table-body">
                         <tr style="background: #f5f0ea; " data-price="25" data-models="9">
-                            <td style="padding: 1rem; font-weight: 600;"><a href="bialetti/" style="">Bialetti</a></td>
+                            <td style="padding: 1rem; font-weight: 600;"><a href="bialetti/">Bialetti</a></td>
                             <td style="padding: 1rem; text-align: center;">€25-65</td>
                             <td style="padding: 1rem; text-align: center;">Traditie & Kwaliteit</td>
                             <td style="padding: 1rem; text-align: center;">Dagelijks gebruik</td>
@@ -510,7 +509,7 @@
             
             <div class="grid grid-3" style="gap: 2rem;">
                 <!-- Bialetti Bestseller -->
-                <div class="product-card" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+                <div class="product-card" style="border: 1px solid var(--border); border-radius: 0.5rem;">
                     <div class="product-image">
                         <img src="../Images/bialetti_fiammetta.jpg" alt="Bialetti Fiammetta">
                     </div>
@@ -534,7 +533,7 @@
                 </div>
 
                 <!-- Alessi Bestseller -->
-                <div class="product-card" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+                <div class="product-card" style="border: 1px solid var(--border); border-radius: 0.5rem;">
                     <div class="product-image">
                         <img src="../Images/alessi_pulcina.jpg" alt="Alessi Pulcina">
                     </div>
@@ -558,7 +557,7 @@
                 </div>
 
                 <!-- Grosche Bestseller -->
-                <div class="product-card" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+                <div class="product-card" style="border: 1px solid var(--border); border-radius: 0.5rem;">
                     <div class="product-image">
                         <img src="../Images/grosche-milano.jpg" alt="Grosche Milano">
                     </div>
@@ -588,7 +587,7 @@
     <section class="section" style="background: #f5f0ea; ">
         <div class="container">
             <div style="max-width: 850px; margin: 0 auto;">
-                <h2 style="">Veelgestelde vragen over percolatormerken</h2>
+                <h2>Veelgestelde vragen over percolatormerken</h2>
 
                 <div style="display: grid; gap: 1.5rem;">
                     <!-- FAQ Item 1 -->

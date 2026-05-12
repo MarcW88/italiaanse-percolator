@@ -41,23 +41,24 @@
 </head>
 <body>
   <!-- Navigation -->
-      <nav class="navbar">
+    <nav class="navbar">
         <div class="container">
             <div class="nav-container">
                 <a href="index.html" class="nav-brand">Italiaanse Percolator</a>
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link">Home</a></li>
                     <li class="nav-item dropdown">
-                        <a href="beste-italiaanse-percolators.html" class="nav-link dropdown-toggle">Guides ▾</a>
+                        <a href="beste-italiaanse-percolators.html" class="nav-link dropdown-toggle active">Guides</a>
                         <ul class="dropdown-menu">
                             <li><a href="beste-italiaanse-percolators.html" class="dropdown-link">Top 10</a></li>
                             <li><a href="koopgids/index.html" class="dropdown-link">Koopgids</a></li>
                             <li><a href="alle-reviews.html" class="dropdown-link">Reviews</a></li>
+                            <li><a href="vergelijking/index.html" class="dropdown-link">Vergelijking</a></li>
                         </ul>
                     </li>
                     <li><a href="marques/index.html" class="nav-link">Merken</a></li>
                     <li class="nav-item dropdown">
-                        <a href="boutique.html" class="nav-link dropdown-toggle">Shop ▾</a>
+                        <a href="boutique.html" class="nav-link dropdown-toggle">Shop</a>
                         <ul class="dropdown-menu">
                             <li><a href="boutique.html" class="dropdown-link">Alle modellen</a></li>
                             <li><a href="categories/percolators.html" class="dropdown-link">Percolators</a></li>
@@ -69,23 +70,6 @@
             </div>
         </div>
     </nav>
-    <script>
-        // Dropdown toggle functionality
-        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
-            toggle.addEventListener('click', function(e) {
-                e.preventDefault();
-                const dropdown = this.parentElement;
-                dropdown.classList.toggle('active');
-            });
-        });
-        
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('.dropdown')) {
-                document.querySelectorAll('.dropdown.active').forEach(d => d.classList.remove('active'));
-            }
-        });
-    </script>
 
   <!-- Breadcrumbs -->
   <div class="container" style="padding-top: var(--sp-6);">
@@ -267,8 +251,8 @@
             <h3 style="color: #dc2626; margin-bottom: 16px;"> De Pulcina is NIET voor jou als je:</h3>
             <div class="grid grid-2 gap-4">
               <ul style="font-size: 14px; color: #7f1d1d;">
-                <li><strong>Budget onder €150 hebt</strong> → Kies dan de <a href="bialetti-fiammetta-review.html" style="">Bialetti Fiammetta</a> (€34,95)</li>
-                <li><strong>Inductie kookplaat hebt</strong> → Overweeg <a href="bialetti-venus-review.html" style="">Venus RVS</a> (inductie-geschikt)</li>
+                <li><strong>Budget onder €150 hebt</strong> → Kies dan de <a href="bialetti-fiammetta-review.html">Bialetti Fiammetta</a> (€34,95)</li>
+                <li><strong>Inductie kookplaat hebt</strong> → Overweeg <a href="bialetti-venus-review.html">Venus RVS</a> (inductie-geschikt)</li>
                 <li><strong>Meer dan 3 kopjes per keer wilt</strong> → Pulcina heeft beperkte capaciteit</li>
               </ul>
               <ul style="font-size: 14px; color: #7f1d1d;">
@@ -514,7 +498,7 @@
               
               
               <div>
-                <h4 style="font-size: var(--fs-base); margin-bottom: var(--sp-2);">📚 Musea</h4>
+                <h4 style="font-size: var(--fs-base); margin-bottom: var(--sp-2);">Musea</h4>
                 <p class="text-sm text-dim">Onderdeel van permanente collecties in verschillende designmusea wereldwijd.</p>
               </div>
             </div>
@@ -527,13 +511,13 @@
               
               <div class="mb-4">
                 <h4 style="font-size: var(--fs-base); margin-bottom: var(--sp-2);">Budget alternatief?</h4>
-                <p class="text-sm text-dim mb-2">→ <a href="bialetti-fiammetta-review.html" style="">Bialetti Fiammetta</a></p>
+                <p class="text-sm text-dim mb-2">→ <a href="bialetti-fiammetta-review.html">Bialetti Fiammetta</a></p>
                 <p class="text-xs text-dim">Klassiek design, betaalbaar</p>
               
               
               <div>
                 <h4 style="font-size: var(--fs-base); margin-bottom: var(--sp-2);">Wil je inductie?</h4>
-                <p class="text-sm text-dim mb-2">→ <a href="bialetti-venus-review.html" style="">Bialetti Venus</a></p>
+                <p class="text-sm text-dim mb-2">→ <a href="bialetti-venus-review.html">Bialetti Venus</a></p>
                 <p class="text-xs text-dim">Modern design, inductiegeschikt</p>
               </div>
             </div>
@@ -605,7 +589,7 @@
         <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
           
             <h4 class="mb-3">Is de Pulcina geschikt voor inductie?</h4>
-            <p class="text-sm">Nee, de Pulcina is gemaakt van aluminium en werkt niet op inductie. Voor inductie kies je de <a href="bialetti-venus-review.html" style="">Bialetti Venus</a> of <a href="bialetti-musa-review.html" style="">Musa</a> (RVS).</p>
+            <p class="text-sm">Nee, de Pulcina is gemaakt van aluminium en werkt niet op inductie. Voor inductie kies je de <a href="bialetti-venus-review.html">Bialetti Venus</a> of <a href="bialetti-musa-review.html">Musa</a> (RVS).</p>
           
         </div>
         

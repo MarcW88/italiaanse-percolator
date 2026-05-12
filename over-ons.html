@@ -18,23 +18,24 @@
 </head>
 <body>
   <!-- Navigation -->
-      <nav class="navbar">
+    <nav class="navbar">
         <div class="container">
             <div class="nav-container">
                 <a href="index.html" class="nav-brand">Italiaanse Percolator</a>
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link">Home</a></li>
                     <li class="nav-item dropdown">
-                        <a href="beste-italiaanse-percolators.html" class="nav-link dropdown-toggle">Guides ▾</a>
+                        <a href="beste-italiaanse-percolators.html" class="nav-link dropdown-toggle">Guides</a>
                         <ul class="dropdown-menu">
                             <li><a href="beste-italiaanse-percolators.html" class="dropdown-link">Top 10</a></li>
                             <li><a href="koopgids/index.html" class="dropdown-link">Koopgids</a></li>
                             <li><a href="alle-reviews.html" class="dropdown-link">Reviews</a></li>
+                            <li><a href="vergelijking/index.html" class="dropdown-link">Vergelijking</a></li>
                         </ul>
                     </li>
                     <li><a href="marques/index.html" class="nav-link">Merken</a></li>
                     <li class="nav-item dropdown">
-                        <a href="boutique.html" class="nav-link dropdown-toggle">Shop ▾</a>
+                        <a href="boutique.html" class="nav-link dropdown-toggle">Shop</a>
                         <ul class="dropdown-menu">
                             <li><a href="boutique.html" class="dropdown-link">Alle modellen</a></li>
                             <li><a href="categories/percolators.html" class="dropdown-link">Percolators</a></li>
@@ -46,58 +47,24 @@
             </div>
         </div>
     </nav>
-    <script>
-        // Dropdown toggle functionality
-        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
-            toggle.addEventListener('click', function(e) {
-                e.preventDefault();
-                const dropdown = this.parentElement;
-                dropdown.classList.toggle('active');
-            });
-        });
-        
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('.dropdown')) {
-                document.querySelectorAll('.dropdown.active').forEach(d => d.classList.remove('active'));
-            }
-        });
-    </script>
-
-
-  <!-- Hero Section -->
     <section style="background: #f5f0ea; padding: 3rem 0 2.5rem;">
-    <div class="container" style="max-width: 780px;">
-      <h1 style="font-family: var(--font-serif); font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 400; margin-bottom: 0.75rem; ">Over Italiaanse Percolator</h1>
-      <p style="color: var(--text-dim); font-size: 1rem; max-width: 540px;">Wij zijn gepassioneerde koffieliefhebbers die je helpen de perfecte Italiaanse percolator te vinden. Ontdek ons verhaal en onze missie.</p>
-    </div>
-  </section>
-
-  <!-- Breadcrumbs -->
-  <div class="container" style="padding-top: var(--sp-6);">
-    <div class="breadcrumbs">
-      <a href="index.html">Home</a>
-      <span>›</span>
-      <span>Over ons</span>
-    </div>
-  </div>
-
-  <!-- Hero -->
-  <section class="section-sm">
-    <div class="container">
-      <h1 class="display-title text-center mb-6">Over ons</h1>
-      <p class="lead text-center mb-8">Wij zijn een klein team van koffieliefhebbers dat gepassioneerd is over authentieke Italiaanse koffie. Geen gesponsorde content, geen verborgen agenda's - alleen eerlijke reviews gebaseerd op uitgebreide tests.</p>
-    </div>
-  </section>
+        <div class="container" style="max-width: 780px;">
+            <p style="font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem;">
+                <a href="index.html" style="color: var(--text-light); text-decoration: none;">Home</a> / Over ons
+            </p>
+            <h1 style="font-family: var(--font-serif); font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 400; margin-bottom: 0.75rem;">Over Italiaanse Percolator</h1>
+            <p style="color: var(--text-dim); font-size: 1rem; max-width: 540px;">Wij zijn koffieliefhebbers die onafhankelijke percolator reviews en gidsen maken, gebaseerd op langdurige tests in de praktijk.</p>
+        </div>
+    </section>
 
   <!-- Mission -->
   <section class="section">
     <div class="container">
       <div class="grid" style="grid-template-columns: 1fr 400px; gap: var(--sp-8);">
         <div>
-          <h2 class="mb-6">Onze missie</h2>
+          <h2 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--coffee); margin-bottom: 1.5rem;">Onze missie</h2>
           
-          <div class="card mb-6" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+          <div class="card mb-6" style="border: 1px solid var(--border); border-radius: 0.5rem;">
             
               <h3>Waarom wij bestaan</h3>
               <p class="mb-4">De markt voor percolators is overweldigend. Honderden modellen, tientallen merken, en veel marketing praatjes. Wij geloven dat je als consument recht hebt op eerlijke, onafhankelijke informatie.</p>
@@ -108,24 +75,24 @@
             
           </div>
           
-          <div class="card mb-6" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+          <div class="card mb-6" style="border: 1px solid var(--border); border-radius: 0.5rem;">
             
               <h3>Onze waarden</h3>
               <div class="grid grid-2 gap-4">
                 <div>
-                  <h4 style=""> Transparantie</h4>
+                  <h4> Transparantie</h4>
                   <p class="text-sm text-dim">Alle testmethoden en criteria zijn openbaar. Je weet precies hoe we tot onze oordelen komen.</p>
                 
                 <div>
-                  <h4 style="">🚫 Onafhankelijkheid</h4>
+                  <h4>Onafhankelijkheid</h4>
                   <p class="text-sm text-dim">We accepteren geen geld van merken voor positieve reviews. Onze mening is niet te koop.</p>
                 </div>
                 <div>
-                  <h4 style="">🧪 Grondigheid</h4>
+                  <h4>Grondigheid</h4>
                   <p class="text-sm text-dim">Elke percolator wordt minimaal 3 maanden getest voordat we een review publiceren.</p>
                 </div>
                 <div>
-                  <h4 style="">📚 Educatie</h4>
+                  <h4>Educatie</h4>
                   <p class="text-sm text-dim">We delen niet alleen onze mening, maar leggen ook uit waarom en hoe.</p>
                 </div>
               </div>
@@ -135,8 +102,8 @@
         
         <!-- Sidebar -->
         <div>
-          <div class="card mb-6" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
-            <div class="card-body text-center" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+          <div class="card mb-6" style="border: 1px solid var(--border); border-radius: 0.5rem;">
+            <div class="card-body text-center" style="border: 1px solid var(--border); border-radius: 0.5rem;">
               <div style="font-size: 4rem; margin-bottom: var(--sp-4);"></div>
               <h3>Ons testlab</h3>
               <p class="text-dim mb-4">Onze keuken in Amsterdam waar alle percolators uitgebreid getest worden.</p>
@@ -148,7 +115,7 @@
             </div>
           </div>
           
-          <div class="card mb-6" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+          <div class="card mb-6" style="border: 1px solid var(--border); border-radius: 0.5rem;">
             
               <h3 class="mb-4">Contact</h3>
               <p class="text-sm mb-3"><strong>Email:</strong> info@italiaanse-percolator.nl</p>
@@ -168,32 +135,32 @@
       <h2 class="text-center mb-8">Ons testproces</h2>
       
       <div class="grid grid-4">
-        <div class="card" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
-          <div class="card-body text-center" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+        <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem;">
+          <div class="card-body text-center" style="border: 1px solid var(--border); border-radius: 0.5rem;">
             <div style="font-size: 2.5rem; margin-bottom: var(--sp-4);">🛒</div>
             <h3>1. Aankoop</h3>
             <p class="text-sm text-dim">We kopen alle percolators zelf, net zoals jij dat zou doen. Geen gratis samples van merken.</p>
           </div>
         </div>
         
-        <div class="card" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
-          <div class="card-body text-center" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+        <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem;">
+          <div class="card-body text-center" style="border: 1px solid var(--border); border-radius: 0.5rem;">
             <div style="font-size: 2.5rem; margin-bottom: var(--sp-4);">📏</div>
             <h3>2. Eerste indruk</h3>
             <p class="text-sm text-dim">Uitpakken, eerste gebruik, bouwkwaliteit beoordelen. Alle details worden gedocumenteerd.</p>
           </div>
         </div>
         
-        <div class="card" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
-          <div class="card-body text-center" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+        <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem;">
+          <div class="card-body text-center" style="border: 1px solid var(--border); border-radius: 0.5rem;">
             <div style="font-size: 2.5rem; margin-bottom: var(--sp-4);"></div>
             <h3>3. Langdurig testen</h3>
             <p class="text-sm text-dim">Minimaal 3 maanden dagelijks gebruik. We testen smaak, gebruiksgemak, onderhoud en duurzaamheid.</p>
           </div>
         </div>
         
-        <div class="card" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
-          <div class="card-body text-center" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+        <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem;">
+          <div class="card-body text-center" style="border: 1px solid var(--border); border-radius: 0.5rem;">
             <div style="font-size: 2.5rem; margin-bottom: var(--sp-4);">✍️</div>
             <h3>4. Review schrijven</h3>
             <p class="text-sm text-dim">Eerlijke, gedetailleerde review met voor- en nadelen. Geen suikercoating.</p>
@@ -209,8 +176,8 @@
       <h2 class="text-center mb-8">Ons team</h2>
       
       <div class="grid grid-3">
-        <div class="card" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
-          <div class="card-body text-center" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+        <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem;">
+          <div class="card-body text-center" style="border: 1px solid var(--border); border-radius: 0.5rem;">
             <div style="width: 100px; height: 100px; background: var(--coffee); %; margin: 0 auto var(--sp-4); display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white;">M</div>
             <h3>Marco</h3>
             <p class="text-sm text-dim mb-4">Hoofdredacteur & koffie-expert</p>
@@ -218,8 +185,8 @@
           </div>
         </div>
         
-        <div class="card" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
-          <div class="card-body text-center" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+        <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem;">
+          <div class="card-body text-center" style="border: 1px solid var(--border); border-radius: 0.5rem;">
             <div style="width: 100px; height: 100px; background: var(--sage); %; margin: 0 auto var(--sp-4); display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white;">L</div>
             <h3>Lisa</h3>
             <p class="text-sm text-dim mb-4">Test coördinator & fotograaf</p>
@@ -227,8 +194,8 @@
           </div>
         </div>
         
-        <div class="card" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
-          <div class="card-body text-center" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+        <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem;">
+          <div class="card-body text-center" style="border: 1px solid var(--border); border-radius: 0.5rem;">
             <div style="width: 100px; height: 100px; background: var(--cta); %; margin: 0 auto var(--sp-4); display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white;">D</div>
             <h3>David</h3>
             <p class="text-sm text-dim mb-4">Technisch analist</p>
@@ -244,7 +211,7 @@
     <div class="container">
       <h2 class="text-center mb-8">Transparantie over inkomsten</h2>
       
-      <div class="card" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;" style="max-width: 800px; margin: 0 auto;">
+      <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem;" style="max-width: 800px; margin: 0 auto;">
         
           <h3 class="mb-4">Hoe verdienen wij geld?</h3>
           
@@ -270,7 +237,7 @@
             </div>
           </div>
           
-          <div class="card" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;" style="background: var(--surface);">
+          <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem;" style="background: var(--surface);">
             
               <h4>Belangrijk om te weten:</h4>
               <p class="text-sm">Affiliate commissies hebben <strong>geen invloed</strong> op onze reviews. We raden alleen producten aan die we zelf zouden kopen. Als een product slecht is, zeggen we dat - ongeacht de commissie.</p>
@@ -333,7 +300,7 @@
   <!-- CTA -->
   <section class="section-sm text-center">
     <div class="container">
-      <div class="card" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;" style="max-width: 600px; margin: 0 auto;">
+      <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem;" style="max-width: 600px; margin: 0 auto;">
         
           <h2 class="mb-4">Vragen of suggesties?</h2>
           <p class="lead mb-6">We horen graag van je! Of je nu een vraag hebt over een product, een suggestie voor een nieuwe review, of gewoon wilt zeggen hallo.</p>

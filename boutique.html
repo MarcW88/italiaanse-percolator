@@ -21,11 +21,25 @@
                 <a href="index.html" class="nav-brand">Italiaanse Percolator</a>
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="beste-italiaanse-percolators.html" class="nav-link">Top 10</a></li>
-                    <li><a href="alle-reviews.html" class="nav-link">Reviews</a></li>
-                    <li><a href="koopgids/index.html" class="nav-link">Koopgids</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="beste-italiaanse-percolators.html" class="nav-link dropdown-toggle">Guides</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="beste-italiaanse-percolators.html" class="dropdown-link">Top 10</a></li>
+                            <li><a href="koopgids/index.html" class="dropdown-link">Koopgids</a></li>
+                            <li><a href="alle-reviews.html" class="dropdown-link">Reviews</a></li>
+                            <li><a href="vergelijking/index.html" class="dropdown-link">Vergelijking</a></li>
+                        </ul>
+                    </li>
                     <li><a href="marques/index.html" class="nav-link">Merken</a></li>
-                    <li><a href="boutique.html" class="nav-link active">Alle modellen</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="boutique.html" class="nav-link dropdown-toggle active">Shop</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="boutique.html" class="dropdown-link">Alle modellen</a></li>
+                            <li><a href="categories/percolators.html" class="dropdown-link">Percolators</a></li>
+                            <li><a href="categories/elektrische-percolators.html" class="dropdown-link">Elektrisch</a></li>
+                            <li><a href="categories/accessoires.html" class="dropdown-link">Accessoires</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -45,12 +59,12 @@
     <!-- Categories -->
     <div style="border-bottom: 1px solid var(--border); padding: 1rem 0;">
         <div class="container" style="display: flex; gap: 1.5rem; flex-wrap: wrap; font-size: 0.85rem;">
-            <a href="categories/percolators.html" style="color: var(--text-dim); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--border); .25rem; border: 1px solid var(--border); border-radius: 0.5rem;">Percolators (322)</a>
-            <a href="categories/elektrische-percolators.html" style="color: var(--text-dim); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--border); .25rem; border: 1px solid var(--border); border-radius: 0.5rem;">Elektrisch (247)</a>
-            <a href="categories/accessoires.html" style="color: var(--text-dim); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--border); .25rem; border: 1px solid var(--border); border-radius: 0.5rem;">Accessoires (862)</a>
-            <a href="categories/percolators-inductie.html" style="color: var(--text-dim); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--border); .25rem; border: 1px solid var(--border); border-radius: 0.5rem;">Inductie</a>
-            <a href="categories/percolators-aluminium.html" style="color: var(--text-dim); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--border); .25rem; border: 1px solid var(--border); border-radius: 0.5rem;">Aluminium</a>
-            <a href="categories/percolators-rvs.html" style="color: var(--text-dim); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--border); .25rem; border: 1px solid var(--border); border-radius: 0.5rem;">RVS</a>
+            <a href="categories/percolators.html" style="color: var(--text-dim); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--border); border-radius: 0.5rem;">Percolators (322)</a>
+            <a href="categories/elektrische-percolators.html" style="color: var(--text-dim); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--border); border-radius: 0.5rem;">Elektrisch (247)</a>
+            <a href="categories/accessoires.html" style="color: var(--text-dim); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--border); border-radius: 0.5rem;">Accessoires (862)</a>
+            <a href="categories/percolators-inductie.html" style="color: var(--text-dim); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--border); border-radius: 0.5rem;">Inductie</a>
+            <a href="categories/percolators-aluminium.html" style="color: var(--text-dim); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--border); border-radius: 0.5rem;">Aluminium</a>
+            <a href="categories/percolators-rvs.html" style="color: var(--text-dim); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--border); border-radius: 0.5rem;">RVS</a>
         </div>
     </div>
 
@@ -168,7 +182,7 @@
             updatePagination();
         } catch (error) {
             console.error('Fout:', error);
-            document.getElementById('loading-indicator').innerHTML = '<p style="color:var(--text-light);">Producten konden niet geladen worden. <a href="" style="">Probeer opnieuw</a></p>';
+            document.getElementById('loading-indicator').innerHTML = '<p style="color:var(--text-light);">Producten konden niet geladen worden. <a href="">Probeer opnieuw</a></p>';
         }
     });
 

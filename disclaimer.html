@@ -18,23 +18,24 @@
 </head>
 <body>
   <!-- Navigation -->
-      <nav class="navbar">
+    <nav class="navbar">
         <div class="container">
             <div class="nav-container">
                 <a href="index.html" class="nav-brand">Italiaanse Percolator</a>
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link">Home</a></li>
                     <li class="nav-item dropdown">
-                        <a href="beste-italiaanse-percolators.html" class="nav-link dropdown-toggle">Guides ▾</a>
+                        <a href="beste-italiaanse-percolators.html" class="nav-link dropdown-toggle">Guides</a>
                         <ul class="dropdown-menu">
                             <li><a href="beste-italiaanse-percolators.html" class="dropdown-link">Top 10</a></li>
                             <li><a href="koopgids/index.html" class="dropdown-link">Koopgids</a></li>
                             <li><a href="alle-reviews.html" class="dropdown-link">Reviews</a></li>
+                            <li><a href="vergelijking/index.html" class="dropdown-link">Vergelijking</a></li>
                         </ul>
                     </li>
                     <li><a href="marques/index.html" class="nav-link">Merken</a></li>
                     <li class="nav-item dropdown">
-                        <a href="boutique.html" class="nav-link dropdown-toggle">Shop ▾</a>
+                        <a href="boutique.html" class="nav-link dropdown-toggle">Shop</a>
                         <ul class="dropdown-menu">
                             <li><a href="boutique.html" class="dropdown-link">Alle modellen</a></li>
                             <li><a href="categories/percolators.html" class="dropdown-link">Percolators</a></li>
@@ -46,23 +47,6 @@
             </div>
         </div>
     </nav>
-    <script>
-        // Dropdown toggle functionality
-        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
-            toggle.addEventListener('click', function(e) {
-                e.preventDefault();
-                const dropdown = this.parentElement;
-                dropdown.classList.toggle('active');
-            });
-        });
-        
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('.dropdown')) {
-                document.querySelectorAll('.dropdown.active').forEach(d => d.classList.remove('active'));
-            }
-        });
-    </script>
 
   <!-- Breadcrumbs -->
   <div class="container" style="padding-top: var(--sp-6);">
@@ -79,8 +63,8 @@
       <h1 class="display-title text-center mb-6">Disclaimer</h1>
       <p class="lead text-center mb-8">Belangrijke informatie over het gebruik van onze website, affiliate links, reviews en aansprakelijkheid.</p>
       
-      <div class="card mb-8" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
-        <div class="card-body text-center" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+      <div class="card mb-8" style="border: 1px solid var(--border); border-radius: 0.5rem;">
+        <div class="card-body text-center" style="border: 1px solid var(--border); border-radius: 0.5rem;">
           <h3>Samenvatting</h3>
           <p>We doen ons best om accurate informatie te geven, maar kunnen geen garanties bieden. We verdienen commissie via affiliate links. Gebruik onze informatie als uitgangspunt, niet als definitief advies.</p>
         </div>
@@ -94,12 +78,12 @@
       <div style="max-width: 800px; margin: 0 auto;">
         
         <!-- Affiliate Disclosure -->
-        <div class="card mb-8" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+        <div class="card mb-8" style="border: 1px solid var(--border); border-radius: 0.5rem;">
           
             <h2>Affiliate Links Disclosure</h2>
             
-            <div class="card mb-4" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;" style="background: var(--surface-soft); border-left: 4px solid var(--warning);">
-              <div class="card-body" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+            <div class="card mb-4" style="border: 1px solid var(--border); border-radius: 0.5rem;" style="background: var(--surface-soft); border-left: 4px solid var(--warning);">
+              <div class="card-body" style="border: 1px solid var(--border); border-radius: 0.5rem;">
                 <h3>Belangrijke mededeling</h3>
                 <p><strong>Als partner van Bol.com, Amazon en andere retailers verdienen wij aan kwalificerende aankopen.</strong></p>
               
@@ -138,7 +122,7 @@
         </div>
 
         <!-- Review Disclaimer -->
-        <div class="card mb-8" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+        <div class="card mb-8" style="border: 1px solid var(--border); border-radius: 0.5rem;">
           
             <h2>Reviews & Meningen</h2>
             
@@ -151,8 +135,8 @@
             </ul>
             
             <h3>Wat je moet weten</h3>
-            <div class="card" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;" style="background: var(--surface-soft);">
-              <div class="card-body" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+            <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem;" style="background: var(--surface-soft);">
+              <div class="card-body" style="border: 1px solid var(--border); border-radius: 0.5rem;">
                 <ul class="text-sm">
                   <li><strong>Persoonlijke smaak:</strong> Koffiesmaak is subjectief - wat wij lekker vinden, vind jij misschien niet</li>
                   <li><strong>Gebruiksomstandigheden:</strong> Onze testomgeving kan verschillen van jouw situatie</li>
@@ -168,7 +152,7 @@
         </div>
 
         <!-- Information Accuracy -->
-        <div class="card mb-8" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+        <div class="card mb-8" style="border: 1px solid var(--border); border-radius: 0.5rem;">
           
             <h2>ℹ Informatie Nauwkeurigheid</h2>
             
@@ -176,8 +160,8 @@
             <p>We doen ons uiterste best om accurate, actuele en nuttige informatie te verstrekken. Echter:</p>
             
             <div class="grid grid-2 gap-6">
-              <div class="card" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;" style="border-left: 4px solid var(--success);">
-                <div class="card-body" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+              <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem;" style="border-left: 4px solid var(--success);">
+                <div class="card-body" style="border: 1px solid var(--border); border-radius: 0.5rem;">
                   <h4> Wat we wel doen</h4>
                   <ul class="text-sm">
                     <li>Informatie regelmatig controleren</li>
@@ -188,7 +172,7 @@
                 
               </div>
               
-              <div class="card" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;" style="border-left: 4px solid var(--warning);">
+              <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem;" style="border-left: 4px solid var(--warning);">
                 
                   <h4>⚠️ Wat we niet kunnen garanderen</h4>
                   <ul class="text-sm">
@@ -207,7 +191,7 @@
         </div>
 
         <!-- Liability -->
-        <div class="card mb-8" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+        <div class="card mb-8" style="border: 1px solid var(--border); border-radius: 0.5rem;">
           
             <h2>Aansprakelijkheid</h2>
             
@@ -223,8 +207,8 @@
             </ul>
             
             <h3>Jouw verantwoordelijkheid</h3>
-            <div class="card" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;" style="background: var(--surface-soft);">
-              <div class="card-body" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+            <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem;" style="background: var(--surface-soft);">
+              <div class="card-body" style="border: 1px solid var(--border); border-radius: 0.5rem;">
                 <p><strong>Door onze website te gebruiken, ga je ermee akkoord dat:</strong></p>
                 <ul class="text-sm">
                   <li>Je onze informatie gebruikt als uitgangspunt, niet als definitief advies</li>
@@ -238,7 +222,7 @@
         </div>
 
         <!-- External Links -->
-        <div class="card mb-8" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+        <div class="card mb-8" style="border: 1px solid var(--border); border-radius: 0.5rem;">
           
             <h2>Externe Links</h2>
             
@@ -264,7 +248,7 @@
         </div>
 
         <!-- Intellectual Property -->
-        <div class="card mb-8" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+        <div class="card mb-8" style="border: 1px solid var(--border); border-radius: 0.5rem;">
           
             <h2>© Intellectueel Eigendom</h2>
             
@@ -299,7 +283,7 @@
         </div>
 
         <!-- Changes -->
-        <div class="card mb-8" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+        <div class="card mb-8" style="border: 1px solid var(--border); border-radius: 0.5rem;">
           
             <h2>Wijzigingen</h2>
             
@@ -316,7 +300,7 @@
         </div>
 
         <!-- Contact -->
-        <div class="card mb-8" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+        <div class="card mb-8" style="border: 1px solid var(--border); border-radius: 0.5rem;">
           
             <h2>Vragen over deze disclaimer?</h2>
             
@@ -332,9 +316,9 @@
               <div>
                 <h3>Andere vragen?</h3>
                 <ul class="text-sm">
-                  <li><a href="privacy.html" style="">Privacy Policy</a> - Voor privacy gerelateerde vragen</li>
-                  <li><a href="over-ons.html" style="">Over Ons</a> - Voor informatie over ons team</li>
-                  <li><a href="contact.html" style="">Contact</a> - Voor algemene vragen</li>
+                  <li><a href="privacy.html">Privacy Policy</a> - Voor privacy gerelateerde vragen</li>
+                  <li><a href="over-ons.html">Over Ons</a> - Voor informatie over ons team</li>
+                  <li><a href="contact.html">Contact</a> - Voor algemene vragen</li>
                 </ul>
               </div>
             </div>
@@ -342,7 +326,7 @@
         </div>
 
         <!-- Applicable Law -->
-        <div class="card mb-8" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+        <div class="card mb-8" style="border: 1px solid var(--border); border-radius: 0.5rem;">
           
             <h2>Toepasselijk Recht</h2>
             
@@ -355,8 +339,8 @@
         </div>
 
         <!-- Last Updated -->
-        <div class="card" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
-          <div class="card-body text-center" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+        <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem;">
+          <div class="card-body text-center" style="border: 1px solid var(--border); border-radius: 0.5rem;">
             <p class="text-sm text-dim">
               <strong>Laatst bijgewerkt:</strong> 13 oktober 2025<br>
               <strong>Versie:</strong> 1.0<br>

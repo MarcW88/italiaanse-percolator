@@ -18,23 +18,24 @@
 </head>
 <body>
   <!-- Navigation -->
-      <nav class="navbar">
+    <nav class="navbar">
         <div class="container">
             <div class="nav-container">
                 <a href="index.html" class="nav-brand">Italiaanse Percolator</a>
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link">Home</a></li>
                     <li class="nav-item dropdown">
-                        <a href="beste-italiaanse-percolators.html" class="nav-link dropdown-toggle">Guides ▾</a>
+                        <a href="beste-italiaanse-percolators.html" class="nav-link dropdown-toggle">Guides</a>
                         <ul class="dropdown-menu">
                             <li><a href="beste-italiaanse-percolators.html" class="dropdown-link">Top 10</a></li>
                             <li><a href="koopgids/index.html" class="dropdown-link">Koopgids</a></li>
                             <li><a href="alle-reviews.html" class="dropdown-link">Reviews</a></li>
+                            <li><a href="vergelijking/index.html" class="dropdown-link">Vergelijking</a></li>
                         </ul>
                     </li>
                     <li><a href="marques/index.html" class="nav-link">Merken</a></li>
                     <li class="nav-item dropdown">
-                        <a href="boutique.html" class="nav-link dropdown-toggle">Shop ▾</a>
+                        <a href="boutique.html" class="nav-link dropdown-toggle">Shop</a>
                         <ul class="dropdown-menu">
                             <li><a href="boutique.html" class="dropdown-link">Alle modellen</a></li>
                             <li><a href="categories/percolators.html" class="dropdown-link">Percolators</a></li>
@@ -46,23 +47,6 @@
             </div>
         </div>
     </nav>
-    <script>
-        // Dropdown toggle functionality
-        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
-            toggle.addEventListener('click', function(e) {
-                e.preventDefault();
-                const dropdown = this.parentElement;
-                dropdown.classList.toggle('active');
-            });
-        });
-        
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('.dropdown')) {
-                document.querySelectorAll('.dropdown.active').forEach(d => d.classList.remove('active'));
-            }
-        });
-    </script>
 
   <!-- Breadcrumbs -->
   <div class="container" style="padding-top: var(--sp-6);">
@@ -88,7 +72,7 @@
         
         <!-- Contact Form -->
         <div>
-          <div class="card" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+          <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem;">
             
               <h2 class="mb-6">Stuur ons een bericht</h2>
               
@@ -131,7 +115,7 @@
 
         <!-- Contact Info -->
         <div>
-          <div class="card mb-6" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+          <div class="card mb-6" style="border: 1px solid var(--border); border-radius: 0.5rem;">
             
               <h3 class="mb-4">Direct contact</h3>
               
@@ -155,7 +139,7 @@
             </div>
           </div>
 
-          <div class="card mb-6" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+          <div class="card mb-6" style="border: 1px solid var(--border); border-radius: 0.5rem;">
             
               <h3 class="mb-4">Veelgestelde vragen</h3>
               
@@ -176,8 +160,8 @@
             </div>
           </div>
 
-          <div class="card" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
-            <div class="card-body text-center" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+          <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem;">
+            <div class="card-body text-center" style="border: 1px solid var(--border); border-radius: 0.5rem;">
               <h3 class="mb-4">Snel hulp nodig?</h3>
               <p class="text-sm text-dim mb-4">Bekijk eerst onze uitgebreide gidsen - misschien staat je antwoord er al bij!</p>
               <a href="koopgids/index.html" class="btn btn-outline" style="width: 100%;">Bekijk koopgids →</a>
@@ -194,30 +178,30 @@
       <h2 class="text-center mb-8">Waar we vaak over gevraagd worden</h2>
       
       <div class="grid grid-3">
-        <div class="card" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+        <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem;">
           
             <div style="font-size: 2rem; margin-bottom: var(--sp-3);">🤔
             <h4>Welke percolator kiezen?</h4>
             <p class="text-sm text-dim mb-3">Hangt af van je kookplaat, budget en voorkeuren.</p>
-            <a href="koopgids/hoe-kies-je-de-juiste-percolator.html" class="text-sm" style="">→ Koopgids lezen</a>
+            <a href="koopgids/hoe-kies-je-de-juiste-percolator.html" class="text-sm">→ Koopgids lezen</a>
           </div>
         </div>
         
-        <div class="card" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+        <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem;">
           
             <div style="font-size: 2rem; margin-bottom: var(--sp-3);">🧽
             <h4>Hoe onderhouden?</h4>
             <p class="text-sm text-dim mb-3">Dagelijks spoelen, wekelijks grondig reinigen, maandelijks ontkalken.</p>
-            <a href="koopgids/hoe-onderhoud-je-een-percolator.html" class="text-sm" style="">→ Onderhoudsgids</a>
+            <a href="koopgids/hoe-onderhoud-je-een-percolator.html" class="text-sm">→ Onderhoudsgids</a>
           </div>
         </div>
         
-        <div class="card" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+        <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem;">
           
             <div style="font-size: 2rem; margin-bottom: var(--sp-3);">
             <h4>Percolator vs espresso?</h4>
             <p class="text-sm text-dim mb-3">Verschillende ervaringen, budgetten en gebruiksgemak.</p>
-            <a href="koopgids/percolator-vs-espressoapparaat.html" class="text-sm" style="">→ Vergelijking lezen</a>
+            <a href="koopgids/percolator-vs-espressoapparaat.html" class="text-sm">→ Vergelijking lezen</a>
           </div>
         </div>
       </div>
@@ -230,8 +214,8 @@
       <h2 class="text-center mb-8">Ons team</h2>
       
       <div class="grid grid-3">
-        <div class="card" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
-          <div class="card-body text-center" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+        <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem;">
+          <div class="card-body text-center" style="border: 1px solid var(--border); border-radius: 0.5rem;">
             <div style="width: 80px; height: 80px; background: var(--coffee); %; margin: 0 auto var(--sp-4); display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white;">M</div>
             <h3>Marco</h3>
             <p class="text-sm text-dim mb-3">Hoofdredacteur & koffie-expert</p>
@@ -239,8 +223,8 @@
           </div>
         </div>
         
-        <div class="card" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
-          <div class="card-body text-center" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+        <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem;">
+          <div class="card-body text-center" style="border: 1px solid var(--border); border-radius: 0.5rem;">
             <div style="width: 80px; height: 80px; background: var(--sage); %; margin: 0 auto var(--sp-4); display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white;">L</div>
             <h3>Lisa</h3>
             <p class="text-sm text-dim mb-3">Test coördinator</p>
@@ -248,8 +232,8 @@
           </div>
         </div>
         
-        <div class="card" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
-          <div class="card-body text-center" style="border: 1px solid var(--border); .5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+        <div class="card" style="border: 1px solid var(--border); border-radius: 0.5rem;">
+          <div class="card-body text-center" style="border: 1px solid var(--border); border-radius: 0.5rem;">
             <div style="width: 80px; height: 80px; background: var(--cta); %; margin: 0 auto var(--sp-4); display: flex; align-items: center; justify-content: center; font-size: 2rem; color: white;">D</div>
             <h3>David</h3>
             <p class="text-sm text-dim mb-3">Technisch analist</p>

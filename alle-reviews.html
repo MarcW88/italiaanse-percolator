@@ -11,11 +11,11 @@
   <link rel="stylesheet" href="style.css">
   <style>
     .review-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
-    .review-card { background: white;  overflow: hidden; border: 1px solid #e5e7eb; transition: all 0.3s ease; }
-    .review-card:hover { transform: translateY(-4px);  }
-    .review-image { width: 100 height: 200px; object-fit: cover; }
+    .review-card { background: white; overflow: hidden; border: 1px solid var(--border); border-radius: 0.5rem; transition: border-color 0.2s ease; }
+    .review-card:hover { border-color: var(--coffee); }
+    .review-image { width: 100%; height: 200px; object-fit: cover; }
     .review-content { padding: 1.5rem; }
-    .review-badge { display: inline-block; padding: 0.25rem 0.75rem; background: var(--coffee); color: white;  font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .review-badge { display: inline-block; padding: 0.25rem 0.75rem; background: #f5f0ea; color: var(--text); border: 1px solid var(--border); border-radius: 0.3rem; font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem; }
     .review-title { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; color: #1f2937; }
     .review-meta { font-size: 0.875rem; color: #6b7280; margin-bottom: 1rem; }
     .review-score { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; }
@@ -27,23 +27,24 @@
   <link rel="canonical" href="https://italiaanse-percolator.nl/alle-reviews.html">
 </head>
 <body>
-      <nav class="navbar">
+    <nav class="navbar">
         <div class="container">
             <div class="nav-container">
                 <a href="index.html" class="nav-brand">Italiaanse Percolator</a>
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link">Home</a></li>
                     <li class="nav-item dropdown">
-                        <a href="beste-italiaanse-percolators.html" class="nav-link dropdown-toggle">Guides ▾</a>
+                        <a href="beste-italiaanse-percolators.html" class="nav-link dropdown-toggle active">Guides</a>
                         <ul class="dropdown-menu">
                             <li><a href="beste-italiaanse-percolators.html" class="dropdown-link">Top 10</a></li>
                             <li><a href="koopgids/index.html" class="dropdown-link">Koopgids</a></li>
                             <li><a href="alle-reviews.html" class="dropdown-link">Reviews</a></li>
+                            <li><a href="vergelijking/index.html" class="dropdown-link">Vergelijking</a></li>
                         </ul>
                     </li>
                     <li><a href="marques/index.html" class="nav-link">Merken</a></li>
                     <li class="nav-item dropdown">
-                        <a href="boutique.html" class="nav-link dropdown-toggle">Shop ▾</a>
+                        <a href="boutique.html" class="nav-link dropdown-toggle">Shop</a>
                         <ul class="dropdown-menu">
                             <li><a href="boutique.html" class="dropdown-link">Alle modellen</a></li>
                             <li><a href="categories/percolators.html" class="dropdown-link">Percolators</a></li>
@@ -55,58 +56,40 @@
             </div>
         </div>
     </nav>
-    <script>
-        // Dropdown toggle functionality
-        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
-            toggle.addEventListener('click', function(e) {
-                e.preventDefault();
-                const dropdown = this.parentElement;
-                dropdown.classList.toggle('active');
-            });
-        });
-        
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('.dropdown')) {
-                document.querySelectorAll('.dropdown.active').forEach(d => d.classList.remove('active'));
-            }
-        });
-    </script>
 
-  <div class="container" style="padding-top: var(--sp-6);">
-    <div class="breadcrumbs">
-      <a href="index.html">Home</a>
-      <span>›</span>
-      <span>Alle Reviews</span>
+  <section style="background: #f5f0ea; padding: 3rem 0 2.5rem;">
+    <div class="container" style="max-width: 780px;">
+      <p style="font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.75rem;">
+        <a href="index.html" style="color: var(--text-light); text-decoration: none;">Home</a> / Reviews
+      </p>
+      <h1 style="font-family: var(--font-serif); font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 400; margin-bottom: 0.75rem;">Alle percolator reviews</h1>
+      <p style="color: var(--text-dim); font-size: 1rem; max-width: 540px;">20+ complete reviews van Bialetti, Alessi, De'Longhi en meer. Elk model uitgebreid getest met scores, voor- en nadelen, en eerlijke aanbevelingen.</p>
     </div>
-  </div>
+  </section>
 
   <section style="padding: 3rem 0;">
     <div class="container">
-      <h1 class="display-title text-center mb-4">Alle Percolator Reviews</h1>
-      <p class="text-center text-lg mb-8" style="max-width: 800px; margin: 0 auto;">20+ complete reviews van Bialetti, Alessi, De'Longhi en meer. Elk model uitgebreid getest met scores, voor- en nadelen, en eerlijke aanbevelingen.</p>
-
       <!-- Quick Stats -->
       <div class="grid grid-4 gap-4 mb-8">
-        <div class="card text-center" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+        <div class="card text-center" style="border: 1px solid var(--border); border-radius: 0.5rem;">
           
             <div style="font-size: 2rem; font-weight: 700; ">20+
             <div style="font-size: 0.875rem; color: #6b7280;">Complete Reviews</div>
           </div>
         </div>
-        <div class="card text-center" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+        <div class="card text-center" style="border: 1px solid var(--border); border-radius: 0.5rem;">
           
             <div style="font-size: 2rem; font-weight: 700; ">8
             <div style="font-size: 0.875rem; color: #6b7280;">Merken Getest</div>
           </div>
         </div>
-        <div class="card text-center" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+        <div class="card text-center" style="border: 1px solid var(--border); border-radius: 0.5rem;">
           
             <div style="font-size: 2rem; font-weight: 700; ">6+
             <div style="font-size: 0.875rem; color: #6b7280;">Maanden Testing</div>
           </div>
         </div>
-        <div class="card text-center" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+        <div class="card text-center" style="border: 1px solid var(--border); border-radius: 0.5rem;">
           
             <div style="font-size: 2rem; font-weight: 700; ">100%
             <div style="font-size: 0.875rem; color: #6b7280;">Onafhankelijk</div>
@@ -121,7 +104,7 @@
       </div>
 
       <div class="review-grid">
-        <a href="bialetti-fiammetta-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;" style="text-decoration: none;">
+        <a href="bialetti-fiammetta-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; text-decoration: none;">
           <img src="Images/bialetti_fiammetta.jpg" alt="Bialetti Fiammetta" class="review-image">
           <div class="review-content">
             <span class="review-badge">Beste Keuze</span>
@@ -137,7 +120,7 @@
           </div>
         </a>
 
-        <a href="bialetti-venus-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;" style="text-decoration: none;">
+        <a href="bialetti-venus-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; text-decoration: none;">
           <img src="Images/bialetti_venus.jpg" alt="Bialetti Venus" class="review-image">
           <div class="review-content">
             <span class="review-badge">Beste Inductie</span>
@@ -153,7 +136,7 @@
           </div>
         </a>
 
-        <a href="bialetti-moka-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;" style="text-decoration: none;">
+        <a href="bialetti-moka-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; text-decoration: none;">
           <img src="Images/bialetti-moka-express-1.jpg" alt="Bialetti Moka Express" class="review-image">
           <div class="review-content">
             <span class="review-badge">Iconisch</span>
@@ -169,7 +152,7 @@
           </div>
         </a>
 
-        <a href="bialetti-brikka-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;" style="text-decoration: none;">
+        <a href="bialetti-brikka-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; text-decoration: none;">
           <img src="Images/bialetti_brikka.jpg" alt="Bialetti Brikka" class="review-image">
           <div class="review-content">
             <span class="review-badge">Crema</span>
@@ -185,7 +168,7 @@
           </div>
         </a>
 
-        <a href="bialetti-moka-timer-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;" style="text-decoration: none;">
+        <a href="bialetti-moka-timer-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; text-decoration: none;">
           <img src="Images/bialetti-moka-express-1.jpg" alt="Bialetti Moka Timer" class="review-image">
           <div class="review-content">
             <span class="review-badge">Elektrisch</span>
@@ -201,7 +184,7 @@
           </div>
         </a>
 
-        <a href="bialetti-alpina-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;" style="text-decoration: none;">
+        <a href="bialetti-alpina-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; text-decoration: none;">
           <img src="Images/bialetti-alpina-1.jpg" alt="Bialetti Alpina" class="review-image">
           <div class="review-content">
             <h3 class="review-title">Bialetti Alpina</h3>
@@ -216,7 +199,7 @@
           </div>
         </a>
 
-        <a href="bialetti-musa-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;" style="text-decoration: none;">
+        <a href="bialetti-musa-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; text-decoration: none;">
           <img src="Images/bialetti-musa-1.jpg" alt="Bialetti Musa" class="review-image">
           <div class="review-content">
             <h3 class="review-title">Bialetti Musa</h3>
@@ -231,7 +214,7 @@
           </div>
         </a>
 
-        <a href="bialetti-dama-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;" style="text-decoration: none;">
+        <a href="bialetti-dama-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; text-decoration: none;">
           <img src="Images/bialetti-dama-1.jpg" alt="Bialetti Dama" class="review-image">
           <div class="review-content">
             <h3 class="review-title">Bialetti Dama</h3>
@@ -246,7 +229,7 @@
           </div>
         </a>
 
-        <a href="bialetti-mini-express-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;" style="text-decoration: none;">
+        <a href="bialetti-mini-express-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; text-decoration: none;">
           <img src="Images/bialetti-mini-express.jpg" alt="Bialetti Mini Express" class="review-image">
           <div class="review-content">
             <h3 class="review-title">Bialetti Mini Express</h3>
@@ -269,7 +252,7 @@
       </div>
 
       <div class="review-grid">
-        <a href="alessi-9090-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;" style="text-decoration: none;">
+        <a href="alessi-9090-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; text-decoration: none;">
           <img src="Images/alessi_pulcina.jpg" alt="Alessi 9090" class="review-image">
           <div class="review-content">
             <span class="review-badge">Design Icoon</span>
@@ -285,7 +268,7 @@
           </div>
         </a>
 
-        <a href="alessi-la-conica-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;" style="text-decoration: none;">
+        <a href="alessi-la-conica-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; text-decoration: none;">
           <img src="Images/alessi_pulcina.jpg" alt="Alessi La Conica" class="review-image">
           <div class="review-content">
             <span class="review-badge">Postmodern</span>
@@ -301,7 +284,7 @@
           </div>
         </a>
 
-        <a href="alessi-moka-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;" style="text-decoration: none;">
+        <a href="alessi-moka-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; text-decoration: none;">
           <img src="Images/alessi_pulcina.jpg" alt="Alessi Moka" class="review-image">
           <div class="review-content">
             <span class="review-badge">Modern</span>
@@ -317,7 +300,7 @@
           </div>
         </a>
 
-        <a href="alessi-pulcina-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;" style="text-decoration: none;">
+        <a href="alessi-pulcina-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; text-decoration: none;">
           <img src="Images/alessi_pulcina.jpg" alt="Alessi Pulcina" class="review-image">
           <div class="review-content">
             <h3 class="review-title">Alessi Pulcina</h3>
@@ -340,7 +323,7 @@
       </div>
 
       <div class="review-grid">
-        <a href="delonghi-alicia-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;" style="text-decoration: none;">
+        <a href="delonghi-alicia-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; text-decoration: none;">
           <img src="Images/bialetti-moka-express-1.jpg" alt="De'Longhi Alicia" class="review-image">
           <div class="review-content">
             <span class="review-badge">Bestseller</span>
@@ -356,7 +339,7 @@
           </div>
         </a>
 
-        <a href="rommelsbacher-eko366-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;" style="text-decoration: none;">
+        <a href="rommelsbacher-eko366-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; text-decoration: none;">
           <img src="Images/bialetti-moka-express-1.jpg" alt="Rommelsbacher EKO 366" class="review-image">
           <div class="review-content">
             <span class="review-badge">Premium</span>
@@ -372,7 +355,7 @@
           </div>
         </a>
 
-        <a href="cloer-5928-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;" style="text-decoration: none;">
+        <a href="cloer-5928-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; text-decoration: none;">
           <img src="Images/bialetti-moka-express-1.jpg" alt="Cloer 5928" class="review-image">
           <div class="review-content">
             <span class="review-badge">Budget</span>
@@ -388,7 +371,7 @@
           </div>
         </a>
 
-        <a href="cilio-classico-electric-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;" style="text-decoration: none;">
+        <a href="cilio-classico-electric-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; text-decoration: none;">
           <img src="Images/bialetti-moka-express-1.jpg" alt="Cilio Classico Electric" class="review-image">
           <div class="review-content">
             <h3 class="review-title">Cilio Classico Electric</h3>
@@ -411,7 +394,7 @@
       </div>
 
       <div class="review-grid">
-        <a href="giannini-giannina-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;" style="text-decoration: none;">
+        <a href="giannini-giannina-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; text-decoration: none;">
           <img src="Images/bialetti-moka-express-1.jpg" alt="Giannini Giannina" class="review-image">
           <div class="review-content">
             <span class="review-badge">Rolls Royce</span>
@@ -427,7 +410,7 @@
           </div>
         </a>
 
-        <a href="stelton-collar-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;" style="text-decoration: none;">
+        <a href="stelton-collar-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; text-decoration: none;">
           <img src="Images/bialetti-moka-express-1.jpg" alt="Stelton Collar" class="review-image">
           <div class="review-content">
             <span class="review-badge">Scandinavisch</span>
@@ -443,7 +426,7 @@
           </div>
         </a>
 
-        <a href="grosche-milano-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;" style="text-decoration: none;">
+        <a href="grosche-milano-review.html" class="review-card" style="border: 1px solid var(--border); border-radius: 0.5rem; text-decoration: none;">
           <img src="Images/grosche-milano.jpg" alt="Grosche Milano" class="review-image">
           <div class="review-content">
             <h3 class="review-title">Grosche Milano</h3>
@@ -460,7 +443,7 @@
       </div>
 
       <!-- CTA Section -->
-      <div class="card mt-8" style="border: 1px solid var(--border); border-radius: 0.5rem; border: 1px solid var(--border); border-radius: 0.5rem;" style="background: linear-gradient(135deg, var(--coffee), #8B4513); color: white; text-align: center;">
+      <div class="card mt-8" style="border: 1px solid var(--border); border-radius: 0.5rem;" style="background: linear-gradient(135deg, var(--coffee), #8B4513); color: white; text-align: center;">
         
           <h2 style="color: white; margin-bottom: 1rem;">Niet gevonden wat je zocht?</h2>
           <p style="opacity: 0.95;  max-width: 600px; margin-left: auto; margin-right: auto;">Bekijk onze Top 10 ranglijst of gebruik de koopgids om de perfecte percolator voor jouw situatie te vinden.</p>

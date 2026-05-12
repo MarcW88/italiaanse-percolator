@@ -28,24 +28,24 @@
   </script>
 </head>
 <body>
-
-      <nav class="navbar">
+    <nav class="navbar">
         <div class="container">
             <div class="nav-container">
                 <a href="index.html" class="nav-brand">Italiaanse Percolator</a>
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link">Home</a></li>
                     <li class="nav-item dropdown">
-                        <a href="beste-italiaanse-percolators.html" class="nav-link dropdown-toggle">Guides ▾</a>
+                        <a href="beste-italiaanse-percolators.html" class="nav-link dropdown-toggle active">Guides</a>
                         <ul class="dropdown-menu">
                             <li><a href="beste-italiaanse-percolators.html" class="dropdown-link">Top 10</a></li>
                             <li><a href="koopgids/index.html" class="dropdown-link">Koopgids</a></li>
                             <li><a href="alle-reviews.html" class="dropdown-link">Reviews</a></li>
+                            <li><a href="vergelijking/index.html" class="dropdown-link">Vergelijking</a></li>
                         </ul>
                     </li>
                     <li><a href="marques/index.html" class="nav-link">Merken</a></li>
                     <li class="nav-item dropdown">
-                        <a href="boutique.html" class="nav-link dropdown-toggle">Shop ▾</a>
+                        <a href="boutique.html" class="nav-link dropdown-toggle">Shop</a>
                         <ul class="dropdown-menu">
                             <li><a href="boutique.html" class="dropdown-link">Alle modellen</a></li>
                             <li><a href="categories/percolators.html" class="dropdown-link">Percolators</a></li>
@@ -57,23 +57,6 @@
             </div>
         </div>
     </nav>
-    <script>
-        // Dropdown toggle functionality
-        document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
-            toggle.addEventListener('click', function(e) {
-                e.preventDefault();
-                const dropdown = this.parentElement;
-                dropdown.classList.toggle('active');
-            });
-        });
-        
-        // Close dropdown when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!e.target.closest('.dropdown')) {
-                document.querySelectorAll('.dropdown.active').forEach(d => d.classList.remove('active'));
-            }
-        });
-    </script>
 
   <div class="container" style="padding-top:var(--sp-6);">
     <div class="breadcrumbs">
@@ -317,12 +300,12 @@
     <div class="container" style="max-width:800px;">
       <h2 style="font-size:1margin-bottom:1.25rem;">Gerelateerde pagina&#x27;s</h2>
       <ul style="columns:2;gap:2rem;">
-        <li><a href="categories/percolators.html" style="">Vergelijk inductiemodellen</a></li>
-        <li><a href="marques/bialetti/" style="">Alle Bialetti modellen</a></li>
-        <li><a href="koopgids/index.html" style="">Koopgids percolators</a></li>
-        <li><a href="beste-italiaanse-percolators.html" style="">Top 10 beste percolators</a></li>
-        <li><a href="boutique.html" style="">Shop alle modellen</a></li>
-        <li><a href="vergelijking/index.html" style="">Vergelijkingstool</a></li>
+        <li><a href="categories/percolators.html">Vergelijk inductiemodellen</a></li>
+        <li><a href="marques/bialetti/">Alle Bialetti modellen</a></li>
+        <li><a href="koopgids/index.html">Koopgids percolators</a></li>
+        <li><a href="beste-italiaanse-percolators.html">Top 10 beste percolators</a></li>
+        <li><a href="boutique.html">Shop alle modellen</a></li>
+        <li><a href="vergelijking/index.html">Vergelijkingstool</a></li>
       </ul>
     </div>
   </section>

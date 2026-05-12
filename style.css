@@ -467,7 +467,9 @@ h4 {
   transition: transform 0.2s ease;
 }
 
-.nav-item.dropdown.active .dropdown-toggle::after {
+.nav-item.dropdown.active .dropdown-toggle::after,
+.nav-item.dropdown:hover .dropdown-toggle::after,
+.nav-item.dropdown:focus-within .dropdown-toggle::after {
   transform: rotate(180deg);
 }
 
@@ -489,7 +491,9 @@ h4 {
   z-index: 1000;
 }
 
-.nav-item.dropdown.active .dropdown-menu {
+.nav-item.dropdown.active .dropdown-menu,
+.nav-item.dropdown:hover .dropdown-menu,
+.nav-item.dropdown:focus-within .dropdown-menu {
   opacity: 1;
   visibility: visible;
   transform: translateY(8px);
