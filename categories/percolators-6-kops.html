@@ -51,6 +51,17 @@
     const baseUrl = 'categories/percolators-6-kops.html';
     let currentPage = 1;
     
+    function toggleLeesMeer(id, link) {
+        const el = document.getElementById(id);
+        if (el.style.display === 'none') {
+            el.style.display = 'block';
+            link.textContent = link.textContent.replace('&raquo;', '&laquo;');
+        } else {
+            el.style.display = 'none';
+            link.textContent = link.textContent.replace('&laquo;', '&raquo;');
+        }
+    }
+    
     function getPageUrl(page) {
         return page === 1 ? baseUrl : baseUrl + '?page=' + page;
     }

@@ -37,8 +37,10 @@
     <div style="background:#fafafa;padding:2rem 0;margin-bottom:2rem;">
         <div class="container" style="max-width:800px;">
             <p><strong>Op zoek naar een échte Italiaanse koffiebeleving thuis?</strong> Met een Italiaanse percolator zet je sterke, aromatische koffie zoals in een bar in Rome – zonder dure volautomaat of ingewikkelde instellingen. Of je nu één kopje drinkt of koffie zet voor het hele gezin, in onze collectie vind je de italiaanse percolator die past bij jouw fornuis, budget en koffieritueel.</p>
+            <div id="percolator-intro-extra" style="display:none;">
             <p>Bij Italiaanse‑Percolator.nl vind je uitsluitend percolators die getest zijn op smaak, gebruiksgemak en duurzaamheid. Denk aan klassieke aluminium mokapotten voor gas of elektrisch, maar ook moderne roestvrijstalen modellen die geschikt zijn voor inductie. We helpen je kiezen op basis van formaat (van 1 tot 12 koppen), warmtebron en gewenste koffiesterkte, zodat je precies de juiste italiaanse percolator kunt kopen.</p>
-            <a href="#percolator-lees-meer" style="color:var(--coffee);text-decoration:none;font-weight:600;">Lees meer &raquo;</a>
+            </div>
+            <a href="#" onclick="toggleLeesMeer('percolator-intro-extra', this); return false;" style="color:var(--coffee);text-decoration:none;font-weight:600;">Lees meer &raquo;</a>
         </div>
     </div>
     <main class="container" style="padding:2.5rem 0;">
@@ -91,6 +93,17 @@
     const perPage = 24;
     const baseUrl = 'categories/percolators.html';
     let currentPage = 1;
+    
+    function toggleLeesMeer(id, link) {
+        const el = document.getElementById(id);
+        if (el.style.display === 'none') {
+            el.style.display = 'block';
+            link.textContent = link.textContent.replace('&raquo;', '&laquo;');
+        } else {
+            el.style.display = 'none';
+            link.textContent = link.textContent.replace('&laquo;', '&raquo;');
+        }
+    }
     
     function getPageUrl(page) {
         return page === 1 ? baseUrl : baseUrl + '?page=' + page;

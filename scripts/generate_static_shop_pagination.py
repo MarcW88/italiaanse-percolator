@@ -211,8 +211,10 @@ def render(kind, slug, products, page, total_pages, title, h1, description):
     <div style="background:#fafafa;padding:2rem 0;margin-bottom:2rem;">
         <div class="container" style="max-width:800px;">
             <p><strong>Op zoek naar een échte Italiaanse koffiebeleving thuis?</strong> Met een Italiaanse percolator zet je sterke, aromatische koffie zoals in een bar in Rome – zonder dure volautomaat of ingewikkelde instellingen. Of je nu één kopje drinkt of koffie zet voor het hele gezin, in onze collectie vind je de italiaanse percolator die past bij jouw fornuis, budget en koffieritueel.</p>
+            <div id="percolator-intro-extra" style="display:none;">
             <p>Bij Italiaanse‑Percolator.nl vind je uitsluitend percolators die getest zijn op smaak, gebruiksgemak en duurzaamheid. Denk aan klassieke aluminium mokapotten voor gas of elektrisch, maar ook moderne roestvrijstalen modellen die geschikt zijn voor inductie. We helpen je kiezen op basis van formaat (van 1 tot 12 koppen), warmtebron en gewenste koffiesterkte, zodat je precies de juiste italiaanse percolator kunt kopen.</p>
-            <a href="#percolator-lees-meer" style="color:var(--coffee);text-decoration:none;font-weight:600;">Lees meer &raquo;</a>
+            </div>
+            <a href="#" onclick="toggleLeesMeer('percolator-intro-extra', this); return false;" style="color:var(--coffee);text-decoration:none;font-weight:600;">Lees meer &raquo;</a>
         </div>
     </div>'''
         content_below_html = '''
@@ -256,8 +258,10 @@ def render(kind, slug, products, page, total_pages, title, h1, description):
     <div style="background:#fafafa;padding:2rem 0;margin-bottom:2rem;">
         <div class="container" style="max-width:800px;">
             <p><strong>Wil je zonder gedoe verse koffie zetten, gewoon met één druk op de knop?</strong> Met een elektrische percolator combineer je de volle smaak van traditionele percolatorkoffie met het gemak van een modern apparaat. Je hebt geen fornuis nodig: stekker in het stopcontact, water en koffie erin, en de percolator regelt de temperatuur en doorlooptijd voor je.</p>
+            <div id="elektrische-percolator-intro-extra" style="display:none;">
             <p>Of je nu een compacte elektrische percolator zoekt voor 2–6 kopjes aan de ontbijttafel, of een grotere variant voor familie, kantoor of feestjes: in onze selectie vind je makkelijk het model dat bij jouw gebruik past. Filter op inhoud, materiaal (RVS of aluminium), warmhoudfunctie en design om snel de juiste elektrische percolator te kopen.</p>
-            <a href="#elektrische-percolator-lees-meer" style="color:var(--coffee);text-decoration:none;font-weight:600;">Lees meer over elektrische percolators &raquo;</a>
+            </div>
+            <a href="#" onclick="toggleLeesMeer('elektrische-percolator-intro-extra', this); return false;" style="color:var(--coffee);text-decoration:none;font-weight:600;">Lees meer over elektrische percolators &raquo;</a>
         </div>
     </div>'''
         content_below_html = '''
@@ -332,6 +336,17 @@ def render(kind, slug, products, page, total_pages, title, h1, description):
     const perPage = {PER_PAGE};
     const baseUrl = '{base_url}';
     let currentPage = 1;
+    
+    function toggleLeesMeer(id, link) {{
+        const el = document.getElementById(id);
+        if (el.style.display === 'none') {{
+            el.style.display = 'block';
+            link.textContent = link.textContent.replace('&raquo;', '&laquo;');
+        }} else {{
+            el.style.display = 'none';
+            link.textContent = link.textContent.replace('&laquo;', '&raquo;');
+        }}
+    }}
     
     function getPageUrl(page) {{
         return page === 1 ? baseUrl : baseUrl + '?page=' + page;
