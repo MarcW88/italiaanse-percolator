@@ -251,6 +251,51 @@ def render(kind, slug, products, page, total_pages, title, h1, description):
             </div>
         </div>
     </section>'''
+    elif kind == 'category' and slug == 'elektrische-percolators':
+        intro_html = '''
+    <div style="background:#fafafa;padding:2rem 0;margin-bottom:2rem;">
+        <div class="container" style="max-width:800px;">
+            <p><strong>Wil je zonder gedoe verse koffie zetten, gewoon met één druk op de knop?</strong> Met een elektrische percolator combineer je de volle smaak van traditionele percolatorkoffie met het gemak van een modern apparaat. Je hebt geen fornuis nodig: stekker in het stopcontact, water en koffie erin, en de percolator regelt de temperatuur en doorlooptijd voor je.</p>
+            <p>Of je nu een compacte elektrische percolator zoekt voor 2–6 kopjes aan de ontbijttafel, of een grotere variant voor familie, kantoor of feestjes: in onze selectie vind je makkelijk het model dat bij jouw gebruik past. Filter op inhoud, materiaal (RVS of aluminium), warmhoudfunctie en design om snel de juiste elektrische percolator te kopen.</p>
+            <a href="#elektrische-percolator-lees-meer" style="color:var(--coffee);text-decoration:none;font-weight:600;">Lees meer over elektrische percolators &raquo;</a>
+        </div>
+    </div>'''
+        content_below_html = '''
+    <div id="elektrische-percolator-lees-meer" style="background:#fafafa;padding:3rem 0;margin-top:3rem;">
+        <div class="container" style="max-width:800px;">
+            <h2 style="font-family:var(--font-serif);font-size:1.8rem;font-weight:400;margin-bottom:1.5rem;">Welke elektrische percolator past bij mij?</h2>
+            <p style="color:var(--text-dim);line-height:1.7;margin-bottom:1rem;">Bij het kiezen van een elektrische percolator zijn vooral de inhoud, warmhoudmogelijkheden en het gebruiksgemak belangrijk. Kleinere modellen van 2 tot 6 kopjes zijn ideaal voor thuis, terwijl grotere percolators met 10+ kopjes handig zijn voor vergaderingen, brunches of feestjes. Veel elektrische percolators schakelen automatisch uit en houden de koffie daarna nog een tijd op drinktemperatuur, zodat je niet hoeft op te letten of de koffie "doorkookt".</p>
+            <p style="color:var(--text-dim);line-height:1.7;">Een elektrische percolator is interessant als je de smaak van percolatorkoffie wilt, maar geen zin hebt in een fornuis of aparte kookplaat. Je zet de kan neer waar je wilt, vult water en gemalen koffie, en de rest gaat vanzelf. In de productbeschrijving vermelden we steeds hoeveel kopjes je per zetbeurt maakt, of er een warmhoudfunctie is, welk materiaal gebruikt is en hoe lang het snoer is. Zo kun je met vertrouwen de elektrische percolator kopen die precies past bij jouw keuken, kantoor of vakantiehuis.</p>
+        </div>
+    </div>'''
+        faq_html = '''
+    <section style="padding:3rem 0;">
+        <div class="container" style="max-width:800px;">
+            <h2 style="font-family:var(--font-serif);font-size:1.8rem;font-weight:400;margin-bottom:2rem;">Veelgestelde vragen over een elektrische percolator kopen</h2>
+            <div style="display:flex;flex-direction:column;gap:1.5rem;">
+                <div>
+                    <h3 style="font-size:1.1rem;font-weight:600;margin-bottom:0.5rem;">Wat is een elektrische percolator precies?</h3>
+                    <p style="color:var(--text-dim);line-height:1.7;">Een elektrische percolator is een percolator met een ingebouwd verwarmingselement. In plaats van op gas of inductie plaats je het apparaat gewoon op het aanrecht, steekt de stekker in het stopcontact en het water wordt automatisch verhit tot de koffie klaar is.</p>
+                </div>
+                <div>
+                    <h3 style="font-size:1.1rem;font-weight:600;margin-bottom:0.5rem;">Wat zijn de voordelen van een elektrische percolator?</h3>
+                    <p style="color:var(--text-dim);line-height:1.7;">Je hebt geen fornuis nodig, de temperatuur en zetduur zijn constant en veel modellen hebben een warmhoudfunctie. Dat maakt een elektrische percolator ideaal als je meerdere kopjes achter elkaar wilt schenken zonder erbij te moeten blijven.</p>
+                </div>
+                <div>
+                    <h3 style="font-size:1.1rem;font-weight:600;margin-bottom:0.5rem;">Hoeveel kopjes koffie kan ik met een elektrische percolator zetten?</h3>
+                    <p style="color:var(--text-dim);line-height:1.7;">Dat verschilt per model: er zijn compacte toestellen voor 2–4 kopjes, maar ook grote elektrische percolators voor 10 tot 40+ kopjes. In de productinformatie staat altijd duidelijk het maximale aantal kopjes per zetbeurt vermeld.</p>
+                </div>
+                <div>
+                    <h3 style="font-size:1.1rem;font-weight:600;margin-bottom:0.5rem;">Welke koffie gebruik ik in een elektrische percolator?</h3>
+                    <p style="color:var(--text-dim);line-height:1.7;">Gebruik gemalen koffie met een maling tussen filter en espresso in. Te fijne maling kan zorgen voor een bittere smaak, te grof geeft eerder een slappe koffie. Vaak werkt een speciale "percolator" of "moka" maling het best.</p>
+                </div>
+                <div>
+                    <h3 style="font-size:1.1rem;font-weight:600;margin-bottom:0.5rem;">Is een elektrische percolator geschikt voor op kantoor of bij feestjes?</h3>
+                    <p style="color:var(--text-dim);line-height:1.7;">Ja, zeker. Vooral de grotere modellen zijn ideaal voor kantoor, brunch of feest: je zet in één keer een volle kan en dankzij de warmhoudfunctie blijft de koffie langer op temperatuur. Dat is praktischer dan steeds aparte kopjes zetten met een volautomaat.</p>
+                </div>
+            </div>
+        </div>
+    </section>'''
     
     return f'''<!DOCTYPE html>
 <html lang="nl">
