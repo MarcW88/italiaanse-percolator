@@ -1422,6 +1422,34 @@ img {
   text-align: left;
 }
 
+.faq-item > h4.faq-question,
+div[style*="overflow: hidden"] > button,
+div[style*="overflow:hidden"] > button {
+  width: 100% !important;
+  padding: var(--sp-5) var(--sp-6) !important;
+  background: var(--surface) !important;
+  border: 0 !important;
+  color: var(--text) !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: var(--sp-4) !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  text-align: left !important;
+  margin: 0 !important;
+}
+
+div[style*="overflow: hidden"] > div[style*="display"],
+div[style*="overflow:hidden"] > div[style*="display"] {
+  padding: 0 var(--sp-6) var(--sp-6) !important;
+  background: var(--surface) !important;
+  color: var(--text-dim) !important;
+  line-height: 1.75 !important;
+  font-size: 0.95rem !important;
+}
+
 .faq-body {
   display: none;
   padding: 0 var(--sp-6) var(--sp-6) !important;
@@ -1433,6 +1461,139 @@ img {
   font-family: var(--font-serif);
   font-weight: 400;
   color: var(--text);
+}
+
+.faq-section .container > div,
+.section .container > div:has(.faq-item),
+.section-sm .container:has(.faq-item) {
+  max-width: 850px !important;
+}
+
+.faq-item,
+div[style*="border: 1px solid var(--border)"][style*="overflow: hidden"],
+div[style*="border:1px solid #ddd"][style*="overflow:hidden"] {
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 0.75rem !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.faq-answer,
+.faq-body,
+.faq-item > div[style*="display: none"],
+.faq-item > p[style*="display: none"] {
+  background: var(--surface) !important;
+  color: var(--text-dim) !important;
+  font-size: 0.95rem !important;
+}
+
+/* Review pages */
+body.review-page {
+  background: #fdfbf8;
+}
+
+.review-page .section-sm {
+  padding: var(--sp-16) 0;
+}
+
+.review-page .display-title {
+  color: var(--text);
+  letter-spacing: -0.03em;
+}
+
+.review-page .card,
+.review-page .product-card {
+  background: var(--surface);
+  border: 1px solid var(--border) !important;
+  border-radius: 1rem !important;
+  box-shadow: var(--shadow-sm);
+}
+
+.review-page .card {
+  padding: var(--sp-6);
+}
+
+.review-page .card-body {
+  padding: 0;
+}
+
+.review-page img {
+  border-radius: 1rem;
+}
+
+.review-page .rating-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--coffee), #8B4513);
+  color: white;
+  border-radius: 999px;
+  padding: 0.55rem 1rem;
+  font-weight: 700;
+}
+
+.review-page .alternative-card-grid,
+.brand-product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--sp-5);
+}
+
+.review-page .alternative-card,
+.brand-product-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+}
+
+.review-page .alternative-card img,
+.brand-product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  background: #faf7f2;
+  padding: var(--sp-4);
+}
+
+.review-page .alternative-card-body,
+.brand-product-card-body {
+  padding: var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  flex: 1;
+}
+
+.review-page .alternative-card-title,
+.brand-product-card-title {
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.review-page .alternative-card p,
+.brand-product-card p {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.review-page .alternative-card a,
+.brand-product-card a {
+  margin-top: auto;
+}
+
+@media (max-width: 900px) {
+  .review-page .alternative-card-grid,
+  .brand-product-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Espacement pour les chips/badges */
