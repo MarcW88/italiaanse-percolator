@@ -97,7 +97,7 @@
     font-weight: 600;
     color: #2563eb;
     white-space: nowrap;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    
   }
 
   .lead-compact {
@@ -211,7 +211,7 @@
 
   .pick-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    
   }
 
   .pick-card {
@@ -232,7 +232,7 @@
     font-weight: 600;
     color: #7B5A43;
     margin-bottom: 0.75rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    
   }
 
   .pick-card h3 {
@@ -367,7 +367,7 @@
     overflow-x: auto;
     margin-bottom: 2rem;
     border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    
   }
 
   .filter-btn {
@@ -416,7 +416,7 @@
 
   .comparison-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    
   }
 
   .card-rank {
@@ -581,7 +581,7 @@
     border: 2px solid #e2e8f0;
     border-radius: 12px;
     padding: 1.5rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    
   }
 
   .toc-sidebar h3 {
@@ -844,19 +844,11 @@
 
 
   <!-- Hero Section -->
-  <section class="section" style="background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1600&q=80') center/cover; min-height: 400px; display: flex; align-items: center; color: white; position: relative;">
-    <div class="container" style="text-align: center; position: relative; z-index: 2;">
-      <h1 style="color: white; font-size: 3rem; line-height: 1.1; margin-bottom: var(--sp-4); font-weight: 700; text-shadow: 2px 2px 8px rgba(0,0,0,0.7); font-family: 'DM Serif Display', serif;">De Beste Italiaanse Percolators van 2026</h1>
-      
-      <div style="max-width: 700px; margin: 0 auto; margin-bottom: var(--sp-6);">
-        <p style="color: rgba(255,255,255,0.95); font-size: 1.2rem; margin-bottom: var(--sp-6); font-weight: 400; text-shadow: 1px 1px 4px rgba(0,0,0,0.7); line-height: 1.6;">Onze experts hebben meer dan 50 percolators getest om jou de ultieme top 10 te brengen. Van klassieke Bialetti tot moderne Alessi designs.</p>
-      </div>
-      
-      <a href="#top-1" class="btn btn-primary btn-lg" style="background: linear-gradient(135deg, #D2691E, #8B4513); border: none; padding: 1rem 2rem; font-size: 1.1rem; font-weight: 600; box-shadow: 0 6px 20px rgba(0,0,0,0.3);">Bekijk onze #1 keuze →</a>
+    <section style="background: #f5f0ea; padding: 3rem 0 2.5rem;">
+    <div class="container" style="max-width: 780px;">
+      <h1 style="font-family: var(--font-serif); font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 400; margin-bottom: 0.75rem; color: var(--coffee);">De Beste Italiaanse Percolators van 2026</h1>
+      <p style="color: var(--text-dim); font-size: 1rem; max-width: 540px;">Onze experts hebben meer dan 50 percolators getest om jou de ultieme top 10 te brengen. Van klassieke Bialetti tot moderne Alessi designs.</p>
     </div>
-    
-    <!-- Overlay for better text readability -->
-    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.1); z-index: 1;"></div>
   </section>
 
   <!-- Breadcrumbs -->
@@ -876,7 +868,7 @@
       
       <!-- 3 cartes principales toujours visibles -->
       <div class="picks-grid">
-        <div class="pick-card">
+        <div class="pick-card" style="border: 1px solid var(--border); border-radius: 0.5rem;">
           <div class="pick-badge">Beste algemeen</div>
           <img src="Images/bialetti_fiammetta.jpg" alt="Bialetti Fiammetta" style="width: 120px; height: 120px; object-fit: contain; border-radius: var(--r-md); margin: 0 auto 12px auto; display: block;">
           <h3>Bialetti Fiammetta</h3>
@@ -891,7 +883,7 @@
           <a href="#bialetti-fiammetta" class="pick-cta">Bekijk review →</a>
         </div>
         
-        <div class="pick-card">
+        <div class="pick-card" style="border: 1px solid var(--border); border-radius: 0.5rem;">
           <div class="pick-badge">Beste inductie</div>
           <img src="Images/bialetti_venus.jpg" alt="Bialetti Venus" style="width: 120px; height: 120px; object-fit: contain; border-radius: var(--r-md); margin: 0 auto 12px auto; display: block;">
           <h3>Bialetti Venus</h3>
@@ -906,7 +898,7 @@
           <a href="#bialetti-venus" class="pick-cta">Bekijk review →</a>
         </div>
         
-        <div class="pick-card">
+        <div class="pick-card" style="border: 1px solid var(--border); border-radius: 0.5rem;">
           <div class="pick-badge">Beste budget</div>
           <img src="Images/bialetti-moka-express-1.jpg" alt="Bialetti Moka Express" style="width: 120px; height: 120px; object-fit: contain; border-radius: var(--r-md); margin: 0 auto 12px auto; display: block;">
           <h3>Moka Express</h3>
@@ -926,7 +918,7 @@
       <details class="picks-more">
         <summary class="picks-more-btn">Bekijk 3 andere aanbevelingen →</summary>
         <div class="picks-grid">
-          <div class="pick-card">
+          <div class="pick-card" style="border: 1px solid var(--border); border-radius: 0.5rem;">
             <div class="pick-badge">Beste design</div>
             <h3>Alessi Pulcina</h3>
             <p class="pick-desc">Award-winnend design</p>
@@ -940,7 +932,7 @@
             <a href="#alessi-pulcina" class="pick-cta">Bekijk review →</a>
           </div>
           
-          <div class="pick-card">
+          <div class="pick-card" style="border: 1px solid var(--border); border-radius: 0.5rem;">
             <div class="pick-badge">Beste premium</div>
             <h3>Bialetti Musa</h3>
             <p class="pick-desc">Luxe RVS design</p>
@@ -954,7 +946,7 @@
             <a href="#bialetti-musa" class="pick-cta">Bekijk review →</a>
           </div>
           
-          <div class="pick-card">
+          <div class="pick-card" style="border: 1px solid var(--border); border-radius: 0.5rem;">
             <div class="pick-badge">Beste compact</div>
             <h3>Bialetti Dama</h3>
             <p class="pick-desc">Elegant & compact</p>
@@ -1018,7 +1010,7 @@
               <td><span class="rank-badge rank-2">2</span></td>
               <td><a href="#bialetti-venus" class="font-medium">Bialetti Venus 4c</a></td>
               <td><span class="material-badge steel">RVS</span></td>
-              <td><span class="inductie-yes">✅</span></td>
+              <td><span class="inductie-yes"></span></td>
               <td>4 cups (200ml)</td>
               <td><span class="price-badge mid">€€</span></td>
               <td>Inductie</td>
@@ -1040,7 +1032,7 @@
               <td><span class="rank-badge rank-4">4</span></td>
               <td><a href="#bialetti-musa" class="font-medium">Bialetti Musa 6c</a></td>
               <td><span class="material-badge steel">RVS</span></td>
-              <td><span class="inductie-yes">✅</span></td>
+              <td><span class="inductie-yes"></span></td>
               <td>6 cups (300ml)</td>
               <td><span class="price-badge mid">€€</span></td>
               <td>Gezinnen</td>
@@ -1051,7 +1043,7 @@
               <td><span class="rank-badge rank-5">5</span></td>
               <td><a href="#bialetti-dama" class="font-medium">Bialetti Dama 3c</a></td>
               <td><span class="material-badge steel">RVS</span></td>
-              <td><span class="inductie-yes">✅</span></td>
+              <td><span class="inductie-yes"></span></td>
               <td>3 cups (150ml)</td>
               <td><span class="price-badge mid">€€</span></td>
               <td>Design</td>
@@ -1095,7 +1087,7 @@
               <td><span class="rank-badge rank-9">9</span></td>
               <td><a href="#grosche-milano" class="font-medium">Grosche Milano 6c</a></td>
               <td><span class="material-badge steel">RVS</span></td>
-              <td><span class="inductie-yes">✅</span></td>
+              <td><span class="inductie-yes"></span></td>
               <td>6 cups (300ml)</td>
               <td><span class="price-badge mid">€€</span></td>
               <td>Moderne stijl</td>
@@ -1118,20 +1110,20 @@
       </div>
       
       <!-- Cards mobile -->
-      <div class="comparison-cards-mobile">
-        <div class="comparison-card" data-category="budget,3cups">
-          <div class="card-rank">
+      <div class="comparison-cards-mobile" style="border: 1px solid var(--border); border-radius: 0.5rem;">
+        <div class="comparison-card" style="border: 1px solid var(--border); border-radius: 0.5rem;" data-category="budget,3cups">
+          <div class="card-rank" style="border: 1px solid var(--border); border-radius: 0.5rem;">
             <span class="rank-number">1</span>
             <span class="rank-label">Best choice</span>
           </div>
-          <div class="card-header">
+          <div class="card-header" style="border: 1px solid var(--border); border-radius: 0.5rem;">
             <h4>Bialetti Fiammetta 3c</h4>
-            <span class="card-rating">9.2/10</span>
+            <span class="card-rating" style="border: 1px solid var(--border); border-radius: 0.5rem;">9.2/10</span>
           </div>
-          <div class="card-image">
+          <div class="card-image" style="border: 1px solid var(--border); border-radius: 0.5rem;">
             <img src="Images/bialetti_fiammetta.jpg" alt="Fiammetta" loading="lazy">
           </div>
-          <div class="card-specs">
+          <div class="card-specs" style="border: 1px solid var(--border); border-radius: 0.5rem;">
             <div class="spec-row">
               <span class="spec-label">Materiaal</span>
               <span class="spec-value badge-aluminum">Aluminium</span>
@@ -1149,29 +1141,29 @@
               <span class="spec-value badge-price">€35</span>
             </div>
           </div>
-          <a href="#bialetti-fiammetta" class="card-cta">Bekijk review</a>
+          <a href="#bialetti-fiammetta" class="card-cta" style="border: 1px solid var(--border); border-radius: 0.5rem;">Bekijk review</a>
         </div>
         
-        <div class="comparison-card" data-category="inductie,mid">
-          <div class="card-rank">
+        <div class="comparison-card" style="border: 1px solid var(--border); border-radius: 0.5rem;" data-category="inductie,mid">
+          <div class="card-rank" style="border: 1px solid var(--border); border-radius: 0.5rem;">
             <span class="rank-number">2</span>
             <span class="rank-label">Best inductie</span>
           </div>
-          <div class="card-header">
+          <div class="card-header" style="border: 1px solid var(--border); border-radius: 0.5rem;">
             <h4>Bialetti Venus 4c</h4>
-            <span class="card-rating">8.8/10</span>
+            <span class="card-rating" style="border: 1px solid var(--border); border-radius: 0.5rem;">8.8/10</span>
           </div>
-          <div class="card-image">
+          <div class="card-image" style="border: 1px solid var(--border); border-radius: 0.5rem;">
             <img src="Images/bialetti_venus.jpg" alt="Venus" loading="lazy">
           </div>
-          <div class="card-specs">
+          <div class="card-specs" style="border: 1px solid var(--border); border-radius: 0.5rem;">
             <div class="spec-row">
               <span class="spec-label">Materiaal</span>
               <span class="spec-value badge-steel">RVS</span>
             </div>
             <div class="spec-row">
               <span class="spec-label">Inductie</span>
-              <span class="spec-value">✅</span>
+              <span class="spec-value"></span>
             </div>
             <div class="spec-row">
               <span class="spec-label">Capaciteit</span>
@@ -1182,22 +1174,22 @@
               <span class="spec-value badge-price">€48</span>
             </div>
           </div>
-          <a href="#bialetti-venus" class="card-cta">Bekijk review</a>
+          <a href="#bialetti-venus" class="card-cta" style="border: 1px solid var(--border); border-radius: 0.5rem;">Bekijk review</a>
         </div>
         
-        <div class="comparison-card" data-category="budget,3cups">
-          <div class="card-rank">
+        <div class="comparison-card" style="border: 1px solid var(--border); border-radius: 0.5rem;" data-category="budget,3cups">
+          <div class="card-rank" style="border: 1px solid var(--border); border-radius: 0.5rem;">
             <span class="rank-number">3</span>
             <span class="rank-label">Klassiek</span>
           </div>
-          <div class="card-header">
+          <div class="card-header" style="border: 1px solid var(--border); border-radius: 0.5rem;">
             <h4>Bialetti Moka Express 3c</h4>
-            <span class="card-rating">9.0/10</span>
+            <span class="card-rating" style="border: 1px solid var(--border); border-radius: 0.5rem;">9.0/10</span>
           </div>
-          <div class="card-image">
+          <div class="card-image" style="border: 1px solid var(--border); border-radius: 0.5rem;">
             <img src="Images/bialetti-moka-express.jpg" alt="Moka Express" loading="lazy">
           </div>
-          <div class="card-specs">
+          <div class="card-specs" style="border: 1px solid var(--border); border-radius: 0.5rem;">
             <div class="spec-row">
               <span class="spec-label">Materiaal</span>
               <span class="spec-value badge-aluminum">Aluminium</span>
@@ -1215,7 +1207,7 @@
               <span class="spec-value badge-price">€25</span>
             </div>
           </div>
-          <a href="#bialetti-moka" class="card-cta">Bekijk review</a>
+          <a href="#bialetti-moka" class="card-cta" style="border: 1px solid var(--border); border-radius: 0.5rem;">Bekijk review</a>
         </div>
       </div>
       
@@ -1226,8 +1218,8 @@
   </div>
 
         <!-- Test Methodology (Condensed) -->
-        <div class="card mb-8">
-          <div class="card-body">
+        <div class="card mb-8" style="border: 1px solid var(--border); border-radius: 0.5rem;">
+          <div class="card-body" style="border: 1px solid var(--border); border-radius: 0.5rem;">
             <h2 class="mb-4">Onze testmethode</h2>
             
             <p class="text-dim mb-4">
@@ -1253,8 +1245,8 @@
           <h2 class="mb-6">Gedetailleerde reviews</h2>
           
           <!-- Product 1 - BESTE KEUZE EERST! -->
-          <div class="card mb-6" id="bialetti-fiammetta">
-            <div class="card-body">
+          <div class="card mb-6" style="border: 1px solid var(--border); border-radius: 0.5rem;" id="bialetti-fiammetta">
+            <div class="card-body" style="border: 1px solid var(--border); border-radius: 0.5rem;">
               <div class="grid grid-2 gap-6">
                 <div>
                   <img src="Images/bialetti_fiammetta.jpg" alt="Bialetti Fiammetta percolator 3-kops aluminium review beste keuze beginners" loading="lazy" style="width: 100%; border-radius: var(--r-lg);">
@@ -1313,8 +1305,8 @@
           </div>
 
           <!-- Product 2 -->
-          <div class="card mb-6" id="bialetti-venus">
-            <div class="card-body">
+          <div class="card mb-6" style="border: 1px solid var(--border); border-radius: 0.5rem;" id="bialetti-venus">
+            <div class="card-body" style="border: 1px solid var(--border); border-radius: 0.5rem;">
               <div class="grid grid-2 gap-6">
                 <div>
                   <img src="Images/bialetti_venus.jpg" alt="Bialetti Venus percolator 4-kops RVS inductie review beste voor inductie" loading="lazy" style="width: 100%; border-radius: var(--r-lg);">
@@ -1372,8 +1364,8 @@
           </div>
 
           <!-- Product 3 -->
-          <div class="card mb-6" id="bialetti-moka">
-            <div class="card-body">
+          <div class="card mb-6" style="border: 1px solid var(--border); border-radius: 0.5rem;" id="bialetti-moka">
+            <div class="card-body" style="border: 1px solid var(--border); border-radius: 0.5rem;">
               <div class="grid grid-2 gap-6">
                 <div>
                   <img src="Images/bialetti-moka-express.jpg" alt="Bialetti Moka Express percolator 3-kops aluminium budget klassiek review sinds 1933" loading="lazy" style="width: 100%; border-radius: var(--r-lg);">
@@ -1431,8 +1423,8 @@
           </div>
 
           <!-- Product 4 -->
-          <div class="card mb-6" id="bialetti-musa">
-            <div class="card-body">
+          <div class="card mb-6" style="border: 1px solid var(--border); border-radius: 0.5rem;" id="bialetti-musa">
+            <div class="card-body" style="border: 1px solid var(--border); border-radius: 0.5rem;">
               <div class="grid grid-2 gap-6">
                 <div>
                   <img src="Images/bialetti-musa-2.jpg" alt="Bialetti Musa percolator 6-kops RVS inductie review premium grote huishoudens" loading="lazy" style="width: 100%; border-radius: var(--r-lg);">
@@ -1490,8 +1482,8 @@
           </div>
 
           <!-- Product 5 -->
-          <div class="card mb-6" id="bialetti-dama">
-            <div class="card-body">
+          <div class="card mb-6" style="border: 1px solid var(--border); border-radius: 0.5rem;" id="bialetti-dama">
+            <div class="card-body" style="border: 1px solid var(--border); border-radius: 0.5rem;">
               <div class="grid grid-2 gap-6">
                 <div>
                   <img src="Images/bialetti-dama-1.jpg" alt="Bialetti Dama percolator 3-kops RVS elegant design review inductie compact" loading="lazy" style="width: 100%; border-radius: var(--r-lg);">
@@ -1549,8 +1541,8 @@
           </div>
 
           <!-- Product 6 -->
-          <div class="card mb-6" id="bialetti-alpina">
-            <div class="card-body">
+          <div class="card mb-6" style="border: 1px solid var(--border); border-radius: 0.5rem;" id="bialetti-alpina">
+            <div class="card-body" style="border: 1px solid var(--border); border-radius: 0.5rem;">
               <div class="grid grid-2 gap-6">
                 <div>
                   <img src="Images/bialetti-alpina-1.jpg" alt="Bialetti Alpina percolator 1-2-kops aluminium compact design review Alpentroepen" loading="lazy" style="width: 100%; border-radius: var(--r-lg);">
@@ -1608,8 +1600,8 @@
           </div>
 
           <!-- Product 7 -->
-          <div class="card mb-6" id="alessi-pulcina">
-            <div class="card-body">
+          <div class="card mb-6" style="border: 1px solid var(--border); border-radius: 0.5rem;" id="alessi-pulcina">
+            <div class="card-body" style="border: 1px solid var(--border); border-radius: 0.5rem;">
               <div class="grid grid-2 gap-6">
                 <div>
                   <img src="Images/alessi_pulcina.jpg" alt="Alessi Pulcina percolator 3-kops aluminium design review Michele De Lucchi award-winnend" loading="lazy" style="width: 100%; border-radius: var(--r-lg);">
@@ -1668,8 +1660,8 @@
           </div>
 
           <!-- Product 8 -->
-          <div class="card mb-6" id="bialetti-mini-express">
-            <div class="card-body">
+          <div class="card mb-6" style="border: 1px solid var(--border); border-radius: 0.5rem;" id="bialetti-mini-express">
+            <div class="card-body" style="border: 1px solid var(--border); border-radius: 0.5rem;">
               <div class="grid grid-2 gap-6">
                 <div>
                   <img src="Images/bialetti-mini-express.jpg" alt="Bialetti Mini Express percolator 2-kops aluminium review direct serveren kopjes compact" loading="lazy" style="width: 100%; border-radius: var(--r-lg);">
@@ -1727,8 +1719,8 @@
           </div>
 
           <!-- Product 9 -->
-          <div class="card mb-6" id="grosche-milano">
-            <div class="card-body">
+          <div class="card mb-6" style="border: 1px solid var(--border); border-radius: 0.5rem;" id="grosche-milano">
+            <div class="card-body" style="border: 1px solid var(--border); border-radius: 0.5rem;">
               <div class="grid grid-2 gap-6">
                 <div>
                   <img src="Images/grosche-milano.jpg" alt="Grosche Milano percolator 6-kops RVS review alternatief Bialetti inductie budget" loading="lazy" style="width: 100%; border-radius: var(--r-lg);">
@@ -1786,8 +1778,8 @@
           </div>
 
           <!-- Product 10 -->
-          <div class="card mb-6" id="bialetti-brikka">
-            <div class="card-body">
+          <div class="card mb-6" style="border: 1px solid var(--border); border-radius: 0.5rem;" id="bialetti-brikka">
+            <div class="card-body" style="border: 1px solid var(--border); border-radius: 0.5rem;">
               <div class="grid grid-2 gap-6">
                 <div>
                   <img src="Images/bialetti_brikka.jpg" alt="Bialetti Brikka percolator 2-4-kops aluminium review crema drukventiel systeem innovatief" loading="lazy" style="width: 100%; border-radius: var(--r-lg);">
@@ -1941,8 +1933,8 @@
   <!-- Buying Guide Section -->
 
         <!-- Buying Guide -->
-        <div class="card mb-8" id="buying-guide" style="box-shadow: none !important; border: 1px solid #e2e8f0; transform: none !important;">
-          <div class="card-body">
+        <div class="card mb-8" style="border: 1px solid var(--border); border-radius: 0.5rem;" id="buying-guide" style="box-shadow: none !important; border: 1px solid #e2e8f0; transform: none !important;">
+          <div class="card-body" style="border: 1px solid var(--border); border-radius: 0.5rem;">
             <div style="max-width: 900px; margin: 0 auto;">
               <h2 class="mb-6">Waar moet je op letten bij het kiezen?</h2>
 
