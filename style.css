@@ -3342,13 +3342,20 @@ body.review-page {
 }
 
 /* Related links */
+.blog-related-section {
+  border-top: 1px solid var(--border);
+  margin-top: var(--sp-10);
+  padding-top: var(--sp-6);
+}
+
+.blog-related-section > .blog-toc-label {
+  margin-bottom: var(--sp-5);
+}
+
 .blog-related {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--sp-6);
-  padding: var(--sp-8) 0 var(--sp-4);
-  border-top: 1px solid var(--border);
-  margin-top: var(--sp-4);
 }
 
 .blog-related-link {
