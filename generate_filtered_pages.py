@@ -38,7 +38,8 @@ def generate_product_card(product):
                         <span style="font-size:1.1rem;font-weight:700;">{price}</span>
                         {rating_html}
                     </div>
-                    <a href="{affiliate_url}" target="_blank" rel="sponsored" style="display:block;text-align:center;padding:0.55rem;background:var(--coffee);color:white;text-decoration:none;border-radius:0.3rem;font-size:0.82rem;font-weight:600;margin-bottom:0.4rem;">Bekijk op Bol.com</a>
+                    <a href="{affiliate_url}" target="_blank" rel="sponsored" style="display:block;text-align:center;padding:0.55rem;background:var(--coffee);color:white;text-decoration:none;border-radius:0.3rem;font-size:0.82rem;font-weight:600;margin-bottom:0.4rem;">Koop product</a>
+                    <span style="display:block;text-align:center;font-size:0.72rem;color:var(--text-light);">via Bol.com</span>
                     <a href="producten/{slug}.html" style="display:block;text-align:center;padding:0.45rem;border:1px solid var(--border);color:var(--text-dim);text-decoration:none;border-radius:0.3rem;font-size:0.78rem;">Details</a>
                 </div>
             </div>'''
