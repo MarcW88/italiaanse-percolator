@@ -2207,9 +2207,6 @@ body.review-page {
 }
 
 .review-hero__container {
-  max-width: var(--container);
-  margin: 0 auto;
-  padding: 0 var(--sp-4);
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--sp-8);
