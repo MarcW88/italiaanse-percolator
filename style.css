@@ -2630,3 +2630,49 @@ body.review-page {
 .pros-cons-card.cons .pros-cons-list li::before {
   content: "✗";
 }
+
+/* Spec Table */
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface-soft);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.spec-table tr {
+  border-bottom: 1px solid var(--border);
+}
+
+.spec-table tr:last-child {
+  border-bottom: none;
+}
+
+.spec-table th {
+  padding: var(--sp-3);
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-dim);
+  width: 40%;
+  background: var(--bg);
+}
+
+.spec-table td {
+  padding: var(--sp-3);
+  color: var(--text);
+}
+
+/* Review CTA */
+.review-cta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  align-items: center;
+  text-align: center;
+  padding: var(--sp-6) 0;
+}
+
+.review-cta .btn {
+  min-width: 280px;
+}
