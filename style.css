@@ -2202,8 +2202,8 @@ body.review-page {
 
 /* Review Hero - Editorial 2-column layout */
 .review-hero {
-  padding: var(--sp-12) 0;
-  background: var(--surface-soft);
+  padding: var(--sp-8) 0;
+  background: var(--bg);
 }
 
 .review-hero__container {
@@ -2212,49 +2212,49 @@ body.review-page {
   padding: 0 var(--sp-4);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--sp-12);
+  gap: var(--sp-8);
   align-items: center;
 }
 
 @media (max-width: 768px) {
   .review-hero__container {
     grid-template-columns: 1fr;
-    gap: var(--sp-8);
+    gap: var(--sp-6);
   }
 }
 
 .review-hero__content {
   display: flex;
   flex-direction: column;
-  gap: var(--sp-6);
+  gap: var(--sp-4);
 }
 
 .review-hero__eyebrow {
-  font-size: var(--fs-sm);
+  font-size: var(--fs-xs);
   font-weight: 500;
-  color: var(--coffee);
+  color: var(--text-dim);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
 .review-hero h1 {
   font-family: var(--font-display);
-  font-size: var(--fs-4xl);
-  line-height: 1.1;
+  font-size: var(--fs-3xl);
+  line-height: 1.2;
   color: var(--text);
 }
 
 @media (max-width: 768px) {
   .review-hero h1 {
-    font-size: var(--fs-3xl);
+    font-size: var(--fs-2xl);
   }
 }
 
 .review-hero__lead {
-  font-size: var(--fs-lg);
+  font-size: var(--fs-base);
   line-height: 1.6;
   color: var(--text-dim);
-  max-width: 540px;
+  max-width: 480px;
 }
 
 .hero-chips {
@@ -2266,29 +2266,29 @@ body.review-page {
 .hero-chip {
   display: inline-flex;
   align-items: center;
-  padding: var(--sp-2) var(--sp-3);
-  background: var(--bg);
+  padding: var(--sp-1) var(--sp-2);
+  background: var(--surface-soft);
   border: 1px solid var(--border);
-  border-radius: var(--r-lg);
-  font-size: var(--fs-sm);
+  border-radius: var(--r-md);
+  font-size: var(--fs-xs);
   color: var(--text-dim);
 }
 
 .hero-actions {
   display: flex;
   flex-direction: column;
-  gap: var(--sp-3);
+  gap: var(--sp-2);
 }
 
 .hero-actions .btn {
   text-align: center;
-  min-width: 280px;
+  min-width: 240px;
 }
 
 .hero-proof {
   display: flex;
-  gap: var(--sp-6);
-  padding-top: var(--sp-4);
+  gap: var(--sp-4);
+  padding-top: var(--sp-3);
   border-top: 1px solid var(--border);
 }
 
@@ -2298,9 +2298,9 @@ body.review-page {
 
 .hero-proof-item strong {
   display: block;
-  font-size: var(--fs-2xl);
+  font-size: var(--fs-xl);
   font-weight: 700;
-  color: var(--coffee);
+  color: var(--text);
 }
 
 .hero-proof-item span {
@@ -2317,50 +2317,49 @@ body.review-page {
 
 .product-stage {
   position: relative;
-  background: var(--bg);
-  border-radius: var(--r-2xl);
-  padding: var(--sp-6);
-  box-shadow: var(--shadow-lg);
+  background: var(--surface-soft);
+  border-radius: var(--r-lg);
+  padding: var(--sp-4);
+  box-shadow: var(--shadow-sm);
 }
 
 .product-stage img {
   width: 100%;
   height: auto;
-  border-radius: var(--r-lg);
+  border-radius: var(--r-md);
 }
 
 .floating-card {
   position: absolute;
-  top: var(--sp-4);
-  right: var(--sp-4);
-  background: var(--coffee);
+  top: var(--sp-3);
+  right: var(--sp-3);
+  background: var(--text);
   color: white;
-  padding: var(--sp-2) var(--sp-3);
-  border-radius: var(--r-lg);
-  font-size: var(--fs-sm);
+  padding: var(--sp-2);
+  border-radius: var(--r-md);
+  font-size: var(--fs-xs);
   font-weight: 500;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
 }
 
 .floating-note {
   position: absolute;
-  bottom: var(--sp-4);
-  left: var(--sp-4);
-  background: var(--surface-soft);
+  bottom: var(--sp-3);
+  left: var(--sp-3);
+  background: var(--bg);
   border: 1px solid var(--border);
-  padding: var(--sp-2) var(--sp-3);
-  border-radius: var(--r-lg);
-  font-size: var(--fs-sm);
+  padding: var(--sp-2);
+  border-radius: var(--r-md);
+  font-size: var(--fs-xs);
   color: var(--text-dim);
   box-shadow: var(--shadow-sm);
 }
 
 /* Trust Banner */
 .trust-banner {
-  background: var(--bg);
-  border-top: 1px solid var(--border);
+  background: var(--surface-soft);
   border-bottom: 1px solid var(--border);
-  padding: var(--sp-4) 0;
+  padding: var(--sp-3) 0;
 }
 
 .trust-banner__container {
@@ -2369,7 +2368,7 @@ body.review-page {
   padding: 0 var(--sp-4);
   display: flex;
   justify-content: center;
-  gap: var(--sp-12);
+  gap: var(--sp-8);
   flex-wrap: wrap;
 }
 
@@ -2377,19 +2376,19 @@ body.review-page {
   display: flex;
   align-items: center;
   gap: var(--sp-2);
-  font-size: var(--fs-sm);
+  font-size: var(--fs-xs);
   color: var(--text-dim);
 }
 
 .trust-item svg {
-  width: 18px;
-  height: 18px;
-  color: var(--success);
+  width: 16px;
+  height: 16px;
+  color: var(--text);
 }
 
 /* Review Summary Grid */
 .review-summary-grid {
-  padding: var(--sp-12) 0;
+  padding: var(--sp-8) 0;
   background: var(--bg);
 }
 
@@ -2399,7 +2398,7 @@ body.review-page {
   padding: 0 var(--sp-4);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--sp-6);
+  gap: var(--sp-4);
 }
 
 @media (max-width: 768px) {
@@ -2409,33 +2408,31 @@ body.review-page {
 }
 
 .summary-card {
-  padding: var(--sp-6);
-  border-radius: var(--r-xl);
+  padding: var(--sp-5);
+  border-radius: var(--r-lg);
   border: 1px solid var(--border);
-  transition: box-shadow var(--sp-2), border-color var(--sp-2);
+  transition: box-shadow var(--sp-2);
 }
 
 .summary-card:hover {
-  box-shadow: var(--shadow-md);
-  border-color: var(--coffee);
+  box-shadow: var(--shadow-sm);
 }
 
 .summary-card h2 {
-  font-size: var(--fs-lg);
+  font-size: var(--fs-base);
   font-weight: 600;
   color: var(--text);
-  margin-bottom: var(--sp-3);
+  margin-bottom: var(--sp-2);
 }
 
 .summary-card p {
   font-size: var(--fs-sm);
   color: var(--text-dim);
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .summary-card.positive {
-  background: linear-gradient(135deg, var(--sage-light) 0%, var(--bg) 100%);
-  border-color: var(--sage);
+  background: var(--surface-soft);
 }
 
 .summary-card.neutral {
@@ -2443,14 +2440,13 @@ body.review-page {
 }
 
 .summary-card.accent {
-  background: linear-gradient(135deg, #fff8f0 0%, var(--bg) 100%);
-  border-color: var(--coffee-light);
+  background: var(--surface-soft);
 }
 
 /* Quick Facts Table */
 .quick-facts {
   padding: var(--sp-8) 0;
-  background: var(--surface-soft);
+  background: var(--bg);
 }
 
 .quick-facts__container {
@@ -2461,18 +2457,18 @@ body.review-page {
 
 .quick-facts h2 {
   font-family: var(--font-display);
-  font-size: var(--fs-2xl);
-  margin-bottom: var(--sp-6);
+  font-size: var(--fs-xl);
+  margin-bottom: var(--sp-4);
   color: var(--text);
 }
 
 .quick-facts-table {
   width: 100%;
   border-collapse: collapse;
-  background: var(--bg);
-  border-radius: var(--r-xl);
+  background: var(--surface-soft);
+  border-radius: var(--r-lg);
   overflow: hidden;
-  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
 }
 
 .quick-facts-table tr {
@@ -2484,22 +2480,22 @@ body.review-page {
 }
 
 .quick-facts-table th {
-  padding: var(--sp-4);
+  padding: var(--sp-3);
   text-align: left;
   font-weight: 600;
   color: var(--text-dim);
   width: 40%;
-  background: var(--surface-soft);
+  background: var(--bg);
 }
 
 .quick-facts-table td {
-  padding: var(--sp-4);
+  padding: var(--sp-3);
   color: var(--text);
 }
 
 /* Score Cards Grid */
 .score-cards-grid {
-  padding: var(--sp-12) 0;
+  padding: var(--sp-8) 0;
   background: var(--bg);
 }
 
@@ -2509,7 +2505,7 @@ body.review-page {
   padding: 0 var(--sp-4);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--sp-4);
+  gap: var(--sp-3);
 }
 
 @media (max-width: 768px) {
@@ -2519,28 +2515,27 @@ body.review-page {
 }
 
 .score-card {
-  padding: var(--sp-5);
-  border-radius: var(--r-xl);
+  padding: var(--sp-4);
+  border-radius: var(--r-lg);
   border: 1px solid var(--border);
   background: var(--surface-soft);
-  transition: transform var(--sp-2), box-shadow var(--sp-2);
+  transition: box-shadow var(--sp-2);
 }
 
 .score-card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
 }
 
 .score-card__label {
   font-size: var(--fs-sm);
   color: var(--text-dim);
-  margin-bottom: var(--sp-2);
+  margin-bottom: var(--sp-1);
 }
 
 .score-card__value {
-  font-size: var(--fs-3xl);
+  font-size: var(--fs-2xl);
   font-weight: 700;
-  color: var(--coffee);
+  color: var(--text);
 }
 
 .score-card.high .score-card__value {
@@ -2555,10 +2550,18 @@ body.review-page {
   color: var(--error);
 }
 
+/* Review Verdict */
+.review-verdict {
+  padding: var(--sp-5);
+  background: var(--surface-soft);
+  border-radius: var(--r-lg);
+  border: 1px solid var(--border);
+}
+
 /* Pros Cons Cards */
 .pros-cons-grid {
-  padding: var(--sp-12) 0;
-  background: var(--surface-soft);
+  padding: var(--sp-8) 0;
+  background: var(--bg);
 }
 
 .pros-cons-grid__container {
@@ -2567,7 +2570,7 @@ body.review-page {
   padding: 0 var(--sp-4);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--sp-8);
+  gap: var(--sp-4);
 }
 
 @media (max-width: 768px) {
@@ -2577,27 +2580,27 @@ body.review-page {
 }
 
 .pros-cons-card {
-  background: var(--bg);
-  border-radius: var(--r-xl);
-  padding: var(--sp-6);
+  background: var(--surface-soft);
+  border-radius: var(--r-lg);
+  padding: var(--sp-5);
   border: 1px solid var(--border);
 }
 
 .pros-cons-card h2 {
-  font-size: var(--fs-xl);
+  font-size: var(--fs-lg);
   font-weight: 600;
-  margin-bottom: var(--sp-4);
+  margin-bottom: var(--sp-3);
   display: flex;
   align-items: center;
   gap: var(--sp-2);
 }
 
 .pros-cons-card.pros h2 {
-  color: var(--success);
+  color: var(--text);
 }
 
 .pros-cons-card.cons h2 {
-  color: var(--error);
+  color: var(--text);
 }
 
 .pros-cons-list {
@@ -2605,7 +2608,7 @@ body.review-page {
 }
 
 .pros-cons-list li {
-  padding: var(--sp-3) 0;
+  padding: var(--sp-2) 0;
   border-bottom: 1px solid var(--border);
   font-size: var(--fs-sm);
   color: var(--text-dim);
@@ -2619,17 +2622,14 @@ body.review-page {
 }
 
 .pros-cons-list li::before {
-  content: "•";
   color: var(--coffee);
   font-weight: bold;
 }
 
 .pros-cons-card.pros .pros-cons-list li::before {
-  color: var(--success);
   content: "✓";
 }
 
 .pros-cons-card.cons .pros-cons-list li::before {
-  color: var(--error);
   content: "✗";
 }
