@@ -2137,6 +2137,16 @@ body.review-page {
   padding: 0.45rem 0.2rem;
 }
 
+#pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-top: var(--sp-10);
+  margin-bottom: var(--sp-6);
+}
+
 .category-chip {
   padding: 0.4rem 0.75rem;
   font-size: 0.85rem;
