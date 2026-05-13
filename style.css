@@ -50,6 +50,7 @@
   --sp-4: 1rem;
   --sp-6: 1.5rem;
   --sp-8: 2rem;
+  --sp-10: 2.5rem;
   --sp-12: 3rem;
   --sp-16: 4rem;
   --sp-20: 5rem;
@@ -2144,6 +2145,8 @@ body.review-page {
   flex-wrap: wrap;
   gap: var(--sp-2);
   margin-top: var(--sp-10);
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--border);
   margin-bottom: var(--sp-6);
 }
 
