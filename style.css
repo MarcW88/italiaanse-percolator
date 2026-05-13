@@ -2037,3 +2037,165 @@ body.review-page {
     gap: var(--sp-6);
   }
 }
+
+/* Rating Box - Encadré de scores stylisé */
+.rating-box {
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: var(--sp-6);
+  margin: var(--sp-8) 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.rating-box h3 {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  color: var(--text);
+  margin-bottom: var(--sp-4);
+  border-bottom: 2px solid var(--coffee);
+  padding-bottom: var(--sp-2);
+}
+
+.rating-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.rating-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--sp-3) 0;
+  border-bottom: 1px solid var(--border);
+  font-size: var(--fs-base);
+}
+
+.rating-item:last-child {
+  border-bottom: none;
+}
+
+.rating-label {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.rating-score {
+  font-weight: 700;
+  color: var(--coffee);
+  font-size: var(--fs-lg);
+}
+
+.rating-score.high {
+  color: var(--success);
+}
+
+.rating-score.medium {
+  color: var(--warning);
+}
+
+.rating-score.low {
+  color: var(--error);
+}
+
+.rating-verdict {
+  margin-top: var(--sp-6);
+  padding: var(--sp-4);
+  background: var(--surface);
+  border-left: 4px solid var(--coffee);
+  border-radius: var(--r-sm);
+  font-style: italic;
+  color: var(--text-dim);
+}
+
+/* Product Image - Image du produit */
+.product-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin: var(--sp-8) auto;
+  display: block;
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-md);
+  object-fit: contain;
+}
+
+.product-image-container {
+  text-align: center;
+  margin: var(--sp-8) 0;
+}
+
+.product-image-caption {
+  font-size: var(--fs-sm);
+  color: var(--text-light);
+  margin-top: var(--sp-2);
+  font-style: italic;
+}
+
+/* Enhanced Comparison Table - Tableau de comparaison amélioré */
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--sp-8) 0;
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+
+.comparison-table thead {
+  background: var(--coffee);
+  color: white;
+}
+
+.comparison-table th {
+  padding: var(--sp-4);
+  text-align: left;
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.comparison-table td {
+  padding: var(--sp-4);
+  border-bottom: 1px solid var(--border);
+  font-size: var(--fs-base);
+}
+
+.comparison-table tbody tr:hover {
+  background: var(--surface-soft);
+}
+
+.comparison-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.comparison-table .highlight-row {
+  background: var(--sage-light);
+}
+
+.comparison-table .highlight-row td {
+  font-weight: 600;
+  color: var(--coffee);
+}
+
+.comparison-table .rating-cell {
+  text-align: center;
+  font-weight: 700;
+}
+
+.comparison-table .price-cell {
+  font-weight: 600;
+  color: var(--success);
+}
+
+.comparison-table .feature-check {
+  color: var(--success);
+  font-weight: bold;
+}
+
+.comparison-table .feature-cross {
+  color: var(--error);
+  font-weight: bold;
+}
