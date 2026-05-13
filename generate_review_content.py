@@ -717,7 +717,7 @@ def generate_review_content(review_key, data):
                 </div>
                 <div class="review-hero-sidebar">
                     <div class="card">
-                        <div class="rating-badge">9.0/10{data['subtitle']}{data['description']}</div>
+                        <div class="rating-badge">9.0/10</div>
                         <h3>{data['subtitle']}</h3>
                         <p class="text-dim">{data['description']}</p>
                         <div class="review-specs">
