@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alle modellen vergelijken - pagina 1 | Italiaanse Percolator</title>
-    <meta name="description" content="Bekijk Italiaanse percolators, elektrische koffiezetters en accessoires met eigen SEO-pagina per paginastap. Pagina 60 van 60.">
+    <meta name="description" content="Ontdek het complete aanbod van Italiaanse percolators, moka potten en accessoires. Vergelijk modellen op prijs, materiaal en formaat.">
     <link rel="stylesheet" href="style.css">
     <link rel="canonical" href="https://italiaanse-percolator.nl/boutique.html">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -464,9 +464,10 @@
     }
     
     function renderPage(page) {
+        const filtered = getFilteredProducts();
         const start = (page - 1) * perPage;
-        const items = allProducts.slice(start, start + perPage);
-        const totalPages = Math.ceil(allProducts.length / perPage);
+        const items = filtered.slice(start, start + perPage);
+        const totalPages = Math.ceil(filtered.length / perPage);
         
         const grid = document.getElementById('products-grid');
         grid.innerHTML = items.map(p => {
@@ -476,7 +477,7 @@
             if (p.materiaal) badges.push(p.materiaal);
             const badgeHTML = badges.map(b => `<span style="font-size:0.72rem;color:var(--text-light);border:1px solid var(--border);padding:0.2rem 0.5rem;border-radius:0.5rem;">${b}</span>`).join('');
             const price = p.price ? `€${p.price.toFixed(2)}` : '';
-            const rating = p.rating ? `{p.rating}/5` : '';
+            const rating = p.rating ? `${p.rating}/5` : '';
             const ratingHTML = rating ? `<span style="font-size:0.78rem;color:var(--text-light);">${rating}</span>` : '';
             return `<div style="border:1px solid var(--border);overflow:hidden;background:white;transition:border-color 0.2s;border-radius:0.5rem;display:flex;flex-direction:column;height:100%;" onmouseover="this.style.borderColor='var(--coffee)'" onmouseout="this.style.borderColor='var(--border)'">
                 <div style="background:#fafafa;padding:1rem;text-align:center;"><img src="${p.image || 'Images/placeholder-product.jpg'}" alt="${p.name}" loading="lazy" style="height:160px;width:100%;object-fit:contain;" onerror="this.src='Images/placeholder-product.jpg'"></div>
@@ -494,7 +495,7 @@
             </div>`;
         }).join('');
         
-        document.getElementById('page-info').textContent = `Pagina ${page} van ${totalPages} · producten ${start + 1}-${Math.min(start + perPage, allProducts.length)} van ${allProducts.length}`;
+        document.getElementById('page-info').textContent = `${filtered.length} producten gevonden · pagina ${page} van ${totalPages || 1}`;
         
         const pagination = document.getElementById('pagination');
         if (totalPages <= 1) { pagination.innerHTML = ''; return; }
@@ -515,44 +516,79 @@
         pagination.innerHTML = html;
     }
     
+    // ── Filtering & search ─────────────────────────────────────────
+    function getFilteredProducts() {
+        const params = new URLSearchParams(window.location.search);
+        const typeFilter     = params.get('type');
+        const inductieFilter = params.get('inductie');
+        const matFilter      = params.get('materiaal');
+        const q              = (params.get('q') || '').toLowerCase().trim();
+
+        return allProducts.filter(p => {
+            if (typeFilter     && p.type     !== typeFilter)     return false;
+            if (inductieFilter && p.inductie !== inductieFilter) return false;
+            if (matFilter      && p.materiaal !== matFilter)     return false;
+            if (q) {
+                const hay = ((p.name||'') + ' ' + (p.brand||'') + ' ' + (p.description||'')).toLowerCase();
+                if (!hay.includes(q)) return false;
+            }
+            return true;
+        });
+    }
+
     function updateFilters() {
         const params = new URLSearchParams();
-        
-        if (document.getElementById('filter-percolators').checked) {
-            params.set('type', 'percolator');
-        }
-        if (document.getElementById('filter-elektrisch').checked) {
-            params.set('type', 'cafetière électrique');
-        }
-        if (document.getElementById('filter-accessoires').checked) {
-            params.set('type', 'accessoire');
-        }
-        if (document.getElementById('filter-inductie-ja').checked) {
-            params.set('inductie', 'oui');
-        }
-        if (document.getElementById('filter-inductie-nee').checked) {
-            params.set('inductie', 'non');
-        }
-        if (document.getElementById('filter-aluminium').checked) {
-            params.set('materiaal', 'aluminium');
-        }
-        if (document.getElementById('filter-rvs').checked) {
-            params.set('materiaal', 'rvs');
-        }
-        if (document.getElementById('filter-glas').checked) {
-            params.set('materiaal', 'roestvrij staal');
-        }
-        
-        const queryString = params.toString();
-        const newUrl = queryString ? `${baseUrl}?${queryString}` : baseUrl;
-        window.location.href = newUrl;
+        if (document.getElementById('filter-percolators').checked)  params.set('type', 'Cafetière percolateur');
+        if (document.getElementById('filter-elektrisch').checked)    params.set('type', 'Cafetière électrique');
+        if (document.getElementById('filter-accessoires').checked)   params.set('type', 'Accessoire');
+        if (document.getElementById('filter-inductie-ja').checked)   params.set('inductie', 'Oui');
+        if (document.getElementById('filter-inductie-nee').checked)  params.set('inductie', 'Non');
+        if (document.getElementById('filter-aluminium').checked)     params.set('materiaal', 'Aluminium');
+        if (document.getElementById('filter-rvs').checked)           params.set('materiaal', 'RVS');
+        if (document.getElementById('filter-glas').checked)          params.set('materiaal', 'Glas');
+        const q = (document.getElementById('search-input') || {}).value;
+        if (q && q.trim()) params.set('q', q.trim());
+        params.delete('page');
+        window.location.href = params.toString() ? `${baseUrl}?${params}` : baseUrl;
     }
-    
+
+    function applySearch() {
+        const q = (document.getElementById('search-input').value || '').trim();
+        const params = new URLSearchParams(window.location.search);
+        if (q) params.set('q', q); else params.delete('q');
+        params.delete('page');
+        window.location.href = params.toString() ? `${baseUrl}?${params}` : baseUrl;
+    }
+
     function clearFilters() {
         window.location.href = baseUrl;
     }
-    
+
+    function restoreFilters() {
+        const params = new URLSearchParams(window.location.search);
+        const type = params.get('type');
+        const ind  = params.get('inductie');
+        const mat  = params.get('materiaal');
+        const q    = params.get('q');
+        const el   = id => document.getElementById(id);
+        if (type === 'Cafetière percolateur')  el('filter-percolators').checked = true;
+        if (type === 'Cafetière électrique') el('filter-elektrisch').checked = true;
+        if (type === 'Accessoire')                 el('filter-accessoires').checked = true;
+        if (ind  === 'Oui')                        el('filter-inductie-ja').checked  = true;
+        if (ind  === 'Non')                        el('filter-inductie-nee').checked = true;
+        if (mat  === 'Aluminium')                  el('filter-aluminium').checked    = true;
+        if (mat  === 'RVS')                        el('filter-rvs').checked          = true;
+        if (mat  === 'Glas')                       el('filter-glas').checked         = true;
+        if (q) el('search-input').value = q;
+        if (q || type || ind || mat) {
+            const meta = document.createElement('meta');
+            meta.name = 'robots'; meta.content = 'noindex,follow';
+            document.head.appendChild(meta);
+        }
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
+        restoreFilters();
         currentPage = getPageFromUrl();
         renderPage(currentPage);
     });
