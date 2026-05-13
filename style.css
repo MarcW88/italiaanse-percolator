@@ -2199,3 +2199,437 @@ body.review-page {
   color: var(--error);
   font-weight: bold;
 }
+
+/* Review Hero - Editorial 2-column layout */
+.review-hero {
+  padding: var(--sp-12) 0;
+  background: var(--surface-soft);
+}
+
+.review-hero__container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--sp-4);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-12);
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .review-hero__container {
+    grid-template-columns: 1fr;
+    gap: var(--sp-8);
+  }
+}
+
+.review-hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+
+.review-hero__eyebrow {
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--coffee);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.review-hero h1 {
+  font-family: var(--font-display);
+  font-size: var(--fs-4xl);
+  line-height: 1.1;
+  color: var(--text);
+}
+
+@media (max-width: 768px) {
+  .review-hero h1 {
+    font-size: var(--fs-3xl);
+  }
+}
+
+.review-hero__lead {
+  font-size: var(--fs-lg);
+  line-height: 1.6;
+  color: var(--text-dim);
+  max-width: 540px;
+}
+
+.hero-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+.hero-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--sp-2) var(--sp-3);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  font-size: var(--fs-sm);
+  color: var(--text-dim);
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.hero-actions .btn {
+  text-align: center;
+  min-width: 280px;
+}
+
+.hero-proof {
+  display: flex;
+  gap: var(--sp-6);
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--border);
+}
+
+.hero-proof-item {
+  text-align: center;
+}
+
+.hero-proof-item strong {
+  display: block;
+  font-size: var(--fs-2xl);
+  font-weight: 700;
+  color: var(--coffee);
+}
+
+.hero-proof-item span {
+  display: block;
+  font-size: var(--fs-xs);
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.review-hero__visual {
+  position: relative;
+}
+
+.product-stage {
+  position: relative;
+  background: var(--bg);
+  border-radius: var(--r-2xl);
+  padding: var(--sp-6);
+  box-shadow: var(--shadow-lg);
+}
+
+.product-stage img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--r-lg);
+}
+
+.floating-card {
+  position: absolute;
+  top: var(--sp-4);
+  right: var(--sp-4);
+  background: var(--coffee);
+  color: white;
+  padding: var(--sp-2) var(--sp-3);
+  border-radius: var(--r-lg);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  box-shadow: var(--shadow-md);
+}
+
+.floating-note {
+  position: absolute;
+  bottom: var(--sp-4);
+  left: var(--sp-4);
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  padding: var(--sp-2) var(--sp-3);
+  border-radius: var(--r-lg);
+  font-size: var(--fs-sm);
+  color: var(--text-dim);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Trust Banner */
+.trust-banner {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: var(--sp-4) 0;
+}
+
+.trust-banner__container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--sp-4);
+  display: flex;
+  justify-content: center;
+  gap: var(--sp-12);
+  flex-wrap: wrap;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--fs-sm);
+  color: var(--text-dim);
+}
+
+.trust-item svg {
+  width: 18px;
+  height: 18px;
+  color: var(--success);
+}
+
+/* Review Summary Grid */
+.review-summary-grid {
+  padding: var(--sp-12) 0;
+  background: var(--bg);
+}
+
+.review-summary-grid__container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--sp-4);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-6);
+}
+
+@media (max-width: 768px) {
+  .review-summary-grid__container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.summary-card {
+  padding: var(--sp-6);
+  border-radius: var(--r-xl);
+  border: 1px solid var(--border);
+  transition: box-shadow var(--sp-2), border-color var(--sp-2);
+}
+
+.summary-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--coffee);
+}
+
+.summary-card h2 {
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: var(--sp-3);
+}
+
+.summary-card p {
+  font-size: var(--fs-sm);
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+
+.summary-card.positive {
+  background: linear-gradient(135deg, var(--sage-light) 0%, var(--bg) 100%);
+  border-color: var(--sage);
+}
+
+.summary-card.neutral {
+  background: var(--surface-soft);
+}
+
+.summary-card.accent {
+  background: linear-gradient(135deg, #fff8f0 0%, var(--bg) 100%);
+  border-color: var(--coffee-light);
+}
+
+/* Quick Facts Table */
+.quick-facts {
+  padding: var(--sp-8) 0;
+  background: var(--surface-soft);
+}
+
+.quick-facts__container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--sp-4);
+}
+
+.quick-facts h2 {
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  margin-bottom: var(--sp-6);
+  color: var(--text);
+}
+
+.quick-facts-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--bg);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.quick-facts-table tr {
+  border-bottom: 1px solid var(--border);
+}
+
+.quick-facts-table tr:last-child {
+  border-bottom: none;
+}
+
+.quick-facts-table th {
+  padding: var(--sp-4);
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-dim);
+  width: 40%;
+  background: var(--surface-soft);
+}
+
+.quick-facts-table td {
+  padding: var(--sp-4);
+  color: var(--text);
+}
+
+/* Score Cards Grid */
+.score-cards-grid {
+  padding: var(--sp-12) 0;
+  background: var(--bg);
+}
+
+.score-cards-grid__container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--sp-4);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+}
+
+@media (max-width: 768px) {
+  .score-cards-grid__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.score-card {
+  padding: var(--sp-5);
+  border-radius: var(--r-xl);
+  border: 1px solid var(--border);
+  background: var(--surface-soft);
+  transition: transform var(--sp-2), box-shadow var(--sp-2);
+}
+
+.score-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.score-card__label {
+  font-size: var(--fs-sm);
+  color: var(--text-dim);
+  margin-bottom: var(--sp-2);
+}
+
+.score-card__value {
+  font-size: var(--fs-3xl);
+  font-weight: 700;
+  color: var(--coffee);
+}
+
+.score-card.high .score-card__value {
+  color: var(--success);
+}
+
+.score-card.medium .score-card__value {
+  color: var(--warning);
+}
+
+.score-card.low .score-card__value {
+  color: var(--error);
+}
+
+/* Pros Cons Cards */
+.pros-cons-grid {
+  padding: var(--sp-12) 0;
+  background: var(--surface-soft);
+}
+
+.pros-cons-grid__container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--sp-4);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-8);
+}
+
+@media (max-width: 768px) {
+  .pros-cons-grid__container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pros-cons-card {
+  background: var(--bg);
+  border-radius: var(--r-xl);
+  padding: var(--sp-6);
+  border: 1px solid var(--border);
+}
+
+.pros-cons-card h2 {
+  font-size: var(--fs-xl);
+  font-weight: 600;
+  margin-bottom: var(--sp-4);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.pros-cons-card.pros h2 {
+  color: var(--success);
+}
+
+.pros-cons-card.cons h2 {
+  color: var(--error);
+}
+
+.pros-cons-list {
+  list-style: none;
+}
+
+.pros-cons-list li {
+  padding: var(--sp-3) 0;
+  border-bottom: 1px solid var(--border);
+  font-size: var(--fs-sm);
+  color: var(--text-dim);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-2);
+}
+
+.pros-cons-list li:last-child {
+  border-bottom: none;
+}
+
+.pros-cons-list li::before {
+  content: "•";
+  color: var(--coffee);
+  font-weight: bold;
+}
+
+.pros-cons-card.pros .pros-cons-list li::before {
+  color: var(--success);
+  content: "✓";
+}
+
+.pros-cons-card.cons .pros-cons-list li::before {
+  color: var(--error);
+  content: "✗";
+}
