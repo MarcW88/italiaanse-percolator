@@ -5,13 +5,11 @@ from pathlib import Path
 import re
 from urllib.parse import urlparse
 
-def slugify_from_url(url):
-    """Extract slug from Bol.com URL"""
-    # Parse the URL and extract the last part
+def extract_filename_from_url(url):
+    """Extract HTML filename from URL"""
     path = urlparse(url).path
-    # The slug is usually the last part of the path before the product ID
-    # But we need to match it with the actual file names
-    return path.split('/')[-1]
+    filename = path.split('/')[-1]
+    return filename
 
 def slugify_text(text):
     """Slugify text for matching"""
@@ -26,40 +24,19 @@ def slugify_text(text):
     s = s.strip('-')
     return s[:80]
 
-def find_product_file(product_name, url):
-    """Find the HTML file for a given product"""
+def find_product_file(url):
+    """Find the HTML file for a given URL"""
     producten_dir = Path('producten')
     
-    # Try to create slug from product name
-    name_slug = slugify_text(product_name)
+    # Extract filename from URL
+    filename = extract_filename_from_url(url)
     
-    # Try exact match first
-    exact_file = producten_dir / f"{name_slug}.html"
+    # Try exact match
+    exact_file = producten_dir / filename
     if exact_file.exists():
         return exact_file
     
-    # Try partial match - look for files containing key terms
-    key_terms = product_name.lower().split()
-    key_terms = [term for term in key_terms if len(term) > 3]
-    
-    best_match = None
-    best_score = 0
-    
-    for file in producten_dir.glob('*.html'):
-        file_slug = file.stem.lower()
-        score = 0
-        
-        # Check for key terms in filename
-        for term in key_terms:
-            if term in file_slug:
-                score += 1
-        
-        # Prefer files with higher score
-        if score > best_score and score >= 2:
-            best_score = score
-            best_match = file
-    
-    return best_match
+    return None
 
 def update_description_in_file(file_path, new_description):
     """Update the description in an HTML file"""
@@ -94,40 +71,33 @@ def update_description_in_file(file_path, new_description):
 
 def main():
     # Read Excel file
-    df = pd.read_excel('catalogue_bialetti_complet.xlsx')
+    df = pd.read_excel('/Users/marc/Desktop/descriptions.xlsx', header=None)
     
     print(f"Total products in Excel: {len(df)}")
-    print(f"Columns: {df.columns.tolist()}")
-    
-    # Check if we have description column
-    if 'Description courte' not in df.columns:
-        print("Error: 'Description courte' column not found in Excel file")
-        return
     
     # Process each product
     updated_count = 0
     not_found_count = 0
     
     for idx, row in df.iterrows():
-        product_name = row['Nom du produit']
-        description = row['Description courte']
-        url = row['URL']
+        url = row[0]
+        description = row[1]
         
         if pd.isna(description) or description == '':
-            print(f"Skipping {product_name}: no description")
+            print(f"Skipping {url}: no description")
             continue
         
-        # Try to find the product file using product name
-        product_file = find_product_file(product_name, url)
+        # Try to find the product file using URL
+        product_file = find_product_file(url)
         
         if product_file:
-            print(f"Updating {product_file.name}: {description}")
+            print(f"Updating {product_file.name}")
             if update_description_in_file(product_file, description):
                 updated_count += 1
             else:
                 print(f"  Warning: Could not find description pattern in {product_file.name}")
         else:
-            print(f"Not found: {product_name} (from {url})")
+            print(f"Not found: {url}")
             not_found_count += 1
     
     print(f"\nSummary:")
