@@ -2314,7 +2314,7 @@ body.review-page {
 
 .product-stage {
   position: relative;
-  background: var(--surface-soft);
+  background: var(--bg);
   border-radius: var(--r-lg);
   padding: var(--sp-4);
   box-shadow: var(--shadow-sm);
@@ -2354,7 +2354,7 @@ body.review-page {
 
 /* Trust Banner */
 .trust-banner {
-  background: var(--surface-soft);
+  background: var(--bg);
   border-bottom: 1px solid var(--border);
   padding: var(--sp-3) 0;
 }
@@ -2429,15 +2429,15 @@ body.review-page {
 }
 
 .summary-card.positive {
-  background: var(--surface-soft);
+  background: var(--bg);
 }
 
 .summary-card.neutral {
-  background: var(--surface-soft);
+  background: var(--bg);
 }
 
 .summary-card.accent {
-  background: var(--surface-soft);
+  background: var(--bg);
 }
 
 /* Quick Facts Table */
@@ -2462,7 +2462,7 @@ body.review-page {
 .quick-facts-table {
   width: 100%;
   border-collapse: collapse;
-  background: var(--surface-soft);
+  background: var(--bg);
   border-radius: var(--r-lg);
   overflow: hidden;
   border: 1px solid var(--border);
@@ -2515,7 +2515,7 @@ body.review-page {
   padding: var(--sp-4);
   border-radius: var(--r-lg);
   border: 1px solid var(--border);
-  background: var(--surface-soft);
+  background: var(--bg);
   transition: box-shadow var(--sp-2);
 }
 
@@ -2550,7 +2550,7 @@ body.review-page {
 /* Review Verdict */
 .review-verdict {
   padding: var(--sp-5);
-  background: var(--surface-soft);
+  background: var(--bg);
   border-radius: var(--r-lg);
   border: 1px solid var(--border);
 }
@@ -2577,7 +2577,7 @@ body.review-page {
 }
 
 .pros-cons-card {
-  background: var(--surface-soft);
+  background: var(--bg);
   border-radius: var(--r-lg);
   padding: var(--sp-5);
   border: 1px solid var(--border);
@@ -2632,10 +2632,40 @@ body.review-page {
 }
 
 /* Spec Table */
+.spec-box {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: var(--sp-5);
+}
+
+.spec-item {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--sp-3) 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.spec-item:last-child {
+  border-bottom: none;
+}
+
+.spec-label {
+  font-weight: 600;
+  color: var(--text-dim);
+  flex: 0 0 40%;
+}
+
+.spec-value {
+  color: var(--text);
+  flex: 1;
+}
+
+/* Spec Table (deprecated, kept for compatibility) */
 .spec-table {
   width: 100%;
   border-collapse: collapse;
-  background: var(--surface-soft);
+  background: var(--bg);
   border-radius: var(--r-lg);
   overflow: hidden;
   border: 1px solid var(--border);
