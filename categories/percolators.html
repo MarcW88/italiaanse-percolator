@@ -44,10 +44,81 @@
 </div>
 </div>
 <main class="container" style="padding:2.5rem 0;">
-<p id="page-info" style="color:var(--text-dim);margin-bottom:1.5rem;">Pagina laden...</p>
+<p id="page-info" style="color:var(--text-dim);margin-bottom:1.5rem;">Producten laden...</p>
 <div class="shop-product-grid" id="products-grid"></div>
-<div id="pagination"></div>
+<div id="pagination" style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:2rem;align-items:center;"></div>
 </main>
+<script>
+(function() {
+    const TYPE = 'Cafetière percolateur';
+    const PER_PAGE = 24;
+    let allProducts = [];
+    let filtered = [];
+    let page = 1;
+
+    fetch('../all_products.json')
+        .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+        .then(data => {
+            allProducts = data.filter(p => p.deliverable && p.price > 0 && p.type === TYPE);
+            filtered = [...allProducts];
+            render();
+        })
+        .catch(() => {
+            document.getElementById('page-info').textContent = 'Producten konden niet geladen worden.';
+        });
+
+    function render() {
+        const start = (page - 1) * PER_PAGE;
+        const items = filtered.slice(start, start + PER_PAGE);
+        const total = filtered.length;
+        const totalPages = Math.ceil(total / PER_PAGE);
+
+        document.getElementById('page-info').textContent =
+            total + ' producten gevonden · pagina ' + page + ' van ' + (totalPages || 1);
+
+        document.getElementById('products-grid').innerHTML = items.map(p => {
+            const badges = [];
+            if (p.inductie === 'Oui') badges.push('Inductie');
+            if (p.capaciteit) badges.push(p.capaciteit + ' kops');
+            if (p.materiaal) badges.push(p.materiaal);
+            const badgeHTML = badges.map(b =>
+                '<span style="font-size:0.72rem;color:var(--text-light);border:1px solid var(--border);padding:0.2rem 0.5rem;border-radius:0.3rem;">' + b + '</span>'
+            ).join('');
+            const price = p.price ? '\u20ac' + p.price.toFixed(2) : '';
+            return '<div style="border:1px solid var(--border);border-radius:0.5rem;overflow:hidden;background:white;transition:border-color 0.2s;display:flex;flex-direction:column;" onmouseover="this.style.borderColor=\'var(--coffee)\'" onmouseout="this.style.borderColor=\'var(--border)\'">' +
+                '<div style="background:#fafafa;padding:1rem;text-align:center;"><img src="' + (p.image || '') + '" alt="' + (p.name || '') + '" loading="lazy" style="height:160px;width:100%;object-fit:contain;" onerror="this.style.display=\'none\'"></div>' +
+                '<div style="padding:1rem;flex:1;display:flex;flex-direction:column;">' +
+                '<div style="display:flex;gap:0.35rem;flex-wrap:wrap;margin-bottom:0.5rem;">' + badgeHTML + '</div>' +
+                '<h3 style="font-size:0.88rem;font-weight:600;line-height:1.35;margin-bottom:0.5rem;flex:1;">' + (p.name || '') + '</h3>' +
+                '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">' +
+                '<span style="font-size:1.1rem;font-weight:700;color:var(--coffee);">' + price + '</span>' +
+                '<span style="font-size:0.72rem;font-weight:600;color:var(--coffee);background:#f5ede5;padding:0.15rem 0.5rem;border-radius:0.3rem;">Bol.com</span>' +
+                '</div>' +
+                '<a href="' + (p.affiliate_url || '#') + '" target="_blank" rel="sponsored" style="display:block;text-align:center;padding:0.55rem;background:var(--coffee);color:white;text-decoration:none;border-radius:0.3rem;font-size:0.82rem;font-weight:600;margin-bottom:0.4rem;">Bekijk op Bol.com</a>' +
+                '<a href="../producten/' + (p.slug || '') + '.html" style="display:block;text-align:center;padding:0.45rem;border:1px solid var(--border);color:var(--text-dim);text-decoration:none;border-radius:0.3rem;font-size:0.78rem;">Details</a>' +
+                '</div></div>';
+        }).join('');
+
+        const pag = document.getElementById('pagination');
+        if (totalPages <= 1) { pag.innerHTML = ''; return; }
+        let html = '';
+        if (page > 1) html += '<button onclick="catPage(' + (page-1) + ')" style="padding:0.5rem 0.75rem;border:1px solid var(--border);background:white;border-radius:0.25rem;cursor:pointer;font-size:0.82rem;">Vorige</button>';
+        const s = Math.max(1, page-2), e = Math.min(totalPages, page+2);
+        for (let i = s; i <= e; i++) {
+            const a = i === page ? 'background:var(--coffee);color:white;border-color:var(--coffee);' : 'background:white;';
+            html += '<button onclick="catPage(' + i + ')" style="padding:0.5rem 0.75rem;border:1px solid var(--border);border-radius:0.25rem;cursor:pointer;font-size:0.82rem;min-width:36px;' + a + '">' + i + '</button>';
+        }
+        if (page < totalPages) html += '<button onclick="catPage(' + (page+1) + ')" style="padding:0.5rem 0.75rem;border:1px solid var(--border);background:white;border-radius:0.25rem;cursor:pointer;font-size:0.82rem;">Volgende</button>';
+        pag.innerHTML = html;
+    }
+
+    window.catPage = function(n) {
+        page = n;
+        render();
+        window.scrollTo({ top: document.getElementById('products-grid').offsetTop - 80, behavior: 'smooth' });
+    };
+})();
+</script>
 <div id="percolator-lees-meer" style="background:#fafafa;padding:3rem 0;margin-top:3rem;">
 <div class="container" style="max-width:800px;">
 <h2 style="font-family:var(--font-serif);font-size:1.8rem;font-weight:400;margin-bottom:1.5rem;">Welke italiaanse percolator moet ik kopen?</h2>
