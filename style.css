@@ -3548,6 +3548,158 @@ body.review-page {
   color: white;
 }
 
+/* ── Brand page components ───────────────────────────────────────────────── */
+.brand-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  margin-top: var(--sp-4);
+}
+
+.brand-stat {
+  font-size: var(--fs-sm);
+  color: var(--text-dim);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 2rem;
+  padding: 0.25rem 0.75rem;
+}
+
+.brand-highlights {
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: var(--sp-6);
+  margin-top: var(--sp-5);
+}
+
+.brand-highlights ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.brand-highlights li {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  line-height: 1.65;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.brand-highlights li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--coffee);
+  font-size: 0.85rem;
+}
+
+.brand-for-whom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-4);
+  margin-top: var(--sp-5);
+}
+
+.brand-for-whom-item {
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: var(--sp-5);
+}
+
+.brand-for-whom-item h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: var(--sp-2);
+  color: var(--text);
+}
+
+.brand-for-whom-item p {
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.brand-compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  margin-top: var(--sp-5);
+}
+
+.brand-compare-table th {
+  padding: var(--sp-3) var(--sp-4);
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: var(--surface-soft);
+  border-bottom: 2px solid var(--border);
+  color: var(--text-dim);
+}
+
+.brand-compare-table td {
+  padding: var(--sp-3) var(--sp-4);
+  border-bottom: 1px solid var(--border);
+  color: var(--text-dim);
+  vertical-align: top;
+}
+
+.brand-compare-table tr:last-child td {
+  border-bottom: none;
+}
+
+.brand-compare-table td:first-child {
+  color: var(--text);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.brand-editorial {
+  max-width: 660px;
+  color: var(--text-dim);
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+.brand-editorial p + p {
+  margin-top: var(--sp-4);
+}
+
+.brand-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  margin-top: var(--sp-4);
+}
+
+.brand-links a {
+  font-size: 0.88rem;
+  color: var(--coffee);
+  text-decoration: none;
+  border: 1px solid var(--border);
+  padding: 0.4rem 0.9rem;
+  border-radius: 2rem;
+  transition: background 0.15s;
+}
+
+.brand-links a:hover {
+  background: var(--surface-soft);
+}
+
+@media (max-width: 600px) {
+  .brand-for-whom {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ── Author box ─────────────────────────────────────────────────────────── */
 .author-box {
   display: flex;
