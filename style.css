@@ -1577,6 +1577,11 @@ body.blog-page {
   text-align: center;
 }
 
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: var(--sp-1); }
+.mb-2 { margin-bottom: var(--sp-2); }
+.mb-3 { margin-bottom: var(--sp-3); }
+
 .mb-4 {
   margin-bottom: var(--sp-4);
 }
@@ -1588,6 +1593,10 @@ body.blog-page {
 .mb-8 {
   margin-bottom: var(--sp-8);
 }
+
+.mt-2 { margin-top: var(--sp-2); }
+.mt-3 { margin-top: var(--sp-3); }
+.mt-4 { margin-top: var(--sp-4); }
 
 .mt-8 {
   margin-top: var(--sp-8);
