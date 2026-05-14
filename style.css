@@ -4657,9 +4657,10 @@ body.review-page {
 
 .similar-article-image {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
   object-position: center;
+  max-height: 180px;
 }
 
 .similar-article-content {
