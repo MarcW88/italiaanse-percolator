@@ -4507,3 +4507,91 @@ body.review-page {
     gap: var(--sp-6);
   }
 }
+
+/* ========================================
+   BLOG ARTICLE DROPDOWN TOC
+   ======================================== */
+
+.toc-dropdown {
+  margin-bottom: 2rem;
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.toc-dropdown summary {
+  padding: 1rem 1.5rem;
+  background: #f8fafc;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  transition: background 0.2s;
+}
+
+.toc-dropdown summary::-webkit-details-marker {
+  display: none;
+}
+
+.toc-dropdown summary:hover {
+  background: #f1f5f9;
+}
+
+.toc-dropdown summary::after {
+  content: '▼';
+  font-size: 0.75rem;
+  transition: transform 0.2s;
+}
+
+.toc-dropdown[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.toc-dropdown[open] summary {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.toc-dropdown-content {
+  padding: 1rem 1.5rem;
+}
+
+.toc-dropdown-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toc-dropdown-item {
+  margin-bottom: 0.5rem;
+}
+
+.toc-dropdown-item:last-child {
+  margin-bottom: 0;
+}
+
+.toc-dropdown-link {
+  color: #475569;
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.75rem;
+  display: block;
+  border-radius: 0.25rem;
+  transition: all 0.2s;
+}
+
+.toc-dropdown-link:hover {
+  background: #f8fafc;
+  color: #0f172a;
+  padding-left: 1rem;
+}
+
+.toc-dropdown-link.active {
+  background: #eff6ff;
+  color: #2563eb;
+  font-weight: 500;
+}
