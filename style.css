@@ -2227,6 +2227,27 @@ body.review-page {
   color: var(--text);
 }
 
+.rating-hero-layout {
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr) minmax(0, 1fr);
+  gap: var(--sp-6);
+  align-items: start;
+}
+
+.rating-hero-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--r-md);
+}
+
+.rating-hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
 .rating-box h3 {
   font-family: var(--font-display);
   font-size: var(--fs-base);
