@@ -53,7 +53,14 @@ def restructure_rating_box(file_path):
 <p>{kort_match.group(1)}</p>
 </div>'''
     
-    # Créer la nouvelle structure
+    # Créer la nouvelle structure avec korte oordeel à l'intérieur
+    kort_html_inside = ""
+    if kort_match:
+        kort_html_inside = f'''<div class="kort-oordeel-section">
+<h2 id="kort-oordeel">Oordeel</h2>
+<p>{kort_match.group(1)}</p>
+</div>'''
+    
     new_structure = f'''<div class="rating-box-top">
 <h2 id="onze-beoordeling">Onze beoordeling</h2>
 <div class="rating-hero-layout">
@@ -62,9 +69,9 @@ def restructure_rating_box(file_path):
 </div>
 <div class="rating-hero-content">
 {rating_box}
+{kort_html_inside}
 </div>
 </div>
-{kort_html}
 </div>'''
     
     # Supprimer l'ancien rating box
@@ -95,11 +102,15 @@ def main():
         'alessi-la-conica-review.html',
         'alessi-moka-review.html',
         'alessi-pulcina-review.html',
+        'bialetti-alpina-review.html',
+        'bialetti-brikka-review.html',
         'bialetti-dama-review.html',
         'bialetti-fiammetta-review.html',
         'bialetti-mini-express-review.html',
         'bialetti-moka-review.html',
+        'bialetti-moka-timer-review.html',
         'bialetti-musa-review.html',
+        'bialetti-venus-review.html',
         'cilio-classico-electric-review.html',
         'cloer-5928-review.html',
         'delonghi-alicia-review.html',
