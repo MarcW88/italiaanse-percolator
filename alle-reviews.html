@@ -13,7 +13,7 @@
     .review-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 1.5rem; }
     .review-card { background: white; overflow: hidden; border: 1px solid var(--border); border-radius: 0.5rem; transition: all 0.3s ease; text-decoration: none; color: inherit; }
     .review-card:hover { border-color: var(--coffee); transform: translateY(-4px); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); }
-    .review-image { width: 100%; height: 220px; object-fit: cover; object-position: center; }
+    .review-image { width: 100%; height: auto; max-height: 220px; object-fit: contain; object-position: center; }
     .review-content { padding: 1.5rem; }
     .review-badge { display: inline-block; padding: 0.25rem 0.75rem; background: #f5f0ea; color: var(--text); border: 1px solid var(--border); border-radius: 0.3rem; font-size: 0.875rem; font-weight: 600; margin-bottom: 0.5rem; }
     .review-title { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; color: #1f2937; }
@@ -443,15 +443,13 @@
       </div>
 
       <!-- CTA Section -->
-      <div class="card mt-8" style="border: 1px solid var(--border); border-radius: 0.5rem; background: linear-gradient(135deg, var(--coffee), #8B4513); color: white; text-align: center;">
-        
+      <div class="card mt-8" style="border: 1px solid var(--border); border-radius: 0.5rem; background: linear-gradient(135deg, var(--coffee), #8B4513); color: white; text-align: center; padding: 3rem 2rem;">
           <h2 style="color: white; margin-bottom: 1rem;">Niet gevonden wat je zocht?</h2>
-          <p style="opacity: 0.95;  max-width: 600px; margin-left: auto; margin-right: auto;">Bekijk onze Top 10 ranglijst of gebruik de koopgids om de perfecte percolator voor jouw situatie te vinden.</p>
+          <p style="opacity: 0.95;  max-width: 600px; margin-left: auto; margin-right: auto; margin-bottom: 1.5rem;">Bekijk onze Top 10 ranglijst of gebruik de koopgids om de perfecte percolator voor jouw situatie te vinden. Onze gidsen helpen je bij het maken van de beste keuze op basis van jouw kookplaat, budget en koffievoorkeuren.</p>
           <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-            <a href="beste-italiaanse-percolators.html" class="btn btn-lg" style="background: white; ">Bekijk Top 10 →</a>
+            <a href="beste-italiaanse-percolators.html" class="btn btn-lg" style="background: white; color: var(--coffee); border: none;">Bekijk Top 10 →</a>
             <a href="koopgids/index.html" class="btn btn-lg btn-outline" style="border-color: white; color: white;">Koopgids →</a>
-          
-        </div>
+          </div>
       </div>
     </div>
   </section>
