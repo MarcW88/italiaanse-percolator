@@ -158,6 +158,34 @@
             html += `<a href="${getPageUrl(page + 1)}" class="pagination-link">Volgende</a>`;
         }
         pagination.innerHTML = html;
+
+        // Update SEO: canonical, rel=next, rel=prev
+        const canonicalLink = document.querySelector('link[rel="canonical"]');
+        if (canonicalLink) {
+            canonicalLink.href = page === 1
+                ? 'https://italiaanse-percolator.nl/categories/accessoires.html'
+                : `https://italiaanse-percolator.nl/categories/accessoires.html?page=${page}`;
+        }
+
+        // Remove existing next/prev
+        document.querySelectorAll('link[rel="next"], link[rel="prev"]').forEach(el => el.remove());
+
+        // Add next/prev
+        const head = document.head;
+        if (page > 1) {
+            const prev = document.createElement('link');
+            prev.rel = 'prev';
+            prev.href = page === 2
+                ? 'https://italiaanse-percolator.nl/categories/accessoires.html'
+                : `https://italiaanse-percolator.nl/categories/accessoires.html?page=${page - 1}`;
+            head.appendChild(prev);
+        }
+        if (page < totalPages) {
+            const next = document.createElement('link');
+            next.rel = 'next';
+            next.href = `https://italiaanse-percolator.nl/categories/accessoires.html?page=${page + 1}`;
+            head.appendChild(next);
+        }
     }
     
     document.addEventListener('DOMContentLoaded', () => {
