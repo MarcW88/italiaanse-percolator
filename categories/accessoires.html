@@ -31,20 +31,36 @@
         <h1 style="font-family:var(--font-serif);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:400;margin-bottom:0.75rem;">Italiaanse percolator accessoires</h1>
         <p style="color:var(--text-dim);font-size:1rem;">Maak je koffiehoek compleet met de juiste onderdelen en handige extra’s. Hier vind je filters, ringen, vervangstukken en accessoires voor percolators en koffiezetters, zodat je toestel goed blijft werken en je elke dag geniet van de beste koffiesmaak.</p>
     </div></section>
-    <div style="border-bottom:1px solid var(--border);padding:1rem 0;"><div class="container" style="display:flex;gap:0.75rem;flex-wrap:wrap;font-size:0.85rem;">
-        <a href="accessoires.html" style="color:var(--text-dim);text-decoration:none;padding:0.4rem 0.75rem;border:1px solid var(--border);border-radius:0.5rem;">Alle accessoires</a>
-        <a href="accessoires-koffiefilters.html" style="color:var(--text-dim);text-decoration:none;padding:0.4rem 0.75rem;border:1px solid var(--border);border-radius:0.5rem;">Koffiefilters</a>
-        <a href="accessoires-capsulehouder.html" style="color:var(--text-dim);text-decoration:none;padding:0.4rem 0.75rem;border:1px solid var(--border);border-radius:0.5rem;">Capsulehouder</a>
-        <a href="accessoires-tamper.html" style="color:var(--text-dim);text-decoration:none;padding:0.4rem 0.75rem;border:1px solid var(--border);border-radius:0.5rem;">Tamper &amp; verdelers</a>
-        <a href="accessoires-melkopschuimers.html" style="color:var(--text-dim);text-decoration:none;padding:0.4rem 0.75rem;border:1px solid var(--border);border-radius:0.5rem;">Melkopschuimers</a>
-        <a href="accessoires-uitklopbak.html" style="color:var(--text-dim);text-decoration:none;padding:0.4rem 0.75rem;border:1px solid var(--border);border-radius:0.5rem;">Uitklopbak</a>
-        <a href="accessoires-koffiebus.html" style="color:var(--text-dim);text-decoration:none;padding:0.4rem 0.75rem;border:1px solid var(--border);border-radius:0.5rem;">Koffiebus</a>
-    </div></div>
-
-    <main class="container" style="padding:2.5rem 0;">
-        <p id="page-info" style="color:var(--text-dim);margin-bottom:1.5rem;">Pagina laden...</p>
-        <div id="products-grid" class="shop-product-grid"></div>
-        <div id="pagination"></div>
+        <main class="container" style="padding:2.5rem 0;">
+        <div style="display: grid; grid-template-columns: 250px 1fr; gap: 2rem; align-items: start;">
+            <!-- Sidebar Categorieën -->
+            <aside style="background: #fafafa; padding: 1.5rem; border-radius: 0.5rem; border: 1px solid var(--border); position: sticky; top: 2rem;">
+                <h3 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem; color: var(--text);">Categorieën</h3>
+                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    <a href="accessoires.html" style="font-size: 0.85rem; color: var(--text-dim); text-decoration: none; padding: 0.4rem 0;">Alle accessoires</a>
+                    <a href="accessoires-koffiefilters.html" style="font-size: 0.85rem; color: var(--text-dim); text-decoration: none; padding: 0.4rem 0;">Koffiefilters</a>
+                    <a href="accessoires-capsulehouders.html" style="font-size: 0.85rem; color: var(--text-dim); text-decoration: none; padding: 0.4rem 0;">Capsulehouders</a>
+                    <a href="accessoires-tampers.html" style="font-size: 0.85rem; color: var(--text-dim); text-decoration: none; padding: 0.4rem 0;">Tampers &amp; verdelers</a>
+                    <a href="accessoires-melkopschuimers.html" style="font-size: 0.85rem; color: var(--text-dim); text-decoration: none; padding: 0.4rem 0;">Melkopschuimers</a>
+                    <a href="accessoires-uitklopbakken.html" style="font-size: 0.85rem; color: var(--text-dim); text-decoration: none; padding: 0.4rem 0;">Uitklopbakken</a>
+                    <a href="accessoires-koffiebewaar.html" style="font-size: 0.85rem; color: var(--text-dim); text-decoration: none; padding: 0.4rem 0;">Koffiebewaar</a>
+                    <a href="accessoires-afdichtringen.html" style="font-size: 0.85rem; color: var(--text-dim); text-decoration: none; padding: 0.4rem 0;">Afdichtringen</a>
+                    <a href="accessoires-ventielen.html" style="font-size: 0.85rem; color: var(--text-dim); text-decoration: none; padding: 0.4rem 0;">Ventielen</a>
+                    <a href="accessoires-handgrepen.html" style="font-size: 0.85rem; color: var(--text-dim); text-decoration: none; padding: 0.4rem 0;">Handgrepen</a>
+                    <a href="accessoires-schoonmaak.html" style="font-size: 0.85rem; color: var(--text-dim); text-decoration: none; padding: 0.4rem 0;">Schoonmaakaccessoires</a>
+                    <a href="accessoires-maatlepels.html" style="font-size: 0.85rem; color: var(--text-dim); text-decoration: none; padding: 0.4rem 0;">Maatlepels</a>
+                    <a href="accessoires-thermos-bekers.html" style="font-size: 0.85rem; color: var(--text-dim); text-decoration: none; padding: 0.4rem 0;">Thermos &amp; bekers</a>
+                    <a href="accessoires-onderzetters.html" style="font-size: 0.85rem; color: var(--text-dim); text-decoration: none; padding: 0.4rem 0;">Onderzetters</a>
+                    <a href="accessoires-schalen-bakjes.html" style="font-size: 0.85rem; color: var(--text-dim); text-decoration: none; padding: 0.4rem 0;">Schalen &amp; bakjes</a>
+                </div>
+            </aside>
+            <!-- Products Grid -->
+            <div>
+                <p id="page-info" style="color:var(--text-dim);margin-bottom:1.5rem;">Pagina laden...</p>
+                <div id="products-grid" class="shop-product-grid"></div>
+                <div id="pagination"></div>
+            </div>
+        </div>
     </main>
 
     <section class="container" style="padding:0 0 3rem;">
