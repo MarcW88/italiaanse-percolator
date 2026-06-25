@@ -225,14 +225,6 @@
         currentPage = getPageFromUrl();
         renderPage(currentPage);
 
-        // Highlight active category filter
-        const activeCat = getActiveCat();
-        document.querySelectorAll('#cat-filters a').forEach(a => {
-            const isCurrent = a.dataset.cat === activeCat;
-            a.style.color = isCurrent ? 'var(--coffee)' : 'var(--text-dim)';
-            a.style.borderColor = isCurrent ? 'var(--coffee)' : 'var(--border)';
-            a.style.fontWeight = isCurrent ? '600' : 'normal';
-        });
     });
     </script>
 <script>
