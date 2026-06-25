@@ -31,8 +31,14 @@
         <h1 style="font-family:var(--font-serif);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:400;margin-bottom:0.75rem;">Italiaanse percolator accessoires</h1>
         <p style="color:var(--text-dim);font-size:1rem;">Maak je koffiehoek compleet met de juiste onderdelen en handige extra’s. Hier vind je filters, ringen, vervangstukken en accessoires voor percolators en koffiezetters, zodat je toestel goed blijft werken en je elke dag geniet van de beste koffiesmaak.</p>
     </div></section>
-    <div style="border-bottom:1px solid var(--border);padding:1rem 0;"><div class="container" style="display:flex;gap:1.5rem;flex-wrap:wrap;font-size:0.85rem;">
-        <a href="../categories/percolators.html" style="color: var(--text-dim); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--border); border-radius: 0.5rem;">Percolators</a><a href="../categories/elektrische-percolators.html" style="color: var(--text-dim); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--border); border-radius: 0.5rem;">Elektrisch</a><a href="../categories/accessoires.html" style="color: var(--text-dim); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--border); border-radius: 0.5rem;">Accessoires</a><a href="../categories/percolators-inductie.html" style="color: var(--text-dim); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--border); border-radius: 0.5rem;">Inductie</a><a href="../categories/percolators-aluminium.html" style="color: var(--text-dim); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--border); border-radius: 0.5rem;">Aluminium</a><a href="../categories/percolators-rvs.html" style="color: var(--text-dim); text-decoration: none; padding: 0.4rem 0.75rem; border: 1px solid var(--border); border-radius: 0.5rem;">RVS</a>
+    <div style="border-bottom:1px solid var(--border);padding:1rem 0;"><div class="container" id="cat-filters" style="display:flex;gap:0.75rem;flex-wrap:wrap;font-size:0.85rem;">
+        <a href="accessoires.html" data-cat="" style="color:var(--text-dim);text-decoration:none;padding:0.4rem 0.75rem;border:1px solid var(--border);border-radius:0.5rem;">Alle accessoires</a>
+        <a href="accessoires.html?cat=filter" data-cat="filter" style="color:var(--text-dim);text-decoration:none;padding:0.4rem 0.75rem;border:1px solid var(--border);border-radius:0.5rem;">Koffiefilters</a>
+        <a href="accessoires.html?cat=capsule" data-cat="capsule" style="color:var(--text-dim);text-decoration:none;padding:0.4rem 0.75rem;border:1px solid var(--border);border-radius:0.5rem;">Capsulehouder</a>
+        <a href="accessoires.html?cat=tamper" data-cat="tamper" style="color:var(--text-dim);text-decoration:none;padding:0.4rem 0.75rem;border:1px solid var(--border);border-radius:0.5rem;">Tamper &amp; verdelers</a>
+        <a href="accessoires.html?cat=melk" data-cat="melk" style="color:var(--text-dim);text-decoration:none;padding:0.4rem 0.75rem;border:1px solid var(--border);border-radius:0.5rem;">Melkopschuimers</a>
+        <a href="accessoires.html?cat=uitklop" data-cat="uitklop" style="color:var(--text-dim);text-decoration:none;padding:0.4rem 0.75rem;border:1px solid var(--border);border-radius:0.5rem;">Uitklopbak</a>
+        <a href="accessoires.html?cat=koffiebus" data-cat="koffiebus" style="color:var(--text-dim);text-decoration:none;padding:0.4rem 0.75rem;border:1px solid var(--border);border-radius:0.5rem;">Koffiebus</a>
     </div></div>
 
     <main class="container" style="padding:2.5rem 0;">
@@ -74,6 +80,29 @@
     const perPage = 24;
     const baseUrl = 'accessoires.html';
     let currentPage = 1;
+
+    const CATEGORY_KEYWORDS = {
+        'filter':    ['filter', 'filterpapier', 'koffiefilter'],
+        'tamper':    ['tamper', 'verdeler', 'distributor', 'wdt'],
+        'melk':      ['melkopschuim', 'opschuimer', 'schuimkan'],
+        'uitklop':   ['uitklop', 'knock'],
+        'capsule':   ['capsule'],
+        'koffiebus': ['koffiebus', 'opbergbus', 'bewaarbus', 'voorraadbus', 'koffieblik']
+    };
+
+    function getActiveCat() {
+        return new URLSearchParams(window.location.search).get('cat') || '';
+    }
+
+    function getFilteredProducts() {
+        const cat = getActiveCat();
+        if (!cat) return allProducts;
+        const keywords = CATEGORY_KEYWORDS[cat] || [];
+        return allProducts.filter(p => {
+            const name = (p.name || '').toLowerCase();
+            return keywords.some(kw => name.includes(kw));
+        });
+    }
     
     function toggleLeesMeer(id, link) {
         const el = document.getElementById(id);
@@ -99,7 +128,10 @@
     }
     
     function getPageUrl(page) {
-        return page === 1 ? baseUrl : baseUrl + '?page=' + page;
+        const cat = getActiveCat();
+        const catParam = cat ? '&cat=' + cat : '';
+        if (page === 1) return cat ? baseUrl + '?cat=' + cat : baseUrl;
+        return baseUrl + '?page=' + page + catParam;
     }
     
     function getPageFromUrl() {
@@ -109,9 +141,10 @@
     }
     
     function renderPage(page) {
+        const filtered = getFilteredProducts();
         const start = (page - 1) * perPage;
-        const items = allProducts.slice(start, start + perPage);
-        const totalPages = Math.ceil(allProducts.length / perPage);
+        const items = filtered.slice(start, start + perPage);
+        const totalPages = Math.ceil(filtered.length / perPage);
         
         const grid = document.getElementById('products-grid');
         grid.innerHTML = items.map(p => {
@@ -139,7 +172,7 @@
             </div>`;
         }).join('');
         
-        document.getElementById('page-info').textContent = `Pagina ${page} van ${totalPages} · producten ${start + 1}-${Math.min(start + perPage, allProducts.length)} van ${allProducts.length}`;
+        document.getElementById('page-info').textContent = `Pagina ${page} van ${totalPages} · producten ${start + 1}-${Math.min(start + perPage, filtered.length)} van ${filtered.length}`;
         
         const pagination = document.getElementById('pagination');
         if (totalPages <= 1) { pagination.innerHTML = ''; return; }
@@ -191,6 +224,15 @@
     document.addEventListener('DOMContentLoaded', () => {
         currentPage = getPageFromUrl();
         renderPage(currentPage);
+
+        // Highlight active category filter
+        const activeCat = getActiveCat();
+        document.querySelectorAll('#cat-filters a').forEach(a => {
+            const isCurrent = a.dataset.cat === activeCat;
+            a.style.color = isCurrent ? 'var(--coffee)' : 'var(--text-dim)';
+            a.style.borderColor = isCurrent ? 'var(--coffee)' : 'var(--border)';
+            a.style.fontWeight = isCurrent ? '600' : 'normal';
+        });
     });
     </script>
 <script>
