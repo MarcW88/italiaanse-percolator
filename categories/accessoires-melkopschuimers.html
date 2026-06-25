@@ -29,17 +29,8 @@
     <section style="background:#f5f0ea;padding:3rem 0 2.5rem;"><div class="container" >
         <p style="font-size:0.78rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem;"><a href="../index.html" style="color:var(--text-light);text-decoration:none;">Home</a> / Shop / <a href="accessoires.html" style="color:var(--text-light);text-decoration:none;">Accessoires</a></p>
         <h1 style="font-family:var(--font-serif);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:400;margin-bottom:0.75rem;">Melkopschuimers</h1>
-        <p style="color:var(--text-dim);font-size:1rem;">Handmatige melkopschuimers en opschuimkannen voor cappuccino, latte en andere koffiedranken. Zonder stoom, puur mechanisch.</p>
+        <p style="color:var(--text-dim);font-size:1rem;">Handmatige melkopschuimers en opschuimkannen voor cappuccino, latte en andere koffiedranken.</p>
     </div></section>
-    <div style="border-bottom:1px solid var(--border);padding:1rem 0;"><div class="container" style="display:flex;gap:0.75rem;flex-wrap:wrap;font-size:0.85rem;">
-        <a href="accessoires.html" style="color:var(--text-dim);text-decoration:none;padding:0.4rem 0.75rem;border:1px solid var(--border);border-radius:0.5rem;">Alle accessoires</a>
-        <a href="accessoires-koffiefilters.html" style="color:var(--text-dim);text-decoration:none;padding:0.4rem 0.75rem;border:1px solid var(--border);border-radius:0.5rem;">Koffiefilters</a>
-        <a href="accessoires-capsulehouder.html" style="color:var(--text-dim);text-decoration:none;padding:0.4rem 0.75rem;border:1px solid var(--border);border-radius:0.5rem;">Capsulehouder</a>
-        <a href="accessoires-tamper.html" style="color:var(--text-dim);text-decoration:none;padding:0.4rem 0.75rem;border:1px solid var(--border);border-radius:0.5rem;">Tamper &amp; verdelers</a>
-        <a href="accessoires-melkopschuimers.html" style="color:var(--text-dim);text-decoration:none;padding:0.4rem 0.75rem;border:1px solid var(--border);border-radius:0.5rem;">Melkopschuimers</a>
-        <a href="accessoires-uitklopbak.html" style="color:var(--text-dim);text-decoration:none;padding:0.4rem 0.75rem;border:1px solid var(--border);border-radius:0.5rem;">Uitklopbak</a>
-        <a href="accessoires-koffiebus.html" style="color:var(--text-dim);text-decoration:none;padding:0.4rem 0.75rem;border:1px solid var(--border);border-radius:0.5rem;">Koffiebus</a>
-    </div></div>
 
     <main class="container" style="padding:2.5rem 0;">
         <p id="page-info" style="color:var(--text-dim);margin-bottom:1.5rem;">Pagina laden...</p>
@@ -50,8 +41,7 @@
     <section class="container" style="padding:0 0 3rem;">
         <div style="max-width:860px;margin:0 auto;color:var(--text-dim);font-size:1rem;line-height:1.8;">
             <h2 style="font-family:var(--font-serif);font-size:1.6rem;font-weight:400;color:var(--text);margin:2rem 0 0.75rem;">Zelf melk opschuimen zonder stoom</h2>
-<p>Handmatige melkopschuimers zijn perfect voor wie geen espressomachine met stoompijp heeft. Met een opschuimkan maak je toch romige, zachte melkschuim voor cappuccino, latte macchiato en andere specialiteiten.</p>
-<p>Kies uit verschillende maten en materialen: RVS voor duurzaamheid, glas voor elegantie, of kunststof voor gebruiksgemak. Sommige modellen werken op batterijen, andere zijn volledig handmatig.</p>
+<p>Handmatige melkopschuimers zijn perfect voor wie geen espressomachine met stoompijp heeft. Met een opschuimkan maak je toch romige, zachte melkschuim.</p>
         </div>
     </section>
 
@@ -65,7 +55,7 @@
     const baseUrl = 'accessoires-melkopschuimers.html';
     let currentPage = 1;
 
-    const CATEGORY_KEYWORDS = ["melkopschuim", "opschuimer", "schuimkan"];
+    const CATEGORY_KEYWORDS = ["melkopschuim", "opschuimer", "schuimkan", "melkkan", "frother"];
 
     function getFilteredProducts() {
         return allProducts.filter(p => {
