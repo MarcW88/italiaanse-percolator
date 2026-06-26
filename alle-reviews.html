@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700&family=DM+Serif+Display:ital,wght@0,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
-    .review-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 1.5rem; }
+    .review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
     .review-card { background: white; overflow: hidden; border: 1px solid var(--border); border-radius: 0.5rem; transition: all 0.3s ease; text-decoration: none; color: inherit; }
     .review-card:hover { border-color: var(--coffee); transform: translateY(-4px); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); }
     .review-image { width: 100%; height: auto; max-height: 220px; object-fit: contain; object-position: center; }
@@ -22,6 +22,7 @@
     .score-number { font-size: 1.5rem; font-weight: 700; }
     .review-price { font-weight: 600; color: #059669; }
     .category-header { margin-top: 3rem; margin-bottom: 1.5rem; }
+    @media (max-width: 1024px) { .review-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 768px) { .review-grid { grid-template-columns: 1fr; } }
   </style>
   <link rel="canonical" href="https://italiaanse-percolator.nl/alle-reviews.html">
