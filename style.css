@@ -174,7 +174,7 @@ h4 {
   padding: 0 var(--sp-4);
 }
 
-body.review-page .container {
+body.review-page section.section-sm > .container {
   max-width: 650px;
 }
 
