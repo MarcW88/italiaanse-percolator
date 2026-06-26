@@ -3868,12 +3868,9 @@ body.review-page {
 
 /* ── Author box ─────────────────────────────────────────────────────────── */
 .author-box {
-  display: flex;
-  gap: var(--sp-6);
-  background: var(--surface-soft);
-  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
   border-radius: var(--r-lg);
-  padding: var(--sp-6);
   margin: var(--sp-10) 0 var(--sp-6);
 }
 
