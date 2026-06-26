@@ -57,7 +57,11 @@
             <!-- Products Grid -->
             <div>
                 <p id="page-info" style="color:var(--text-dim);margin-bottom:1.5rem;">Pagina laden...</p>
-                <div id="products-grid" class="shop-product-grid"></div>
+                <div id="products-grid" class="shop-product-grid">
+<!-- STATIC-PRODUCTS-START -->
+<div style="border:1px solid var(--border);overflow:hidden;background:white;border-radius:0.5rem;display:flex;flex-direction:column;height:100%;"><div style="background:#fafafa;padding:1rem;text-align:center;"><img src="https://media.s-bol.com/PkDzXx3ZKAnw/pYW2QAX/1200x682.jpg" alt="Filters, Set van 2 Stuks, Vervanging voor LCKNOCKBOX, 12 cm, RVS - La Cafetière" loading="lazy" style="height:160px;width:100%;object-fit:contain;" onerror="this.src='../../Images/placeholder-product.jpg'"></div><div style="padding:1rem;"><div style="display:flex;gap:0.35rem;flex-wrap:wrap;margin-bottom:0.5rem;"><span style="font-size:0.72rem;color:var(--text-light);border:1px solid var(--border);padding:0.2rem 0.5rem;border-radius:0.5rem;">RVS</span></div><h3 style="font-size:0.88rem;font-weight:600;line-height:1.35;margin-bottom:0.5rem;height:2.4rem;overflow:hidden;">Filters, Set van 2 Stuks, Vervanging voor LCKNOCKBOX, 12 cm, RVS - La Cafetière</h3><div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;"><span style="font-size:1.1rem;font-weight:700;">&euro;13.24</span><span style="font-size:0.72rem;font-weight:600;color:var(--coffee);background:#f5ede5;padding:0.15rem 0.5rem;border-radius:0.3rem;">Bol.com</span></div><a href="https://partner.bol.com/click/click?p=2&amp;t=url&amp;s=1519207&amp;f=TXL&amp;url=https%3A%2F%2Fwww.bol.com%2Fnl%2Fnl%2Fp%2Ffilters-set-van-2-stuks-vervanging-voor-lcknockbox-12-cm-rvs-la-cafetiere%2F9300000197735144%2F&amp;name=Filters,%20Set%20van%202%20Stuks,%20Vervanging%20voor%20LCKNOCKB" target="_blank" rel="sponsored" style="display:block;text-align:center;padding:0.55rem;background:var(--coffee);color:white;text-decoration:none;border-radius:0.3rem;font-size:0.82rem;font-weight:600;margin-bottom:0.4rem;">Koop product</a><a href="../../producten/filters-set-van-2-stuks-vervanging-voor-lcknockbox-12-cm-rvs-la-cafetiere.html" style="display:block;text-align:center;padding:0.45rem;border:1px solid var(--border);color:var(--text-dim);text-decoration:none;border-radius:0.3rem;font-size:0.78rem;">Details</a></div></div>
+<!-- STATIC-PRODUCTS-END -->
+</div>
                 <div id="pagination"></div>
             </div>
         </div>
@@ -163,7 +167,7 @@ function toggleLeesMeer(id, link) {
         const totalPages = Math.ceil(getFilteredProducts().length / perPage);
         
         const grid = document.getElementById('products-grid');
-        grid.innerHTML = items.map(p => {
+        grid.innerHTML = ''; grid.innerHTML = items.map(p => {
             const badges = [];
             if (p.inductie === 'Oui') badges.push('Inductie');
             if (p.capaciteit) badges.push(p.capaciteit + ' kops');
