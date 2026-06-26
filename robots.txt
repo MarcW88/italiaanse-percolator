@@ -52,3 +52,6 @@ Disallow: /
 
 User-agent: SemrushBot
 Disallow: /
+
+User-agent: TLM Audit Scanner
+Disallow: /
