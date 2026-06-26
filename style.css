@@ -175,9 +175,11 @@ h4 {
 }
 
 body.review-page section.section-sm > .container {
-  max-width: 800px;
+  display: grid;
+  grid-template-columns: 1fr 800px 1fr;
+  gap: 2rem;
+  max-width: 1200px;
 }
-
 .container-sm {
   max-width: var(--container-sm);
   margin: 0 auto;
@@ -461,12 +463,12 @@ body.review-page section.section-sm > .container {
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.8;
-}
-
 .review-page .article-content {
+  grid-column: 2;
   max-width: 100%;
   margin: 0 auto;
   line-height: 1.8;
+}  line-height: 1.8;
 }
 
 .blog-page .article-header {
