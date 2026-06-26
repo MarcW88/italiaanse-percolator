@@ -3129,7 +3129,7 @@ body.review-page {
 
 .review-main .section-sm .container,
 body.blog-page .section-sm .container {
-  max-width: 750px;
+  max-width: 650px;
   margin: 0 auto;
   padding-left: var(--sp-4);
   padding-right: var(--sp-4);
