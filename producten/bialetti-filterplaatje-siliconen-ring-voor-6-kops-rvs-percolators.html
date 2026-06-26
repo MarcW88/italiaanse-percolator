@@ -75,7 +75,25 @@
             .buy-box { position:static; }
             .similar-grid { grid-template-columns:repeat(2,1fr); }
         }
-    </style>
+            .compat-section { margin-top:3.5rem;border-top:1px solid #eee;padding-top:2.5rem; }
+        .compat-section h2 { font-size:1.2rem;font-weight:600;margin-bottom:0.4rem;color:#111; }
+        .compat-sub { color:#888;font-size:0.85rem;margin-bottom:1.25rem; }
+        .compat-wrapper { position:relative; }
+        .compat-track-outer { overflow:hidden; }
+        .compat-track { display:flex;gap:1.25rem;transition:transform 0.35s ease;will-change:transform; }
+        .compat-card { flex:0 0 150px;text-decoration:none;color:inherit;border:1px solid #eee;border-radius:8px;padding:1rem;transition:box-shadow 0.2s;display:flex;flex-direction:column;align-items:center; }
+        .compat-card:hover { box-shadow:0 4px 12px rgba(0,0,0,0.08); }
+        .compat-card img { width:100%;height:100px;object-fit:contain;margin-bottom:0.75rem; }
+        .compat-card .cc-name { font-size:0.8rem;line-height:1.4;margin-bottom:0.5rem;color:#333;font-weight:500;text-align:center;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden; }
+        .compat-card .cc-kops { font-size:0.7rem;background:#f5f0ea;color:#666;border-radius:3px;padding:0.15rem 0.4rem; }
+        .compat-card .cc-price { font-size:0.95rem;font-weight:700;color:#D2691E; }
+        .compat-card .cc-btn { font-size:0.72rem;color:#888;border:1px solid #ddd;border-radius:4px;padding:0.2rem 0.5rem;margin-top:0.25rem; }
+        .compat-arrow { position:absolute;top:50%;transform:translateY(-50%);background:white;border:1px solid #ddd;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:2;box-shadow:0 2px 6px rgba(0,0,0,0.1);font-size:1.1rem;color:#555;user-select:none; }
+        .compat-arrow:hover { border-color:#D2691E;color:#D2691E; }
+        .compat-arrow.prev { left:-18px; }
+        .compat-arrow.next { right:-18px; }
+        .compat-arrow[disabled] { opacity:0.3;pointer-events:none; }
+        </style>
 </head>
 <body>
     <nav class="navbar">
@@ -176,6 +194,29 @@
             </aside>
         </div>
 
+        
+        <section class="compat-section">
+            <h2>Compatibel met...</h2>
+            <p class="compat-sub">Deze afdichtring past op de volgende percolators:</p>
+            <div class="compat-wrapper">
+                <button class="compat-arrow prev" id="prev-bialettifilterplaat" onclick="compatSlide('bialettifilterplaat',-1)" disabled>&#8249;</button>
+                <div class="compat-track-outer">
+                    <div class="compat-track" id="track-bialettifilterplaat" data-pos="0">
+                        <a href="bialetti-rainbow-rood-percolator-300ml-6-kops.html" class="compat-card"><img src="https://media.s-bol.com/xLK7nE4Yr9kB/nDGZ5/1200x476.jpg" alt="Bialetti Rainbow Rood Percolator 300ml – 6 kops" loading="lazy" onerror="this.style.display='none'"><span class="cc-name">Bialetti Rainbow Rood Percolator 300ml – 6 kops</span><span class="cc-kops">6 kops</span><span class="cc-price">€39.80</span><span class="cc-btn">Details ›</span></a>
+        <a href="bialetti-venus-6tz-koffiezetapparaat-set-nocciola-koffie-250g-classico-koffie-25.html" class="compat-card"><img src="https://media.s-bol.com/38omZGo751JA/2RwjzZj/1198x1200.jpg" alt="Bialetti Venus 6tz koffiezetapparaat set + Nocciola koffie 250g + Classico koffie 250g, Percolator, Italië, voordeelpack, kerstpakket, ideal kerst cadeau, koffieliefhebbers, uniek gift" loading="lazy" onerror="this.style.display='none'"><span class="cc-name">Bialetti Venus 6tz koffiezetapparaat set + Nocciola koffie 250g + Classico koffie 250g, Percolator, Italië, voordeelpack, kerstpakket, ideal kerst cadeau, koffieliefhebbers, uniek gift</span><span class="cc-kops">6 kops</span><span class="cc-price">€75.00</span><span class="cc-btn">Details ›</span></a>
+        <a href="bialetti-percolator-venus-6-kops-roestvrijstaal-inductiegeschikt.html" class="compat-card"><img src="https://media.s-bol.com/xLK7nE4Yr9kB/nDGZ5/1200x476.jpg" alt="Bialetti Percolator Venus - 6 kops - Roestvrijstaal - Inductiegeschikt" loading="lazy" onerror="this.style.display='none'"><span class="cc-name">Bialetti Percolator Venus - 6 kops - Roestvrijstaal - Inductiegeschikt</span><span class="cc-kops">6 kops</span><span class="cc-price">€34.99</span><span class="cc-btn">Details ›</span></a>
+        <a href="bialetti-moka-induction-percolator-rood-6-kops.html" class="compat-card"><img src="https://media.s-bol.com/xLK7nE4Yr9kB/nDGZ5/1200x476.jpg" alt="Bialetti Moka Induction - Percolator - Rood - 6 kops" loading="lazy" onerror="this.style.display='none'"><span class="cc-name">Bialetti Moka Induction - Percolator - Rood - 6 kops</span><span class="cc-kops">6 kops</span><span class="cc-price">€40.99</span><span class="cc-btn">Details ›</span></a>
+        <a href="bialetti-venus-copper-percolator-6-kops-roestvrijstaal-inductiegeschikt.html" class="compat-card"><img src="https://media.s-bol.com/xLK7nE4Yr9kB/nDGZ5/1200x476.jpg" alt="Bialetti Venus Copper - Percolator - 6 kops - Roestvrijstaal - Inductiegeschikt" loading="lazy" onerror="this.style.display='none'"><span class="cc-name">Bialetti Venus Copper - Percolator - 6 kops - Roestvrijstaal - Inductiegeschikt</span><span class="cc-kops">6 kops</span><span class="cc-price">€44.99</span><span class="cc-btn">Details ›</span></a>
+        <a href="bialetti-moka-express-percolator-6-kops-aluminium-zwart.html" class="compat-card"><img src="https://media.s-bol.com/xLK7nE4Yr9kB/nDGZ5/1200x476.jpg" alt="Bialetti Moka Express - Percolator - 6 kops - Aluminium - Zwart" loading="lazy" onerror="this.style.display='none'"><span class="cc-name">Bialetti Moka Express - Percolator - 6 kops - Aluminium - Zwart</span><span class="cc-kops">6 kops</span><span class="cc-price">€33.95</span><span class="cc-btn">Details ›</span></a>
+        <a href="bialetti-moka-express-italia-6-kops-bialetti-koffiepakket-3x250gr.html" class="compat-card"><img src="https://media.s-bol.com/7BM106wX8ZPr/YEQ7BAM/978x1200.jpg" alt="Bialetti Moka Express Italia 6 kops + Bialetti koffiepakket 3x250gr" loading="lazy" onerror="this.style.display='none'"><span class="cc-name">Bialetti Moka Express Italia 6 kops + Bialetti koffiepakket 3x250gr</span><span class="cc-kops">6 kops</span><span class="cc-price">€71.45</span><span class="cc-btn">Details ›</span></a>
+        <a href="bialetti-new-venus-6tz-percolator.html" class="compat-card"><img src="https://media.s-bol.com/7BM106wX8ZPr/YEQ7BAM/978x1200.jpg" alt="Bialetti NEW VENUS 6TZ - Percolator" loading="lazy" onerror="this.style.display='none'"><span class="cc-name">Bialetti NEW VENUS 6TZ - Percolator</span><span class="cc-kops">6 kops</span><span class="cc-price">€47.52</span><span class="cc-btn">Details ›</span></a>
+        <a href="bialetti-moka-express-percolator-6-kops-aluminium.html" class="compat-card"><img src="../Images/placeholder-product.jpg" alt="Bialetti Moka Express Percolator 6 Kops Aluminium" loading="lazy" onerror="this.style.display='none'"><span class="cc-name">Bialetti Moka Express Percolator 6 Kops Aluminium</span><span class="cc-kops">6 kops</span><span class="cc-price">€28.99</span><span class="cc-btn">Details ›</span></a>
+        <a href="bialetti-venus-percolator-rvs-6-kops-bialetti-koffie-proefpakket-3-x-250gr.html" class="compat-card"><img src="https://media.s-bol.com/7BM106wX8ZPr/YEQ7BAM/978x1200.jpg" alt="Bialetti Venus Percolator RVS 6 kops + Bialetti koffie proefpakket 3 x 250gr" loading="lazy" onerror="this.style.display='none'"><span class="cc-name">Bialetti Venus Percolator RVS 6 kops + Bialetti koffie proefpakket 3 x 250gr</span><span class="cc-kops">6 kops</span><span class="cc-price">€78.05</span><span class="cc-btn">Details ›</span></a>
+                    </div>
+                </div>
+                <button class="compat-arrow next" id="next-bialettifilterplaat" onclick="compatSlide('bialettifilterplaat',1)">&#8250;</button>
+            </div>
+        </section>
         <section class="similar-section">
             <h2>Vergelijkbare Producten</h2>
             <div class="similar-grid">
@@ -203,72 +244,6 @@
         </section>
     </div>
     
-
-<style>
-.compat-section{margin-top:3rem;border-top:1px solid #eee;padding-top:2.5rem;}
-.compat-section h2{font-size:1.2rem;font-weight:600;color:#111;margin-bottom:0.4rem;}
-.compat-section .compat-sub{color:#888;font-size:0.85rem;margin-bottom:1.25rem;}
-.compat-wrapper{position:relative;}
-.compat-track-outer{overflow:hidden;}
-.compat-track{display:flex;gap:1rem;transition:transform 0.35s ease;will-change:transform;}
-.compat-card{flex:0 0 160px;text-decoration:none;color:inherit;border:1px solid #eee;
-  border-radius:8px;padding:0.85rem;display:flex;flex-direction:column;align-items:center;
-  gap:0.4rem;transition:box-shadow 0.2s;background:#fff;}
-.compat-card:hover{box-shadow:0 4px 12px rgba(0,0,0,0.08);border-color:#D2691E;}
-.compat-card img{width:100%;height:90px;object-fit:contain;}
-.compat-card .cc-name{font-size:0.75rem;font-weight:500;color:#333;text-align:center;
-  line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
-.compat-card .cc-kops{font-size:0.7rem;background:#f5f0ea;color:#666;border-radius:3px;padding:0.15rem 0.4rem;}
-.compat-card .cc-price{font-size:0.9rem;font-weight:700;color:#D2691E;}
-.compat-card .cc-btn{font-size:0.72rem;color:#888;border:1px solid #ddd;border-radius:4px;
-  padding:0.2rem 0.5rem;margin-top:0.15rem;}
-.compat-arrow{position:absolute;top:50%;transform:translateY(-50%);background:white;
-  border:1px solid #ddd;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;
-  justify-content:center;cursor:pointer;z-index:2;box-shadow:0 2px 6px rgba(0,0,0,0.1);
-  font-size:1rem;color:#555;user-select:none;}
-.compat-arrow:hover{border-color:#D2691E;color:#D2691E;}
-.compat-arrow.prev{left:-18px;}
-.compat-arrow.next{right:-18px;}
-.compat-arrow[disabled]{opacity:0.3;cursor:default;pointer-events:none;}
-</style>
-<section class="compat-section">
-  <h2>Compatibel met...</h2>
-  <p class="compat-sub">Deze afdichtring past op de volgende percolators:</p>
-  <div class="compat-wrapper">
-    <button class="compat-arrow prev" id="prev-bialettifilterplaat" onclick="compatSlide('bialettifilterplaat',-1)" disabled>&#8249;</button>
-    <div class="compat-track-outer">
-      <div class="compat-track" id="track-bialettifilterplaat">
-        <a href="bialetti-rainbow-rood-percolator-300ml-6-kops.html" class="compat-card"><img src="https://media.s-bol.com/xLK7nE4Yr9kB/nDGZ5/1200x476.jpg" alt="Bialetti Rainbow Rood Percolator 300ml – 6 kops" loading="lazy" onerror="this.style.display='none'"><span class="cc-name">Bialetti Rainbow Rood Percolator 300ml – 6 kops</span><span class="cc-kops">6 kops</span><span class="cc-price">€39.80</span><span class="cc-btn">Details</span></a>
-<a href="bialetti-venus-6tz-koffiezetapparaat-set-nocciola-koffie-250g-classico-koffie-25.html" class="compat-card"><img src="https://media.s-bol.com/38omZGo751JA/2RwjzZj/1198x1200.jpg" alt="Bialetti Venus 6tz koffiezetapparaat set + Nocciola koffie 250g + Classico koffie 250g, Percolator, Italië, voordeelpack, kerstpakket, ideal kerst cadeau, koffieliefhebbers, uniek gift" loading="lazy" onerror="this.style.display='none'"><span class="cc-name">Bialetti Venus 6tz koffiezetapparaat set + Nocciola koffie 250g + Classico koffie 250g, Percolator, Italië, voordeelpack, kerstpakket, ideal kerst cadeau, koffieliefhebbers, uniek gift</span><span class="cc-kops">6 kops</span><span class="cc-price">€75.00</span><span class="cc-btn">Details</span></a>
-<a href="bialetti-percolator-venus-6-kops-roestvrijstaal-inductiegeschikt.html" class="compat-card"><img src="https://media.s-bol.com/xLK7nE4Yr9kB/nDGZ5/1200x476.jpg" alt="Bialetti Percolator Venus - 6 kops - Roestvrijstaal - Inductiegeschikt" loading="lazy" onerror="this.style.display='none'"><span class="cc-name">Bialetti Percolator Venus - 6 kops - Roestvrijstaal - Inductiegeschikt</span><span class="cc-kops">6 kops</span><span class="cc-price">€34.99</span><span class="cc-btn">Details</span></a>
-<a href="bialetti-moka-induction-percolator-rood-6-kops.html" class="compat-card"><img src="https://media.s-bol.com/xLK7nE4Yr9kB/nDGZ5/1200x476.jpg" alt="Bialetti Moka Induction - Percolator - Rood - 6 kops" loading="lazy" onerror="this.style.display='none'"><span class="cc-name">Bialetti Moka Induction - Percolator - Rood - 6 kops</span><span class="cc-kops">6 kops</span><span class="cc-price">€40.99</span><span class="cc-btn">Details</span></a>
-<a href="bialetti-venus-copper-percolator-6-kops-roestvrijstaal-inductiegeschikt.html" class="compat-card"><img src="https://media.s-bol.com/xLK7nE4Yr9kB/nDGZ5/1200x476.jpg" alt="Bialetti Venus Copper - Percolator - 6 kops - Roestvrijstaal - Inductiegeschikt" loading="lazy" onerror="this.style.display='none'"><span class="cc-name">Bialetti Venus Copper - Percolator - 6 kops - Roestvrijstaal - Inductiegeschikt</span><span class="cc-kops">6 kops</span><span class="cc-price">€44.99</span><span class="cc-btn">Details</span></a>
-<a href="bialetti-moka-express-percolator-6-kops-aluminium-zwart.html" class="compat-card"><img src="https://media.s-bol.com/xLK7nE4Yr9kB/nDGZ5/1200x476.jpg" alt="Bialetti Moka Express - Percolator - 6 kops - Aluminium - Zwart" loading="lazy" onerror="this.style.display='none'"><span class="cc-name">Bialetti Moka Express - Percolator - 6 kops - Aluminium - Zwart</span><span class="cc-kops">6 kops</span><span class="cc-price">€33.95</span><span class="cc-btn">Details</span></a>
-<a href="bialetti-moka-express-italia-6-kops-bialetti-koffiepakket-3x250gr.html" class="compat-card"><img src="https://media.s-bol.com/7BM106wX8ZPr/YEQ7BAM/978x1200.jpg" alt="Bialetti Moka Express Italia 6 kops + Bialetti koffiepakket 3x250gr" loading="lazy" onerror="this.style.display='none'"><span class="cc-name">Bialetti Moka Express Italia 6 kops + Bialetti koffiepakket 3x250gr</span><span class="cc-kops">6 kops</span><span class="cc-price">€71.45</span><span class="cc-btn">Details</span></a>
-<a href="bialetti-new-venus-6tz-percolator.html" class="compat-card"><img src="https://media.s-bol.com/7BM106wX8ZPr/YEQ7BAM/978x1200.jpg" alt="Bialetti NEW VENUS 6TZ - Percolator" loading="lazy" onerror="this.style.display='none'"><span class="cc-name">Bialetti NEW VENUS 6TZ - Percolator</span><span class="cc-kops">6 kops</span><span class="cc-price">€47.52</span><span class="cc-btn">Details</span></a>
-<a href="bialetti-moka-express-percolator-6-kops-aluminium.html" class="compat-card"><img src="../Images/placeholder-product.jpg" alt="Bialetti Moka Express Percolator 6 Kops Aluminium" loading="lazy" onerror="this.style.display='none'"><span class="cc-name">Bialetti Moka Express Percolator 6 Kops Aluminium</span><span class="cc-kops">6 kops</span><span class="cc-price">€28.99</span><span class="cc-btn">Details</span></a>
-<a href="bialetti-venus-percolator-rvs-6-kops-bialetti-koffie-proefpakket-3-x-250gr.html" class="compat-card"><img src="https://media.s-bol.com/7BM106wX8ZPr/YEQ7BAM/978x1200.jpg" alt="Bialetti Venus Percolator RVS 6 kops + Bialetti koffie proefpakket 3 x 250gr" loading="lazy" onerror="this.style.display='none'"><span class="cc-name">Bialetti Venus Percolator RVS 6 kops + Bialetti koffie proefpakket 3 x 250gr</span><span class="cc-kops">6 kops</span><span class="cc-price">€78.05</span><span class="cc-btn">Details</span></a>
-      </div>
-    </div>
-    <button class="compat-arrow next" id="next-bialettifilterplaat" onclick="compatSlide('bialettifilterplaat',1)">&#8250;</button>
-  </div>
-</section>
-<script>
-(function(){
-  var pos_bialettifilterplaat=0;
-  window.compatSlide=window.compatSlide||function(id,dir){
-    var track=document.getElementById("track-"+id);
-    var outer=track.parentElement;
-    var card=track.querySelector(".compat-card");
-    var cardW=card.offsetWidth+16;
-    var maxPos=track.scrollWidth-outer.offsetWidth;
-    if(id==="bialettifilterplaat"){ pos_bialettifilterplaat=Math.max(0,Math.min(pos_bialettifilterplaat+dir*cardW*2,maxPos)); }
-    track.style.transform="translateX(-"+pos_bialettifilterplaat+"px)";
-    document.getElementById("prev-"+id).disabled=pos_bialettifilterplaat<=0;
-    document.getElementById("next-"+id).disabled=pos_bialettifilterplaat>=maxPos;
-  };
-})();
-</script>
 </main>
 
     <footer class="footer">
@@ -315,6 +290,21 @@ dropdownToggles.forEach(toggle => {
         }
     });
 });
+</script>
+<script>
+function compatSlide(id,dir){
+  var track=document.getElementById('track-'+id);
+  var outer=track.parentElement;
+  var card=track.querySelector('.compat-card');
+  var cardW=card.offsetWidth+20;
+  var maxPos=track.scrollWidth-outer.offsetWidth;
+  var cur=parseFloat(track.getAttribute('data-pos')||'0');
+  cur=Math.max(0,Math.min(cur+dir*cardW*2,maxPos));
+  track.setAttribute('data-pos',cur);
+  track.style.transform='translateX(-'+cur+'px)';
+  document.getElementById('prev-'+id).disabled=cur<=0;
+  document.getElementById('next-'+id).disabled=cur>=maxPos;
+}
 </script>
 </body>
 </html>
