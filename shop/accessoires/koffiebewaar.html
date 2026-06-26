@@ -194,7 +194,7 @@ function toggleLeesMeer(id, link) {
             if (p.materiaal) badges.push(p.materiaal);
             const badgeHTML = badges.map(b => `<span style="font-size:0.72rem;color:var(--text-light);border:1px solid var(--border);padding:0.2rem 0.5rem;border-radius:0.5rem;">${b}</span>`).join('');
             const price = p.price ? `€${p.price.toFixed(2)}` : '';
-            const rating = p.rating ? `{p.rating}/5` : '';
+            const rating = p.rating ? `${p.rating}/5` : '';
             const ratingHTML = rating ? `<span style="font-size:0.78rem;color:var(--text-light);">${rating}</span>` : '';
             return `<div style="border:1px solid var(--border);overflow:hidden;background:white;transition:border-color 0.2s;border-radius:0.5rem;display:flex;flex-direction:column;height:100%;" onmouseover="this.style.borderColor='var(--coffee)'" onmouseout="this.style.borderColor='var(--border)'">
                 <div style="background:#fafafa;padding:1rem;text-align:center;"><img src="${p.image || '../Images/placeholder-product.jpg'}" alt="${p.name}" loading="lazy" style="height:160px;width:100%;object-fit:contain;" onerror="this.src='../Images/placeholder-product.jpg'"></div>
