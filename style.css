@@ -3127,10 +3127,12 @@ body.review-page {
   min-width: 0;
 }
 
-.review-main .section-sm .container {
-  max-width: 100%;
-  padding-left: 0;
-  padding-right: 0;
+.review-main .section-sm .container,
+body.blog-page .section-sm .container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-left: var(--sp-4);
+  padding-right: var(--sp-4);
 }
 
 .review-page .review-main .section-sm {
