@@ -244,15 +244,15 @@ for page in PAGES_TO_PROCESS:
         amazon_search=specs['amazon_search']
     )
     
-    # Trouver l'endroit où insérer (avant le footer)
-    footer_index = content.find('<footer>')
+    # Trouver l'endroit où insérer (avant la fermeture de </section>)
+    section_close_index = content.rfind('</section>')
     
-    if footer_index != -1:
-        new_content = content[:footer_index] + specs_box + '\n\n' + content[footer_index:]
+    if section_close_index != -1:
+        new_content = content[:section_close_index] + specs_box + '\n\n' + content[section_close_index:]
         with open(page, 'w', encoding='utf-8') as f:
             f.write(new_content)
         print(f"Added specs box to {page}")
     else:
-        print(f"Could not find <footer> in {page}")
+        print(f"Could not find </section> in {page}")
 
 print("Done!")
