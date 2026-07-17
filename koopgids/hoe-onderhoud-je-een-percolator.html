@@ -12,6 +12,69 @@
 <link href="../style.css" rel="stylesheet"/>
 <link href="https://italiaanse-percolator.nl/koopgids/hoe-onderhoud-je-een-percolator.html" rel="canonical"/>
 <link href="https://italiaanse-percolator.nl/koopgids/hoe-onderhoud-je-een-percolator.html" hreflang="nl-NL" rel="alternate"/>
+<style>
+/* ── Guide 2-column layout ─────────────────────────────────────────── */
+.guide-badge{display:inline-block;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--coffee);background:#fdf3ee;border:1px solid #f0d6c8;border-radius:2rem;padding:.18rem .65rem;margin-bottom:.85rem;}
+.guide-breadcrumb{font-size:.77rem;color:var(--text-light);margin-bottom:.85rem;}
+.guide-breadcrumb a{color:var(--text-light);text-decoration:none;}
+.guide-breadcrumb a:hover{color:var(--coffee);}
+.guide-breadcrumb span{margin:0 .3rem;}
+.guide-meta-row{display:flex;align-items:center;gap:.9rem;flex-wrap:wrap;margin:.9rem 0 1.4rem;}
+.guide-author-avatar{width:34px;height:34px;border-radius:50%;background:#b85c38;color:white;font-size:.82rem;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.guide-author-name{font-size:.82rem;font-weight:600;color:var(--text);line-height:1.2;}
+.guide-author-role{font-size:.72rem;color:var(--text-light);}
+.guide-meta-sep{width:1px;height:22px;background:var(--border);flex-shrink:0;}
+.guide-meta-item{font-size:.77rem;color:var(--text-dim);}
+.guide-meta-item strong{color:var(--text);font-weight:600;}
+.guide-layout-wrap{max-width:1060px!important;}
+.guide-layout{display:grid;grid-template-columns:1fr 278px;gap:3rem;align-items:start;padding:var(--sp-10) 0 var(--sp-16);}
+.guide-main-col{min-width:0;}
+.guide-sidebar-col{min-width:0;}
+.guide-sidebar-sticky{position:sticky;top:5.5rem;}
+.guide-sidebar-card{background:#fafafa;border:1px solid var(--border);border-radius:.65rem;padding:1.1rem 1.25rem;margin-bottom:1.1rem;}
+.guide-sidebar-label{font-size:.64rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--text-light);margin:0 0 .7rem;display:block;}
+.guide-toc-list{list-style:none;padding:0;margin:0;counter-reset:toc-c;}
+.guide-toc-list li{counter-increment:toc-c;margin-bottom:.22rem;}
+.guide-toc-list a{display:flex;align-items:baseline;gap:.4rem;font-size:.79rem;color:var(--text-dim);text-decoration:none;line-height:1.4;padding:.12rem 0;}
+.guide-toc-list a::before{content:counter(toc-c);font-size:.63rem;font-weight:700;color:#ccc;min-width:.85rem;flex-shrink:0;}
+.guide-toc-list a:hover,.guide-toc-list a.toc-active{color:var(--coffee);}
+.guide-toc-list a.toc-active::before{color:var(--coffee);}
+.guide-pick{padding:.5rem 0;border-bottom:1px solid var(--border);}
+.guide-pick:last-child{border-bottom:none;padding-bottom:0;}
+.guide-pick-lbl{font-size:.63rem;text-transform:uppercase;letter-spacing:.06em;color:var(--text-light);margin-bottom:.1rem;}
+.guide-pick-name{font-size:.82rem;font-weight:600;color:var(--text);}
+.guide-pick-detail{font-size:.77rem;color:var(--text-dim);}
+.guide-pick-link{font-size:.77rem;color:var(--coffee);text-decoration:none;font-weight:600;}
+.guide-pick-link:hover{text-decoration:underline;}
+.guide-progress{position:fixed;top:0;left:0;height:2px;background:var(--coffee);z-index:9999;width:0%;transition:width .1s linear;pointer-events:none;}
+/* Spacing overrides */
+.guide-main-col.blog-article{padding:0;}
+.guide-main-col .blog-article section,.guide-main-col section{margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--border);}
+.guide-main-col section:last-of-type{border-bottom:none;margin-bottom:0;}
+.guide-main-col .blog-article h2,.guide-main-col h2{font-family:var(--font-serif);font-size:clamp(1.2rem,2vw,1.5rem);font-weight:400;border-bottom:none;padding-bottom:0;margin-bottom:.75rem;}
+.guide-main-col .blog-article h3,.guide-main-col h3{margin-top:1.1rem;margin-bottom:.35rem;font-size:.97rem;}
+.guide-main-col .blog-article h4,.guide-main-col h4{margin-top:.85rem;margin-bottom:.25rem;}
+.guide-main-col .blog-article p,.guide-main-col p{margin-bottom:.65rem;font-size:.92rem;line-height:1.7;}
+.guide-main-col .blog-article ul,.guide-main-col .blog-article ol{margin-bottom:.65rem;}
+.guide-main-col .blog-article li{margin-bottom:.2rem;font-size:.92rem;}
+.guide-main-col .blog-compare{gap:1.25rem;margin:1rem 0;}
+.guide-main-col .blog-callout{margin:1rem 0;}
+.guide-main-col .blog-scenarios{gap:1rem;margin:1rem 0;}
+.guide-main-col table th,.guide-main-col .blog-article th{background:#f5f0ea;color:var(--text);border-bottom:2px solid var(--border);}
+.guide-main-col table td,.guide-main-col .blog-article td{font-size:.87rem;}
+.guide-main-col table,.guide-main-col .blog-article table{margin:.75rem 0;}
+@media(max-width:900px){
+  .guide-layout-wrap{max-width:740px!important;}
+  .guide-layout{grid-template-columns:1fr;gap:0;}
+  .guide-sidebar-col{order:-1;margin-bottom:1.5rem;}
+  .guide-sidebar-sticky{position:static;}
+  .guide-toc-list{display:flex;flex-wrap:wrap;gap:.3rem;}
+  .guide-toc-list li{margin:0;}
+  .guide-toc-list a{font-size:.74rem;background:#f0ebe5;padding:.2rem .55rem;border-radius:2rem;}
+  .guide-toc-list a::before{display:none;}
+  .guide-meta-sep{display:none;}
+}
+</style>
 </head>
 <body class="blog-page">
 <nav class="navbar">
@@ -49,41 +112,25 @@
 </div>
 </nav>
 <div class="mobile-menu-overlay"></div>
-<div class="blog-container" style="padding-top:var(--sp-4);padding-bottom:var(--sp-2);">
-<div>
-<a href="../index.html">Home</a>
-<span>›</span>
-<a href="../koopgids/index.html">Koopgids</a>
-<span>›</span>
-<span>Hoe onderhoud je een percolator?</span>
-</div>
-</div>
 <header class="blog-hero">
 <div class="blog-container">
-<p class="blog-meta">Onderhoud · Leestijd: 15 minuten · Bijgewerkt: mei 2025</p>
+<nav class="guide-breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Home</a><span>/</span><a href="../koopgids/index.html">Koopgids</a><span>/</span><span>Hoe onderhoud je een percolator?</span></nav>
+<span class="guide-badge">Onderhoud</span>
 <h1>Hoe onderhoud je een percolator?</h1>
+<div class="guide-meta-row">
+<div class="guide-author-avatar" aria-hidden="true">L</div>
+<div><div class="guide-author-name">Lisa De Boer</div><div class="guide-author-role">Koffiejournalist</div></div>
+<span class="guide-meta-sep"></span>
+<span class="guide-meta-item"><strong>15 min</strong> leestijd</span><span class="guide-meta-sep"></span><span class="guide-meta-item">Update: mei 2025</span>
+</div>
 <p class="blog-intro-text">Een Italiaanse percolator kan 10 tot 15 jaar meegaan — maar alleen met de juiste routine. Complete gids van dagelijkse reiniging tot ontkalken, pakking vervangen en veelvoorkomende problemen oplossen.</p>
 </div>
 </header>
+<div class="guide-progress" id="guide-progress"></div>
 <main>
-<div class="blog-container">
-<article class="blog-article">
-<nav class="blog-toc">
-<p class="blog-toc-label">Inhoudsopgave</p>
-<ol>
-<li><a href="#belangrijkste-regel">BELANGRIJKSTE REGEL</a></li>
-<li><a href="#eerste-gebruik-nieuwe-percolator-klaarma">Eerste gebruik: nieuwe percolator klaarmaken</a></li>
-<li><a href="#dagelijks-onderhoud-na-elk-gebruik">Dagelijks onderhoud (na elk gebruik)</a></li>
-<li><a href="#wekelijks-diep-reinigen-10-15-minuten">Wekelijks diep reinigen (10-15 minuten)</a></li>
-<li><a href="#maandelijks-ontkalken-20-30-minuten">Maandelijks ontkalken (20-30 minuten)</a></li>
-<li><a href="#onderhoud-per-materiaal-aluminium-vs-rvs">Onderhoud per materiaal - Aluminium vs RVS</a></li>
-<li><a href="#veelvoorkomende-problemen-oplossen">Veelvoorkomende problemen oplossen</a></li>
-<li><a href="#veelgestelde-vragen-faq">Veelgestelde vragen (FAQ)</a></li>
-<li><a href="#opslag-en-langdurig-niet-gebruik">Opslag en langdurig niet-gebruik</a></li>
-<li><a href="#complete-onderhouds-checklist">Complete onderhouds checklist</a></li>
-<li><a href="#over-de-auteur">Over de auteur</a></li>
-</ol>
-</nav>
+<div class="blog-container guide-layout-wrap">
+<div class="guide-layout">
+<article class="blog-article guide-main-col" id="guide-article">
 <section id="belangrijkste-regel">
 <h2>BELANGRIJKSTE REGEL</h2>
 <p class="mb-4"><strong>Gebruik NOOIT zeep of afwasmiddel in je percolator</strong></p>
@@ -815,6 +862,60 @@
 </div>
 </div>
 </article>
+
+<aside class="guide-sidebar-col">
+<div class="guide-sidebar-sticky">
+
+<div class="guide-sidebar-card">
+<span class="guide-sidebar-label">Inhoudsopgave</span>
+<nav aria-label="Inhoudsopgave">
+<ol class="guide-toc-list">
+<li><a href="#belangrijkste-regel">BELANGRIJKSTE REGEL</a></li>
+<li><a href="#eerste-gebruik-nieuwe-percolator-klaarma">Eerste gebruik: nieuwe percolator klaarmaken</a></li>
+<li><a href="#dagelijks-onderhoud-na-elk-gebruik">Dagelijks onderhoud (na elk gebruik)</a></li>
+<li><a href="#wekelijks-diep-reinigen-10-15-minuten">Wekelijks diep reinigen (10-15 minuten)</a></li>
+<li><a href="#maandelijks-ontkalken-20-30-minuten">Maandelijks ontkalken (20-30 minuten)</a></li>
+<li><a href="#onderhoud-per-materiaal-aluminium-vs-rvs">Onderhoud per materiaal - Aluminium vs RVS</a></li>
+<li><a href="#veelvoorkomende-problemen-oplossen">Veelvoorkomende problemen oplossen</a></li>
+<li><a href="#veelgestelde-vragen-faq">Veelgestelde vragen (FAQ)</a></li>
+<li><a href="#opslag-en-langdurig-niet-gebruik">Opslag en langdurig niet-gebruik</a></li>
+<li><a href="#complete-onderhouds-checklist">Complete onderhouds checklist</a></li>
+<li><a href="#over-de-auteur">Over de auteur</a></li>
+</ol>
+</nav>
+</div>
+
+<div class="guide-sidebar-card">
+<span class="guide-sidebar-label">Onze top keuzes</span>
+<div class="guide-pick">
+<div class="guide-pick-lbl">Beste overall</div>
+<div class="guide-pick-name">Bialetti Fiammetta</div>
+<div class="guide-pick-detail">&euro;25&ndash;45 &middot; Aluminium &middot; 9.2/10</div>
+<a href="../bialetti-fiammetta-review.html" class="guide-pick-link">Bekijk review &rarr;</a>
+</div>
+<div class="guide-pick">
+<div class="guide-pick-lbl">Beste voor inductie</div>
+<div class="guide-pick-name">Bialetti Venus</div>
+<div class="guide-pick-detail">&euro;40&ndash;65 &middot; RVS &middot; 8.8/10</div>
+<a href="../bialetti-venus-review.html" class="guide-pick-link">Bekijk review &rarr;</a>
+</div>
+<div class="guide-pick">
+<div class="guide-pick-lbl">Beste design</div>
+<div class="guide-pick-name">Alessi Pulcina</div>
+<div class="guide-pick-detail">&euro;80&ndash;120 &middot; Aluminium &middot; 8.5/10</div>
+<a href="../alessi-pulcina-review.html" class="guide-pick-link">Bekijk review &rarr;</a>
+</div>
+</div>
+<div class="guide-sidebar-card" style="background:var(--coffee);border-color:var(--coffee);">
+<span class="guide-sidebar-label" style="color:rgba(255,255,255,0.6);">Vergelijk alle modellen</span>
+<p style="font-size:.82rem;color:white;margin:0 0 .8rem;line-height:1.55;">Bekijk onze complete vergelijking van alle percolators op prijs, materiaal en score.</p>
+<a href="../beste-italiaanse-percolators.html" style="display:block;text-align:center;background:white;color:var(--coffee);border-radius:.4rem;padding:.5rem;font-size:.82rem;font-weight:700;text-decoration:none;">Bekijk top 10 &rarr;</a>
+</div>
+
+</div>
+</aside>
+
+</div>
 </div>
 </main>
 <footer class="footer">
