@@ -1,157 +1,9 @@
-<!DOCTYPE html>
+from pathlib import Path
 
-<html lang="nl">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Percolator Vergelijken: Merken, Modellen &amp; Materialen</title>
-<meta content="Directe vergelijkingen van 50+ percolators: Bialetti vs Alessi, aluminium vs RVS, modellen &amp; prijzen. Objectief getest, eerlijk vergeleken. Vind jouw match." name="description"/>
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Outfit:wght@400;600;700&amp;family=DM+Serif+Display:ital,wght@0,400&amp;display=swap" rel="stylesheet"/>
-<!-- Styles -->
-<link href="../style.css" rel="stylesheet"/>
-<link href="https://italiaanse-percolator.nl/vergelijking/index.html" rel="canonical"/>
-<link href="https://italiaanse-percolator.nl/vergelijking/index.html" hreflang="nl-NL" rel="alternate"/>
-<!-- Favicon -->
-<link href="../favicon.svg" rel="icon" type="image/svg+xml"/>
-<link href="../favicon-simple.svg" rel="icon" sizes="16x16" type="image/svg+xml"/>
-<link href="../favicon.svg" rel="apple-touch-icon" sizes="180x180"/>
-<meta content="var(--coffee)" name="theme-color"/>
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": ["WebPage", "CollectionPage"],
-        "@id": "https://italiaanse-percolator.nl/vergelijking/index.html#webpage",
-        "url": "https://italiaanse-percolator.nl/vergelijking/index.html",
-        "name": "Percolator Vergelijken: Merken, Modellen & Materialen",
-        "inLanguage": "nl-NL",
-        "description": "Directe vergelijkingen van percolator merken, materialen en modellen. Bialetti vs Alessi, aluminium vs RVS, inductie vs gas en meer.",
-        "isPartOf": {
-          "@id": "https://italiaanse-percolator.nl/#website"
-        }
-      },
-      {
-        "@type": "ItemList",
-        "@id": "https://italiaanse-percolator.nl/vergelijking/index.html#comparisons",
-        "url": "https://italiaanse-percolator.nl/vergelijking/index.html",
-        "name": "Percolator vergelijkingen",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Bialetti vs Alessi",
-            "url": "https://italiaanse-percolator.nl/vergelijking/bialetti-vs-alessi.html"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Bialetti vs Grosche",
-            "url": "https://italiaanse-percolator.nl/vergelijking/index.html#bialetti-vs-grosche"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Aluminium vs RVS percolator",
-            "url": "https://italiaanse-percolator.nl/koopgids/hoe-kies-je-de-juiste-percolator.html#materiaal"
-          },
-          {
-            "@type": "ListItem",
-            "position": 4,
-            "name": "Inductie vs gas percolator",
-            "url": "https://italiaanse-percolator.nl/koopgids/hoe-kies-je-de-juiste-percolator.html#kookplaat"
-          },
-          {
-            "@type": "ListItem",
-            "position": 5,
-            "name": "3 vs 6 kopjes percolator",
-            "url": "https://italiaanse-percolator.nl/koopgids/hoe-kies-je-de-juiste-percolator.html#grootte"
-          },
-          {
-            "@type": "ListItem",
-            "position": 6,
-            "name": "Percolator vs espressoapparaat",
-            "url": "https://italiaanse-percolator.nl/koopgids/percolator-vs-espressoapparaat.html"
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://italiaanse-percolator.nl/vergelijking/index.html#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Wat is het belangrijkste verschil tussen Bialetti en Alessi?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Bialetti focust op traditie, gebruiksgemak en betaalbaarheid; Alessi op design en premium afwerking. In blinde smaaktests liggen de scores dicht bij elkaar, maar Bialetti wint meestal op prijs-kwaliteit, terwijl Alessi uitblinkt in uitstraling en bouwkwaliteit."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Maakt een dure percolator echt betere koffie dan een goedkope?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Niet per se. Een betaalbare Bialetti Moka Express kan vrijwel dezelfde koffiesmaak geven als een veel duurdere designpercolator. Duurdere modellen scoren vooral beter op afwerking, design en soms duurzaamheid. De grootste smaakverschillen komen van koffiebonen, maling en gebruik, niet van de prijs van de percolator."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Hoe kies ik tussen aluminium en RVS percolators?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Heb je inductie, dan is RVS verplicht. Op gas of elektrisch is aluminium vaak de beste prijs-kwaliteitkeuze: lichter, goedkoper en klassiek van uitstraling. RVS wint als je minder onderhoud wilt, een moderne look zoekt of maximale flexibiliteit tussen kookplaten wilt. Qua smaak is het verschil minimaal."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Welke maat percolator is het meest veelzijdig?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "In de praktijk is een 6-kops percolator het meest veelzijdig: groot genoeg voor een gezin of bezoek, maar nog bruikbaar voor twee personen als je hem niet volledig vult. 3-kops is ideaal voor solo of koppels, 9+ kopjes vooral voor grote gezinnen of kantoor. Veel mensen eindigen met twee maten voor maximale flexibiliteit."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Welke vergelijking moet ik eerst lezen als ik helemaal vastzit?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Begin met de vergelijking die jouw grootste twijfel oplost: materiaal (Aluminium vs RVS), kookplaat (Inductie vs gas), of merk (Bialetti vs Alessi). Als je nog niet weet welk type of budget bij je past, start dan met de algemene koopgids en kom daarna terug naar de specifieke vergelijkingen."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Werkt een RVS percolator ook op gas?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Ja. Een RVS percolator werkt op alle kookplaten: inductie, gas, elektrisch en keramisch, zolang de bodem vlak is. Op gas heb je geen voordeel ten opzichte van aluminium, maar je behoudt de flexibiliteit om later naar inductie over te stappen zonder een nieuwe percolator te hoeven kopen."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Welke percolator maakt de beste koffie?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Het smaakverschil tussen goede percolators is kleiner dan veel mensen denken. Een degelijk basismodel van rond de 25-40 euro kan bijna dezelfde koffie maken als een veel duurder designmodel. Uitzondering is de Bialetti Brikka, die dankzij de speciale klep een vollere, meer espresso-achtige koffie met crema maakt." 
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Kan ik jullie om persoonlijk vergelijkingsadvies vragen?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Ja. Als je twijfelt tussen twee of drie concrete modellen kun je ons een bericht sturen met jouw situatie (kookplaat, budget, huishouden, ervaring en prioriteiten). Op basis van onze praktijktests geven we een eerlijke aanbeveling met voor- en nadelen per optie en een duidelijke voorkeur." 
-            }
-          }
-        ]
-      }
-    ]
-  }
-  </script>
-<style>
+f = Path('vergelijking/index.html')
+html = f.read_text(encoding='utf-8')
+
+CSS = """<style>
 .v-hero{background:#f5f0ea;padding:3rem 0 2.5rem;border-bottom:1px solid var(--border);}
 .v-hero h1{font-family:var(--font-serif);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:400;margin:0 0 .75rem;}
 .v-lead{color:var(--text-dim);font-size:1rem;max-width:640px;margin:0;}
@@ -223,7 +75,7 @@
 .v-faq summary{font-size:.95rem;font-weight:600;color:var(--text);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem;}
 .v-faq summary::-webkit-details-marker{display:none;}
 .v-faq summary::after{content:'+';font-size:1.1rem;color:var(--coffee);flex-shrink:0;}
-.v-faq details[open] summary::after{content:'2';}
+.v-faq details[open] summary::after{content:'\2212';}
 .v-faq details p{font-size:.88rem;color:var(--text-dim);line-height:1.7;margin:.7rem 0 .2rem;}
 .v-cta-section{background:#f5f0ea;border-top:1px solid var(--border);padding:3rem 0;text-align:center;}
 .v-cta-section h2{font-family:var(--font-serif);font-size:clamp(1.3rem,2vw,1.6rem);font-weight:400;margin:0 0 .5rem;}
@@ -236,44 +88,9 @@
   .v-comparison-block{padding:1.25rem;}
 }
 </style>
-</head>
-<body>
-<!-- Navigation -->
-<nav class="navbar">
-<div class="container">
-<div class="nav-container">
-<a class="nav-brand" href="../index.html">Italiaanse Percolator</a>
-<button class="mobile-menu-toggle" aria-label="Menu">
-<span></span>
-<span></span>
-<span></span>
-</button>
-<ul class="nav-menu">
-<li><a class="nav-link" href="../index.html">Home</a></li>
-<li class="nav-item dropdown">
-<a class="nav-link dropdown-toggle active" href="../beste-italiaanse-percolators.html">Gidsen</a>
-<ul class="dropdown-menu">
-<li><a class="dropdown-link" href="../beste-italiaanse-percolators.html">Top 10</a></li>
-<li><a class="dropdown-link" href="../koopgids/index.html">Koopgids</a></li>
-<li><a class="dropdown-link" href="../alle-reviews.html">Reviews</a></li>
-<li><a class="dropdown-link" href="../vergelijking/index.html">Vergelijking</a></li>
-</ul>
-</li>
-<li><a class="nav-link" href="../marques/index.html">Merken</a></li>
-<li class="nav-item dropdown">
-<a class="nav-link dropdown-toggle" href="../shop.html">Shop</a>
-<ul class="dropdown-menu">
-<li><a class="dropdown-link" href="../shop.html">Alle modellen</a></li>
-<li><a class="dropdown-link" href="../categories/percolators.html">Percolators</a></li>
-<li><a class="dropdown-link" href="../categories/elektrische-percolators.html">Elektrisch</a></li>
-<li><a class="dropdown-link" href="../categories/accessoires.html">Accessoires</a></li>
-</ul>
-</li>
-</ul>
-</div>
-</div>
-</nav>
-<div class="mobile-menu-overlay"></div>
+"""
+
+NEW_BODY = """\
 <section class="v-hero">
 <div class="container">
 <nav class="v-breadcrumb"><a href="../index.html">Home</a><span>/</span>Percolators Vergelijken</nav>
@@ -551,81 +368,21 @@
 </div>
 </div>
 </section>
+"""
 
-<footer class="footer">
-<div class="container">
-<div style="display: grid; grid-template-columns: 2fr repeat(3, 1fr); gap: 3rem; ">
-<div>
-<p style="font-family: var(--font-serif); font-size: 1.2rem; color: white; margin-bottom: 1rem;">Italiaanse Percolator</p>
-<p style="color: #999; font-size: 0.85rem; line-height: 1.7; margin-bottom: 0;">Onafhankelijke gids voor Italiaanse moka-percolators. Wij testen, vergelijken en selecteren de beste modellen sinds 2017.</p>
-</div>
-<div>
-<h4 style="color: white; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">Gidsen</h4>
-<ul style="list-style: none; padding: 0;">
-<li style="margin-bottom: 0.6rem;"><a href="../beste-italiaanse-percolators.html" style="color: #aaa; font-size: 0.85rem; text-decoration: none;">Top 10 percolators</a></li>
-<li style="margin-bottom: 0.6rem;"><a href="../koopgids/index.html" style="color: #aaa; font-size: 0.85rem; text-decoration: none;">Koopgids</a></li>
-<li style="margin-bottom: 0.6rem;"><a href="../koopgids/hoe-kies-je-de-juiste-percolator.html" style="color: #aaa; font-size: 0.85rem; text-decoration: none;">Keuzehulp</a></li>
-</ul>
-</div>
-<div>
-<h4 style="color: white; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">Merken</h4>
-<ul style="list-style: none; padding: 0;">
-<li style="margin-bottom: 0.6rem;"><a href="../marques/bialetti/" style="color: #aaa; font-size: 0.85rem; text-decoration: none;">Bialetti</a></li>
-<li style="margin-bottom: 0.6rem;"><a href="../marques/alessi/" style="color: #aaa; font-size: 0.85rem; text-decoration: none;">Alessi</a></li>
-<li style="margin-bottom: 0.6rem;"><a href="../marques/index.html" style="color: #aaa; font-size: 0.85rem; text-decoration: none;">Alle merken</a></li>
-</ul>
-</div>
-<div>
-<h4 style="color: white; font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">Info</h4>
-<ul style="list-style: none; padding: 0;">
-<li style="margin-bottom: 0.6rem;"><a href="../over-ons.html" style="color: #aaa; font-size: 0.85rem; text-decoration: none;">Over ons</a></li>
-<li style="margin-bottom: 0.6rem;"><a href="../contact.html" style="color: #aaa; font-size: 0.85rem; text-decoration: none;">Contact</a></li>
-<li style="margin-bottom: 0.6rem;"><a href="../privacy.html" style="color: #aaa; font-size: 0.85rem; text-decoration: none;">Privacy</a></li>
-</ul>
-</div>
-</div>
-<div style="border-top: 1px solid #333; padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-<p style="color: #666; font-size: 0.8rem; margin: 0;">© 2025 Italiaanse Percolator. Alle rechten voorbehouden.</p>
-<p style="color: #666; font-size: 0.8rem; margin: 0;">Deze site bevat partnerlinks. Bij aankoop ontvangen wij een commissie, zonder extra kosten voor jou.</p>
-</div>
-</div>
-</footer>
-<script>
-const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
-const navMenu = document.querySelector('.nav-menu');
+# ── Apply changes ─────────────────────────────────────────────────────────────
 
-if (mobileMenuToggle) {
-    mobileMenuToggle.addEventListener('click', () => {
-        mobileMenuToggle.classList.toggle('active');
-        navMenu.classList.toggle('active');
-        mobileMenuOverlay.classList.toggle('active');
-        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
-    });
-}
+# 1. Inject CSS before </head>
+assert '</head>' in html, 'Missing </head>'
+html = html.replace('</head>', CSS + '</head>', 1)
 
-if (mobileMenuOverlay) {
-    mobileMenuOverlay.addEventListener('click', () => {
-        mobileMenuToggle.classList.remove('active');
-        navMenu.classList.remove('active');
-        mobileMenuOverlay.classList.remove('active');
-        document.body.style.overflow = '';
-    });
-}
+# 2. Replace body content between overlay div and footer
+ANCHOR_START = '<div class="mobile-menu-overlay"></div>'
+ANCHOR_END = '<footer class="footer">'
+idx_start = html.find(ANCHOR_START)
+idx_end = html.find(ANCHOR_END)
+assert idx_start != -1 and idx_end != -1, 'Anchors not found'
+html = html[:idx_start + len(ANCHOR_START)] + '\n' + NEW_BODY + '\n' + html[idx_end:]
 
-// Mobile dropdown toggle
-const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-dropdownToggles.forEach(toggle => {
-    toggle.addEventListener('click', (e) => {
-        if (window.innerWidth <= 768) {
-            e.preventDefault();
-            const dropdownItem = toggle.closest('.nav-item.dropdown');
-            dropdownItem.classList.toggle('active');
-            const dropdownMenu = dropdownItem.querySelector('.dropdown-menu');
-            dropdownMenu.classList.toggle('active');
-        }
-    });
-});
-</script>
-</body>
-</html>
+f.write_text(html, encoding='utf-8')
+print('OK: vergelijking/index.html rewritten')
