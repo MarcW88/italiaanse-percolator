@@ -88,6 +88,37 @@
   .guide-toc-list a::before{display:none;}
   .guide-meta-sep{display:none;}
 }
+/* ── Spacing overrides within guide layout ─────────────────────────── */
+.guide-main-col.blog-article{padding:0;}
+.guide-main-col .blog-article section,
+.guide-main-col section{margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid var(--border);}
+.guide-main-col section:last-of-type{border-bottom:none;margin-bottom:0;}
+.guide-main-col .blog-article h2,
+.guide-main-col h2{font-family:var(--font-serif);font-size:clamp(1.2rem,2vw,1.5rem);font-weight:400;border-bottom:none;padding-bottom:0;margin-bottom:.75rem;}
+.guide-main-col .blog-article h3,
+.guide-main-col h3{margin-top:1.1rem;margin-bottom:.35rem;font-size:.97rem;}
+.guide-main-col .blog-article h4,
+.guide-main-col h4{margin-top:.85rem;margin-bottom:.25rem;}
+.guide-main-col .blog-article p,
+.guide-main-col p{margin-bottom:.65rem;font-size:.92rem;line-height:1.7;}
+.guide-main-col .blog-article ul,
+.guide-main-col .blog-article ol{margin-bottom:.65rem;}
+.guide-main-col .blog-article li{margin-bottom:.2rem;font-size:.92rem;}
+.guide-main-col .blog-compare{gap:1.25rem;margin:1rem 0;}
+.guide-main-col .blog-callout{margin:1rem 0;}
+.guide-main-col .blog-scenarios{gap:1rem;margin:1rem 0;}
+/* Table overrides: readable headers */
+.guide-main-col table th,.guide-main-col .blog-article th{background:#f5f0ea;color:var(--text);border-bottom:2px solid var(--border);}
+.guide-main-col table td,.guide-main-col .blog-article td{font-size:.87rem;}
+.guide-main-col table,.guide-main-col .blog-article table{margin:.75rem 0;}
+/* Compat table */
+.compat-table{width:100%;border-collapse:collapse;font-size:.87rem;margin:.75rem 0;}
+.compat-table th{background:#f5f0ea;color:var(--text);padding:.55rem .85rem;text-align:left;font-weight:600;border-bottom:2px solid var(--border);}
+.compat-table td{padding:.55rem .85rem;border-bottom:1px solid var(--border);color:var(--text-dim);}
+.compat-table tr:last-child td{border-bottom:none;}
+.compat-table tr:hover td{background:#fafafa;}
+.compat-ok{color:#2e7d32;font-weight:600;}
+.compat-no{color:#c62828;font-weight:600;}
 </style>
 </head>
 <body class="blog-page">
@@ -236,30 +267,20 @@
 <h2>Stap 3: Kookplaat compatibiliteit — Inductie of niet?</h2>
 <p><strong>70% van de percolator problemen</strong> ontstaat door incompatibiliteit met de kookplaat. Controleer dit altijd voordat je koopt.</p>
 <div class="blog-callout">
-<p><strong>Veelgemaakte fout:</strong> “Ik kocht een mooie aluminium percolator, maar hij werkt niet op mijn inductiekookplaat!” — veelgehoorde klacht in onze inbox.</p>
+<p><strong>Veelgemaakte fout:</strong> „Ik kocht een mooie aluminium percolator, maar hij werkt niet op mijn inductiekookplaat!” — veelgehoorde klacht in onze inbox.</p>
 </div>
-<div class="blog-compare">
-<div>
-<h3>Inductiekookplaten</h3>
-<p>Inductie werkt alleen met magnetische materialen. Test met een magneet op de bodem van de percolator.</p>
-<h4 style="color:#4caf50">Werkt wel:</h4>
-<ul><li>Roestvrij staal (RVS)</li><li>Gietijzer</li><li>Geëmailleerd staal</li></ul>
-<h4 style="color:#e53935">Werkt niet:</h4>
-<ul><li>Aluminium</li><li>Koper</li><li>Glas</li></ul>
-</div>
-<div>
-<h3>Andere kookplaten</h3>
-<p>Gas, elektrisch en keramisch werken met alle materialen.</p>
-<h4>Gas</h4>
-<p>Ideaal voor percolators. Snelle temperatuurcontrole en traditioneel.</p>
-<h4>Elektrisch</h4>
-<p>Werkt goed, maar langzamer dan gas. Let op vlakke bodem.</p>
-<h4>Keramisch</h4>
-<p>Vergelijkbaar met elektrisch. Zorg voor schone bodem om krassen te vermijden.</p>
-</div>
-</div>
-
-<p style="font-size:var(--fs-sm);color:var(--text-dim);margin-top:calc(-1 * var(--sp-4))">Test met een magneet op de bodem: plakt het? Dan werkt het op inductie!</p>
+<table class="compat-table">
+<thead>
+<tr><th>Kookplaat</th><th>Aluminium</th><th>RVS</th><th>Opmerking</th></tr>
+</thead>
+<tbody>
+<tr><td>Gas</td><td class="compat-ok">Ja</td><td class="compat-ok">Ja</td><td>Alle percolators werken. Aluminium warmt sneller op.</td></tr>
+<tr><td>Elektrisch</td><td class="compat-ok">Ja</td><td class="compat-ok">Ja</td><td>Let op vlakke bodem voor goed contact.</td></tr>
+<tr><td>Keramisch</td><td class="compat-ok">Ja</td><td class="compat-ok">Ja</td><td>Zorg voor schone bodem om krassen te vermijden.</td></tr>
+<tr><td>Inductie</td><td class="compat-no">Nee</td><td class="compat-ok">Ja</td><td>Alleen RVS met magnetische bodem. Test met magneet.</td></tr>
+</tbody>
+</table>
+<p style="font-size:.82rem;color:var(--text-dim);">Snelle test: houd een magneet tegen de bodem. Plakt hij? Dan werkt het op inductie.</p>
 <div class="blog-callout blog-callout-neutral">
 <p><strong>Heb je inductie?</strong> Kies voor RVS modellen zoals de <a href="../bialetti-venus-review.html">Bialetti Venus</a>.<br/>
 <strong>Andere kookplaten?</strong> Aluminium modellen zoals de <a href="../bialetti-fiammetta-review.html">Bialetti Fiammetta</a> zijn perfect.</p>
