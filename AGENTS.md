@@ -91,3 +91,28 @@ For the 15 pages listed in SEO-RECOVERY-REVIEW.md, run:
 11. editorial-qa.
 
 The final commit is allowed only after the preservation contract passes.
+
+
+## Blog editorial finishing pipeline
+
+For every /koopgids/ page that is edited, run this editorial finishing sequence after factual/content changes and before technical QA:
+
+1. humanizer — broad whole-artifact pass; preserve all facts, data, links, tables, headings, prices and technical distinctions.
+2. general-writing — final house-style pass using minimum effective edit; review headings, callouts, labels, transitions and whole-page coherence, not only body paragraphs.
+3. anti-ai-slop — evidence-based final credibility/specificity review for generic, template-like or AI-smell patterns. Every finding must point to a concrete passage and include a fix.
+4. preservation / seo-drift check.
+5. seo-technical + seo-best-practices.
+6. editorial-qa final status.
+
+For /koopgids/ work, the editorial pass must explicitly detect:
+- apparent contradictions between neighboring sentences;
+- disclaimers that undermine or repeat the preceding claim;
+- stitched-together tone caused by multiple agent edits;
+- synthetic authors, invented reader stories, unsupported experience or testing;
+- arbitrary ratings, statistics or pseudo-precision;
+- repeated template structures and symmetrical section patterns;
+- promotional language that is not needed for the reader's task;
+- generic recaps and filler transitions;
+- claims that are technically true but pragmatically strange or defensive.
+
+A page cannot receive PASS until it has been read from top to bottom in rendered reading order after the final edit.
