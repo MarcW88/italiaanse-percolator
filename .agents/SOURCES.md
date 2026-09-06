@@ -32,3 +32,13 @@ The fact-check skill is an adapted, simplified site-specific version of the sepa
 ## Adaptation
 
 The files under `.agents/skills/` are not verbatim copies. They have been rewritten and narrowed specifically for italiaanse-percolator.nl, Dutch-language affiliate content, mokapots/percolators, product comparisons and SEO recovery.
+
+
+## Additional external skills
+
+- dageno-agents/internal-linking-audit — internal-linking-audit/SKILL.md
+- rampstackco/claude-skills — seo-technical/SKILL.md
+- AsyrafHussin/agent-skills — seo-best-practices/SKILL.md
+- seranking/seo-skills — seo-page/SKILL.md and seo-drift/SKILL.md
+
+These are stored as upstream skill files under .agents/skills/. Their original license/frontmatter is preserved in the copied files.
