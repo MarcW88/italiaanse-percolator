@@ -45,3 +45,49 @@ Affiliate monetisatie mag nooit de redactionele conclusie bepalen. Een pagina mo
 ## Werkwijze
 
 Bij twijfel eerst een auditrapport geven en niet meteen herschrijven. Maak bij een rewrite zo weinig mogelijk wijzigingen aan passages die al goed, specifiek en natuurlijk zijn.
+
+
+## Preservation contract
+
+This constraint overrides every content/SEO skill.
+
+Before editing an existing page, capture the BEFORE state of:
+- visible product prices and old-price/discount values;
+- affiliate CTA labels and affiliate destination URLs;
+- product images and meaningful content images;
+- product specifications, EAN/model/capacity/material fields;
+- canonical URL, robots directives and hreflang;
+- JSON-LD blocks and schema types;
+- H1 and primary page intent;
+- contextual internal links and breadcrumbs;
+- external review counts/ratings when they are explicitly sourced to a third-party platform;
+- availability/shipping information already displayed.
+
+A review is permission to improve editorial content, not permission to remove functional or commercial information.
+
+Rules:
+1. Preserve every field above by default.
+2. If fact-checking shows a field is wrong, contradictory or unverifiable, FLAG it first. Do not silently delete it.
+3. Removing or changing any preserved field requires an explicit reason in the page review log.
+4. Prices may be retained even if dynamic. If freshness is uncertain, qualify them as indicative/current-at-check rather than deleting them.
+5. Affiliate URLs and CTAs must not be replaced by placeholders such as "#" during editorial review.
+6. After editing, compare BEFORE vs AFTER. Any unexplained removal is an automatic editorial-qa FAIL.
+7. Validate JSON-LD after every mutation. A page with newly invalid schema is an automatic FAIL.
+8. Do not commit a page whose HTML was unexpectedly shortened or whose major sections disappeared.
+
+## Recovery workflow for the ranking-loss cohort
+
+For the 15 pages listed in SEO-RECOVERY-REVIEW.md, run:
+1. seo-page / content-audit diagnosis using supplied GSC evidence where available;
+2. content-refresh;
+3. search-intent;
+4. affiliate-value when relevant;
+5. fact-check;
+6. natural-writing;
+7. internal-linking-audit;
+8. seo-technical;
+9. seo-best-practices;
+10. seo-drift-style BEFORE/AFTER comparison;
+11. editorial-qa.
+
+The final commit is allowed only after the preservation contract passes.
