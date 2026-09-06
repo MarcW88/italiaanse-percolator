@@ -42,3 +42,27 @@ The files under `.agents/skills/` are not verbatim copies. They have been rewrit
 - seranking/seo-skills — seo-page/SKILL.md and seo-drift/SKILL.md
 
 These are stored as upstream skill files under .agents/skills/. Their original license/frontmatter is preserved in the copied files.
+
+
+## Editorial writing skills
+
+- msimchowitz/writing-skills
+  - general-writing/SKILL.md
+  - humanizer/SKILL.md
+  - better-usage/SKILL.md
+  - academic-voice/SKILL.md
+  - writing-cadence/SKILL.md
+  - non-autoregressive-writing-pass/SKILL.md
+  - general-writing/references/eval.md
+- ch040602/anti-ai-slop
+  - SKILL.md
+  - protocols/review_workflow.md
+  - protocols/finding_format.md
+  - protocols/output_design_review_gate.md
+  - taxonomies/task_purpose_matrix.md
+  - dimensions/writing_information.md
+  - checklists/global_ai_smell_checklist.md
+  - checklists/remediation_patterns.md
+  - templates/review_report_template.md
+
+These files are copied from upstream repositories and stored under .agents/skills/. Their upstream instructions and attribution are retained.
