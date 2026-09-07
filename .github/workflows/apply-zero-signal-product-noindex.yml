@@ -1,0 +1,30 @@
+name: Apply temporary noindex to zero-signal products
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/apply_zero_signal_product_noindex.py'
+      - '.github/workflows/apply-zero-signal-product-noindex.yml'
+permissions:
+  contents: write
+jobs:
+  noindex:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Apply noindex
+        run: python scripts/apply_zero_signal_product_noindex.py
+      - name: Commit generated HTML changes
+        run: |
+          if git diff --quiet; then
+            echo "No changes required"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add producten/*.html
+          git commit -m "Temporarily noindex 790 zero-signal product pages"
+          git push
