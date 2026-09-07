@@ -174,3 +174,54 @@ A review cannot receive PASS when:
 - affiliate URLs or prices were unintentionally removed;
 - schema claims a Review/rating that the visible methodology cannot support;
 - the final page contains stitched-agent contradictions, synthetic expertise, unsupported performance claims or generic AI-style filler.
+
+
+## Product Page Recovery Workflow
+
+Use this workflow for individual affiliate/e-commerce product pages under `/producten/`. It extends the existing recovery stack and reuses installed skills.
+
+### Pre-edit diagnosis
+1. Performance / recovery diagnostic from supplied GSC evidence.
+2. content-audit + spam-risk: KEEP / LIGHT / MEDIUM / DEEP REFRESH.
+3. search-intent: preserve exact product/model intent.
+4. Thin-affiliate / merchant-copy audit: identify copied manufacturer/merchant language and require useful original decision support.
+5. seo-ecommerce: mandatory product-data and e-commerce SEO gate. Audit visible product facts, Product/Offer markup, price, currency, availability, brand, SKU/GTIN/MPN where present, images, metadata and HTML ↔ structured-data consistency.
+6. evidence-based-reviews: apply to performance, quality, durability, recommendation, comparison or experience claims. Never imply hands-on testing without documented evidence.
+7. fact-check: verify material claims and exact variant/model facts; flag uncertainty instead of inventing or silently deleting.
+8. internal-linking-audit: connect naturally to parent category, relevant koopgids, comparison/review and genuine alternatives.
+9. Schema judgment: Product/Offer data must reflect visible, supportable information. Do not fabricate ratings/reviews.
+
+### Editorial finishing sequence
+1. humanizer
+2. general-writing
+3. anti-ai-slop
+4. preservation / seo-drift BEFORE vs AFTER
+5. seo-technical + seo-best-practices
+6. editorial-qa
+7. whole-page final read in rendered reading order
+
+### Product preservation contract
+Preserve by default:
+- exact product/model/variant name;
+- current price, old price, discount and currency;
+- affiliate CTA text and destination URL;
+- availability/shipping information;
+- images and image destinations;
+- brand, material, capacity/ml, cup count, dimensions, weight, color and compatibility;
+- SKU, GTIN, MPN or other identifiers when present;
+- Product/Offer structured-data fields that remain accurate;
+- factual pros/cons;
+- category, guide, comparison and review links.
+
+The seo-ecommerce skill is an audit/optimization gate, not permission to delete or invent product data. Any contradiction or unverifiable preserved field must be flagged and changed only for an explicit documented reason.
+
+### Automatic FAIL conditions
+A product page cannot PASS when:
+- a preserved price, affiliate URL, image, specification or identifier disappeared unintentionally;
+- visible price/currency/availability conflicts with Product/Offer markup;
+- merchant/manufacturer copy remains substantially duplicated without meaningful added value;
+- unsupported testing, performance, durability, taste or quality claims remain;
+- a rating/review is fabricated or unsupported;
+- the page is mostly generic template text that could apply unchanged to another model;
+- schema contains unsupported commercial data;
+- final rendered reading order contains contradictions, stitched-agent artifacts or AI-style filler.
