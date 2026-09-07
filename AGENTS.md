@@ -116,3 +116,61 @@ For /koopgids/ work, the editorial pass must explicitly detect:
 - claims that are technically true but pragmatically strange or defensive.
 
 A page cannot receive PASS until it has been read from top to bottom in rendered reading order after the final edit.
+
+
+## Review Recovery Workflow
+
+Use this workflow for individual product review pages (for example `*-review.html`). It extends the existing recovery stack; it does not replace the existing skills.
+
+### Pre-edit diagnosis
+
+1. **Performance / recovery diagnostic** — use supplied GSC evidence where available; distinguish loss of clicks, impressions and average position.
+2. **content-audit + spam-risk** — decide KEEP / LIGHT REFRESH / MEDIUM REFRESH / DEEP REFRESH before editing.
+3. **search-intent** — preserve the individual-review intent and avoid turning the page into a generic buying guide.
+4. **affiliate-value** — the page must remain useful if affiliate links are removed.
+5. **evidence-based-reviews** — mandatory core review gate. Classify the evidence behind material claims and never imply hands-on testing without documented first-hand evidence.
+6. **Product facts / source verification** — verify important specifications against the exact model/variant where possible. Flag uncertain facts rather than silently deleting them.
+7. **Review methodology / evidence tier** — make the factual basis of the review transparent. Do not create arbitrary numeric ratings.
+8. **Strengths / drawbacks / use-case fit** — explain who the product suits, who it does not suit, and meaningful trade-offs.
+9. **comparison-tool-design** — use when the review compares the reviewed product with alternatives or makes relative/best-choice claims.
+10. **fact-check** — separate verification pass after substantive edits.
+11. **internal-linking-audit** — link naturally to relevant comparison, koopgids, maintenance/use guides and genuine alternatives without creating a templated link block.
+12. **Schema judgment** — use Review/rating markup only when the page has a defensible documented review/rating basis. Otherwise prefer honest Article/Product markup appropriate to the visible content.
+
+### Editorial finishing sequence
+
+After factual/content changes and before technical QA, run the same finishing stack already used for /koopgids/:
+
+1. **humanizer**
+2. **general-writing**
+3. **anti-ai-slop**
+4. **preservation / seo-drift BEFORE vs AFTER**
+5. **seo-technical + seo-best-practices**
+6. **editorial-qa**
+7. **whole-page final read in rendered reading order**
+
+### Review-specific preservation gate
+
+In addition to the global Preservation contract, preserve by default:
+- exact product/model name and variant;
+- visible price, old price and discount values;
+- affiliate CTA labels and destination URLs;
+- product images;
+- material, capacity/ml, cup count, dimensions, weight, compatibility and other technical specifications;
+- pros/cons that remain factually supported;
+- contextual links to the product's comparison and relevant guides;
+- availability/shipping information;
+- existing Product/Offer fields that remain accurate.
+
+Do not silently remove a preserved commercial or technical field. If it is wrong, contradictory or unverifiable, flag it in the review log and change it only with an explicit reason.
+
+### Automatic FAIL conditions
+
+A review cannot receive PASS when:
+- it claims or implies first-hand testing without documented evidence;
+- it retains an unexplained numeric score or rating presented as objective;
+- a recommendation is stronger than its evidence;
+- material product facts disappeared during rewriting;
+- affiliate URLs or prices were unintentionally removed;
+- schema claims a Review/rating that the visible methodology cannot support;
+- the final page contains stitched-agent contradictions, synthetic expertise, unsupported performance claims or generic AI-style filler.
