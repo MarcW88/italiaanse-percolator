@@ -215,6 +215,16 @@ Preserve by default:
 
 The seo-ecommerce skill is an audit/optimization gate, not permission to delete or invent product data. Any contradiction or unverifiable preserved field must be flagged and changed only for an explicit documented reason.
 
+### Product editorial language guard
+
+During the whole-page final read, flag and rewrite defensive/internal-process language that exposes editorial mechanics instead of helping the reader. Examples include:
+- explaining what "this page is intended to do";
+- telling readers that the page "is not responsible for" current commercial information;
+- disclaimers that repeat obvious uncertainty about price/availability in bureaucratic language;
+- phrases such as "we do not claim...", "this page is meant to...", "use the seller for commercial information" when a simpler reader-facing sentence would do.
+
+Prefer direct reader language, e.g. "Prijs en beschikbaarheid kunnen veranderen. Bekijk de actuele informatie bij de verkooppartner."
+
 ### Automatic FAIL conditions
 A product page cannot PASS when:
 - a preserved price, affiliate URL, image, specification or identifier disappeared unintentionally;
@@ -224,4 +234,5 @@ A product page cannot PASS when:
 - a rating/review is fabricated or unsupported;
 - the page is mostly generic template text that could apply unchanged to another model;
 - schema contains unsupported commercial data;
-- final rendered reading order contains contradictions, stitched-agent artifacts or AI-style filler.
+- final rendered reading order contains contradictions, stitched-agent artifacts or AI-style filler;
+- defensive or meta-editorial wording remains where a simpler reader-facing formulation is possible.
