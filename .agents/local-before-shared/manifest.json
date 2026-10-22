@@ -1,0 +1,26 @@
+{
+  "repository": "italiaanse-percolator",
+  "base_commit": "80a962840be415609367bb84a49fd5a384b1b8e4",
+  "files": {
+    ".agents/skills/anti-ai-slop/SKILL.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/anti-ai-slop/SKILL.md",
+      "sha256": "49683b3742b32cd3d70ee0901222db4ef8088d105a5232cef682f7c162efa158"
+    },
+    ".agents/skills/content-audit/SKILL.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/content-audit/SKILL.md",
+      "sha256": "183fa4dc9f8fa4646683c3091401c05e2c1eb5e0af69602d6f0d1e034afe937b"
+    },
+    ".agents/skills/editorial-qa/SKILL.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/editorial-qa/SKILL.md",
+      "sha256": "58a24956f7660da3f1fd2264fb1477f4cbdd5005c5e009820f378cdd481862c9"
+    },
+    ".agents/skills/evidence-based-reviews/SKILL.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/evidence-based-reviews/SKILL.md",
+      "sha256": "d827133c07978d77d1d669a7ba887d4278d65b407787d98e0e8bd32cb0229f9a"
+    },
+    ".agents/skills/seo-technical/SKILL.md": {
+      "backup": ".agents/local-before-shared/.agents/skills/seo-technical/SKILL.md",
+      "sha256": "fee193ee3f4be95e36966e7968110b2f9ca1ab2d5f5313f12a38d8462c85480c"
+    }
+  }
+}

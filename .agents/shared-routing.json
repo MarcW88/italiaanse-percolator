@@ -1,0 +1,48 @@
+{
+  "context": ".agents/site-context.shared.md",
+  "lock": ".agents/site-agents.lock.json",
+  "families": {
+    "guide": [
+      "guide-analysis-workflow",
+      "guide-content-workflow"
+    ],
+    "comparison": [
+      "comparison-analysis-workflow",
+      "comparison-content-workflow"
+    ],
+    "brand": [
+      "brand-analysis-workflow",
+      "brand-content-workflow"
+    ],
+    "usage": [
+      "usage-analysis-workflow",
+      "usage-content-workflow"
+    ],
+    "deal": [
+      "deal-analysis-workflow",
+      "deal-content-workflow"
+    ],
+    "trust": [
+      "trust-content-workflow"
+    ],
+    "model": [
+      "model-analysis-workflow",
+      "model-content-workflow"
+    ],
+    "recovery": [
+      "content-recovery-and-production-workflow"
+    ],
+    "design": [
+      "site-design-review"
+    ]
+  },
+  "routes": {
+    "/koopgids/": "guide",
+    "/vergelijking/": "comparison",
+    "/marques/": "brand",
+    "/producten/": "brand",
+    "/categories/": "usage",
+    "/over-ons/": "trust",
+    "/garantie-retourbeleid/": "trust"
+  }
+}

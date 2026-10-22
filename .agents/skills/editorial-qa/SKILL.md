@@ -64,6 +64,17 @@ Controleer ook:
 - Zijn concrete details makkelijker te vinden dan vóór de rewrite?
 - Is er echte informatie toegevoegd in plaats van alleen nieuwe formuleringen?
 
+## Gate 7 — Décision d'image éditoriale
+
+Pour les contenus de `bloc-notes-numeriques.fr`, exécuter `.agents/skills/editorial-image-planner/SKILL.md` après la rédaction et avant la publication.
+
+PASS lorsque l'une des deux décisions est explicitement prise :
+
+- `NOT_NEEDED` : aucune image générée n'apporte assez de valeur à la page ;
+- une requête est créée dans `.content/image-requests/` avec un statut cohérent (`PENDING` pour une illustration générique à faible risque, `BLOCKED` lorsqu'une vraie image est nécessaire).
+
+Ne jamais créer une image IA uniquement pour remplir la page. Ne jamais utiliser une image générée comme preuve d'un test, comme photo fidèle d'un produit précis, comme capture d'interface ou comme représentation de marque.
+
 ## Eindoutput
 
 ### PASS

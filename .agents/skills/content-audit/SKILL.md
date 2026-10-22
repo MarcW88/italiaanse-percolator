@@ -1,66 +1,84 @@
 ---
 name: content-audit
-description: Beslis voor bestaande pagina's op italiaanse-percolator.nl of ze KEEP, UPDATE, MERGE, REDIRECT of REMOVE zijn voordat er herschreven wordt.
+description: Auditer une page éditoriale existante avant réécriture et décider KEEP, UPDATE, MERGE, REDIRECT ou REMOVE à partir de l'intention, de la valeur originale, des performances disponibles et des chevauchements. Adapté du skill content-audit de MarcW88/italiaanse-percolator.
 license: MIT
+metadata:
+  upstream: https://github.com/MarcW88/italiaanse-percolator/tree/main/.agents/skills/content-audit
+  adapted_for: bloc-notes-numeriques.fr
 ---
 
-# Content audit — italiaanse-percolator.nl
+# Content Audit — adaptation bloc-notes-numeriques.fr
 
-Gebruik deze skill als eerste stap bij SEO-herstel.
+Utiliser ce skill avant toute réécriture d'une page existante. Il audite et décide ; il ne rédige pas la nouvelle page.
 
-## Doel
+## Principe
 
-Niet elke zwakke pagina moet herschreven worden. Bepaal eerst of de URL nog een duidelijke functie en herstelpotentieel heeft.
+Une page faible ne mérite pas automatiquement une réécriture. Vérifier d'abord si l'URL possède encore une fonction propre, une intention identifiable, une valeur historique ou éditoriale et un potentiel de récupération.
 
-## Vereiste informatie
+Ne jamais compléter une donnée manquante par supposition. Si GSC, backlinks, historique ou autre signal n'est pas disponible, le signal reste `UNKNOWN`.
 
-Gebruik zoveel mogelijk:
-- huidige URL en inhoud;
-- historische en recente GSC-data;
-- belangrijkste queries en vroegere posities;
-- organische clicks en impressies vóór en na de daling;
-- eventuele backlinks of interne links;
-- overlap met andere pagina's in de repo;
-- paginatype: product, merk, categorie, vergelijking, gids of FAQ.
+## Entrées utiles
 
-Ontbreekt data, vermeld dat expliciet. Vul niets in op basis van aannames.
+Utiliser autant que possible :
 
-## Beslissingen
+- URL et contenu actuels ;
+- requêtes cibles ou historiques ;
+- données GSC historiques et récentes lorsqu'elles existent ;
+- clics, impressions et positions avant/après une baisse lorsqu'ils existent ;
+- backlinks et liens internes lorsqu'ils sont disponibles ;
+- pages voisines du même cluster ;
+- type de page et fonction éditoriale ;
+- état actuel des produits, marques, services ou technologies cités.
+
+## Décisions
 
 ### KEEP
-Gebruik wanneer de pagina inhoudelijk sterk, actueel en uniek is en nog een duidelijke zoekintentie bedient. Kleine taalcorrecties zijn toegestaan, maar geen volledige rewrite.
+
+La page est unique, actuelle, utile et sert encore une intention claire. Des corrections mineures restent possibles, mais une réécriture profonde n'est pas justifiée.
 
 ### UPDATE
-Gebruik wanneer de URL historisch potentieel toont of een nuttige functie heeft, maar inhoud mist, verouderd is, te generiek is of onvoldoende beslissingswaarde biedt.
+
+L'URL garde une fonction ou un potentiel, mais présente une ou plusieurs faiblesses : informations obsolètes, valeur trop faible, structure inadaptée, preuves insuffisantes, contenu trop marchand ou dérive d'intention.
+
+Après `UPDATE`, utiliser `content-refresh` pour choisir entre correction légère, révision majeure ou réécriture complète.
 
 ### MERGE
-Gebruik wanneer twee of meer URL's vrijwel dezelfde intentie bedienen en afzonderlijk weinig onderscheid hebben. Kies de sterkste canonieke bestemming op basis van historische prestaties, links, relevantie en URL-logica.
+
+Deux ou plusieurs URLs servent essentiellement la même intention sans valeur distincte suffisante. Choisir la destination la plus logique à partir des performances, liens, pertinence, historique et architecture du site.
 
 ### REDIRECT
-Gebruik wanneer de specifieke pagina geen zelfstandige reden van bestaan meer heeft, maar een relevante opvolger bestaat. Geef de voorgestelde doel-URL.
+
+La page n'a plus de raison autonome d'exister mais un successeur pertinent existe. Le skill recommande la destination ; il n'applique pas la redirection automatiquement.
 
 ### REMOVE
-Alleen wanneer de pagina geen relevante intentie, historische waarde, links of unieke functie heeft en niet logisch te consolideren is.
 
-## Extra risico's voor deze site
+Seulement si l'URL n'a plus d'intention utile, de valeur historique, de liens significatifs ni de fonction éditoriale et ne mérite pas de consolidation.
 
-Flag:
-- productbeschrijvingen die hoofdzakelijk fabrikant-/merchantinformatie herhalen;
-- honderden pagina's met hetzelfde template en weinig unieke beslissingswaarde;
-- bijna identieke vergelijkingen;
-- generieke AI-intro's en conclusies;
-- pagina's waarvan alleen merk/model verschilt;
-- verouderde producten of prijzen die als actueel worden voorgesteld;
-- pagina's zonder duidelijk antwoord op "voor wie is dit product geschikt?".
+## Risques à signaler sur un site affilié
+
+Flagger explicitement :
+
+- paraphrase de fiches fabricant ou marchand ;
+- pages dont seul le nom de marque/modèle change ;
+- architecture répétée sans justification par l'intention ;
+- introductions, conclusions ou sections génériques ;
+- recommandations sans critères ou sans limites visibles ;
+- informations obsolètes sur modèles, générations, prix, compatibilités ou disponibilité ;
+- faux niveau d'expérience ou test non démontré ;
+- absence de réponse claire à la question de décision du lecteur ;
+- cannibalisation avec une autre URL ;
+- contenu qui perd presque toute utilité si les liens affiliés disparaissent.
 
 ## Output
 
-Geef:
-1. **Decision:** KEEP / UPDATE / MERGE / REDIRECT / REMOVE
-2. **Confidence:** high / medium / low
-3. **Evidence:** concrete signalen
-4. **Main problem:** één kernprobleem
-5. **Recovery potential:** waarom herstel wel/niet zinvol is
-6. **Next skill:** welke stap hierna moet volgen
+Retourner :
 
-Herschrijf de pagina niet tijdens deze audit.
+1. `Decision`: KEEP / UPDATE / MERGE / REDIRECT / REMOVE
+2. `Confidence`: high / medium / low
+3. `Evidence`: signaux concrets utilisés
+4. `Unknowns`: données manquantes qui limitent le diagnostic
+5. `Main problem`: problème principal
+6. `Recovery potential`: pourquoi une récupération est ou non justifiée
+7. `Next skill`: prochaine étape recommandée
+
+Ne pas réécrire la page pendant cet audit.
