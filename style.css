@@ -4870,3 +4870,51 @@ body.review-page .section-sm .container {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* ===========================================================
+   Shared Moka editorial identity — Cafetière Italienne parity
+   Applied across categories, reviews, brands, shop and guides.
+   =========================================================== */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap');
+:root {
+  --cream:#f7f2e9;--paper:#fffcf7;--ink:#28231f;--moka:#713f2a;
+  --terra:#c65d38;--olive:#7c8564;--sand:#eee5d8;--line:#ded2c2;--muted:#746a62;
+  --bg:#f7f2e9;--bg-soft:#fffcf7;--bg-warm:#eee5d8;--surface:#fffcf7;--surface-soft:#eee5d8;
+  --text:#28231f;--text-dim:#746a62;--text-light:#746a62;
+  --coffee:#713f2a;--coffee-light:#946048;--coffee-bg:#eee5d8;--coffee-border:#ded2c2;
+  --cta:#c65d38;--cta-hover:#a5472c;--sage:#7c8564;--sage-light:#eef0e6;
+  --border:#ded2c2;--font-sans:'DM Sans',sans-serif;--font-display:'DM Serif Display',Georgia,serif;
+  --font-serif:'DM Serif Display',Georgia,serif;--r-lg:12px;--r-xl:16px;
+  --shadow-lg:0 12px 30px rgba(74,49,34,.09);
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--ink);background:var(--cream)}
+h1,h2,h3,h4,.display-title{font-family:'DM Serif Display',Georgia,serif;font-weight:400;letter-spacing:-.015em;color:var(--ink)}
+h1{line-height:1.12}h2{line-height:1.18}
+p,li{line-height:1.7}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--terra);outline-offset:3px}
+.navbar{background:rgba(247,242,233,.97);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+.nav-brand{font-family:'DM Serif Display',serif;color:var(--moka);font-size:1.28rem}
+.nav-link{color:var(--ink)}.nav-link:hover,.nav-link.active{color:var(--moka);background:var(--sand)}
+.dropdown-menu{background:var(--paper);border:1px solid var(--line);box-shadow:0 12px 30px rgba(74,49,34,.11)}
+.dropdown-link:hover{background:var(--sand);color:var(--moka)}
+.btn-primary,.button-primary,.cta-button{background:var(--terra);border-color:var(--terra);color:#fff}
+.btn-primary:hover,.button-primary:hover{background:#a5472c;border-color:#a5472c;color:#fff}
+.btn-secondary{border-color:var(--line);background:var(--paper);color:var(--ink)}
+.card,.product-card,.review-card,.category-card,.similar-article-card,.filter-sidebar,.product-details,.comparison-card{background:var(--paper);border-color:var(--line);box-shadow:none}
+.card:hover,.product-card:hover,.review-card:hover,.category-card:hover,.similar-article-card:hover{border-color:#c3aa94;box-shadow:0 12px 28px rgba(74,49,34,.08)}
+.card h2,.card h3,.product-card h2,.product-card h3,.review-card h2,.review-card h3,.category-card h3{color:var(--moka)}
+section[style*="background: #f5f0ea"],section[style*="background:#f5f0ea"]{background:var(--sand)!important}
+table{border-color:var(--line);background:var(--paper)}
+th{background:var(--sand);color:var(--ink)}
+td{border-color:var(--line)}
+blockquote{border-left-color:var(--terra);background:var(--paper)}
+.blog-hero,.guide-hero,.review-hero,.category-hero{background:var(--sand)}
+.blog-container,.guide-layout-wrap,.article-content{color:var(--ink)}
+.blog-page article,.guide-article{max-width:100%}
+.footer,footer.site-footer{background:#211c18;color:#f7f2e9}
+.footer a,footer.site-footer a{color:#ded2c2}
+.footer a:hover,footer.site-footer a:hover{color:#fff}
+img{max-width:100%}
+@media(max-width:768px){.container{max-width:100%}.grid{min-width:0}.grid>*{min-width:0}.nav-menu.active{background:var(--cream)}}
