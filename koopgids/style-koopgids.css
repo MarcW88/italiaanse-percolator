@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap');
 /* ================================================================
    KOOPGIDS — Article stylesheet
    Single source of truth for all /koopgids pages.
@@ -670,7 +671,7 @@ div[style*="overflow-x:auto"] { overflow-x: auto; -webkit-overflow-scrolling: to
    Shared Moka editorial identity — Cafetière Italienne parity
    Applied across categories, reviews, brands, shop and guides.
    =========================================================== */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap');
+
 :root {
   --cream:#f7f2e9;--paper:#fffcf7;--ink:#28231f;--moka:#713f2a;
   --terra:#c65d38;--olive:#7c8564;--sand:#eee5d8;--line:#ded2c2;--muted:#746a62;
